@@ -111,9 +111,8 @@ characterId = 2305843009644414176
 # Hunter:
 # characterId = 2305843010322954573
 
-# MODE Numbers: 4 = Raids, 82 = Dungeons
-# COUNT Limit: 250 per PAGE
-# PAGE LIMIT: unknown
+# Clan ID
+groupId = 4268087
 
 MODE = 82
 COUNT = 250
