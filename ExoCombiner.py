@@ -328,6 +328,12 @@ def ExoCombiner():
     WTB_K = 0
     WTB_P = 0
 
+    TUH_K = 0
+    TUH_P = 0
+
+    WOW_K = 0
+    WOW_P = 0
+
     with open('Exotics.json') as f:
         data1 = json.load(f)
     with open('Exotics_1.json') as f:
@@ -352,12 +358,11 @@ def ExoCombiner():
     exotic_len_2 = len(exotic_json["Response"][1]['weapons'])
     exotic_len_3 = len(exotic_json["Response"][2]['weapons'])
 
-    if exotic_len_1 and exotic_len_2 > 0 and exotic_len_3 > 0:
-        Exotic = {"Exotic": []}
-        Kills = {"Kills": []}
-        Precision = {"Precision Kills": []}
+    Exotic = {"Exotic": []}
+    Kills = {"Kills": []}
+    Precision = {"Precision Kills": []}
 
-        for number in range(0, exotic_len_1):
+    for number in range(0, exotic_len_1):
             Name_1 = exotic_json["Response"][0]["weapons"][number]["referenceId"]
             Kills_1 = exotic_json["Response"][0]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
             Precision_1 = \
@@ -365,7 +370,7 @@ def ExoCombiner():
             Exotic['Exotic'].append(Name_1)
             Kills['Kills'].append(Kills_1)
             Precision['Precision Kills'].append(Precision_1)
-        for number in range(0, exotic_len_2):
+    for number in range(0, exotic_len_2):
             Name_2 = exotic_json["Response"][1]["weapons"][number]["referenceId"]
             Kills_2 = exotic_json["Response"][1]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
             Precision_2 = \
@@ -373,7 +378,7 @@ def ExoCombiner():
             Exotic['Exotic'].append(Name_2)
             Kills['Kills'].append(Kills_2)
             Precision['Precision Kills'].append(Precision_2)
-        for number in range(0, exotic_len_3):
+    for number in range(0, exotic_len_3):
             Name_3 = exotic_json["Response"][2]["weapons"][number]["referenceId"]
             Kills_3 = exotic_json["Response"][2]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
             Precision_3 = \
@@ -382,7 +387,7 @@ def ExoCombiner():
             Kills['Kills'].append(Kills_3)
             Precision['Precision Kills'].append(Precision_3)
 
-        Exotic_Info = [Exotic, Kills, Precision]
+    Exotic_Info = [Exotic, Kills, Precision]
 
     length = len(Exotic_Info[0]['Exotic'])
 
@@ -553,8 +558,8 @@ def ExoCombiner():
             SVG_P += Precision
         elif ID == 374573733:
             Exotic = "Delicate Tomb"
-            DLT_K += Kills
-            DLT_P += Precision
+            DCT_K += Kills
+            DCT_P += Precision
         elif ID == 400096939:
             Exotic = "Outbreak Perfected"
             OBP_K += Kills
@@ -639,62 +644,289 @@ def ExoCombiner():
             Exotic = "Arbalest"
             ABL_K += Kills
             ABL_P += Precision
+        elif ID == 2179048386:
+            Exotic = "Forerunner"
+            FRN_K += Kills
+            FRN_P += Precision
+        elif ID == 2286143274:
+            Exotic = "Huckleberry"
+            HKB_K += Kills
+            HKB_P += Precision
+        elif ID == 2362471601:
+            Exotic = "Rat King"
+            RTK_K += Kills
+            RTK_P += Precision
+        elif ID == 2376481550:
+            Exotic = "Anarchy"
+            ARK_K += Kills
+            ARK_P += Precision
+        elif ID == 2399110176:
+            Exotic = "Eyes of Tomorrow"
+            EOT_K += Kills
+            EOT_P += Precision
+        elif ID == 2415517654:
+            Exotic = "Bastion"
+            BSN_K += Kills
+            BSN_P += Precision
+        elif ID == 2603483885:
+            Exotic = "Cloudstrike"
+            CDS_K += Kills
+            CDS_P += Precision
+        elif ID == 2907129556:
+            Exotic = "Strum"
+            STR_K += Kills
+            STR_P += Precision
+        elif ID == 3110698812:
+            Exotic = "Tarrabah"
+            TRB_K += Kills
+            TRB_P += Precision
+        elif ID == 3118061004:
+            Exotic = "Winterbite"
+            WTB_K += Kills
+            WTB_P += Precision
+        elif ID == 3121540812:
+            Exotic = "Final Warning"
+            FNW_K += Kills
+            FNW_P += Precision
+        elif ID == 3141979347:
+            Exotic = "Borealis"
+            BEL_K += Kills
+            BEL_P += Precision
+        elif ID == 3211806999:
+            Exotic = "Izanagi's Burden"
+            IZB_K += Kills
+            IZB_P += Precision
+        elif ID == 3371017761:
+            Exotic = "Conditional Finality"
+            CDF_K += Kills
+            CDF_P += Precision
+        elif ID == 3505113722:
+            Exotic = "Collective Obligation"
+            CLO_K += Kills
+            CLO_P += Precision
+        elif ID == 3512014804:
+            Exotic = "Lumina"
+            LMN_K += Kills
+            LMN_P += Precision
+        elif ID == 3580904580 or ID == 1744115122:
+            Exotic = "Legend of Acrius"
+            LOA_K += Kills
+            LOA_P += Precision
+        elif ID == 3761898871:
+            Exotic = "Lorentz Driver"
+            LRD_K += Kills
+            LRD_P += Precision
+        elif ID == 3766045777:
+            Exotic = "Black Talon"
+            BKT_K += Kills
+            BKT_P += Precision
+        elif ID == 3824106094:
+            Exotic = "Devil's Ruin"
+            DVR_K += Kills
+            DVR_P += Precision
+        elif ID == 3844694310:
+            Exotic = "The Jade Rabbit"
+            JDR_K += Kills
+            JDR_P += Precision
+        elif ID == 3856705927:
+            Exotic = "Hawkmoon"
+            HKM_K += Kills
+            HKM_P += Precision
+        elif ID == 3899270607:
+            Exotic = "The Colony"
+            CLN_K += Kills
+            CLN_P += Precision
+        elif ID == 4174431791:
+            Exotic = "Hierarchy of Needs"
+            HON_K += Kills
+            HON_P += Precision
+        elif ID == 4289226715:
+            Exotic = "Vex Mythoclast"
+            VMC_K += Kills
+            VMC_P += Precision
+        elif ID == 14194600:
+            Exotic = "Edge of Intent"
+            EOI_K += Kills
+            EOI_P += Precision
+        elif ID == 219145368:
+            Exotic = "The Manticore"
+            TMC_K += Kills
+            TMC_P += Precision
+        elif ID == 347366834:
+            Exotic = "Ace of Spades"
+            AOS_K += Kills
+            AOS_P += Precision
+        elif ID == 940371471:
+            Exotic = "Wicked Implement"
+            WKI_K += Kills
+            WKI_P += Precision
+        elif ID == 1201830623:
+            Exotic = "Truth"
+            TUH_K += Kills
+            TUH_P += Precision
+        elif ID == 1234150730:
+            Exotic = "Trespasser"
+            TSP_K += Kills
+            TSP_P += Precision
+        elif ID == 1331482397:
+            Exotic = "MIDA Multi-Tool"
+            MMT_K += Kills
+            MMT_P += Precision
+        elif ID == 1364093401:
+            Exotic = "The Last WOrd"
+            TLW_K += Kills
+            TLW_P += Precision
+        elif ID == 1541131350:
+            Exotic = "Cerberus+1"
+            CBS_K += Kills
+            CBS_P += Precision
+        elif ID == 1802135586:
+            Exotic = "Touch of Malice"
+            TOM_K += Kills
+            TOM_P += Precision
+        elif ID == 1852863732:
+            Exotic = "Wavesplitter"
+            WVP_K += Kills
+            WVP_P += Precision
+        elif ID == 1853180924:
+            Exotic = "Traveler's Chosen"
+            TVC_K += Kills
+            TVC_P += Precision
+        elif ID == 1864563948:
+            Exotic = "Worldline Zero"
+            WLZ_K += Kills
+            WLZ_P += Precision
+        elif ID == 1891561814:
+            Exotic = "Whisper of the Worm"
+            WOW_K += Kills
+            WOW_P += Precision
+        elif ID == 2069224589:
+            Exotic = "One Thousand Voices"
+            OKV_K += Kills
+            OKV_P += Precision
+        elif ID == 2084878005:
+            Exotic = "Heir Apparent"
+            HAP_K += Kills
+            HAP_P += Precision
+        # elif ID ==
+        # elif ID ==
+        # elif ID ==
+    Primary = PrettyTable()
+    Primary.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
+                                  "The Jade Rabbit", "The Huckleberry", "SUROS Regime", "Cerberus+1", "Wish-Ender",
+                                  "Malfeasance", "Ace of Spades", "The Last Word", "Thorn", "Outbreak Perfected",
+                                  "Lumina", "Bad Juju", "Monte Carlo", "Traveler's Chosen", "Hawkmoon",
+                                  "No Time to Explain",
+                                  "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga", "Touch of Malice",
+                                  "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve",
+                                  "Wicked Implement",
+                                  "Fighting Lion", "Sunshot", "Skyburner's Oath", "Riskrunner", "Hard Light",
+                                  "Polaris Lance",
+                                  "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin",
+                                  "Tommy's Matchbook",
+                                  "Ticuu's Divination", "Vex Mythoclast", "Collective Obligation", "Trespasser",
+                                  "The Manticore", "Hierarchy of Needs", "Centrifuse"])
+    Primary.add_column("Kills",
+                       [SWB_K, STR_K, VIG_K, RTK_K, MMT_K, CRM_K, JDR_K, HKB_K, SRR_K, CBS_K, WHE_K, MFC_K, AOS_K,
+                        TLW_K, TRN_K, OBP_K, LMN_K, BJJ_K, MTC_K, TVC_K, HKM_K, NTE_K, DMT_K, CSK_K, OTS_K, TOM_K,
+                        QSS_K, RVZ_K, FNW_K, VGC_K, WKI_K, FTL_K, SNS_K, SBO_K, RSR_K, HDL_K, PLL_K, TNG_K, LMR_K,
+                        TRB_K, SMY_K, DVR_K, TMB_K, TCD_K, VMC_K, CLO_K, TSP_K, TMC_K, HON_K, CTF_K])
+    Primary.add_column("Precision Kills",
+                       [SWB_P, STR_P, VIG_P, RTK_P, MMT_P, CRM_P, JDR_P, HKB_P, SRR_P, CBS_P, WHE_P, MFC_P, AOS_P,
+                        TLW_P, TRN_P, OBP_P, LMN_P, BJJ_P, MTC_P, TVC_P, HKM_P, NTE_P, DMT_P, CSK_P, OTS_P, TOM_P,
+                        QSS_P, RVZ_P, FNW_P, VGC_P, WKI_P, FTL_P, SNS_P, SBO_P, RSR_P, HDL_P, PLL_P, TNG_P, LMR_P,
+                        TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_K])
+    Primary.align["Exotic"] = 'l'
+    Primary.reversesort = True
+    print(Primary.get_string(sortby="Kills", start=0, end=5))
 
-    x = PrettyTable()
-    x.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
-                            "The Jade Rabbit", "The Huckleberry", "SUROS Regime", "Cerberus+1", "Wish-Ender",
-                            "Malfeasance", "Ace of Spades", "The Last Word", "Thorn", "Outbreak Perfected",
-                            "Lumina", "Bad Juju", "Monte Carlo", "Traveler's Chosen", "Hawkmoon", "No Time to Explain",
-                            "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga", "Touch of Malice",
-                            "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve", "Wicked Implement",
-                            "Fighting Lion", "Sunshot", "Skyburner's Oath", "Riskrunner", "Hard Light", "Polaris Lance",
-                            "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin", "Tommy's Matchbook",
-                            "Ticuu's Divination", "Vex Mythoclast", "Collective Obligation", "Trespasser",
-                            "The Manticore", "Hierarchy of Needs", "Centrifuse"])
-    x.add_column("Kills",
-                 [SWB_K, STR_K, VIG_K, RTK_K, MMT_K, CRM_K, JDR_K, HKB_K, SRR_K, CBS_K, WHE_K, MFC_K, AOS_K, TLW_K,
-                  TRN_K, OBP_K, LMN_K, BJJ_K, MTC_K, TVC_K, HKM_K, NTE_K, DMT_K, CSK_K, OTS_K, TOM_K, QSS_K, RVZ_K,
-                  FNW_K,VGC_K, WKI_K, FTL_K, SNS_K, SBO_K, RSR_K, HDL_K, PLL_K, TNG_K, LMR_K, TRB_K, SMY_K, DVR_K,
-                  TMB_K, TCD_K, VMC_K, CLO_K, TSP_K, MTC_K, HON_K, CTF_K])
-    x.add_column("Precision Kills",
-                 [SWB_P, STR_P, VIG_P, RTK_P, MMT_P, CRM_P, JDR_P, HKB_P, SRR_P, CBS_P, WHE_P, MFC_P, AOS_P,
-                  TLW_P, TRN_P, OBP_P, LMN_P, BJJ_P, MTC_P, TVC_P, HKM_P, NTE_P, DMT_P, CSK_P, OTS_P, TOM_P,
-                  QSS_P, RVZ_P, FNW_P,VGC_P, WKI_P, FTL_P, SNS_P, SBO_P, RSR_P, HDL_P, PLL_P, TNG_P, LMR_P, TRB_P,
-                  SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, MTC_P, HON_P, CTF_K])
-    x.align["Exotic"] = 'l'
-    x.reversesort = True
-    print(x.get_string(sortby="Kills"))
+    Special = PrettyTable()
+    Special.add_column("Exotic",
+                       ["The Chaperone", "Izanagi's Burden", "Arbalest", "Bastion", "Witherhoard", "Ager's Scepter",
+                        "Forerunner", "Conditional Finality", "The Navigator", "Coldheart", "Merciless", "Borealis",
+                        "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn", "Eriana's Vow",
+                        "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
+                        "Lorentz Driver", "Edge of Concurrence", "Edge of Action", "Edge of Intent",
+                        "Dead Messenger", "Delicate Tomb", "Vexcalibur", "Whisper of the Worm"])
+    Special.add_column("Kills",
+                       [CPR_K, IZB_K, ABL_K, BSN_K, WTH_K, ASP_K, FRN_K, CDF_K, NVG_K, CDH_K, MCL_K, BEL_K, PML_K,
+                        TLT_K, WVP_K, LOW_K, JTN_K, EIV_K, DVN_K, TFH_K, RNE_K, DLT_K, CDS_K, LRD_K, EOC_K, EOA_K,
+                        EOI_K, DMS_K, DCT_K, VCB_K, WOW_K])
+    Special.add_column("Precision Kills",
+                       [CPR_P, IZB_P, ABL_P, BSN_P, WTH_P, ASP_P, FRN_P, CDF_P, NVG_P, CDH_P, MCL_P, BEL_P,
+                        PML_P, TLT_P, WVP_P, LOW_P, JTN_P, EIV_P, DVN_P, TFH_P, RNE_P, DLT_P, CDS_P, LRD_P,
+                        EOC_P, EOA_P, EOI_P, DMS_P, DCT_P, VCB_P, WOW_P])
+    Special.align["Exotic"] = 'l'
+    Special.reversesort = True
+    print(Special.get_string(sortby="Kills", start=0, end=5))
 
-    y = PrettyTable()
-    y.add_column("Exotic", ["The Chaperone", "Izanagi's Burden", "Arbalest", "Bastion", "Witherhoard", "Ager's Scepter",
-                            "Forerunner", "Conditional Finality", "The Navigator", "Coldheart", "Merciless", "Borealis",
-                            "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn", "Eriana's Vow",
-                            "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
-                            "Lorentz Driver", "Edge of Concurrence","Edge of Action", "Edge of Intent",
-                            "Dead Messenger", "Delicate Tomb", "Vexcalibur"])
-    y.add_column("Kills", [CPR_K, IZB_K, ABL_K, BSN_K, WTH_K, ASP_K, FRN_K, CDF_K, NVG_K, CDH_K, MCL_K, BEL_K, PML_K,
-                           TLT_K, WVP_K, LOW_K, JTN_K, EIV_K, DVN_K, TFH_K, RNE_K, DLT_K, CDS_K, LRD_K, EOC_K, EOA_K,
-                           EOI_K, DMS_K, DLT_K, VCB_K])
-    y.add_column("Precision Kills", [CPR_P, IZB_P, ABL_P, BSN_P, WTH_P, ASP_P, FRN_P, CDF_P, NVG_P, CDH_P, MCL_P, BEL_P,
-                                     PML_P, TLT_P, WVP_P, LOW_P, JTN_P, EIV_P, DVN_P, TFH_P, RNE_P, DLT_P, CDS_P, LRD_P,
-                                     EOC_P, EOA_P, EOI_P, DMS_P, DLT_P, VCB_P])
-    y.align["Exotic"] = 'l'
-    y.reversesort = True
-    print(y.get_string(sortby="Kills"))
+    Heavy = PrettyTable()
+    Heavy.add_column("Exotic",
+                     ["The Prospector", "The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
+                      "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices", "Two-Tailed Fox",
+                      "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy", "Leviathan's Breath",
+                      "Xenophage", "Deathbringer", "Heir Apparent", "Salvation's Grip", "Eyes of Tomorrow",
+                      "The Lament", "Gjallarhorn", "Parasite", "Grand Overture", "Heartshadow",
+                      "Deterministic Chaos", "Winterbite", "Truth"])
+    Heavy.add_column("Kills",
+                     [PST_K, WCC_K, TCC_K, LOA_K, DRC_K, CLN_K, WLZ_K, SPS_K, OKV_K, TTF_K, BKT_K, QNB_K, TDL_K,
+                      ARK_K, LVB_K, XNP_K, DBG_K, HAP_K, SVG_K, EOT_K, LMT_K, GLH_K, PRS_K, GOT_K, HSD_K, DTC_K,
+                      WTB_K, TUH_K])
+    Heavy.add_column("Precision Kills",
+                     [PST_P, WCC_P, TCC_P, LOA_P, DRC_P, CLN_P, WLZ_P, SPS_P, OKV_P, TTF_P, BKT_P, QNB_P,
+                      TDL_P, ARK_P, LVB_P, XNP_P, DBG_P, HAP_P, SVG_P, EOT_P, LMT_P, GLH_P, PRS_P, GOT_P,
+                      HSD_P, DTC_P, WTB_P, TUH_P])
+    Heavy.align["Exotic"] = 'l'
+    Heavy.reversesort = True
+    print(Heavy.get_string(sortby="Kills", start=0, end=5))
 
-    z = PrettyTable()
-    z.add_column("Exotic", ["The Prospector", "The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
-                            "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices", "Two-Tailed Fox",
-                            "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy", "Leviathan's Breath",
-                            "Xenophage", "Deathbringer", "Heir Apparent", "Salvation's Grip", "Eyes of Tomorrow",
-                            "The Lament", "Gjallarhorn", "Parasite", "Grand Overture", "Heartshadow",
-                            "Deterministic Chaos", "Winterbite"])
-    z.add_column("Kills", [PST_K, WCC_K, TCC_K, LOA_K, DRC_K, CLN_K, WLZ_K, SPS_K, OKV_K, TTF_K, BKT_K, QNB_K, TDL_K,
-                           ARK_K, LVB_K, XNP_K, DBG_K, HAP_K, SVG_K, EOT_K, LMT_K, GLH_K, PRS_K, GOT_K, HSD_K, DTC_K,
-                           WTB_K])
-    z.add_column("Precision Kills", [PST_P, WCC_P, TCC_P, LOA_P, DRC_P, CLN_P, WLZ_P, SPS_P, OKV_P, TTF_P, BKT_P, QNB_P,
-                                     TDL_P, ARK_P, LVB_P, XNP_P, DBG_P, HAP_P, SVG_P, EOT_P, LMT_P, GLH_P, PRS_P, GOT_P,
-                                     HSD_P, DTC_P, WTB_P])
-    z.align["Exotic"] = 'l'
-    z.reversesort = True
-    print(z.get_string(sortby="Kills"))
+    Full = PrettyTable()
+    Full.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
+                               "The Jade Rabbit", "The Huckleberry", "SUROS Regime", "Cerberus+1", "Wish-Ender",
+                               "Malfeasance", "Ace of Spades", "The Last Word", "Thorn", "Outbreak Perfected",
+                               "Lumina", "Bad Juju", "Monte Carlo", "Traveler's Chosen", "Hawkmoon",
+                               "No Time to Explain", "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga",
+                               "Touch of Malice",
+                               "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve",
+                               "Wicked Implement", "Fighting Lion", "Sunshot", "Skyburner's Oath", "Riskrunner",
+                               "Hard Light",
+                               "Polaris Lance", "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin",
+                               "Tommy's Matchbook", "Ticuu's Divination", "Vex Mythoclast", "Collective Obligation",
+                               "Trespasser",
+                               "The Manticore", "Hierarchy of Needs", "Centrifuse", "The Chaperone", "Izanagi's Burden",
+                               "Arbalest", "Bastion", "Witherhoard", "Ager's Scepter",
+                               "Forerunner", "Conditional Finality", "The Navigator", "Coldheart", "Merciless",
+                               "Borealis", "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn",
+                               "Eriana's Vow",
+                               "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
+                               "Lorentz Driver", "Edge of Concurrence", "Edge of Action", "Edge of Intent",
+                               "Dead Messenger", "Delicate Tomb", "Vexcalibur", "Whisper of the Worm", "The Prospector",
+                               "The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
+                               "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices",
+                               "Two-Tailed Fox", "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy",
+                               "Leviathan's Breath",
+                               "Xenophage", "Deathbringer", "Heir Apparent", "Salvation's Grip", "Eyes of Tomorrow",
+                               "The Lament", "Gjallarhorn", "Parasite", "Grand Overture", "Heartshadow",
+                               "Deterministic Chaos", "Winterbite", "Truth"])
+    Full.add_column("Kills",
+                    [SWB_K, STR_K, VIG_K, RTK_K, MMT_K, CRM_K, JDR_K, HKB_K, SRR_K, CBS_K, WHE_K, MFC_K, AOS_K,
+                     TLW_K, TRN_K, OBP_K, LMN_K, BJJ_K, MTC_K, TVC_K, HKM_K, NTE_K, DMT_K, CSK_K, OTS_K, TOM_K, QSS_K,
+                     RVZ_K, FNW_K, VGC_K, WKI_K, FTL_K, SNS_K, SBO_K, RSR_K, HDL_K, PLL_K, TNG_K, LMR_K, TRB_K, SMY_K,
+                     DVR_K, TMB_K, TCD_K, VMC_K, CLO_K, TSP_K, TMC_K, HON_K, CTF_K, CPR_K, IZB_K, ABL_K, BSN_K, WTH_K,
+                     ASP_K, FRN_K, CDF_K, NVG_K, CDH_K, MCL_K, BEL_K, PML_K, TLT_K, WVP_K, LOW_K, JTN_K, EIV_K, DVN_K,
+                     TFH_K, RNE_K, DLT_K, CDS_K, LRD_K, EOC_K, EOA_K, EOI_K, DMS_K, DCT_K, VCB_K, WOW_K, PST_K, WCC_K,
+                     TCC_K, LOA_K, DRC_K, CLN_K, WLZ_K, SPS_K, OKV_K, TTF_K, BKT_K, QNB_K, TDL_K, ARK_K, LVB_K, XNP_K,
+                     DBG_K, HAP_K, SVG_K, EOT_K, LMT_K, GLH_K, PRS_K, GOT_K, HSD_K, DTC_K, WTB_K, TUH_K])
+    Full.add_column("Precision Kills",
+                    [SWB_P, STR_P, VIG_P, RTK_P, MMT_P, CRM_P, JDR_P, HKB_P, SRR_P, CBS_P, WHE_P, MFC_P, AOS_P,
+                     TLW_P, TRN_P, OBP_P, LMN_P, BJJ_P, MTC_P, TVC_P, HKM_P, NTE_P, DMT_P, CSK_P, OTS_P, TOM_P,
+                     QSS_P, RVZ_P, FNW_P, VGC_P, WKI_P, FTL_P, SNS_P, SBO_P, RSR_P, HDL_P, PLL_P, TNG_P, LMR_P,
+                     TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_K, CPR_P, IZB_P,
+                     ABL_P, BSN_P, WTH_P, ASP_P, FRN_P, CDF_P, NVG_P, CDH_P, MCL_P, BEL_P, PML_P, TLT_P, WVP_P,
+                     LOW_P, JTN_P, EIV_P, DVN_P, TFH_P, RNE_P, DLT_P, CDS_P, LRD_P, EOC_P, EOA_P, EOI_P, DMS_P,
+                     DCT_P, VCB_P, WOW_P, PST_P, WCC_P, TCC_P, LOA_P, DRC_P, CLN_P, WLZ_P, SPS_P, OKV_P, TTF_P, BKT_P,
+                     QNB_P, TDL_P, ARK_P, LVB_P, XNP_P, DBG_P, HAP_P, SVG_P, EOT_P, LMT_P, GLH_P, PRS_P, GOT_P,
+                     HSD_P, DTC_P, WTB_P, TUH_P])
+    Full.align["Exotic"] = 'l'
+    Full.reversesort = True
+    print(Full.get_string(sortby="Kills", start=0, end=10))
