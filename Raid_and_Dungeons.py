@@ -250,11 +250,11 @@ def Lachlan():
     if CHAR == "Hunter" or CHAR == "Main":
         characterId = 2305843009359734078
         if MODE == 4 or MODE == 82:
-            URLZero(membershipType, destinyMembershipId, characterId, MODE)
+            oneCharOnePage(membershipType, destinyMembershipId, characterId, MODE)
     if CHAR == "Warlock":
         characterId = 2305843009359365362
         if MODE == 4 or MODE == 82:
-            URLOne(membershipType, destinyMembershipId, characterId, MODE)
+            oneCharOnePage(membershipType, destinyMembershipId, characterId, MODE)
     if CHAR == "Titan":
         characterId = 2305843009756404411
         if MODE == 4 or MODE == 82:
