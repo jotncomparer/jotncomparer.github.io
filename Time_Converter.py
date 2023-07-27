@@ -1,5 +1,6 @@
 import math
 
+
 def Time_Converter(time):
     Seconds = time % 60
     Minutes = time / 60
@@ -13,4 +14,11 @@ def Time_Converter(time):
     Weeks = Days / 7
     Weeks = math.trunc(Weeks)
     Days = Days % 7
-    print(f'Total Time: {Weeks} week(s), {Days} day(s), {Hours}:{Minutes}:{Seconds}')
+    if Weeks > 4:
+        Months = Weeks / 4
+        Months = math.trunc(Months)
+        Weeks = Weeks % 4
+        return f'{Months} month(s) {Weeks} week(s), {Days} day(s), {Hours}:{Minutes}:{Seconds}'
+    else:
+        return f'{Weeks} week(s), {Days} day(s), {Hours}:{Minutes}:{Seconds}'
+
