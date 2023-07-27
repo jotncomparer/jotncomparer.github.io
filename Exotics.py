@@ -1,9 +1,19 @@
+# Connor Downs
+# Started: 7-24-2023
+# Last Updated: 7-26-2023
+# This program needs both ExoCombiner.py and ClanExoComparer.py to work properly.
+
+# This program is used to define every player in Jötunn Gang.
+# This program asks the user which player (or all) they wish to investigate their Exotic usage
+# The program creates an ASCII table of the top 5 Primary, Special, and Heavy ammo weapons, as well as the top 10 of all
+# Exotic weapons used.
+
 import json
 import os
 import requests
 
 from ClanExoComparer import URLThree, URLFour, URLFive, URLSix, URLSeven, URLEight, URLNine, URLTen, URLEleven, \
-    URLTwelve,URLThirteen, URLFourteen, URLFifteen, URLSixteen, URLSeventeen, URLEighteen, URLNineteen, URLTwenty, \
+    URLTwelve, URLThirteen, URLFourteen, URLFifteen, URLSixteen, URLSeventeen, URLEighteen, URLNineteen, URLTwenty, \
     URLTwenOne, URLTwenTwo, URLTwenThree, ClanExoCombiner
 
 from ExoCombiner import ExoCombiner
@@ -15,6 +25,7 @@ client_secret = os.getenv('CLIENT_SECRET')
 base_auth_url = "https://www.bungie.net/en/OAuth/Authorize"
 redirect_url = "https://jotncomparer.github.io/"
 token_url = "https://www.bungie.net/platform/app/oauth/token"
+
 
 def URLZero(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
@@ -29,6 +40,8 @@ def URLZero(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLOne(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -42,6 +55,8 @@ def URLOne(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_1.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTwo(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -55,6 +70,8 @@ def URLTwo(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_2.json', 'w')
     writeFile.write(exotic_data)
+
+
 def Man_in_the_Moon():
     CHAR = 0
     membershipType = 1
@@ -71,6 +88,8 @@ def Man_in_the_Moon():
             URLTwo(membershipType, destinyMembershipId, characterId)
         CHAR += 1
     ExoCombiner()
+
+
 def The_Chrome_Leaf():
     CHAR = 0
     membershipType = 1
@@ -87,6 +106,8 @@ def The_Chrome_Leaf():
             URLTwo(membershipType, destinyMembershipId, characterId)
         CHAR += 1
     ExoCombiner()
+
+
 def Piepuns():
     CHAR = 0
     membershipType = 1
@@ -103,6 +124,8 @@ def Piepuns():
             URLTwo(membershipType, destinyMembershipId, characterId)
         CHAR += 1
     ExoCombiner()
+
+
 def TheZefraOracle():
     CHAR = 0
     membershipType = 1
@@ -119,6 +142,8 @@ def TheZefraOracle():
             URLTwo(membershipType, destinyMembershipId, characterId)
         CHAR += 1
     ExoCombiner()
+
+
 def HeavyChevy():
     CHAR = 0
     membershipType = 2
@@ -135,6 +160,8 @@ def HeavyChevy():
             URLTwo(membershipType, destinyMembershipId, characterId)
         CHAR += 1
     ExoCombiner()
+
+
 def Lachlan():
     CHAR = 0
     membershipType = 3
@@ -151,6 +178,8 @@ def Lachlan():
             URLTwo(membershipType, destinyMembershipId, characterId)
         CHAR += 1
     ExoCombiner()
+
+
 def SlayWarsV():
     CHAR = 0
     membershipType = 3
@@ -167,6 +196,8 @@ def SlayWarsV():
             URLTwo(membershipType, destinyMembershipId, characterId)
         CHAR += 1
     ExoCombiner()
+
+
 def Gargoyle_Goose():
     CHAR = 0
     membershipType = 1
@@ -327,7 +358,7 @@ def ALL():
         ClanExoCombiner()
 
 
-print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade")
+print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade, All")
 print("Player Name: Man in the Moon, The Chrome Leaf, Piepuns, Lachlan, TheZefraOracle, HeavyChevy, SlayWarsV, "
       "Gargoyle Goose, All")
 USER = input("Please type a player or player name to analyse their Exotic Weapon usage: ")
