@@ -853,7 +853,7 @@ def ExoCombiner():
                        [SWB_P, STR_P, VIG_P, RTK_P, MMT_P, CRM_P, JDR_P, HKB_P, SRR_P, CBS_P, WHE_P, MFC_P, AOS_P,
                         TLW_P, TRN_P, OBP_P, LMN_P, BJJ_P, MTC_P, TVC_P, HKM_P, NTE_P, DMT_P, CSK_P, OTS_P, TOM_P,
                         QSS_P, RVZ_P, FNW_P, VGC_P, WKI_P, FTL_P, SNS_P, SBO_P, RSR_P, HDL_P, PLL_P, TNG_P, LMR_P,
-                        TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_K])
+                        TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_P])
     Primary.align["Exotic"] = 'l'
     Primary.align["Element"] = 'l'
     Primary.align["Weapon Type"] = 'l'
@@ -1007,7 +1007,7 @@ def ExoCombiner():
                     [SWB_P, STR_P, VIG_P, RTK_P, MMT_P, CRM_P, JDR_P, HKB_P, SRR_P, CBS_P, WHE_P, MFC_P, AOS_P,
                      TLW_P, TRN_P, OBP_P, LMN_P, BJJ_P, MTC_P, TVC_P, HKM_P, NTE_P, DMT_P, CSK_P, OTS_P, TOM_P,
                      QSS_P, RVZ_P, FNW_P, VGC_P, WKI_P, FTL_P, SNS_P, SBO_P, RSR_P, HDL_P, PLL_P, TNG_P, LMR_P,
-                     TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_K, CPR_P, IZB_P,
+                     TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_P, CPR_P, IZB_P,
                      ABL_P, BSN_P, WTH_P, ASP_P, FRN_P, CDF_P, NVG_P, CDH_P, MCL_P, BEL_P, PML_P, TLT_P, WVP_P,
                      LOW_P, JTN_P, EIV_P, DVN_P, TFH_P, RNE_P, DLT_P, CDS_P, LRD_P, EOC_P, EOA_P, EOI_P, DMS_P,
                      DCT_P, VCB_P, PST_P, WCC_P, TCC_P, LOA_P, DRC_P, CLN_P, WLZ_P, SPS_P, OKV_P, TTF_P, BKT_P,

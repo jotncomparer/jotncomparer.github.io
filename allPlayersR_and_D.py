@@ -2411,7 +2411,7 @@ def allPlayersR_and_D(MODE):
                         if Name == "Ghosts of the Deep":
                             GotD_Tot_Solo_Flawless += 1
             else:
-                Completion = "Activity Incompolete"
+                Completion = "Activity Incomplete"
 
             Dungeon_Tot_Kills += Kills
             Dungeon_Tot_Deaths += Deaths
