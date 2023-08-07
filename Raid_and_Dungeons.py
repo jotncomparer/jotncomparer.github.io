@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-11-2023
-# Last Updated: 7-27-2023
+# Last Updated: 8-7-2023
 # This program requires these programs to operate properly: oneCharOnePage, oneCharTwoPages, allCharsThreePagesONE,
 # allCharsThreePagesTWO, allCharsFourPages, allCharsTwoPages, allPlayersR_and_D, Time_Converter, and JOTUNN.py
 
