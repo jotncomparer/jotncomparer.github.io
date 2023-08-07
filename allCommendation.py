@@ -1,0 +1,271 @@
+# Connor Downs
+# Started: 8-7-2023
+# Last Updated: 8-7-2023
+# This program needs Character_Metrics.py to work properly.
+
+# This program is used to define every player in Jötunn Gang.
+# This program takes the generated .json file made in Character Metrics to build the table of values to sort through.
+# This program specifically looks at commendation scores and commendation card breakdowns for all players.
+
+import json
+from prettytable import PrettyTable
+
+def allCommendationData():
+    with open('Metrics.json') as f:
+        data1 = json.load(f)
+    with open('Metrics_2.json') as f:
+        data2 = json.load(f)
+    with open('Metrics_3.json') as f:
+        data3 = json.load(f)
+    with open('Metrics_4.json') as f:
+        data4 = json.load(f)
+    with open('Metrics_5.json') as f:
+        data5 = json.load(f)
+    with open('Metrics_6.json') as f:
+        data6 = json.load(f)
+    with open('Metrics_7.json') as f:
+        data7 = json.load(f)
+    with open('Metrics_8.json') as f:
+        data8 = json.load(f)
+
+    items1 = data1["Response"]
+    items2 = data2["Response"]
+    items3 = data3["Response"]
+    items4 = data4["Response"]
+    items5 = data5["Response"]
+    items6 = data6["Response"]
+    items7 = data7["Response"]
+    items8 = data8["Response"]
+
+    metric_json = {"Response": []}
+    metric_json['Response'].append(items1)
+    metric_json['Response'].append(items2)
+    metric_json['Response'].append(items3)
+    metric_json['Response'].append(items4)
+    metric_json['Response'].append(items5)
+    metric_json['Response'].append(items6)
+    metric_json['Response'].append(items7)
+    metric_json['Response'].append(items8)
+
+    with open('Metrics.json', "w") as f:
+        f.write(json.dumps(metric_json, indent=2))
+
+    # Commendation Score by Types
+    totalScoreCon = metric_json["Response"][0]['profileCommendations']['data']['totalScore']
+    allyScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    totalScoreTom = metric_json["Response"][1]['profileCommendations']['data']['totalScore']
+    allyScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    totalScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['totalScore']
+    allyScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    totalScoreMark = metric_json["Response"][3]['profileCommendations']['data']['totalScore']
+    allyScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    totalScoreJack = metric_json["Response"][4]['profileCommendations']['data']['totalScore']
+    allyScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    totalScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['totalScore']
+    allyScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    totalScoreCam = metric_json["Response"][6]['profileCommendations']['data']['totalScore']
+    allyScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    totalScoreKade = metric_json["Response"][7]['profileCommendations']['data']['totalScore']
+    allyScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
+    commendationTable = PrettyTable()
+    commendationTable.field_names = ['Commendation Category', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+    commendationTable.add_rows(
+        [
+            ['Ally', allyScoreCon, allyScoreTom, allyScoreDoug, allyScoreMark, allyScoreJack, allyScoreHunt, allyScoreCam, allyScoreKade],
+            ['Fun', funScoreCon, funScoreTom, funScoreDoug, funScoreMark, funScoreJack, funScoreHunt, funScoreCam, funScoreKade ],
+            ['Leadership', leadershipScoreCon, leadershipScoreTom, leadershipScoreDoug, leadershipScoreMark, leadershipScoreJack, leadershipScoreHunt, leadershipScoreCam, leadershipScoreKade ],
+            ['Mastery', masteryScoreCon, masteryScoreTom, masteryScoreDoug, masteryScoreMark, masteryScoreJack, masteryScoreHunt, masteryScoreCam, masteryScoreKade ],
+            ['Total', totalScoreCon, totalScoreTom, totalScoreDoug, totalScoreMark, totalScoreJack, totalScoreHunt, totalScoreCam, totalScoreKade]
+        ]
+    )
+    commendationTable.reversesort = True
+    print(commendationTable.get_string(sortby='Connor'))
+
+    # Specific Commendation Cards
+    selflessScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreCon = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreTom = metric_json["Response"][1]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreDoug = metric_json["Response"][2]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreMark = metric_json["Response"][3]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreJack = metric_json["Response"][4]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreHunt = metric_json["Response"][5]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreCam = metric_json["Response"][6]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    commendationCardTable = PrettyTable()
+    commendationCardTable.field_names = ['Commendation Card', 'Category', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+    commendationCardTable.add_rows(
+        [
+            ['Perceptive', 'Leadership', perceptiveScoreCon, perceptiveScoreTom, perceptiveScoreDoug, perceptiveScoreMark, perceptiveScoreJack, perceptiveScoreHunt, perceptiveScoreCam, perceptiveScoreKade],
+            ['Knowledgeable', 'Leadership', knowledgeableScoreCon, knowledgeableScoreTom, knowledgeableScoreDoug, knowledgeableScoreMark, knowledgeableScoreJack, knowledgeableScoreHunt, knowledgeableScoreCam, knowledgeableScoreKade],
+            ['Joy Bringer', 'Fun', joyBringerScoreCon, joyBringerScoreTom, joyBringerScoreDoug, joyBringerScoreMark, joyBringerScoreJack, joyBringerScoreHunt, joyBringerScoreCam, joyBringerScoreKade],
+            ['Level-headed', 'Fun', levelHeadedScoreCon, levelHeadedScoreTom, levelHeadedScoreDoug, levelHeadedScoreMark, levelHeadedScoreJack, levelHeadedScoreHunt, levelHeadedScoreCam, levelHeadedScoreKade],
+            ['Best Dressed', 'Fun', bestDressedScoreCon, bestDressedScoreTom, bestDressedScoreDoug, bestDressedScoreMark, bestDressedScoreJack, bestDressedScoreHunt, bestDressedScoreCam, bestDressedScoreKade],
+            ['Playmaker', 'Mastery', playmakerScoreCon, playmakerScoreTom, playmakerScoreDoug, playmakerScoreMark, playmakerScoreJack, playmakerScoreHunt, playmakerScoreCam, playmakerScoreKade],
+            ['Primeval Instinct', 'Mastery', primevalInstinctScoreCon, primevalInstinctScoreTom, primevalInstinctScoreDoug, primevalInstinctScoreMark, primevalInstinctScoreJack, primevalInstinctScoreHunt, primevalInstinctScoreCam, primevalInstinctScoreKade],
+            ['Heroic', 'Mastery', heroicScoreCon, heroicScoreTom, heroicScoreDoug, heroicScoreMark, heroicScoreJack, heroicScoreHunt, heroicScoreCam, heroicScoreKade],
+            ['Indispensable', 'Ally', indispensableScoreCon, indispensableScoreTom, indispensableScoreDoug, indispensableScoreMark, indispensableScoreJack, indispensableScoreHunt, indispensableScoreCam, indispensableScoreKade],
+            ['Selfless', 'Ally', selflessScoreCon, selflessScoreTom, selflessScoreDoug, selflessScoreMark, selflessScoreJack, selflessScoreHunt, selflessScoreCam, selflessScoreKade],
+            ['Thoughtful', 'Ally', thoughfulScoreCon, thoughfulScoreTom, thoughfulScoreDoug, thoughfulScoreMark, thoughfulScoreJack, thoughfulScoreHunt, thoughfulScoreCam, thoughfulScoreKade],
+            ['Patience and Consideration', 'Ally', patientConsiderateScoreCon, patientConsiderateScoreTom, patientConsiderateScoreDoug, patientConsiderateScoreMark, patientConsiderateScoreJack, patientConsiderateScoreHunt, patientConsiderateScoreCam, patientConsiderateScoreKade]
+        ]
+    )
+    commendationCardTable.reversesort = False
+    print(commendationCardTable.get_string(sortby='Category'))

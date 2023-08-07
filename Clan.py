@@ -27,4 +27,4 @@ response.content.decode('utf-8')
 pretty_Dungeon_data = json.dumps(json.loads(response.content), indent=2)
 writeFile = open('Clan.json', 'w')
 writeFile.write(pretty_Dungeon_data)
-writeFile.close
+

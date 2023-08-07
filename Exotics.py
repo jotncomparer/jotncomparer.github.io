@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-24-2023
-# Last Updated: 8-7-2023
+# Last Updated: 7-26-2023
 # This program needs both ExoCombiner.py, ClanExoComparer.py, and JOTUNN.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.

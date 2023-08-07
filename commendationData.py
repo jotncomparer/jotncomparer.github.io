@@ -21,7 +21,6 @@ def commendationData():
     with open('Metrics.json', "w") as f:
         f.write(json.dumps(metric_json, indent=2))
 
-    totalScore = metric_json["Response"][0]['profileCommendations']['data']['totalScore']
     # Commendation Score by Types
     allyScore = metric_json["Response"][0]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
     funScore = metric_json["Response"][0]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']

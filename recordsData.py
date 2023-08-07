@@ -322,11 +322,11 @@ def recordsData():
     smithPerc = (smithProgress / smithCompVal) * 100
     smithPerc = round(smithPerc, 3)
     # Chronicler
-    chronicle = metric_json["Response"][0]['profileRecords']['data']['records']['3766199186']["objectives"][0]['complete']
-    chronicleProgress = metric_json["Response"][0]['profileRecords']['data']['records']['3766199186']["objectives"][0]['progress']
-    chronicleCompVal = metric_json["Response"][0]['profileRecords']['data']['records']['3766199186']["objectives"][0]['completionValue']
-    chroniclePerc = (chronicleProgress / chronicleCompVal) * 100
-    chroniclePerc = round(chroniclePerc, 3)
+    lore = metric_json["Response"][0]['profileRecords']['data']['records']['3766199186']["objectives"][0]['complete']
+    loreProgress = metric_json["Response"][0]['profileRecords']['data']['records']['3766199186']["objectives"][0]['progress']
+    loreCompVal = metric_json["Response"][0]['profileRecords']['data']['records']['3766199186']["objectives"][0]['completionValue']
+    lorePerc = (loreProgress / loreCompVal) * 100
+    lorePerc = round(lorePerc, 3)
 
     titleTable = PrettyTable()
     titleTable.field_names = ['Title', 'Source', 'Completion Status', 'Completion Progress', 'Necessary to Complete',
@@ -383,7 +383,7 @@ def recordsData():
             ['MMXXII', 'Season of the Seraph', mmxxii, mmxxiiProgress, mmxxiiCompVal, mmxxiiPerc, 'Season 19 - Season of the Seraph'],
             ['Wayfarer', 'Destinations', wayfare, wayfareProgress, wayfareCompVal, wayfarePerc, 'Forsaken'],
             ['Unbroken', 'Crucible', unbroken, unbrokenProgress, unbrokenCompVal, unbrokenPerc, 'Forsaken'],
-            ['Chronicler', 'Lore', chronicle, chronicleProgress, chronicleCompVal, chroniclePerc, 'Forsaken']
+            ['Chronicler', 'Lore', lore, loreProgress, loreCompVal, lorePerc, 'Forsaken']
         ]
     )
     titleTable.reversesort = True

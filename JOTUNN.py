@@ -12,6 +12,7 @@ from Exotics import Exotics
 from Raid_and_Dungeons import Raid_and_Dungeons
 from Character_Metrics import Character_Metrics
 
+
 print("Exotic Use Reporter (1), Raid and Dungeon Reporter (2), Player Metric Reporter (3)")
 TOOL = input('Please type which tool you wish to use: ')
 
