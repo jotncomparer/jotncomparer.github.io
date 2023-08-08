@@ -8,7 +8,6 @@
 # This program specifically looks to three areas of interest, character data, triumph data, and metric data
 
 def Character_Metrics():
-    from metricGenerator import metricGenerator
     from profileData import profileData
     from recordsData import recordsData
     from metricsData import metricsData
@@ -16,6 +15,7 @@ def Character_Metrics():
     from timeWasted import timeWasted
     from allProfileData import allProfileData
     from allRecordsData import allRecordsData
+    from allMetricsData import allMetricsData
     from allCommendation import allCommendationData
     from allTimeWasted import allTimeWasted
     import json
@@ -233,9 +233,9 @@ def Character_Metrics():
                 API_URL_SEVEN(membershipType, destinyMembershipId)
                 PLAYER += 1
 
-    print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade")
+    print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade, All")
     print("Player Name: Man in the Moon, The Chrome Leaf, Piepuns, Lachlan, TheZefraOracle, HeavyChevy, SlayWarsV, "
-          "Gargoyle Goose")
+          "Gargoyle Goose, All")
     USER = input("Please type a player or player name from the above lists to analyse: ")
 
     if USER == "Man in the Moon" or USER == "Connor":
@@ -281,7 +281,10 @@ def Character_Metrics():
         else:
             recordsData()
     elif typeData == '3':
-        metricsData()
+        if USER == 'All':
+            allMetricsData()
+        else:
+            metricsData()
     elif typeData == '4':
         if USER == 'All':
             allCommendationData()
