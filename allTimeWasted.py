@@ -278,14 +278,18 @@ def allTimeWasted():
         lastLoggedKade = dateLastPlayedHunterKade
 
     timeWasted = PrettyTable()
-    timeWasted.field_names = ['Time', 'Connor', 'Thomas',' Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+    timeWasted.field_names = ['Player', 'Last Logged In', 'Time Wasted']
     timeWasted.add_rows(
         [
-            ['Last Logged Time', lastLoggedCon, lastLoggedTom, lastLoggedDoug, lastLoggedMark, lastLoggedJack, lastLoggedHunt, lastLoggedCam, lastLoggedKade],
-            ['Time Wasted', Time_Converter(secondsPlayedTotalCon), Time_Converter(secondsPlayedTotalTom),
-             Time_Converter(secondsPlayedTotalDoug), Time_Converter(secondsPlayedTotalMark),
-             Time_Converter(secondsPlayedTotalJack), Time_Converter(secondsPlayedTotalHunt),
-             Time_Converter(secondsPlayedTotalCam), Time_Converter(secondsPlayedTotalKade)]
+            ['Connor', lastLoggedCon, Time_Converter(secondsPlayedTotalCon)],
+            ['Thomas', lastLoggedTom, Time_Converter(secondsPlayedTotalTom)],
+            ['Douglas', lastLoggedDoug, Time_Converter(secondsPlayedTotalDoug)],
+            ['Mark', lastLoggedMark, Time_Converter(secondsPlayedTotalMark)],
+            ['Jack', lastLoggedJack, Time_Converter(secondsPlayedTotalJack)],
+            ['Hunter', lastLoggedHunt, Time_Converter(secondsPlayedTotalHunt)],
+            ['Cameron', lastLoggedCam, Time_Converter(secondsPlayedTotalCam)],
+            ['Kade', lastLoggedKade, Time_Converter(secondsPlayedTotalKade)]
         ]
     )
-    print(timeWasted)
+    timeWasted.reversesort = True
+    print(timeWasted.get_string(sortby='Last Logged In'))
