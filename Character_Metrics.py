@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-31-2023
-# Last Updated: 8-7-2023
+# Last Updated: 8-8-2023
 # This program needs metricGenerator.py and JOTUNN.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -22,7 +22,7 @@ def Character_Metrics():
     import requests
 
     def API_URL(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
@@ -36,7 +36,7 @@ def Character_Metrics():
         writeFile.write(metric_data)
 
     def API_URL_ONE(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
@@ -50,7 +50,7 @@ def Character_Metrics():
         writeFile.write(metric_data)
 
     def API_URL_TWO(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
@@ -64,7 +64,7 @@ def Character_Metrics():
         writeFile.write(metric_data)
 
     def API_URL_THREE(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
@@ -78,7 +78,7 @@ def Character_Metrics():
         writeFile.write(metric_data)
 
     def API_URL_FOUR(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
@@ -92,7 +92,7 @@ def Character_Metrics():
         writeFile.write(metric_data)
 
     def API_URL_FIVE(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
@@ -106,7 +106,7 @@ def Character_Metrics():
         writeFile.write(metric_data)
 
     def API_URL_SIX(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
@@ -120,7 +120,7 @@ def Character_Metrics():
         writeFile.write(metric_data)
 
     def API_URL_SEVEN(membershipType, destinyMembershipId):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=200," \
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
               f"900,1100,1300,1400"
         payload = {}
         headers = {
