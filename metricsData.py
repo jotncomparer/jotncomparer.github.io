@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 8-7-2023
-# Last Updated: 8-7-2023
+# Last Updated: 8-8-2023
 # This program needs Character_Metrics.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -35,12 +35,6 @@ def metricsData():
     print(f"Total number of times positive reinforcement was given to the best boy: {goodBoyProtocol}")
     print(f"The total number of fish caught: {fishCaught}")
     print(f"The weight of the heaviest fish caught: {heavyFishCaught}kg")
-
-    # Account Metrics
-    ageOfLoss = metric_json["Response"][0]['metrics']['data']['metrics']['1572939289']["objectiveProgress"][
-        'progress']
-    collectScore = metric_json["Response"][0]['metrics']['data']['metrics']['3526455111']["objectiveProgress"][
-        'progress']
 
     # Element Final Blows
     totalFinalBlows = \
@@ -145,8 +139,6 @@ def metricsData():
     )
 
     print("Account Metrics")
-    print(f"Age of Loss Triumph Score: {ageOfLoss}")
-    print(f"Collection Score: {collectScore}")
     print(f"Number of Total Final Blows: {totalFinalBlows}")
     primaryTable.reversesort = True
     specialTable.reversesort = True
