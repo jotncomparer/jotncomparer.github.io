@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 8-7-2023
-# Last Updated: 8-7-2023
+# Last Updated: 8-8-2023
 # This program needs Character_Metrics.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -49,6 +49,136 @@ def allCommendationData():
 
     with open('Metrics.json', "w") as f:
         f.write(json.dumps(metric_json, indent=2))
+
+    # Guardian Rank Data
+    guardianRankCon = metric_json["Response"][0]['profile']['data']['currentGuardianRank']
+    guardianRankTom = metric_json["Response"][1]['profile']['data']['currentGuardianRank']
+    guardianRankDoug = metric_json["Response"][2]['profile']['data']['currentGuardianRank']
+    guardianRankMark = metric_json["Response"][3]['profile']['data']['currentGuardianRank']
+    guardianRankJack = metric_json["Response"][4]['profile']['data']['currentGuardianRank']
+    guardianRankHunt = metric_json["Response"][5]['profile']['data']['currentGuardianRank']
+    guardianRankCam = metric_json["Response"][6]['profile']['data']['currentGuardianRank']
+    guardianRankKade = metric_json["Response"][7]['profile']['data']['currentGuardianRank']
+
+    if guardianRankCon <= 6:
+        guardianRankTitleCon = 'Blueberry'
+    elif guardianRankCon == 7:
+        guardianRankTitleCon = 'Elite'
+    elif guardianRankCon == 8:
+        guardianRankTitleCon = 'Justiciar'
+    elif guardianRankCon == 9:
+        guardianRankTitleCon = 'Vanquisher'
+    elif guardianRankCon == 10:
+        guardianRankTitleCon = 'Exemplar'
+    elif guardianRankCon == 11:
+        guardianRankTitleCon = 'Paragon'
+
+    if guardianRankTom <= 6:
+        guardianRankTitleTom = 'Blueberry'
+    elif guardianRankTom == 7:
+        guardianRankTitleTom = 'Elite'
+    elif guardianRankTom == 8:
+        guardianRankTitleTom = 'Justiciar'
+    elif guardianRankTom == 9:
+        guardianRankTitleTom = 'Vanquisher'
+    elif guardianRankTom == 10:
+        guardianRankTitleTom = 'Exemplar'
+    elif guardianRankTom == 11:
+        guardianRankTitleTom = 'Paragon'
+
+    if guardianRankDoug <= 6:
+        guardianRankTitleTom = 'Blueberry'
+    elif guardianRankDoug == 7:
+        guardianRankTitleDoug = 'Elite'
+    elif guardianRankDoug == 8:
+        guardianRankTitleDoug = 'Justiciar'
+    elif guardianRankDoug == 9:
+        guardianRankTitleDoug = 'Vanquisher'
+    elif guardianRankDoug == 10:
+        guardianRankTitleDoug = 'Exemplar'
+    elif guardianRankDoug == 11:
+        guardianRankTitleDoug = 'Paragon'
+
+    if guardianRankMark <= 6:
+        guardianRankTitleMark = 'Blueberry'
+    elif guardianRankMark == 7:
+        guardianRankTitleMark = 'Elite'
+    elif guardianRankMark == 8:
+        guardianRankTitleMark = 'Justiciar'
+    elif guardianRankMark == 9:
+        guardianRankTitleMark = 'Vanquisher'
+    elif guardianRankMark == 10:
+        guardianRankTitleMark = 'Exemplar'
+    elif guardianRankMark == 11:
+        guardianRankTitleMark = 'Paragon'
+
+    if guardianRankJack <= 6:
+        guardianRankTitleJack = 'Blueberry'
+    elif guardianRankJack == 7:
+        guardianRankTitleJack = 'Elite'
+    elif guardianRankJack == 8:
+        guardianRankTitleJack = 'Justiciar'
+    elif guardianRankJack == 9:
+        guardianRankTitleJack = 'Vanquisher'
+    elif guardianRankJack == 10:
+        guardianRankTitleJack = 'Exemplar'
+    elif guardianRankJack == 11:
+        guardianRankTitleJack = 'Paragon'
+
+    if guardianRankHunt <= 6:
+        guardianRankTitleHunt = 'Blueberry'
+    elif guardianRankHunt == 7:
+        guardianRankTitleHunt = 'Elite'
+    elif guardianRankHunt == 8:
+        guardianRankTitleHunt = 'Justiciar'
+    elif guardianRankHunt == 9:
+        guardianRankTitleHunt = 'Vanquisher'
+    elif guardianRankHunt == 10:
+        guardianRankTitleHunt = 'Exemplar'
+    elif guardianRankHunt == 11:
+        guardianRankTitleHunt = 'Paragon'
+
+    if guardianRankCam <= 6:
+        guardianRankTitleCam = 'Blueberry'
+    elif guardianRankCam == 7:
+        guardianRankTitleCam = 'Elite'
+    elif guardianRankCam == 8:
+        guardianRankTitleCam = 'Justiciar'
+    elif guardianRankCam == 9:
+        guardianRankTitleCam = 'Vanquisher'
+    elif guardianRankCam == 10:
+        guardianRankTitleCam = 'Exemplar'
+    elif guardianRankCam == 11:
+        guardianRankTitleCam = 'Paragon'
+
+    if guardianRankKade <= 6:
+        guardianRankTitleKade = 'Blueberry'
+    elif guardianRankKade == 7:
+        guardianRankTitleKade = 'Elite'
+    elif guardianRankKade == 8:
+        guardianRankTitleKade = 'Justiciar'
+    elif guardianRankKade == 9:
+        guardianRankTitleKade = 'Vanquisher'
+    elif guardianRankKade == 10:
+        guardianRankTitleKade = 'Exemplar'
+    elif guardianRankKade == 11:
+        guardianRankTitleKade = 'Paragon'
+
+    guardianRankTable = PrettyTable()
+    guardianRankTable.field_names = ['Player', 'Rank', 'Title']
+    guardianRankTable.add_rows(
+        [
+            ['Connor', guardianRankCon, guardianRankTitleCon],
+            ['Thomas', guardianRankTom, guardianRankTitleTom],
+            ['Douglas', guardianRankDoug, guardianRankTitleDoug],
+            ['Mark', guardianRankMark, guardianRankTitleMark],
+            ['Jack', guardianRankJack, guardianRankTitleJack],
+            ['Hunter', guardianRankHunt, guardianRankTitleHunt],
+            ['Cameron', guardianRankCam, guardianRankTitleCam],
+            ['Kade', guardianRankKade, guardianRankTitleKade]
+        ]
+    )
+    print(guardianRankTable)
 
     # Commendation Score by Types
     totalScoreCon = metric_json["Response"][0]['profileCommendations']['data']['totalScore']
