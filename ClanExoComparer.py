@@ -1,7 +1,8 @@
 # Connor Downs
 # Started: 7-26-2023
-# Last Updated: 7-26-2023
-# This program
+# Last Updated: 8-9-2023
+# This program creates tables of the most used exotics across all members of Jotunn Gang
+# Tables are broken down into top 5 Primary, Special, and Heavy, as well as top 10 of all Exotics
 
 import json
 import os
@@ -31,6 +32,8 @@ def URLZero(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLOne(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -44,6 +47,8 @@ def URLOne(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_1.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTwo(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -57,6 +62,8 @@ def URLTwo(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_2.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLThree(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -70,6 +77,8 @@ def URLThree(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_3.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLFour(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -83,6 +92,8 @@ def URLFour(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_4.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLFive(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -96,6 +107,8 @@ def URLFive(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_5.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLSix(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -109,6 +122,8 @@ def URLSix(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_6.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLSeven(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -122,6 +137,8 @@ def URLSeven(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_7.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLEight(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -135,6 +152,8 @@ def URLEight(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_8.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLNine(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -148,6 +167,8 @@ def URLNine(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_9.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -161,6 +182,8 @@ def URLTen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_10.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLEleven(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -174,6 +197,8 @@ def URLEleven(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_11.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTwelve(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -187,6 +212,8 @@ def URLTwelve(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_12.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLThirteen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -200,6 +227,8 @@ def URLThirteen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_13.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLFourteen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -213,6 +242,8 @@ def URLFourteen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_14.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLFifteen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -226,6 +257,8 @@ def URLFifteen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_15.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLSixteen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -239,6 +272,8 @@ def URLSixteen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_16.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLSeventeen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -252,6 +287,8 @@ def URLSeventeen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_17.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLEighteen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -265,6 +302,8 @@ def URLEighteen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_18.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLNineteen(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -278,6 +317,8 @@ def URLNineteen(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_19.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTwenty(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -291,6 +332,8 @@ def URLTwenty(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_20.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTwenOne(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -304,6 +347,8 @@ def URLTwenOne(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_21.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTwenTwo(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -317,6 +362,8 @@ def URLTwenTwo(membershipType, destinyMembershipId, characterId):
     exotic_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Exotics_22.json', 'w')
     writeFile.write(exotic_data)
+
+
 def URLTwenThree(membershipType, destinyMembershipId, characterId):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/UniqueWeapons/"
@@ -331,336 +378,337 @@ def URLTwenThree(membershipType, destinyMembershipId, characterId):
     writeFile = open('Exotics_23.json', 'w')
     writeFile.write(exotic_data)
 
+
 def ClanExoCombiner():
-    SWB_K = 0
-    SWB_P = 0
+    sweetKills = 0
+    sweetPrec = 0
 
-    STR_K = 0
-    STR_P = 0
+    strumKills = 0
+    strumPrec = 0
 
-    VIG_K = 0
-    VIG_P = 0
+    vigilanceKills = 0
+    vigilancePrec = 0
 
-    RTK_K = 0
-    RTK_P = 0
+    ratkingKills = 0
+    ratkingPrec = 0
 
-    MMT_K = 0
-    MMT_P = 0
+    midaKills = 0
+    midaPrec = 0
 
-    CRM_K = 0
-    CRM_P = 0
+    crimsonKills = 0
+    crimsonPrec = 0
 
-    JDR_K = 0
-    JDR_P = 0
+    rabbitKills = 0
+    rabbitPrec = 0
 
-    HKB_K = 0
-    HKB_P = 0
+    huckleKills = 0
+    hucklePrec = 0
 
-    SRR_K = 0
-    SRR_P = 0
+    surosKills = 0
+    surosPrec = 0
 
-    CBS_K = 0
-    CBS_P = 0
+    cerberusKills = 0
+    cerberusPrec = 0
 
-    WHE_K = 0
-    WHE_P = 0
+    wishKills = 0
+    wishPrec = 0
 
-    MFC_K = 0
-    MFC_P = 0
+    malfeaseKills = 0
+    malfeasePrec = 0
 
-    AOS_K = 0
-    AOS_P = 0
+    aceKills = 0
+    acePrec = 0
 
-    CPR_K = 0
-    CPR_P = 0
+    chaperonKills = 0
+    chaperonePrec = 0
 
-    IZB_K = 0
-    IZB_P = 0
+    izanKills = 0
+    izanPrec = 0
 
-    TLW_K = 0
-    TLW_P = 0
+    lastwordKills = 0
+    lastwordPrec = 0
 
-    ABL_K = 0
-    ABL_P = 0
+    arbalestKills = 0
+    arbalestPrec = 0
 
-    TRN_K = 0
-    TRN_P = 0
+    thornKills = 0
+    thornPrec = 0
 
-    OBP_K = 0
-    OBP_P = 0
+    outbreakKills = 0
+    outbreakPrec = 0
 
-    LMN_K = 0
-    LMN_P = 0
+    luminaKills = 0
+    luminaPrec = 0
 
-    BJJ_K = 0
-    BJJ_P = 0
+    jujuKills = 0
+    jujuPrec = 0
 
-    MTC_K = 0
-    MTC_P = 0
+    monteKills = 0
+    montePrec = 0
 
-    BSN_K = 0
-    BSN_P = 0
+    bastionKills = 0
+    bastionPrec = 0
 
-    WTH_K = 0
-    WTH_P = 0
+    witherhoardKills = 0
+    witherhoardPrec = 0
 
-    TVC_K = 0
-    TVC_P = 0
+    chosenKills = 0
+    chosenPrec = 0
 
-    HKM_K = 0
-    HKM_P = 0
+    hawkmoonKills = 0
+    hawkmoonPrec = 0
 
-    NTE_K = 0
-    NTE_P = 0
+    notimeKills = 0
+    notimePrec = 0
 
-    DMT_K = 0
-    DMT_P = 0
+    deadmansKills = 0
+    deadmansPrec = 0
 
-    CSK_K = 0
-    CSK_P = 0
+    cryoKills = 0
+    cryoPrec = 0
 
-    ASP_K = 0
-    ASP_P = 0
+    agersKills = 0
+    agersPrec = 0
 
-    FRN_K = 0
-    FRN_P = 0
+    forerunnerKills = 0
+    forerunnerPrec = 0
 
-    OTS_K = 0
-    OTS_P = 0
+    osteoKills = 0
+    osteoPrec = 0
 
-    TOM_K = 0
-    TOM_P = 0
+    touchKills = 0
+    touchPrec = 0
 
-    QSS_K = 0
-    QSS_P = 0
+    quicksilverKills = 0
+    quicksilverPrec = 0
 
-    RVZ_K = 0
-    RVZ_P = 0
+    revisionKills = 0
+    revisionPrec = 0
 
-    FNW_K = 0
-    FNW_P = 0
+    warningKills = 0
+    warningPrec = 0
 
-    CDF_K = 0
-    CDF_P = 0
+    finalityKills = 0
+    finalityPrec = 0
 
-    VGC_K = 0
-    VGC_P = 0
+    verglasKills = 0
+    verglasPrec = 0
 
-    WKI_K = 0
-    WKI_P = 0
+    wickedKills = 0
+    wickedPrec = 0
 
-    NVG_K = 0
-    NVG_P = 0
+    navigatorKills = 0
+    navigatorPrec = 0
 
-    CDH_K = 0
-    CDH_P = 0
+    coldheartKills = 0
+    coldheartPrec = 0
 
-    MCL_K = 0
-    MCL_P = 0
+    mercilessKills = 0
+    mercilessPrec = 0
 
-    FTL_K = 0
-    FTL_P = 0
+    fightingKills = 0
+    fightingPrec = 0
 
-    SNS_K = 0
-    SNS_P = 0
+    sunshotKills = 0
+    sunshotPrec = 0
 
-    GVL_K = 0
-    GVL_P = 0
+    gravitonKills = 0
+    gravitonPrec = 0
 
-    SBO_K = 0
-    SBO_P = 0
+    skyburnerKills = 0
+    skyburnerPrec = 0
 
-    BEL_K = 0
-    BEL_P = 0
+    boreKills = 0
+    borePrec = 0
 
-    RSR_K = 0
-    RSR_P = 0
+    riskrunnerKills = 0
+    riskrunnerPrec = 0
 
-    HDL_K = 0
-    HDL_P = 0
+    hardlightKills = 0
+    hardlightPrec = 0
 
-    PML_K = 0
-    PML_P = 0
+    prometheusKills = 0
+    prometheusPrec = 0
 
-    TLT_K = 0
-    TLT_P = 0
+    telestoKills = 0
+    telestoPrec = 0
 
-    PLL_K = 0
-    PLL_P = 0
+    polarisKills = 0
+    polarisPrec = 0
 
-    TNG_K = 0
-    TNG_P = 0
+    trinityKills = 0
+    trinityPrec = 0
 
-    WVP_K = 0
-    WVP_P = 0
+    wavesplitKills = 0
+    wavesplitPrec = 0
 
-    LOW_K = 0
-    LOW_P = 0
+    lordofwolvesKills = 0
+    lordofwolvesPrec = 0
 
-    LMR_K = 0
-    LMR_P = 0
+    lemonKills = 0
+    lemonPrec = 0
 
-    JTN_K = 0
-    JTN_P = 0
+    jotunnKills = 0
+    jotunnPrec = 0
 
-    TRB_K = 0
-    TRB_P = 0
+    tarrabahKills = 0
+    tarrabahPrec = 0
 
-    EIV_K = 0
-    EIV_P = 0
+    erianaKills = 0
+    erianaPrec = 0
 
-    DVN_K = 0
-    DVN_P = 0
+    divinityKills = 0
+    divinityPrec = 0
 
-    SMY_K = 0
-    SMY_P = 0
+    symmetryKills = 0
+    symmetryPrec = 0
 
-    DVR_K = 0
-    DVR_P = 0
+    devilKills = 0
+    devilPrec = 0
 
-    TMB_K = 0
-    TMB_P = 0
+    tommysKills = 0
+    tommysPrec = 0
 
-    TFH_K = 0
-    TFH_P = 0
+    fourthhorseKills = 0
+    fourthhorsePrec = 0
 
-    RNE_K = 0
-    RNE_P = 0
+    ruinousKills = 0
+    ruinousPrec = 0
 
-    DLT_K = 0
-    DLT_P = 0
+    dualityKills = 0
+    dualityPrec = 0
 
-    CDS_K = 0
-    CDS_P = 0
+    cloudstrikeKills = 0
+    cloudstrikePrec = 0
 
-    TCD_K = 0
-    TCD_P = 0
+    ticuuKills = 0
+    ticuuPrec = 0
 
-    VMC_K = 0
-    VMC_P = 0
+    mythoclastKills = 0
+    mythoclastPrec = 0
 
-    LRD_K = 0
-    LRD_P = 0
+    driverKills = 0
+    driverPrec = 0
 
-    EOC_K = 0
-    EOC_P = 0
+    concurrenceKills = 0
+    concurrencePrec = 0
 
-    EOA_K = 0
-    EOA_P = 0
+    actionKills = 0
+    actionPrec = 0
 
-    EOI_K = 0
-    EOI_P = 0
+    intentKills = 0
+    intentPrec = 0
 
-    DMS_K = 0
-    DMS_P = 0
+    messengerKills = 0
+    messengerPrec = 0
 
-    CLO_K = 0
-    CLO_P = 0
+    obligationKills = 0
+    obligationPrec = 0
 
-    DCT_K = 0
-    DCT_P = 0
+    delicateKills = 0
+    delicatePrec = 0
 
-    TSP_K = 0
-    TSP_P = 0
+    trespassKills = 0
+    trespassPrec = 0
 
-    TMC_K = 0
-    TMC_P = 0
+    manticoreKills = 0
+    manticorePrec = 0
 
-    HON_K = 0
-    HON_P = 0
+    hierarchyKills = 0
+    hierarchyPrec = 0
 
-    VCB_K = 0
-    VCB_P = 0
+    vexcalKills = 0
+    vexcalPrec = 0
 
-    CTF_K = 0
-    CTF_P = 0
+    centrifuseKills = 0
+    centrifusePrec = 0
 
-    PST_K = 0
-    PST_P = 0
+    prospectorKills = 0
+    prospectorPrec = 0
 
-    WCC_K = 0
-    WCC_P = 0
+    wardcliffKills = 0
+    wardcliffPrec = 0
 
-    TCC_K = 0
-    TCC_P = 0
+    tractorKills = 0
+    tractorPrec = 0
 
-    LOA_K = 0
-    LOA_P = 0
+    acriusKills = 0
+    acriusPrec = 0
 
-    DRC_K = 0
-    DRC_P = 0
+    darciKills = 0
+    darciPrec = 0
 
-    CLN_K = 0
-    CLN_P = 0
+    colonyKills = 0
+    colonyPrec = 0
 
-    WLZ_K = 0
-    WLZ_P = 0
+    wordllineKills = 0
+    wordllinePrec = 0
 
-    SPS_K = 0
-    SPS_P = 0
+    sleeperKills = 0
+    sleeperPrec = 0
 
-    OKV_K = 0
-    OKV_P = 0
+    thousandKills = 0
+    thousandPrec = 0
 
-    TTF_K = 0
-    TTF_P = 0
+    twotailedKills = 0
+    twotailedPrec = 0
 
-    BKT_K = 0
-    BKT_P = 0
+    blackKills = 0
+    blackPrec = 0
 
-    QNB_K = 0
-    QNB_P = 0
+    queenbreakKills = 0
+    queenbreakPrec = 0
 
-    TDL_K = 0
-    TDL_P = 0
+    thunderlordKills = 0
+    thunderlordPrec = 0
 
-    ARK_K = 0
-    ARK_P = 0
+    anarchyKills = 0
+    anarchyPrec = 0
 
-    LVB_K = 0
-    LVB_P = 0
+    leviathanKills = 0
+    leviathanPrec = 0
 
-    XNP_K = 0
-    XNP_P = 0
+    xenoKills = 0
+    xenoPrec = 0
 
-    DBG_K = 0
-    DBG_P = 0
+    deathbringerKills = 0
+    deathbringerPrec = 0
 
-    HAP_K = 0
-    HAP_P = 0
+    heirKills = 0
+    heirPrec = 0
 
-    SVG_K = 0
-    SVG_P = 0
+    salvationKills = 0
+    salvationPrec = 0
 
-    EOT_K = 0
-    EOT_P = 0
+    eyesofKills = 0
+    eyesofPrec = 0
 
-    LMT_K = 0
-    LMT_P = 0
+    lamentKills = 0
+    lamentPrec = 0
 
-    GLH_K = 0
-    GLH_P = 0
+    gjallarKills = 0
+    gjallarPrec = 0
 
-    PRS_K = 0
-    PRS_P = 0
+    parasiteKills = 0
+    parasitePrec = 0
 
-    GOT_K = 0
-    GOT_P = 0
+    overtureKills = 0
+    overturePrec = 0
 
-    HSD_K = 0
-    HSD_P = 0
+    heartshadowKills = 0
+    heartshadowPrec = 0
 
-    DTC_K = 0
-    DTC_P = 0
+    determineKills = 0
+    determinePrec = 0
 
-    WTB_K = 0
-    WTB_P = 0
+    winterbiteKills = 0
+    winterbitePrec = 0
 
-    TUH_K = 0
-    TUH_P = 0
+    truthKills = 0
+    truthPrec = 0
 
-    WOW_K = 0
-    WOW_P = 0
+    whisperKills = 0
+    whisperPrec = 0
 
     with open('Exotics.json') as f:
         data1 = json.load(f)
@@ -986,6 +1034,7 @@ def ClanExoCombiner():
             exotic_json["Response"][23]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
         Exotic['Exotic'].append(Name_24)
         Kills['Kills'].append(Kills_24)
+        [''].append(Kills_24)
         Precision['Precision Kills'].append(Precision_24)
 
     Exotic_Info = [Exotic, Kills, Precision]
@@ -999,419 +1048,435 @@ def ClanExoCombiner():
 
         if ID == 2208405142:
             Exotic = "Telesto"
-            TLT_K += Kills
-            TLT_P += Precision
+            telestoKills += Kills
+            telestoPrec += Precision
         elif ID == 2232171099:
             Exotic = "Deathbringer"
-            DBG_K += Kills
-            DBG_P += Precision
+            deathbringerKills += Kills
+            deathbringerPrec += Precision
         elif ID == 2357297366:
             Exotic = "Witherhoard"
-            WTH_K += Kills
-            WTH_P += Precision
+            witherhoardKills += Kills
+            witherhoardPrec += Precision
         elif ID == 2591746970:
             Exotic = "Leviathan's Breath"
-            LVB_K += Kills
-            LVB_P += Precision
+            leviathanKills += Kills
+            leviathanPrec += Precision
         elif ID == 2694576561:
             Exotic = "Two-Tailed Fox"
-            TTF_K += Kills
-            TTF_P += Precision
+            twotailedKills += Kills
+            twotailedPrec += Precision
         elif ID == 2812324400:
             Exotic = "Parasite"
-            PRS_K += Kills
-            PRS_P += Precision
+            parasiteKills += Kills
+            parasitePrec += Precision
         elif ID == 2812324401:
             Exotic = "Dead Messenger"
-            DMS_K += Kills
-            DMS_P += Precision
+            messengerKills += Kills
+            messengerPrec += Precision
         elif ID == 2816212794:
             Exotic = "Bad Juju"
-            BJJ_K += Kills
-            BJJ_P += Precision
+            jujuKills += Kills
+            jujuPrec += Precision
         elif ID == 2856683562:
             Exotic = "SUROS Regime"
-            SRR_K += Kills
-            SRR_P += Precision
+            surosKills += Kills
+            surosPrec += Precision
         elif ID == 2907129557:
             Exotic = "Sunshot"
-            SNS_K += Kills
-            SNS_P += Precision
+            sunshotKills += Kills
+            sunshotPrec += Precision
         elif ID == 3089417789:
             Exotic = "Riskrunner"
-            RSR_K += Kills
-            RSR_P += Precision
+            riskrunnerKills += Kills
+            riskrunnerPrec += Precision
         elif ID == 3118061005:
             Exotic = "Vexcalibur"
-            VCB_K += Kills
-            VCB_P += Precision
+            vexcalKills += Kills
+            vexcalPrec += Precision
         elif ID == 3141979346:
             Exotic = "D.A.R.C.I."
-            DRC_K += Kills
-            DRC_P += Precision
+            darciKills += Kills
+            darciPrec += Precision
         elif ID == 3260753130:
             Exotic = "Ticuu's Divination"
-            TCD_K += Kills
-            TCD_P += Precision
+            ticuuKills += Kills
+            ticuuPrec += Precision
         elif ID == 3325463374:
             Exotic = "Thunderlord"
-            TDL_K += Kills
-            TDL_P += Precision
+            thunderlordKills += Kills
+            thunderlordPrec += Precision
         elif ID == 3413074534:
             Exotic = "Polaris Lance"
-            PLL_K += Kills
-            PLL_P += Precision
+            polarisKills += Kills
+            polarisPrec += Precision
         elif ID == 3413860062:
             Exotic = "The Chaperone"
-            CPR_K += Kills
-            CPR_P += Precision
+            chaperonKills += Kills
+            chaperonePrec += Precision
         elif ID == 3413860063:
             Exotic = "Lord of Wolves"
-            LOW_K += Kills
-            LOW_P += Precision
+            lordofwolvesKills += Kills
+            lordofwolvesPrec += Precision
         elif ID == 3437746471:
             Exotic = "Crimson"
-            CRM_K += Kills
-            CRM_P += Precision
+            crimsonKills += Kills
+            crimsonPrec += Precision
         elif ID == 3460576091:
             Exotic = "Duality"
-            DLT_K += Kills
-            DLT_P += Precision
+            dualityKills += Kills
+            dualityPrec += Precision
         elif ID == 3487253372:
             Exotic = "The Lament"
-            LMT_K += Kills
-            LMT_P += Precision
+            lamentKills += Kills
+            lamentPrec += Precision
         elif ID == 3524313097:
             Exotic = "Eriana's Vow"
-            EIV_K += Kills
-            EIV_P += Precision
+            erianaKills += Kills
+            erianaPrec += Precision
         elif ID == 3580904581:
             Exotic = "Tractor Cannon"
-            TCC_K += Kills
-            TCC_P += Precision
+            tractorKills += Kills
+            tractorPrec += Precision
         elif ID == 3588934839:
             Exotic = "Le Monarque"
-            LMR_K += Kills
-            LMR_P += Precision
+            lemonKills += Kills
+            lemonPrec += Precision
         elif ID == 3628991658:
             Exotic = "Graviton Lance"
-            GVL_K += Kills
-            GVL_P += Precision
+            gravitonKills += Kills
+            gravitonPrec += Precision
         elif ID == 3628991659:
             Exotic = "Vigilance Wing"
-            VIG_K += Kills
-            VIG_P += Precision
+            vigilanceKills += Kills
+            vigilancePrec += Precision
         elif ID == 3654674561:
             Exotic = "Dead Man's Tale"
-            DMT_K += Kills
-            DMT_P += Precision
+            deadmansKills += Kills
+            deadmansPrec += Precision
         elif ID == 3659414143:
             Exotic = "Verglas Curve"
-            VGC_K += Kills
-            VGC_P += Precision
+            verglasKills += Kills
+            verglasPrec += Precision
         elif ID == 3664831848:
             Exotic = "Heartshadow"
-            HSD_K += Kills
-            HSD_P += Precision
+            heartshadowKills += Kills
+            heartshadowPrec += Precision
         elif ID == 3973202132:
             Exotic = "Thorn"
-            TRN_K += Kills
-            TRN_P += Precision
+            thornKills += Kills
+            thornPrec += Precision
         elif ID == 4017959782:
             Exotic = "Symmetry"
-            SMY_K += Kills
-            SMY_P += Precision
+            symmetryKills += Kills
+            symmetryPrec += Precision
         elif ID == 4036115577:
             Exotic = "Sleeper Simulant"
-            SPS_K += Kills
-            SPS_P += Precision
+            sleeperKills += Kills
+            sleeperPrec += Precision
         elif ID == 4068264807:
             Exotic = "Monte Carlo"
-            MTC_K += Kills
-            MTC_P += Precision
+            monteKills += Kills
+            montePrec += Precision
         elif ID == 4124984448:
             Exotic = "Hard Light"
-            HDL_K += Kills
-            HDL_P += Precision
+            hardlightKills += Kills
+            hardlightPrec += Precision
         elif ID == 4255268456:
             Exotic = "Skyburner's Oath"
-            SBO_K += Kills
-            SBO_P += Precision
+            skyburnerKills += Kills
+            skyburnerPrec += Precision
         elif ID == 4293613902:
             Exotic = "Quicksilver Storm"
-            QSS_K += Kills
-            QSS_P += Precision
+            quicksilverKills += Kills
+            quicksilverPrec += Precision
         elif ID == 19024058:
             Exotic = "Prometheus Lens"
-            PML_K += Kills
-            PML_P += Precision
+            prometheusKills += Kills
+            prometheusPrec += Precision
         elif ID == 46524085:
             Exotic = "Osteo Striga"
-            OTS_K += Kills
-            OTS_P += Precision
+            osteoKills += Kills
+            osteoPrec += Precision
         elif ID == 204878059:
             Exotic = "Malfeasance"
-            MFC_K += Kills
-            MFC_P += Precision
+            malfeaseKills += Kills
+            malfeasePrec += Precision
         elif ID == 370712896:
             Exotic = "Salvation's Grip"
-            SVG_K += Kills
-            SVG_P += Precision
+            salvationKills += Kills
+            salvationPrec += Precision
         elif ID == 374573733:
             Exotic = "Delicate Tomb"
-            DCT_K += Kills
-            DCT_P += Precision
+            delicateKills += Kills
+            delicatePrec += Precision
         elif ID == 400096939:
             Exotic = "Outbreak Perfected"
-            OBP_K += Kills
-            OBP_P += Precision
+            outbreakKills += Kills
+            outbreakPrec += Precision
         elif ID == 417164956:
             Exotic = "Jötunn"
-            JTN_K += Kills
-            JTN_P += Precision
+            jotunnKills += Kills
+            jotunnPrec += Precision
         elif ID == 449318888:
             Exotic = "Deterministic Chaos"
-            DTC_K += Kills
-            DTC_P += Precision
+            determineKills += Kills
+            determinePrec += Precision
         elif ID == 776191470:
             Exotic = "Tommy's Matchbook"
-            TMB_K += Kills
-            TMB_P += Precision
+            tommysKills += Kills
+            tommysPrec += Precision
         elif ID == 814876684:
             Exotic = "Wish-Ender"
-            WHE_K += Kills
-            WHE_P += Precision
+            wishKills += Kills
+            wishPrec += Precision
         elif ID == 814876685:
             Exotic = "Trinity Ghoul"
-            TNG_K += Kills
-            TNG_P += Precision
+            trinityKills += Kills
+            trinityPrec += Precision
         elif ID == 1345867570:
             Exotic = "Sweet Business"
-            SWB_K += Kills
-            SWB_P += Precision
+            sweetKills += Kills
+            sweetPrec += Precision
         elif ID == 1345867571:
             Exotic = "Coldheart"
-            CDH_K += Kills
-            CDH_P += Precision
+            coldheartKills += Kills
+            coldheartPrec += Precision
         elif ID == 1363238943:
             Exotic = "Ruinous Effigy"
-            RNE_K += Kills
-            RNE_P += Precision
+            ruinousKills += Kills
+            ruinousPrec += Precision
         elif ID == 1363886209:
             Exotic = "Gjallarhorn"
-            GLH_K += Kills
-            GLH_P += Precision
+            gjallarKills += Kills
+            gjallarPrec += Precision
         elif ID == 1395261499:
             Exotic = "Xenophage"
-            XNP_K += Kills
-            XNP_P += Precision
+            xenoKills += Kills
+
+            xenoPrec += Precision
         elif ID == 1441805468:
             Exotic = "The Navigator"
-            NVG_K += Kills
-            NVG_P += Precision
+            navigatorKills += Kills
+            navigatorPrec += Precision
         elif ID == 1473821207:
             Exotic = "Revision Zero"
-            RVZ_K += Kills
-            RVZ_P += Precision
+            revisionKills += Kills
+            revisionPrec += Precision
         elif ID == 1508896098:
             Exotic = "The Wardcliff Coil"
-            WCC_K += Kills
-            WCC_P += Precision
+            wardcliffKills += Kills
+            wardcliffPrec += Precision
         elif ID == 1594120904:
             Exotic = "No Time to Explain"
-            NTE_K += Kills
-            NTE_P += Precision
+            notimeKills += Kills
+
+            notimePrec += Precision
         elif ID == 1665952087:
             Exotic = "The Fourth Horseman"
-            TFH_K += Kills
-            TFH_P += Precision
+            fourthhorseKills += Kills
+            fourthhorsePrec += Precision
         elif ID == 1763584999:
             Exotic = "Grand Overture"
-            GOT_K += Kills
-            GOT_P += Precision
+            overtureKills += Kills
+            overturePrec += Precision
         elif ID == 1833195496:
             Exotic = "Ager's Scepter"
-            ASP_K += Kills
-            ASP_P += Precision
+            agersKills += Kills
+            agersPrec += Precision
         elif ID == 1912669214:
             Exotic = "Centrifuse"
-            CTF_K += Kills
-            CTF_P += Precision
+            centrifuseKills += Kills
+            centrifusePrec += Precision
         elif ID == 2044500762:
             Exotic = "The Queenbreaker"
-            QNB_K += Kills
-            QNB_P += Precision
+            queenbreakKills += Kills
+            queenbreakPrec += Precision
         elif ID == 2130065553:
             Exotic = "Arbalest"
-            ABL_K += Kills
-            ABL_P += Precision
+            arbalestKills += Kills
+            arbalestPrec += Precision
         elif ID == 2179048386:
             Exotic = "Forerunner"
-            FRN_K += Kills
-            FRN_P += Precision
+            forerunnerKills += Kills
+            forerunnerPrec += Precision
         elif ID == 2286143274:
             Exotic = "Huckleberry"
-            HKB_K += Kills
-            HKB_P += Precision
+            huckleKills += Kills
+            hucklePrec += Precision
         elif ID == 2362471601:
             Exotic = "Rat King"
-            RTK_K += Kills
-            RTK_P += Precision
+            ratkingKills += Kills
+            ratkingPrec += Precision
         elif ID == 2376481550:
             Exotic = "Anarchy"
-            ARK_K += Kills
-            ARK_P += Precision
+            anarchyKills += Kills
+
+            anarchyPrec += Precision
         elif ID == 2399110176:
             Exotic = "Eyes of Tomorrow"
-            EOT_K += Kills
-            EOT_P += Precision
+            eyesofKills += Kills
+            eyesofPrec += Precision
         elif ID == 2415517654:
             Exotic = "Bastion"
-            BSN_K += Kills
-            BSN_P += Precision
+            bastionKills += Kills
+            bastionPrec += Precision
         elif ID == 2603483885:
             Exotic = "Cloudstrike"
-            CDS_K += Kills
-            CDS_P += Precision
+            cloudstrikeKills += Kills
+            cloudstrikePrec += Precision
         elif ID == 2907129556:
             Exotic = "Strum"
-            STR_K += Kills
-            STR_P += Precision
+            strumKills += Kills
+            strumPrec += Precision
         elif ID == 3110698812:
             Exotic = "Tarrabah"
-            TRB_K += Kills
-            TRB_P += Precision
+            tarrabahKills += Kills
+            tarrabahPrec += Precision
         elif ID == 3118061004:
             Exotic = "Winterbite"
-            WTB_K += Kills
-            WTB_P += Precision
+            winterbiteKills += Kills
+            winterbitePrec += Precision
         elif ID == 3121540812:
             Exotic = "Final Warning"
-            FNW_K += Kills
-            FNW_P += Precision
+            warningKills += Kills
+            warningPrec += Precision
         elif ID == 3141979347:
             Exotic = "Borealis"
-            BEL_K += Kills
-            BEL_P += Precision
+            boreKills += Kills
+            borePrec += Precision
         elif ID == 3211806999:
             Exotic = "Izanagi's Burden"
-            IZB_K += Kills
-            IZB_P += Precision
+            izanKills += Kills
+            izanPrec += Precision
         elif ID == 3371017761:
             Exotic = "Conditional Finality"
-            CDF_K += Kills
-            CDF_P += Precision
+            finalityKills += Kills
+            finalityPrec += Precision
         elif ID == 3505113722:
             Exotic = "Collective Obligation"
-            CLO_K += Kills
-            CLO_P += Precision
+            obligationKills += Kills
+            obligationPrec += Precision
         elif ID == 3512014804:
             Exotic = "Lumina"
-            LMN_K += Kills
-            LMN_P += Precision
+            luminaKills += Kills
+            luminaPrec += Precision
         elif ID == 3580904580 or ID == 1744115122:
             Exotic = "Legend of Acrius"
-            LOA_K += Kills
-            LOA_P += Precision
+            acriusKills += Kills
+            acriusPrec += Precision
         elif ID == 3761898871:
             Exotic = "Lorentz Driver"
-            LRD_K += Kills
-            LRD_P += Precision
+            driverKills += Kills
+            driverPrec += Precision
         elif ID == 3766045777:
             Exotic = "Black Talon"
-            BKT_K += Kills
-            BKT_P += Precision
+            blackKills += Kills
+            blackPrec += Precision
         elif ID == 3824106094:
             Exotic = "Devil's Ruin"
-            DVR_K += Kills
-            DVR_P += Precision
+            devilKills += Kills
+            devilPrec += Precision
         elif ID == 3844694310:
             Exotic = "The Jade Rabbit"
-            JDR_K += Kills
-            JDR_P += Precision
+            rabbitKills += Kills
+            rabbitPrec += Precision
         elif ID == 3856705927:
             Exotic = "Hawkmoon"
-            HKM_K += Kills
-            HKM_P += Precision
+            hawkmoonKills += Kills
+            hawkmoonPrec += Precision
         elif ID == 3899270607:
             Exotic = "The Colony"
-            CLN_K += Kills
-            CLN_P += Precision
+            colonyKills += Kills
+            colonyPrec += Precision
         elif ID == 4174431791:
             Exotic = "Hierarchy of Needs"
-            HON_K += Kills
-            HON_P += Precision
+            hierarchyKills += Kills
+            hierarchyPrec += Precision
         elif ID == 4289226715:
             Exotic = "Vex Mythoclast"
-            VMC_K += Kills
-            VMC_P += Precision
+            mythoclastKills += Kills
+            mythoclastPrec += Precision
         elif ID == 14194600:
             Exotic = "Edge of Intent"
-            EOI_K += Kills
-            EOI_P += Precision
+            intentKills += Kills
+            intentPrec += Precision
         elif ID == 219145368:
             Exotic = "The Manticore"
-            TMC_K += Kills
-            TMC_P += Precision
+            manticoreKills += Kills
+            manticorePrec += Precision
         elif ID == 347366834:
             Exotic = "Ace of Spades"
-            AOS_K += Kills
-            AOS_P += Precision
+            aceKills += Kills
+            acePrec += Precision
         elif ID == 940371471:
             Exotic = "Wicked Implement"
-            WKI_K += Kills
-            WKI_P += Precision
+            wickedKills += Kills
+            wickedPrec += Precision
         elif ID == 1201830623:
             Exotic = "Truth"
-            TUH_K += Kills
-            TUH_P += Precision
+            truthKills += Kills
+            truthPrec += Precision
         elif ID == 1234150730:
             Exotic = "Trespasser"
-            TSP_K += Kills
-            TSP_P += Precision
+            trespassKills += Kills
+            trespassPrec += Precision
         elif ID == 1331482397:
             Exotic = "MIDA Multi-Tool"
-            MMT_K += Kills
-            MMT_P += Precision
+            midaKills += Kills
+            midaPrec += Precision
         elif ID == 1364093401:
-            Exotic = "The Last WOrd"
-            TLW_K += Kills
-            TLW_P += Precision
+            Exotic = "The Last Word"
+            lastwordKills += Kills
+            lastwordPrec += Precision
         elif ID == 1541131350:
             Exotic = "Cerberus+1"
-            CBS_K += Kills
-            CBS_P += Precision
+            cerberusKills += Kills
+            cerberusPrec += Precision
         elif ID == 1802135586:
             Exotic = "Touch of Malice"
-            TOM_K += Kills
-            TOM_P += Precision
+            touchKills += Kills
+            touchPrec += Precision
         elif ID == 1852863732:
             Exotic = "Wavesplitter"
-            WVP_K += Kills
-            WVP_P += Precision
+            wavesplitKills += Kills
+            wavesplitPrec += Precision
         elif ID == 1853180924:
             Exotic = "Traveler's Chosen"
-            TVC_K += Kills
-            TVC_P += Precision
+            chosenKills += Kills
+            chosenPrec += Precision
         elif ID == 1864563948:
             Exotic = "Worldline Zero"
-            WLZ_K += Kills
-            WLZ_P += Precision
+            wordllineKills += Kills
+            wordllinePrec += Precision
         elif ID == 1891561814:
             Exotic = "Whisper of the Worm"
-            WOW_K += Kills
-            WOW_P += Precision
+            whisperKills += Kills
+            whisperPrec += Precision
         elif ID == 2069224589:
             Exotic = "One Thousand Voices"
-            OKV_K += Kills
-            OKV_P += Precision
+            thousandKills += Kills
+            thousandPrec += Precision
         elif ID == 2084878005:
             Exotic = "Heir Apparent"
-            HAP_K += Kills
-            HAP_P += Precision
-        # elif ID ==
-        # elif ID ==
-        # elif ID ==
+            heirKills += Kills
+            heirPrec += Precision
+        elif ID == 4103414242:
+            Exotic = 'Divinity'
+            divinityKills += Kills
+            divinityPrec += Precision
+        elif ID == 603721696:
+            Exotic = 'Cryosthethesia 77K'
+            cryoKills += Kills
+            cryoPrec += Precision
+        elif ID == 4190156464:
+            Exotic = "Merciless"
+            mercilessKills += Kills
+            mercilessPrec += Precision
+        elif ID == 3549153978:
+            Exotic = 'Fighting Lion'
+            fightingKills += Kills
+            fightingPrec += Precision
 
     Primary = PrettyTable()
     Primary.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
@@ -1447,15 +1512,24 @@ def ClanExoCombiner():
                                        "Fusion Rifle", "Pulse Rifle", "Sidearm", "Submachine Gun", "Combat Bow",
                                        "Auto Rifle"])
     Primary.add_column("Kills",
-                       [SWB_K, STR_K, VIG_K, RTK_K, MMT_K, CRM_K, JDR_K, HKB_K, SRR_K, CBS_K, WHE_K, MFC_K, AOS_K,
-                        TLW_K, TRN_K, OBP_K, LMN_K, BJJ_K, MTC_K, TVC_K, HKM_K, NTE_K, DMT_K, CSK_K, OTS_K, TOM_K,
-                        QSS_K, RVZ_K, FNW_K, VGC_K, WKI_K, FTL_K, SNS_K, SBO_K, RSR_K, HDL_K, PLL_K, TNG_K, LMR_K,
-                        TRB_K, SMY_K, DVR_K, TMB_K, TCD_K, VMC_K, CLO_K, TSP_K, TMC_K, HON_K, CTF_K])
+                       [sweetKills, strumKills, vigilanceKills, ratkingKills, midaKills, crimsonKills, rabbitKills,
+                        huckleKills, surosKills, cerberusKills, wishKills, malfeaseKills, aceKills,
+                        lastwordKills, thornKills, outbreakKills, luminaKills, jujuKills, monteKills, chosenKills,
+                        hawkmoonKills, notimeKills, deadmansKills, cryoKills, osteoKills, touchKills,
+                        quicksilverKills, revisionKills, warningKills, verglasKills, wickedKills, fightingKills,
+                        sunshotKills, skyburnerKills, riskrunnerKills, hardlightKills, polarisKills, trinityKills,
+                        lemonKills,
+                        tarrabahKills, symmetryKills, devilKills, tommysKills, ticuuKills, mythoclastKills,
+                        obligationKills, trespassKills, manticoreKills, hierarchyKills, centrifuseKills])
     Primary.add_column("Precision Kills",
-                       [SWB_P, STR_P, VIG_P, RTK_P, MMT_P, CRM_P, JDR_P, HKB_P, SRR_P, CBS_P, WHE_P, MFC_P, AOS_P,
-                        TLW_P, TRN_P, OBP_P, LMN_P, BJJ_P, MTC_P, TVC_P, HKM_P, NTE_P, DMT_P, CSK_P, OTS_P, TOM_P,
-                        QSS_P, RVZ_P, FNW_P, VGC_P, WKI_P, FTL_P, SNS_P, SBO_P, RSR_P, HDL_P, PLL_P, TNG_P, LMR_P,
-                        TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_K])
+                       [sweetPrec, strumPrec, vigilancePrec, ratkingPrec, midaPrec, crimsonPrec, rabbitPrec, hucklePrec,
+                        surosPrec, cerberusPrec, wishPrec, malfeasePrec, acePrec,
+                        lastwordPrec, thornPrec, outbreakPrec, luminaPrec, jujuPrec, montePrec, chosenPrec,
+                        hawkmoonPrec, notimePrec, deadmansPrec, cryoPrec, osteoPrec, touchPrec,
+                        quicksilverPrec, revisionPrec, warningPrec, verglasPrec, wickedPrec, fightingPrec, sunshotPrec,
+                        skyburnerPrec, riskrunnerPrec, hardlightPrec, polarisPrec, trinityPrec, lemonPrec,
+                        tarrabahPrec, symmetryPrec, devilPrec, tommysPrec, ticuuPrec, mythoclastPrec, obligationPrec,
+                        trespassPrec, manticorePrec, hierarchyPrec, centrifusePrec])
     Primary.align["Exotic"] = 'l'
     Primary.align["Element"] = 'l'
     Primary.align["Weapon Type"] = 'l'
@@ -1483,13 +1557,19 @@ def ClanExoCombiner():
                                        "Shotgun", "Trace Rifle", "Shotgun", "Sniper Rifle", "Linear Fusion Rifle",
                                        "Glaive", "Glaive", "Glaive", "Grenade Launcher", "Fusion Rifle", "Glaive"])
     Special.add_column("Kills",
-                       [CPR_K, IZB_K, ABL_K, BSN_K, WTH_K, ASP_K, FRN_K, CDF_K, NVG_K, CDH_K, MCL_K, BEL_K, PML_K,
-                        TLT_K, WVP_K, LOW_K, JTN_K, EIV_K, DVN_K, TFH_K, RNE_K, DLT_K, CDS_K, LRD_K, EOC_K, EOA_K,
-                        EOI_K, DMS_K, DCT_K, VCB_K])
+                       [chaperonKills, izanKills, arbalestKills, bastionKills, witherhoardKills, agersKills,
+                        forerunnerKills, finalityKills, navigatorKills, coldheartKills, mercilessKills, boreKills,
+                        prometheusKills,
+                        telestoKills, wavesplitKills, lordofwolvesKills, jotunnKills, erianaKills, divinityKills,
+                        fourthhorseKills, ruinousKills, dualityKills, cloudstrikeKills, driverKills, concurrenceKills,
+                        actionKills,
+                        intentKills, messengerKills, delicateKills, vexcalKills])
     Special.add_column("Precision Kills",
-                       [CPR_P, IZB_P, ABL_P, BSN_P, WTH_P, ASP_P, FRN_P, CDF_P, NVG_P, CDH_P, MCL_P, BEL_P,
-                        PML_P, TLT_P, WVP_P, LOW_P, JTN_P, EIV_P, DVN_P, TFH_P, RNE_P, DLT_P, CDS_P, LRD_P,
-                        EOC_P, EOA_P, EOI_P, DMS_P, DCT_P, VCB_P])
+                       [chaperonePrec, izanPrec, arbalestPrec, bastionPrec, witherhoardPrec, agersPrec, forerunnerPrec,
+                        finalityPrec, navigatorPrec, coldheartPrec, mercilessPrec, borePrec,
+                        prometheusPrec, telestoPrec, wavesplitPrec, lordofwolvesPrec, jotunnPrec, erianaPrec,
+                        divinityPrec, fourthhorsePrec, ruinousPrec, dualityPrec, cloudstrikePrec, driverPrec,
+                        concurrencePrec, actionPrec, intentPrec, messengerPrec, delicatePrec, vexcalPrec])
     Special.align["Exotic"] = 'l'
     Special.align["Element"] = 'l'
     Special.align["Weapon Type"] = 'l'
@@ -1517,13 +1597,19 @@ def ClanExoCombiner():
                                      "Grenade Launcher", "Machine Gun", "Sword", "Machine Gun", "Glaive",
                                      "Rocket Launcher", "Sniper Rifle"])
     Heavy.add_column("Kills",
-                     [PST_K, WCC_K, TCC_K, LOA_K, DRC_K, CLN_K, WLZ_K, SPS_K, OKV_K, TTF_K, BKT_K, QNB_K, TDL_K,
-                      ARK_K, LVB_K, XNP_K, DBG_K, HAP_K, SVG_K, EOT_K, LMT_K, GLH_K, PRS_K, GOT_K, HSD_K, DTC_K,
-                      WTB_K, TUH_K, WOW_K])
+                     [prospectorKills, wardcliffKills, tractorKills, acriusKills, darciKills, colonyKills,
+                      wordllineKills, sleeperKills, thousandKills, twotailedKills, blackKills, queenbreakKills,
+                      thunderlordKills,
+                      anarchyKills, leviathanKills, xenoKills, deathbringerKills, heirKills, salvationKills,
+                      eyesofKills, lamentKills, gjallarKills, parasiteKills, overtureKills, heartshadowKills,
+                      determineKills,
+                      winterbiteKills, truthKills, whisperKills])
     Heavy.add_column("Precision Kills",
-                     [PST_P, WCC_P, TCC_P, LOA_P, DRC_P, CLN_P, WLZ_P, SPS_P, OKV_P, TTF_P, BKT_P, QNB_P,
-                      TDL_P, ARK_P, LVB_P, XNP_P, DBG_P, HAP_P, SVG_P, EOT_P, LMT_P, GLH_P, PRS_P, GOT_P,
-                      HSD_P, DTC_P, WTB_P, TUH_P, WOW_P])
+                     [prospectorPrec, wardcliffPrec, tractorPrec, acriusPrec, darciPrec, colonyPrec, wordllinePrec,
+                      sleeperPrec, thousandPrec, twotailedPrec, blackPrec, queenbreakPrec,
+                      thunderlordPrec, anarchyPrec, leviathanPrec, xenoPrec, deathbringerPrec, heirPrec, salvationPrec,
+                      eyesofPrec, lamentPrec, gjallarPrec, parasitePrec, overturePrec,
+                      heartshadowPrec, determinePrec, winterbitePrec, truthPrec, whisperPrec])
     Heavy.align["Exotic"] = 'l'
     Heavy.align["Element"] = 'l'
     Heavy.align["Weapon Type"] = 'l'
@@ -1597,24 +1683,46 @@ def ClanExoCombiner():
                                     "Grenade Launcher", "Machine Gun", "Sword", "Machine Gun", "Glaive",
                                     "Rocket Launcher", "Sniper Rifle"])
     Full.add_column("Kills",
-                    [SWB_K, STR_K, VIG_K, RTK_K, MMT_K, CRM_K, JDR_K, HKB_K, SRR_K, CBS_K, WHE_K, MFC_K, AOS_K,
-                     TLW_K, TRN_K, OBP_K, LMN_K, BJJ_K, MTC_K, TVC_K, HKM_K, NTE_K, DMT_K, CSK_K, OTS_K, TOM_K, QSS_K,
-                     RVZ_K, FNW_K, VGC_K, WKI_K, FTL_K, SNS_K, SBO_K, RSR_K, HDL_K, PLL_K, TNG_K, LMR_K, TRB_K, SMY_K,
-                     DVR_K, TMB_K, TCD_K, VMC_K, CLO_K, TSP_K, TMC_K, HON_K, CTF_K, CPR_K, IZB_K, ABL_K, BSN_K, WTH_K,
-                     ASP_K, FRN_K, CDF_K, NVG_K, CDH_K, MCL_K, BEL_K, PML_K, TLT_K, WVP_K, LOW_K, JTN_K, EIV_K, DVN_K,
-                     TFH_K, RNE_K, DLT_K, CDS_K, LRD_K, EOC_K, EOA_K, EOI_K, DMS_K, DCT_K, VCB_K, PST_K, WCC_K,
-                     TCC_K, LOA_K, DRC_K, CLN_K, WLZ_K, SPS_K, OKV_K, TTF_K, BKT_K, QNB_K, TDL_K, ARK_K, LVB_K, XNP_K,
-                     DBG_K, HAP_K, SVG_K, EOT_K, LMT_K, GLH_K, PRS_K, GOT_K, HSD_K, DTC_K, WTB_K, TUH_K, WOW_K])
+                    [sweetKills, strumKills, vigilanceKills, ratkingKills, midaKills, crimsonKills, rabbitKills,
+                     huckleKills, surosKills, cerberusKills, wishKills, malfeaseKills, aceKills,
+                     lastwordKills, thornKills, outbreakKills, luminaKills, jujuKills, monteKills, chosenKills,
+                     hawkmoonKills, notimeKills, deadmansKills, cryoKills, osteoKills, touchKills, quicksilverKills,
+                     revisionKills, warningKills, verglasKills, wickedKills, fightingKills, sunshotKills,
+                     skyburnerKills, riskrunnerKills, hardlightKills, polarisKills, trinityKills, lemonKills,
+                     tarrabahKills, symmetryKills,
+                     devilKills, tommysKills, ticuuKills, mythoclastKills, obligationKills, trespassKills,
+                     manticoreKills, hierarchyKills, centrifuseKills, chaperonKills, izanKills, arbalestKills,
+                     bastionKills, witherhoardKills,
+                     agersKills, forerunnerKills, finalityKills, navigatorKills, coldheartKills, mercilessKills,
+                     boreKills, prometheusKills, telestoKills, wavesplitKills, lordofwolvesKills, jotunnKills,
+                     erianaKills, divinityKills,
+                     fourthhorseKills, ruinousKills, dualityKills, cloudstrikeKills, driverKills, concurrenceKills,
+                     actionKills, intentKills, messengerKills, delicateKills, vexcalKills, prospectorKills,
+                     wardcliffKills,
+                     tractorKills, acriusKills, darciKills, colonyKills, wordllineKills, sleeperKills, thousandKills,
+                     twotailedKills, blackKills, queenbreakKills, thunderlordKills, anarchyKills, leviathanKills,
+                     xenoKills,
+                     deathbringerKills, heirKills, salvationKills, eyesofKills, lamentKills, gjallarKills,
+                     parasiteKills, overtureKills, heartshadowKills, determineKills, winterbiteKills, truthKills,
+                     whisperKills])
     Full.add_column("Precision Kills",
-                    [SWB_P, STR_P, VIG_P, RTK_P, MMT_P, CRM_P, JDR_P, HKB_P, SRR_P, CBS_P, WHE_P, MFC_P, AOS_P,
-                     TLW_P, TRN_P, OBP_P, LMN_P, BJJ_P, MTC_P, TVC_P, HKM_P, NTE_P, DMT_P, CSK_P, OTS_P, TOM_P,
-                     QSS_P, RVZ_P, FNW_P, VGC_P, WKI_P, FTL_P, SNS_P, SBO_P, RSR_P, HDL_P, PLL_P, TNG_P, LMR_P,
-                     TRB_P, SMY_P, DVR_P, TMB_P, TCD_P, VMC_P, CLO_P, TSP_P, TMC_P, HON_P, CTF_K, CPR_P, IZB_P,
-                     ABL_P, BSN_P, WTH_P, ASP_P, FRN_P, CDF_P, NVG_P, CDH_P, MCL_P, BEL_P, PML_P, TLT_P, WVP_P,
-                     LOW_P, JTN_P, EIV_P, DVN_P, TFH_P, RNE_P, DLT_P, CDS_P, LRD_P, EOC_P, EOA_P, EOI_P, DMS_P,
-                     DCT_P, VCB_P, PST_P, WCC_P, TCC_P, LOA_P, DRC_P, CLN_P, WLZ_P, SPS_P, OKV_P, TTF_P, BKT_P,
-                     QNB_P, TDL_P, ARK_P, LVB_P, XNP_P, DBG_P, HAP_P, SVG_P, EOT_P, LMT_P, GLH_P, PRS_P, GOT_P,
-                     HSD_P, DTC_P, WTB_P, TUH_P, WOW_P])
+                    [sweetPrec, strumPrec, vigilancePrec, ratkingPrec, midaPrec, crimsonPrec, rabbitPrec, hucklePrec,
+                     surosPrec, cerberusPrec, wishPrec, malfeasePrec, acePrec,
+                     lastwordPrec, thornPrec, outbreakPrec, luminaPrec, jujuPrec, montePrec, chosenPrec, hawkmoonPrec,
+                     notimePrec, deadmansPrec, cryoPrec, osteoPrec, touchPrec,
+                     quicksilverPrec, revisionPrec, warningPrec, verglasPrec, wickedPrec, fightingPrec, sunshotPrec,
+                     skyburnerPrec, riskrunnerPrec, hardlightPrec, polarisPrec, trinityPrec, lemonPrec,
+                     tarrabahPrec, symmetryPrec, devilPrec, tommysPrec, ticuuPrec, mythoclastPrec, obligationPrec,
+                     trespassPrec, manticorePrec, hierarchyPrec, centrifusePrec, chaperonePrec, izanPrec,
+                     arbalestPrec, bastionPrec, witherhoardPrec, agersPrec, forerunnerPrec, finalityPrec, navigatorPrec,
+                     coldheartPrec, mercilessPrec, borePrec, prometheusPrec, telestoPrec, wavesplitPrec,
+                     lordofwolvesPrec, jotunnPrec, erianaPrec, divinityPrec, fourthhorsePrec, ruinousPrec, dualityPrec,
+                     cloudstrikePrec, driverPrec, concurrencePrec, actionPrec, intentPrec, messengerPrec,
+                     delicatePrec, vexcalPrec, prospectorPrec, wardcliffPrec, tractorPrec, acriusPrec, darciPrec,
+                     colonyPrec, wordllinePrec, sleeperPrec, thousandPrec, twotailedPrec, blackPrec,
+                     queenbreakPrec, thunderlordPrec, anarchyPrec, leviathanPrec, xenoPrec, deathbringerPrec, heirPrec,
+                     salvationPrec, eyesofPrec, lamentPrec, gjallarPrec, parasitePrec, overturePrec,
+                     heartshadowPrec, determinePrec, winterbitePrec, truthPrec, whisperPrec])
     Full.align["Exotic"] = 'l'
     Full.align["Element"] = 'l'
     Full.align["Weapon Type"] = 'l'
@@ -1622,4 +1730,3 @@ def ClanExoCombiner():
     Full.align["Precision Kills"] = 'r'
     Full.reversesort = True
     print(Full.get_string(sortby="Kills", start=0, end=10))
-
