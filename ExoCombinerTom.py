@@ -347,7 +347,7 @@ def ExoCombinerTom():
 
     exotic_json = {"Response": []}
 
-    exotic_json['Response'].append(items1)
+    exotic_json["Response"].append(items1)
     exotic_json["Response"].append(items2)
     exotic_json["Response"].append(items3)
 
