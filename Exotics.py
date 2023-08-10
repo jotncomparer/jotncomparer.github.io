@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-24-2023
-# Last Updated: 8-9-2023
+# Last Updated: 8-10-2023
 # This program needs both ExoCombiner.py, ClanExoComparer.py, all ExoCombiner(name) programs and JOTUNN.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -25,6 +25,7 @@ def Exotics():
     from ExoCombinerHunt import ExoCombinerHunt
     from ExoCombinerCam import ExoCombinerCam
     from ExoCombinerKade import ExoCombinerKade
+    from prettytable import PrettyTable
 
     def URLZero(membershipType, destinyMembershipId, characterId):
         url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
@@ -223,8 +224,6 @@ def Exotics():
                         characterId = 2305843009703275457
                         URLTwo(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Connor's Top 10 Exotics")
-                ExoCombinerCon()
                 PLAYER += 1
             # The Chrome Leaf
             while PLAYER == 1:
@@ -242,8 +241,6 @@ def Exotics():
                         characterId = 2305843009569534739
                         URLFive(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Thomas' Top 10 Exotics")
-                ExoCombinerTom()
                 PLAYER += 1
             # Piepuns
             while PLAYER == 2:
@@ -261,8 +258,6 @@ def Exotics():
                         characterId = 2305843009293915719
                         URLEight(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Douglas' Top 10 Exotics")
-                ExoCombinerDoug()
                 PLAYER += 1
             # TheZefraOracle
             while PLAYER == 3:
@@ -280,8 +275,6 @@ def Exotics():
                         characterId = 2305843009802904121
                         URLEleven(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Mark's Top 10 Exotics")
-                ExoCombinerMark()
                 PLAYER += 1
             # HeavyChevy
             while PLAYER == 4:
@@ -299,8 +292,6 @@ def Exotics():
                         characterId = 2305843009890274343
                         URLFourteen(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Jack's Top 10 Exotics")
-                ExoCombinerJack()
                 PLAYER += 1
             # Lachlan
             while PLAYER == 5:
@@ -318,8 +309,6 @@ def Exotics():
                         characterId = 2305843009756404411
                         URLSeventeen(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Hunter's Top 10 Exotics")
-                ExoCombinerHunt()
                 PLAYER += 1
             # SlayWarsV
             while PLAYER == 6:
@@ -337,8 +326,6 @@ def Exotics():
                         characterId = 2305843009683284492
                         URLTwenty(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Cameron's Top 10 Exotics")
-                ExoCombinerCam()
                 PLAYER += 1
             # Gargoyle Goose
             while PLAYER == 7:
@@ -356,10 +343,14 @@ def Exotics():
                         characterId = 2305843010322954573
                         URLTwenThree(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
-                print("Kade's Top 10 Exotics")
-                ExoCombinerKade()
                 PLAYER += 1
-            print("Top Exotics")
+
+            playerTable = PrettyTable()
+            playerTable.field_names = ['Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+            playerTable.add_row([ExoCombinerCon(), ExoCombinerTom(), ExoCombinerDoug(), ExoCombinerMark(),
+                                 ExoCombinerJack(), ExoCombinerHunt(), ExoCombinerCam(), ExoCombinerKade()])
+            print(playerTable)
+            print(f"\nTop Exotics\n")
             ClanExoCombiner()
 
     print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade, All")
