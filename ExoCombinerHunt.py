@@ -1,6 +1,6 @@
 import json
 
-from prettytable import PrettyTable
+from prettytable import PrettyTable, PLAIN_COLUMNS, MSWORD_FRIENDLY
 
 
 def ExoCombinerHunt():
@@ -863,7 +863,8 @@ def ExoCombinerHunt():
                      TCC_K, LOA_K, DRC_K, CLN_K, WLZ_K, SPS_K, OKV_K, TTF_K, BKT_K, QNB_K, TDL_K, ARK_K, LVB_K, XNP_K,
                      DBG_K, HAP_K, SVG_K, EOT_K, LMT_K, GLH_K, PRS_K, GOT_K, HSD_K, DTC_K, WTB_K, TUH_K, WOW_K])
 
-    Full.align["Exotic"] = 'l'
-    Full.align["Kills"] = 'r'
+    Full.border = False
+    Full.header = False
+    Full.align['Exotic'] = 'c'
     Full.reversesort = True
-    print(Full.get_string(sortby="Kills", start=0, end=10))
+    return Full.get_string(sortby="Kills", start=0, end=10, fields=['Exotic'])
