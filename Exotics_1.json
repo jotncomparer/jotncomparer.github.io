@@ -1,0 +1,731 @@
+{
+  "Response": {
+    "weapons": [
+      {
+        "referenceId": 2357297366,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 175.0,
+              "displayValue": "175"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 2376481550,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 98.0,
+              "displayValue": "98"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 2816212794,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 284.0,
+              "displayValue": "284"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 80.0,
+              "displayValue": "80"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.28169014084507044,
+              "displayValue": "28%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 3325463374,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 14.0,
+              "displayValue": "14"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 4.0,
+              "displayValue": "4"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.2857142857142857,
+              "displayValue": "29%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 3460576091,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 162.0,
+              "displayValue": "162"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 27.0,
+              "displayValue": "27"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.16666666666666666,
+              "displayValue": "17%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 3487253372,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 48.0,
+              "displayValue": "48"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 4036115577,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 35.0,
+              "displayValue": "35"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 16.0,
+              "displayValue": "16"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.45714285714285713,
+              "displayValue": "46%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 4068264807,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 326.0,
+              "displayValue": "326"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 55.0,
+              "displayValue": "55"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.1687116564417178,
+              "displayValue": "17%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 4103414242,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 6.0,
+              "displayValue": "6"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.16666666666666666,
+              "displayValue": "17%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 400096939,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 35.0,
+              "displayValue": "35"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 3.0,
+              "displayValue": "3"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.08571428571428572,
+              "displayValue": "9%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 417164956,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 736.0,
+              "displayValue": "736"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 776191470,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 201.0,
+              "displayValue": "201"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 42.0,
+              "displayValue": "42"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.208955223880597,
+              "displayValue": "21%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 814876685,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 183.0,
+              "displayValue": "183"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 10.0,
+              "displayValue": "10"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.0546448087431694,
+              "displayValue": "5%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 1363886209,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 34.0,
+              "displayValue": "34"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 1594120904,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 37.0,
+              "displayValue": "37"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 5.0,
+              "displayValue": "5"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.13513513513513514,
+              "displayValue": "14%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 1802135586,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 9.0,
+              "displayValue": "9"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.1111111111111111,
+              "displayValue": "11%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 1891561814,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 3.0,
+              "displayValue": "3"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0%"
+            }
+          }
+        }
+      },
+      {
+        "referenceId": 2130065553,
+        "values": {
+          "uniqueWeaponAssists": {
+            "statId": "uniqueWeaponAssists",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponAssistDamage": {
+            "statId": "uniqueWeaponAssistDamage",
+            "basic": {
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          },
+          "uniqueWeaponKills": {
+            "statId": "uniqueWeaponKills",
+            "basic": {
+              "value": 11.0,
+              "displayValue": "11"
+            }
+          },
+          "uniqueWeaponPrecisionKills": {
+            "statId": "uniqueWeaponPrecisionKills",
+            "basic": {
+              "value": 6.0,
+              "displayValue": "6"
+            }
+          },
+          "uniqueWeaponKillsPrecisionKills": {
+            "statId": "uniqueWeaponKillsPrecisionKills",
+            "basic": {
+              "value": 0.5454545454545454,
+              "displayValue": "55%"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "ErrorCode": 1,
+  "ThrottleSeconds": 0,
+  "ErrorStatus": "Success",
+  "Message": "Ok",
+  "MessageData": {}
+}
