@@ -18,6 +18,13 @@ def Time_Converter(time):
         Months = Weeks / 4
         Months = math.trunc(Months)
         Weeks = Weeks % 4
+        if Months > 12:
+            Years = Months / 12
+            Years = math.trunc(Years)
+            Months = Months % 12
+            return f'{Years} years(s) {Months} month(s) {Weeks} week(s), {Days} day(s), {Hours}:{Minutes}:{Seconds}'
+        else:
+            pass
         return f'{Months} month(s) {Weeks} week(s), {Days} day(s), {Hours}:{Minutes}:{Seconds}'
     else:
         return f'{Weeks} week(s), {Days} day(s), {Hours}:{Minutes}:{Seconds}'
