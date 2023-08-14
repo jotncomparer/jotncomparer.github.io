@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-26-2023
-# Last Updated: 8-9-2023
+# Last Updated: 8-14-2023
 # This program creates tables of the most used exotics across all members of Jotunn Gang
 # Tables are broken down into top 5 Primary, Special, and Heavy, as well as top 10 of all Exotics
 
@@ -380,335 +380,124 @@ def URLTwenThree(membershipType, destinyMembershipId, characterId):
 
 
 def ClanExoCombiner():
-    sweetKills = 0
-    sweetPrec = 0
-
-    strumKills = 0
-    strumPrec = 0
-
-    vigilanceKills = 0
-    vigilancePrec = 0
-
-    ratkingKills = 0
-    ratkingPrec = 0
-
-    midaKills = 0
-    midaPrec = 0
-
-    crimsonKills = 0
-    crimsonPrec = 0
-
-    rabbitKills = 0
-    rabbitPrec = 0
-
-    huckleKills = 0
-    hucklePrec = 0
-
-    surosKills = 0
-    surosPrec = 0
-
-    cerberusKills = 0
-    cerberusPrec = 0
-
-    wishKills = 0
-    wishPrec = 0
-
-    malfeaseKills = 0
-    malfeasePrec = 0
-
-    aceKills = 0
-    acePrec = 0
-
-    chaperonKills = 0
-    chaperonePrec = 0
-
-    izanKills = 0
-    izanPrec = 0
-
-    lastwordKills = 0
-    lastwordPrec = 0
-
-    arbalestKills = 0
-    arbalestPrec = 0
-
-    thornKills = 0
-    thornPrec = 0
-
-    outbreakKills = 0
-    outbreakPrec = 0
-
-    luminaKills = 0
-    luminaPrec = 0
-
-    jujuKills = 0
-    jujuPrec = 0
-
-    monteKills = 0
-    montePrec = 0
-
-    bastionKills = 0
-    bastionPrec = 0
-
-    witherhoardKills = 0
-    witherhoardPrec = 0
-
-    chosenKills = 0
-    chosenPrec = 0
-
-    hawkmoonKills = 0
-    hawkmoonPrec = 0
-
-    notimeKills = 0
-    notimePrec = 0
-
-    deadmansKills = 0
-    deadmansPrec = 0
-
-    cryoKills = 0
-    cryoPrec = 0
-
-    agersKills = 0
-    agersPrec = 0
-
-    forerunnerKills = 0
-    forerunnerPrec = 0
-
-    osteoKills = 0
-    osteoPrec = 0
-
-    touchKills = 0
-    touchPrec = 0
-
-    quicksilverKills = 0
-    quicksilverPrec = 0
-
-    revisionKills = 0
-    revisionPrec = 0
-
-    warningKills = 0
-    warningPrec = 0
-
-    finalityKills = 0
-    finalityPrec = 0
-
-    verglasKills = 0
-    verglasPrec = 0
-
-    wickedKills = 0
-    wickedPrec = 0
-
-    navigatorKills = 0
-    navigatorPrec = 0
-
-    coldheartKills = 0
-    coldheartPrec = 0
-
-    mercilessKills = 0
-    mercilessPrec = 0
-
-    fightingKills = 0
-    fightingPrec = 0
-
-    sunshotKills = 0
-    sunshotPrec = 0
-
-    gravitonKills = 0
-    gravitonPrec = 0
-
-    skyburnerKills = 0
-    skyburnerPrec = 0
-
-    boreKills = 0
-    borePrec = 0
-
-    riskrunnerKills = 0
-    riskrunnerPrec = 0
-
-    hardlightKills = 0
-    hardlightPrec = 0
-
-    prometheusKills = 0
-    prometheusPrec = 0
-
-    telestoKills = 0
-    telestoPrec = 0
-
-    polarisKills = 0
-    polarisPrec = 0
-
-    trinityKills = 0
-    trinityPrec = 0
-
-    wavesplitKills = 0
-    wavesplitPrec = 0
-
-    lordofwolvesKills = 0
-    lordofwolvesPrec = 0
-
-    lemonKills = 0
-    lemonPrec = 0
-
-    jotunnKills = 0
-    jotunnPrec = 0
-
-    tarrabahKills = 0
-    tarrabahPrec = 0
-
-    erianaKills = 0
-    erianaPrec = 0
-
-    divinityKills = 0
-    divinityPrec = 0
-
-    symmetryKills = 0
-    symmetryPrec = 0
-
-    devilKills = 0
-    devilPrec = 0
-
-    tommysKills = 0
-    tommysPrec = 0
-
-    fourthhorseKills = 0
-    fourthhorsePrec = 0
-
-    ruinousKills = 0
-    ruinousPrec = 0
-
-    dualityKills = 0
-    dualityPrec = 0
-
-    cloudstrikeKills = 0
-    cloudstrikePrec = 0
-
-    ticuuKills = 0
-    ticuuPrec = 0
-
-    mythoclastKills = 0
-    mythoclastPrec = 0
-
-    driverKills = 0
-    driverPrec = 0
-
-    concurrenceKills = 0
-    concurrencePrec = 0
-
-    actionKills = 0
-    actionPrec = 0
-
-    intentKills = 0
-    intentPrec = 0
-
-    messengerKills = 0
-    messengerPrec = 0
-
-    obligationKills = 0
-    obligationPrec = 0
-
-    delicateKills = 0
-    delicatePrec = 0
-
-    trespassKills = 0
-    trespassPrec = 0
-
-    manticoreKills = 0
-    manticorePrec = 0
-
-    hierarchyKills = 0
-    hierarchyPrec = 0
-
-    vexcalKills = 0
-    vexcalPrec = 0
-
-    centrifuseKills = 0
-    centrifusePrec = 0
-
-    prospectorKills = 0
-    prospectorPrec = 0
-
-    wardcliffKills = 0
-    wardcliffPrec = 0
-
-    tractorKills = 0
-    tractorPrec = 0
-
-    acriusKills = 0
-    acriusPrec = 0
-
-    darciKills = 0
-    darciPrec = 0
-
-    colonyKills = 0
-    colonyPrec = 0
-
-    wordllineKills = 0
-    wordllinePrec = 0
-
-    sleeperKills = 0
-    sleeperPrec = 0
-
-    thousandKills = 0
-    thousandPrec = 0
-
-    twotailedKills = 0
-    twotailedPrec = 0
-
-    blackKills = 0
-    blackPrec = 0
-
-    queenbreakKills = 0
-    queenbreakPrec = 0
-
-    thunderlordKills = 0
-    thunderlordPrec = 0
-
-    anarchyKills = 0
-    anarchyPrec = 0
-
-    leviathanKills = 0
-    leviathanPrec = 0
-
-    xenoKills = 0
-    xenoPrec = 0
-
-    deathbringerKills = 0
-    deathbringerPrec = 0
-
-    heirKills = 0
-    heirPrec = 0
-
-    salvationKills = 0
-    salvationPrec = 0
-
-    eyesofKills = 0
-    eyesofPrec = 0
-
-    lamentKills = 0
-    lamentPrec = 0
-
-    gjallarKills = 0
-    gjallarPrec = 0
-
-    parasiteKills = 0
-    parasitePrec = 0
-
-    overtureKills = 0
-    overturePrec = 0
-
-    heartshadowKills = 0
-    heartshadowPrec = 0
-
-    determineKills = 0
-    determinePrec = 0
-
-    winterbiteKills = 0
-    winterbitePrec = 0
-
-    truthKills = 0
-    truthPrec = 0
-
-    whisperKills = 0
-    whisperPrec = 0
+    class Exotic:
+        def __init__(self, exotic_id, exotic_name):
+            self.id = exotic_id
+            self.name = exotic_name
+            self.kills = 0
+            self.prec = 0
+
+        def weaponData(self, kills, prec):
+            self.kills += Kills
+            self.prec += Precision
+
+    sweetBusiness = Exotic(1345867570, 'Sweet Business')
+    strum = Exotic(2907129556, 'Strum')
+    vigilance = Exotic(3628991659, 'Vigilance Wing')
+    ratKing = Exotic(2362471601, 'Rat King')
+    mida = Exotic(1331482397, 'MIDA Multi-Tool')
+    crimson = Exotic(3437746471, 'Crimson')
+    rabbit = Exotic(3844694310, 'Jade Rabbit')
+    huckle = Exotic(2286143274, 'Huckleberry')
+    suros = Exotic(2856683562, 'SUROS Regime')
+    cerberus = Exotic(1541131350, 'Cerberus+1')
+    wish = Exotic(814876684, 'Wish Ender')
+    malfease = Exotic(204878059, 'Malfeasance')
+    ace = Exotic(347366834, 'Ace of Spaced')
+    chaperone = Exotic(3413860062, 'The Chaperone')
+    izan = Exotic(3211806999, "Izanagi's Burden")
+    lastword = Exotic(1364093401, 'The Last Word')
+    arbalest = Exotic(2130065553, 'Arbalest')
+    thorn = Exotic(3973202132, 'Thorn')
+    outbreak = Exotic(400096939, 'Outbreak Perfected')
+    lumina = Exotic(3512014804, 'Lumina')
+    juju = Exotic(2816212794, 'Bad Juju')
+    monte = Exotic(4068264807, 'Monte Carlo')
+    bastion = Exotic(2415517654, 'Bastion')
+    witherhoard = Exotic(2357297366, 'Witherhoard')
+    chosen = Exotic(1853180924, "Traveler's Chosen")
+    hawkmoon = Exotic(3856705927, 'Hawkmoon')
+    notime = Exotic(1594120904, 'No Time to Explain')
+    deadmans = Exotic(3654674561, "Dead Man's Tale")
+    cryo = Exotic(603721696, 'Cryosthethesia 77K')
+    agers = Exotic(1833195496, "Ager's Scepter")
+    forerunner = Exotic(2179048386, 'Forerunner')
+    osteo = Exotic(46524085, 'Osteo Striga')
+    touch = Exotic(1802135586, 'Touch of Malice')
+    quicksilver = Exotic(4293613902, 'Quicksilver Storm')
+    revision = Exotic(1473821207, 'Revision Zero')
+    warning = Exotic(3121540812, 'Final Warning')
+    finality = Exotic(3371017761, 'Conditional Finality')
+    verglas = Exotic(3659414143, 'Verglas Curve')
+    wicked = Exotic(940371471, 'Wicked Implement')
+    navigator = Exotic(1441805468, 'The Navigator')
+    coldheart = Exotic(1345867571, 'Coldheart')
+    merciless = Exotic(4190156464, 'Merciless')
+    fighting = Exotic(3549153978, 'Fighting Lion')
+    sunshot = Exotic(2907129557, 'Sunshot')
+    graviton = Exotic(3628991658, 'Graviton Lance')
+    skyburner = Exotic(4255268456, "Skyburner's Oath")
+    bore = Exotic(3141979347, 'Borealis')
+    riskrunner = Exotic(3089417789, 'Riskrunner')
+    hardlight = Exotic(4124984448, 'Hard Light')
+    prometheus = Exotic(19024058, 'Prometheus Lens')
+    telesto = Exotic(2208405142, 'Telesto')
+    polaris = Exotic(3413074534, 'Polaris Lance')
+    trinity = Exotic(814876685, 'Trinity Ghoul')
+    wavesplit = Exotic(1852863732, 'Wavesplitter')
+    lordofwolves = Exotic(3413860063, 'Lord of Wolves')
+    lemon = Exotic(3588934839, 'Le Monarque')
+    jotunn = Exotic(417164956, 'Jötunn')
+    tarrabah = Exotic(3110698812, 'Tarrabah')
+    eriana = Exotic(3524313097, "Eriana's Vow")
+    divinity = Exotic(4103414242, 'Divinity')
+    symmetry = Exotic(4017959782, 'Symmetry')
+    devil = Exotic(3824106094, "Devil's Ruin")
+    tommys = Exotic(776191470, "Tommy's Matchbook")
+    fourthhorse = Exotic(1665952087, "The Fourth Horseman")
+    ruinous = Exotic(1363238943, 'Ruinous Effigy')
+    duality = Exotic(3460576091, 'Duality')
+    cloudstrike = Exotic(2603483885, 'Cloudstrike')
+    ticuu = Exotic(3260753130, "Ticuu's Divination")
+    mythoclast = Exotic(4289226715, 'Vex Mythoclast')
+    driver = Exotic(3761898871, 'Lorentz Driver')
+    intent = Exotic(14194600, 'Edge of Intent')
+    messenger = Exotic(2812324401, 'Dead Messenger')
+    obligation = Exotic(3505113722, 'Collective Obligation')
+    delicate = Exotic(374573733, 'Delicate Tomb')
+    trespass = Exotic(1234150730, 'The Trespasser')
+    manticore = Exotic(219145368, 'The Manticore')
+    hierarchy = Exotic(4174431791, 'Hierarchy of Needs')
+    vexcal = Exotic(3118061005, 'Vexcalibur')
+    centrifuse = Exotic(1912669214, 'Centrifuse')
+    wardcliff = Exotic(1508896098, 'Wardcliff Coil')
+    tractor = Exotic(358090458, 'Tractor Cannon')
+    acrius = Exotic(3580904580, 'Legend of Acrius')
+    darci = Exotic(3141979346, 'D.A.R.C.I')
+    colony = Exotic(3899270607, 'The Colony')
+    worldline = Exotic(1864563948, 'Worldline Zero')
+    sleeper = Exotic(4036115577, 'Sleeper Simulant')
+    thousand = Exotic(2069224589, 'One Thousand Voices')
+    twotailed = Exotic(2694576561, 'Two-Tailed Fox')
+    black = Exotic(3766045777, 'Black Talon')
+    queenbreak = Exotic(2044500762, 'The Queenbreaker')
+    thunderlord = Exotic(3325463374, 'Thunderlord')
+    anarchy = Exotic(2376481550, 'Anarchy')
+    leviathan = Exotic(2591746970, "Leviathan's Breath")
+    xeno = Exotic(1395261499, 'Xenopahge')
+    deathbringer = Exotic(2232171099, 'Deathbringer')
+    heir = Exotic(2084878005, 'Heir Apparent')
+    salvation = Exotic(370712896, "Salvation's Grip")
+    eyesof = Exotic(2399110176, 'Eyes of Tomorrow')
+    lament = Exotic(3487253372, 'Lament')
+    gjallar = Exotic(1363886209, 'Gjallarhorn')
+    parasite = Exotic(2812324400, 'Parasite')
+    overture = Exotic(1763584999, 'Grand Overture')
+    heartshadow = Exotic(3664831848, 'Heartshadow')
+    determine = Exotic(449318888, 'Deterministic Chaos')
+    winterbite = Exotic(3118061004, 'Winterbite')
+    truth = Exotic(1201830623, 'Truth')
+    whisper = Exotic(1891561814, 'Whisper of the Worm')
 
     with open('Exotics.json') as f:
         data1 = json.load(f)
@@ -1047,436 +836,219 @@ def ClanExoCombiner():
         Precision = Exotic_Info[2]['Precision Kills'][numb]
 
         if ID == 2208405142:
-            Exotic = "Telesto"
-            telestoKills += Kills
-            telestoPrec += Precision
+            telesto.weaponData(Kills, Precision)
         elif ID == 2232171099:
-            Exotic = "Deathbringer"
-            deathbringerKills += Kills
-            deathbringerPrec += Precision
+            deathbringer.weaponData(Kills, Precision)
         elif ID == 2357297366:
-            Exotic = "Witherhoard"
-            witherhoardKills += Kills
-            witherhoardPrec += Precision
+            witherhoard.weaponData(Kills, Precision)
         elif ID == 2591746970:
-            Exotic = "Leviathan's Breath"
-            leviathanKills += Kills
-            leviathanPrec += Precision
+            leviathan.weaponData(Kills, Precision)
         elif ID == 2694576561:
-            Exotic = "Two-Tailed Fox"
-            twotailedKills += Kills
-            twotailedPrec += Precision
+            twotailed.weaponData(Kills, Precision)
         elif ID == 2812324400:
-            Exotic = "Parasite"
-            parasiteKills += Kills
-            parasitePrec += Precision
+            parasite.weaponData(Kills, Precision)
         elif ID == 2812324401:
-            Exotic = "Dead Messenger"
-            messengerKills += Kills
-            messengerPrec += Precision
+            messenger.weaponData(Kills, Precision)
         elif ID == 2816212794:
-            Exotic = "Bad Juju"
-            jujuKills += Kills
-            jujuPrec += Precision
+            juju.weaponData(Kills, Precision)
         elif ID == 2856683562:
-            Exotic = "SUROS Regime"
-            surosKills += Kills
-            surosPrec += Precision
+            suros.weaponData(Kills, Precision)
         elif ID == 2907129557:
-            Exotic = "Sunshot"
-            sunshotKills += Kills
-            sunshotPrec += Precision
+            sunshot.weaponData(Kills, Precision)
         elif ID == 3089417789:
-            Exotic = "Riskrunner"
-            riskrunnerKills += Kills
-            riskrunnerPrec += Precision
+            riskrunner.weaponData(Kills, Precision)
         elif ID == 3118061005:
-            Exotic = "Vexcalibur"
-            vexcalKills += Kills
-            vexcalPrec += Precision
+            vexcal.weaponData(Kills, Precision)
         elif ID == 3141979346:
-            Exotic = "D.A.R.C.I."
-            darciKills += Kills
-            darciPrec += Precision
+            darci.weaponData(Kills, Precision)
         elif ID == 3260753130:
-            Exotic = "Ticuu's Divination"
-            ticuuKills += Kills
-            ticuuPrec += Precision
+            ticuu.weaponData(Kills, Precision)
         elif ID == 3325463374:
-            Exotic = "Thunderlord"
-            thunderlordKills += Kills
-            thunderlordPrec += Precision
+            thunderlord.weaponData(Kills, Precision)
         elif ID == 3413074534:
-            Exotic = "Polaris Lance"
-            polarisKills += Kills
-            polarisPrec += Precision
+            polaris.weaponData(Kills, Precision)
         elif ID == 3413860062:
-            Exotic = "The Chaperone"
-            chaperonKills += Kills
-            chaperonePrec += Precision
+            chaperone.weaponData(Kills, Precision)
         elif ID == 3413860063:
-            Exotic = "Lord of Wolves"
-            lordofwolvesKills += Kills
-            lordofwolvesPrec += Precision
+            lordofwolves.weaponData(Kills, Precision)
         elif ID == 3437746471:
-            Exotic = "Crimson"
-            crimsonKills += Kills
-            crimsonPrec += Precision
+            crimson.weaponData(Kills, Precision)
         elif ID == 3460576091:
-            Exotic = "Duality"
-            dualityKills += Kills
-            dualityPrec += Precision
+            duality.weaponData(Kills, Precision)
         elif ID == 3487253372:
-            Exotic = "The Lament"
-            lamentKills += Kills
-            lamentPrec += Precision
+            lament.weaponData(Kills, Precision)
         elif ID == 3524313097:
-            Exotic = "Eriana's Vow"
-            erianaKills += Kills
-            erianaPrec += Precision
+            eriana.weaponData(Kills, Precision)
         elif ID == 3580904581:
-            Exotic = "Tractor Cannon"
-            tractorKills += Kills
-            tractorPrec += Precision
+            tractor.weaponData(Kills, Precision)
         elif ID == 3588934839:
-            Exotic = "Le Monarque"
-            lemonKills += Kills
-            lemonPrec += Precision
+            lemon.weaponData(Kills, Precision)
         elif ID == 3628991658:
-            Exotic = "Graviton Lance"
-            gravitonKills += Kills
-            gravitonPrec += Precision
+            graviton.weaponData(Kills, Precision)
         elif ID == 3628991659:
-            Exotic = "Vigilance Wing"
-            vigilanceKills += Kills
-            vigilancePrec += Precision
+            vigilance.weaponData(Kills, Precision)
         elif ID == 3654674561:
-            Exotic = "Dead Man's Tale"
-            deadmansKills += Kills
-            deadmansPrec += Precision
+            deadmans.weaponData(Kills, Precision)
         elif ID == 3659414143:
-            Exotic = "Verglas Curve"
-            verglasKills += Kills
-            verglasPrec += Precision
+            verglas.weaponData(Kills, Precision)
         elif ID == 3664831848:
-            Exotic = "Heartshadow"
-            heartshadowKills += Kills
-            heartshadowPrec += Precision
+            heartshadow.weaponData(Kills, Precision)
         elif ID == 3973202132:
-            Exotic = "Thorn"
-            thornKills += Kills
-            thornPrec += Precision
+            thorn.weaponData(Kills, Precision)
         elif ID == 4017959782:
-            Exotic = "Symmetry"
-            symmetryKills += Kills
-            symmetryPrec += Precision
+            symmetry.weaponData(Kills, Precision)
         elif ID == 4036115577:
-            Exotic = "Sleeper Simulant"
-            sleeperKills += Kills
-            sleeperPrec += Precision
+            sleeper.weaponData(Kills, Precision)
         elif ID == 4068264807:
-            Exotic = "Monte Carlo"
-            monteKills += Kills
-            montePrec += Precision
+            monte.weaponData(Kills, Precision)
         elif ID == 4124984448:
-            Exotic = "Hard Light"
-            hardlightKills += Kills
-            hardlightPrec += Precision
+            hardlight.weaponData(Kills, Precision)
         elif ID == 4255268456:
-            Exotic = "Skyburner's Oath"
-            skyburnerKills += Kills
-            skyburnerPrec += Precision
+            skyburner.weaponData(Kills, Precision)
         elif ID == 4293613902:
-            Exotic = "Quicksilver Storm"
-            quicksilverKills += Kills
-            quicksilverPrec += Precision
+            quicksilver.weaponData(Kills, Precision)
         elif ID == 19024058:
-            Exotic = "Prometheus Lens"
-            prometheusKills += Kills
-            prometheusPrec += Precision
+            prometheus.weaponData(Kills, Precision)
         elif ID == 46524085:
-            Exotic = "Osteo Striga"
-            osteoKills += Kills
-            osteoPrec += Precision
+            osteo.weaponData(Kills, Precision)
         elif ID == 204878059:
-            Exotic = "Malfeasance"
-            malfeaseKills += Kills
-            malfeasePrec += Precision
+            malfease.weaponData(Kills, Precision)
         elif ID == 370712896:
-            Exotic = "Salvation's Grip"
-            salvationKills += Kills
-            salvationPrec += Precision
+            salvation.weaponData(Kills, Precision)
         elif ID == 374573733:
-            Exotic = "Delicate Tomb"
-            delicateKills += Kills
-            delicatePrec += Precision
+            delicate.weaponData(Kills, Precision)
         elif ID == 400096939:
-            Exotic = "Outbreak Perfected"
-            outbreakKills += Kills
-            outbreakPrec += Precision
+            outbreak.weaponData(Kills, Precision)
         elif ID == 417164956:
-            Exotic = "Jötunn"
-            jotunnKills += Kills
-            jotunnPrec += Precision
+            jotunn.weaponData(Kills, Precision)
         elif ID == 449318888:
-            Exotic = "Deterministic Chaos"
-            determineKills += Kills
-            determinePrec += Precision
+            determine.weaponData(Kills, Precision)
         elif ID == 776191470:
-            Exotic = "Tommy's Matchbook"
-            tommysKills += Kills
-            tommysPrec += Precision
+            tommys.weaponData(Kills, Precision)
         elif ID == 814876684:
-            Exotic = "Wish-Ender"
-            wishKills += Kills
-            wishPrec += Precision
+            wish.weaponData(Kills, Precision)
         elif ID == 814876685:
-            Exotic = "Trinity Ghoul"
-            trinityKills += Kills
-            trinityPrec += Precision
+            trinity.weaponData(Kills, Precision)
         elif ID == 1345867570:
-            Exotic = "Sweet Business"
-            sweetKills += Kills
-            sweetPrec += Precision
+            sweetBusiness.weaponData(Kills, Precision)
         elif ID == 1345867571:
-            Exotic = "Coldheart"
-            coldheartKills += Kills
-            coldheartPrec += Precision
+            coldheart.weaponData(Kills, Precision)
         elif ID == 1363238943:
-            Exotic = "Ruinous Effigy"
-            ruinousKills += Kills
-            ruinousPrec += Precision
+            ruinous.weaponData(Kills, Precision)
         elif ID == 1363886209:
-            Exotic = "Gjallarhorn"
-            gjallarKills += Kills
-            gjallarPrec += Precision
+            gjallar.weaponData(Kills, Precision)
         elif ID == 1395261499:
-            Exotic = "Xenophage"
-            xenoKills += Kills
-
-            xenoPrec += Precision
+            xeno.weaponData(Kills, Precision)
         elif ID == 1441805468:
-            Exotic = "The Navigator"
-            navigatorKills += Kills
-            navigatorPrec += Precision
+            navigator.weaponData(Kills, Precision)
         elif ID == 1473821207:
-            Exotic = "Revision Zero"
-            revisionKills += Kills
-            revisionPrec += Precision
+            revision.weaponData(Kills, Precision)
         elif ID == 1508896098:
-            Exotic = "The Wardcliff Coil"
-            wardcliffKills += Kills
-            wardcliffPrec += Precision
+            wardcliff.weaponData(Kills, Precision)
         elif ID == 1594120904:
-            Exotic = "No Time to Explain"
-            notimeKills += Kills
-
-            notimePrec += Precision
+            notime.weaponData(Kills, Precision)
         elif ID == 1665952087:
-            Exotic = "The Fourth Horseman"
-            fourthhorseKills += Kills
-            fourthhorsePrec += Precision
+            fourthhorse.weaponData(Kills, Precision)
         elif ID == 1763584999:
-            Exotic = "Grand Overture"
-            overtureKills += Kills
-            overturePrec += Precision
+            overture.weaponData(Kills, Precision)
         elif ID == 1833195496:
-            Exotic = "Ager's Scepter"
-            agersKills += Kills
-            agersPrec += Precision
+            agers.weaponData(Kills, Precision)
         elif ID == 1912669214:
-            Exotic = "Centrifuse"
-            centrifuseKills += Kills
-            centrifusePrec += Precision
+            centrifuse.weaponData(Kills, Precision)
         elif ID == 2044500762:
-            Exotic = "The Queenbreaker"
-            queenbreakKills += Kills
-            queenbreakPrec += Precision
+            queenbreak.weaponData(Kills, Precision)
         elif ID == 2130065553:
-            Exotic = "Arbalest"
-            arbalestKills += Kills
-            arbalestPrec += Precision
+            arbalest.weaponData(Kills, Precision)
         elif ID == 2179048386:
-            Exotic = "Forerunner"
-            forerunnerKills += Kills
-            forerunnerPrec += Precision
+            forerunner.weaponData(Kills, Precision)
         elif ID == 2286143274:
-            Exotic = "Huckleberry"
-            huckleKills += Kills
-            hucklePrec += Precision
+            huckle.weaponData(Kills, Precision)
         elif ID == 2362471601:
-            Exotic = "Rat King"
-            ratkingKills += Kills
-            ratkingPrec += Precision
+            ratKing.weaponData(Kills, Precision)
         elif ID == 2376481550:
-            Exotic = "Anarchy"
-            anarchyKills += Kills
-
-            anarchyPrec += Precision
+            anarchy.weaponData(Kills, Precision)
         elif ID == 2399110176:
-            Exotic = "Eyes of Tomorrow"
-            eyesofKills += Kills
-            eyesofPrec += Precision
+            eyesof.weaponData(Kills, Precision)
         elif ID == 2415517654:
-            Exotic = "Bastion"
-            bastionKills += Kills
-            bastionPrec += Precision
+            bastion.weaponData(Kills, Precision)
         elif ID == 2603483885:
-            Exotic = "Cloudstrike"
-            cloudstrikeKills += Kills
-            cloudstrikePrec += Precision
+            cloudstrike.weaponData(Kills, Precision)
         elif ID == 2907129556:
-            Exotic = "Strum"
-            strumKills += Kills
-            strumPrec += Precision
+            strum.weaponData(Kills, Precision)
         elif ID == 3110698812:
-            Exotic = "Tarrabah"
-            tarrabahKills += Kills
-            tarrabahPrec += Precision
+            tarrabah.weaponData(Kills, Precision)
         elif ID == 3118061004:
-            Exotic = "Winterbite"
-            winterbiteKills += Kills
-            winterbitePrec += Precision
+            winterbite.weaponData(Kills, Precision)
         elif ID == 3121540812:
-            Exotic = "Final Warning"
-            warningKills += Kills
-            warningPrec += Precision
+            warning.weaponData(Kills, Precision)
         elif ID == 3141979347:
-            Exotic = "Borealis"
-            boreKills += Kills
-            borePrec += Precision
+            bore.weaponData(Kills, Precision)
         elif ID == 3211806999:
-            Exotic = "Izanagi's Burden"
-            izanKills += Kills
-            izanPrec += Precision
+            izan.weaponData(Kills, Precision)
         elif ID == 3371017761:
-            Exotic = "Conditional Finality"
-            finalityKills += Kills
-            finalityPrec += Precision
+            finality.weaponData(Kills, Precision)
         elif ID == 3505113722:
-            Exotic = "Collective Obligation"
-            obligationKills += Kills
-            obligationPrec += Precision
+            obligation.weaponData(Kills, Precision)
         elif ID == 3512014804:
-            Exotic = "Lumina"
-            luminaKills += Kills
-            luminaPrec += Precision
+            lumina.weaponData(Kills, Precision)
         elif ID == 3580904580 or ID == 1744115122:
-            Exotic = "Legend of Acrius"
-            acriusKills += Kills
-            acriusPrec += Precision
+            acrius.weaponData(Kills, Precision)
         elif ID == 3761898871:
-            Exotic = "Lorentz Driver"
-            driverKills += Kills
-            driverPrec += Precision
+            driver.weaponData(Kills, Precision)
         elif ID == 3766045777:
-            Exotic = "Black Talon"
-            blackKills += Kills
-            blackPrec += Precision
+            black.weaponData(Kills, Precision)
         elif ID == 3824106094:
-            Exotic = "Devil's Ruin"
-            devilKills += Kills
-            devilPrec += Precision
+            devil.weaponData(Kills, Precision)
         elif ID == 3844694310:
-            Exotic = "The Jade Rabbit"
-            rabbitKills += Kills
-            rabbitPrec += Precision
+            rabbit.weaponData(Kills, Precision)
         elif ID == 3856705927:
-            Exotic = "Hawkmoon"
-            hawkmoonKills += Kills
-            hawkmoonPrec += Precision
+            hawkmoon.weaponData(Kills, Precision)
         elif ID == 3899270607:
-            Exotic = "The Colony"
-            colonyKills += Kills
-            colonyPrec += Precision
+            colony.weaponData(Kills, Precision)
         elif ID == 4174431791:
-            Exotic = "Hierarchy of Needs"
-            hierarchyKills += Kills
-            hierarchyPrec += Precision
+            hierarchy.weaponData(Kills, Precision)
         elif ID == 4289226715:
-            Exotic = "Vex Mythoclast"
-            mythoclastKills += Kills
-            mythoclastPrec += Precision
+            mythoclast.weaponData(Kills, Precision)
         elif ID == 14194600:
-            Exotic = "Edge of Intent"
-            intentKills += Kills
-            intentPrec += Precision
+            intent.weaponData(Kills, Precision)
         elif ID == 219145368:
-            Exotic = "The Manticore"
-            manticoreKills += Kills
-            manticorePrec += Precision
+            manticore.weaponData(Kills, Precision)
         elif ID == 347366834:
-            Exotic = "Ace of Spades"
-            aceKills += Kills
-            acePrec += Precision
+            ace.weaponData(Kills, Precision)
         elif ID == 940371471:
-            Exotic = "Wicked Implement"
-            wickedKills += Kills
-            wickedPrec += Precision
+            wicked.weaponData(Kills, Precision)
         elif ID == 1201830623:
-            Exotic = "Truth"
-            truthKills += Kills
-            truthPrec += Precision
+            truth.weaponData(Kills, Precision)
         elif ID == 1234150730:
-            Exotic = "Trespasser"
-            trespassKills += Kills
-            trespassPrec += Precision
+            trespass.weaponData(Kills, Precision)
         elif ID == 1331482397:
-            Exotic = "MIDA Multi-Tool"
-            midaKills += Kills
-            midaPrec += Precision
+            mida.weaponData(Kills, Precision)
         elif ID == 1364093401:
-            Exotic = "The Last Word"
-            lastwordKills += Kills
-            lastwordPrec += Precision
+            lastword.weaponData(Kills, Precision)
         elif ID == 1541131350:
-            Exotic = "Cerberus+1"
-            cerberusKills += Kills
-            cerberusPrec += Precision
+            cerberus.weaponData(Kills, Precision)
         elif ID == 1802135586:
-            Exotic = "Touch of Malice"
-            touchKills += Kills
-            touchPrec += Precision
+            touch.weaponData(Kills, Precision)
         elif ID == 1852863732:
-            Exotic = "Wavesplitter"
-            wavesplitKills += Kills
-            wavesplitPrec += Precision
+            wavesplit.weaponData(Kills, Precision)
         elif ID == 1853180924:
-            Exotic = "Traveler's Chosen"
-            chosenKills += Kills
-            chosenPrec += Precision
+            chosen.weaponData(Kills, Precision)
         elif ID == 1864563948:
-            Exotic = "Worldline Zero"
-            wordllineKills += Kills
-            wordllinePrec += Precision
+            worldline.weaponData(Kills, Precision)
         elif ID == 1891561814:
-            Exotic = "Whisper of the Worm"
-            whisperKills += Kills
-            whisperPrec += Precision
+            whisper.weaponData(Kills, Precision)
         elif ID == 2069224589:
-            Exotic = "One Thousand Voices"
-            thousandKills += Kills
-            thousandPrec += Precision
+            thousand.weaponData(Kills, Precision)
         elif ID == 2084878005:
-            Exotic = "Heir Apparent"
-            heirKills += Kills
-            heirPrec += Precision
+            heir.weaponData(Kills, Precision)
         elif ID == 4103414242:
-            Exotic = 'Divinity'
-            divinityKills += Kills
-            divinityPrec += Precision
+            divinity.weaponData(Kills, Precision)
         elif ID == 603721696:
-            Exotic = 'Cryosthethesia 77K'
-            cryoKills += Kills
-            cryoPrec += Precision
+            cryo.weaponData(Kills, Precision)
         elif ID == 4190156464:
-            Exotic = "Merciless"
-            mercilessKills += Kills
-            mercilessPrec += Precision
+            merciless.weaponData(Kills, Precision)
         elif ID == 3549153978:
-            Exotic = 'Fighting Lion'
-            fightingKills += Kills
-            fightingPrec += Precision
+            fighting.weaponData(Kills, Precision)
 
     Primary = PrettyTable()
     Primary.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
@@ -1487,7 +1059,8 @@ def ClanExoCombiner():
                                   "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga", "Touch of Malice",
                                   "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve",
                                   "Wicked Implement",
-                                  "Fighting Lion", "Sunshot", "Skyburner's Oath", "Riskrunner", "Hard Light",
+                                  "Fighting Lion", "Sunshot", "Skyburner's Oath", 'Graviton Lance', "Riskrunner",
+                                  "Hard Light",
                                   "Polaris Lance",
                                   "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin",
                                   "Tommy's Matchbook",
@@ -1498,7 +1071,7 @@ def ClanExoCombiner():
                         "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic",
                         "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis",
                         "Kinetic", "Kinetic", "Kinetic/Strand", "Kinetic", "Strand", "Stasis", "Stasis",
-                        "Void", "Solar", "Solar", "Arc", "Arc/Void/Solar", "Solar", "Arc", "Void", "Solar",
+                        "Void", "Solar", "Solar", 'Void', "Arc", "Arc/Void/Solar", "Solar", "Arc", "Void", "Solar",
                         "Arc", "Solar", "Solar", "Solar", "Solar", "Void", "Arc", "Void", "Solar", "Arc"])
     Primary.add_column("Weapon Type", ["Auto Rifle", "Hand Cannon", "Pulse Rifle", "Sidearm", "Scout Rifle",
                                        "Hand Cannon", "Scout Rifle", "Submachine Gun", "Auto Rifle", "Auto Rifle",
@@ -1506,30 +1079,30 @@ def ClanExoCombiner():
                                        "Pulse Rifle", "Hand Cannon", "Pulse Rifle", "Auto Rifle", "Sidearm",
                                        "Hand Cannon", "Pulse Rifle", "Scout Rifle", "Sidearm", "Submachine Gun",
                                        "Scout Rifle", "Auto Rifle", "Pulse Rifle", "Sidearm", "Combat Bow",
-                                       "Scout Rifle", "Grenade Launcher", "Hand Cannon", "Scout Rifle",
+                                       "Scout Rifle", "Grenade Launcher", "Hand Cannon", "Scout Rifle", 'Pulse Rifle',
                                        "Submachine Gun", "Auto Rifle", "Scout Rifle", "Combat Bow", "Combat Bow",
                                        "Submachine Gun", "Scout Rifle", "Sidearm", "Auto Rifle", "Combat Bow",
                                        "Fusion Rifle", "Pulse Rifle", "Sidearm", "Submachine Gun", "Combat Bow",
                                        "Auto Rifle"])
     Primary.add_column("Kills",
-                       [sweetKills, strumKills, vigilanceKills, ratkingKills, midaKills, crimsonKills, rabbitKills,
-                        huckleKills, surosKills, cerberusKills, wishKills, malfeaseKills, aceKills,
-                        lastwordKills, thornKills, outbreakKills, luminaKills, jujuKills, monteKills, chosenKills,
-                        hawkmoonKills, notimeKills, deadmansKills, cryoKills, osteoKills, touchKills,
-                        quicksilverKills, revisionKills, warningKills, verglasKills, wickedKills, fightingKills,
-                        sunshotKills, skyburnerKills, riskrunnerKills, hardlightKills, polarisKills, trinityKills,
-                        lemonKills,
-                        tarrabahKills, symmetryKills, devilKills, tommysKills, ticuuKills, mythoclastKills,
-                        obligationKills, trespassKills, manticoreKills, hierarchyKills, centrifuseKills])
+                       [sweetBusiness.kills, strum.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
+                        rabbit.kills,
+                        huckle.kills, suros.kills, cerberus.kills, wish.kills, malfease.kills, ace.kills,
+                        lastword.kills, thorn.kills, outbreak.kills, lumina.kills, juju.kills, monte.kills,
+                        chosen.kills, hawkmoon.kills, notime.kills, deadmans.kills, cryo.kills, osteo.kills, touch.kills,
+                        quicksilver.kills, revision.kills, warning.kills, verglas.kills, wicked.kills, fighting.kills,
+                        sunshot.kills, skyburner.kills, graviton.kills, riskrunner.kills, hardlight.kills, polaris.kills,
+                        trinity.kills, lemon.kills, tarrabah.kills, symmetry.kills, devil.kills, tommys.kills, ticuu.kills,
+                        mythoclast.kills, obligation.kills, trespass.kills, manticore.kills, hierarchy.kills, centrifuse.kills])
     Primary.add_column("Precision Kills",
-                       [sweetPrec, strumPrec, vigilancePrec, ratkingPrec, midaPrec, crimsonPrec, rabbitPrec, hucklePrec,
-                        surosPrec, cerberusPrec, wishPrec, malfeasePrec, acePrec,
-                        lastwordPrec, thornPrec, outbreakPrec, luminaPrec, jujuPrec, montePrec, chosenPrec,
-                        hawkmoonPrec, notimePrec, deadmansPrec, cryoPrec, osteoPrec, touchPrec,
-                        quicksilverPrec, revisionPrec, warningPrec, verglasPrec, wickedPrec, fightingPrec, sunshotPrec,
-                        skyburnerPrec, riskrunnerPrec, hardlightPrec, polarisPrec, trinityPrec, lemonPrec,
-                        tarrabahPrec, symmetryPrec, devilPrec, tommysPrec, ticuuPrec, mythoclastPrec, obligationPrec,
-                        trespassPrec, manticorePrec, hierarchyPrec, centrifusePrec])
+                       [sweetBusiness.prec, strum.prec, vigilance.prec, ratKing.prec, mida.prec, crimson.prec,
+                        rabbit.prec, huckle.prec, suros.prec, cerberus.prec, wish.prec, malfease.prec, ace.prec,
+                        lastword.prec, thorn.prec, outbreak.prec, lumina.prec, juju.prec, monte.prec, chosen.prec,
+                        hawkmoon.prec, notime.prec, deadmans.prec, cryo.prec, osteo.prec, touch.prec,
+                        quicksilver.prec, revision.prec, warning.prec, verglas.prec, wicked.prec, fighting.prec,
+                        sunshot.prec, skyburner.prec, graviton.prec, riskrunner.prec, hardlight.prec, polaris.prec,
+                        trinity.prec, lemon.prec, tarrabah.prec, symmetry.prec, devil.prec, tommys.prec, ticuu.prec,
+                        mythoclast.prec, obligation.prec, trespass.prec, manticore.prec, hierarchy.prec, centrifuse.prec])
     Primary.align["Exotic"] = 'l'
     Primary.align["Element"] = 'l'
     Primary.align["Weapon Type"] = 'l'
@@ -1544,32 +1117,30 @@ def ClanExoCombiner():
                         "Forerunner", "Conditional Finality", "The Navigator", "Coldheart", "Merciless", "Borealis",
                         "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn", "Eriana's Vow",
                         "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
-                        "Lorentz Driver", "Edge of Concurrence", "Edge of Action", "Edge of Intent",
+                        "Lorentz Driver", "Edge of Intent",
                         "Dead Messenger", "Delicate Tomb", "Vexcalibur"])
     Special.add_column("Element", ["Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis", "Kinetic",
                                    "Stasis/Solar", "Strand", "Arc", "Solar", "Arc/Void/Solar", "Solar", "Void", "Void",
-                                   "Solar", "Solar", "Solar", "Arc", "Arc", "Void", "Solar", "Arc", "Void", "Arc",
-                                   "Void", "Solar", "Arc/Void/Solar", "Arc", "Void"])
+                                   "Solar", "Solar", "Solar", "Arc", "Arc", "Void", "Solar", "Arc", "Void", "Solar", "Arc/Void/Solar", "Arc", "Void"])
     Special.add_column("Weapon Type", ["Shotgun", "Sniper Rifle", "Linear Fusion Rifle", "Fusion Rifle",
                                        "Grenade Launcher", "Trace Rifle", "Sidearm", "Shotgun", "Trace Rifle",
                                        "Trace Rifle", "Fusion Rifle", "Sniper Rifle", "Trace Rifle", "Fusion Rifle",
                                        "Trace Rifle", "Shotgun", "Fusion Rifle", "Hand Cannon", "Trace Rifle",
                                        "Shotgun", "Trace Rifle", "Shotgun", "Sniper Rifle", "Linear Fusion Rifle",
-                                       "Glaive", "Glaive", "Glaive", "Grenade Launcher", "Fusion Rifle", "Glaive"])
+                                       "Glaive", "Grenade Launcher", "Fusion Rifle", "Glaive"])
     Special.add_column("Kills",
-                       [chaperonKills, izanKills, arbalestKills, bastionKills, witherhoardKills, agersKills,
-                        forerunnerKills, finalityKills, navigatorKills, coldheartKills, mercilessKills, boreKills,
-                        prometheusKills,
-                        telestoKills, wavesplitKills, lordofwolvesKills, jotunnKills, erianaKills, divinityKills,
-                        fourthhorseKills, ruinousKills, dualityKills, cloudstrikeKills, driverKills, concurrenceKills,
-                        actionKills,
-                        intentKills, messengerKills, delicateKills, vexcalKills])
+                       [chaperone.kills, izan.kills, arbalest.kills, bastion.kills, witherhoard.kills, agers.kills,
+                        forerunner.kills, finality.kills, navigator.kills, coldheart.kills, merciless.kills, bore.kills,
+                        prometheus.kills,
+                        telesto.kills, wavesplit.kills, lordofwolves.kills, jotunn.kills, eriana.kills, divinity.kills,
+                        fourthhorse.kills, ruinous.kills, duality.kills, cloudstrike.kills, driver.kills,
+                        intent.kills, messenger.kills, delicate.kills, vexcal.kills])
     Special.add_column("Precision Kills",
-                       [chaperonePrec, izanPrec, arbalestPrec, bastionPrec, witherhoardPrec, agersPrec, forerunnerPrec,
-                        finalityPrec, navigatorPrec, coldheartPrec, mercilessPrec, borePrec,
-                        prometheusPrec, telestoPrec, wavesplitPrec, lordofwolvesPrec, jotunnPrec, erianaPrec,
-                        divinityPrec, fourthhorsePrec, ruinousPrec, dualityPrec, cloudstrikePrec, driverPrec,
-                        concurrencePrec, actionPrec, intentPrec, messengerPrec, delicatePrec, vexcalPrec])
+                       [chaperone.prec, izan.prec, arbalest.prec, bastion.prec, witherhoard.prec, agers.prec, forerunner.prec,
+                        finality.prec, navigator.prec, coldheart.prec, merciless.prec, bore.prec,
+                        prometheus.prec, telesto.prec, wavesplit.prec, lordofwolves.prec, jotunn.prec, eriana.prec,
+                        divinity.prec, fourthhorse.prec, ruinous.prec, duality.prec, cloudstrike.prec, driver.prec,
+                        intent.prec, messenger.prec, delicate.prec, vexcal.prec])
     Special.align["Exotic"] = 'l'
     Special.align["Element"] = 'l'
     Special.align["Weapon Type"] = 'l'
@@ -1580,16 +1151,16 @@ def ClanExoCombiner():
 
     Heavy = PrettyTable()
     Heavy.add_column("Exotic",
-                     ["The Prospector", "The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
+                     ["The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
                       "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices", "Two-Tailed Fox",
                       "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy", "Leviathan's Breath",
                       "Xenophage", "Deathbringer", "Heir Apparent", "Salvation's Grip", "Eyes of Tomorrow",
                       "The Lament", "Gjallarhorn", "Parasite", "Grand Overture", "Heartshadow",
                       "Deterministic Chaos", "Winterbite", "Truth", "Whisper of the Worm"])
-    Heavy.add_column("Element", ["Arc", "Arc", "Void", "Arc", "Arc", "Void", "Arc", "Solar", "Solar", "Arc/Void/Solar",
+    Heavy.add_column("Element", ["Arc", "Void", "Arc", "Arc", "Void", "Arc", "Solar", "Solar", "Arc/Void/Solar",
                                  "Void", "Arc", "Arc", "Arc", "Void", "Solar", "Void", "Solar", "Stasis", "Solar",
                                  "Solar", "Solar", "Solar", "Arc", "Void", "Void", "Stasis", "Void", "Void"])
-    Heavy.add_column("Weapon Type", ["Grenade Launcher", "Rocket Launcher", "Shotgun", "Shotgun", "Sniper Rifle",
+    Heavy.add_column("Weapon Type", ["Rocket Launcher", "Shotgun", "Shotgun", "Sniper Rifle",
                                      "Grenade Launcher", "Sword", "Linear Fusion Rifle", "Fusion Rifle",
                                      "Rocket Launcher", "Sword", "Linear Fusion Rifle", "Machine Gun",
                                      "Grenade Launcher", "Combat Bow", "Machine Gun", "Rocket Launcher", "Machine Gun",
@@ -1597,19 +1168,19 @@ def ClanExoCombiner():
                                      "Grenade Launcher", "Machine Gun", "Sword", "Machine Gun", "Glaive",
                                      "Rocket Launcher", "Sniper Rifle"])
     Heavy.add_column("Kills",
-                     [prospectorKills, wardcliffKills, tractorKills, acriusKills, darciKills, colonyKills,
-                      wordllineKills, sleeperKills, thousandKills, twotailedKills, blackKills, queenbreakKills,
-                      thunderlordKills,
-                      anarchyKills, leviathanKills, xenoKills, deathbringerKills, heirKills, salvationKills,
-                      eyesofKills, lamentKills, gjallarKills, parasiteKills, overtureKills, heartshadowKills,
-                      determineKills,
-                      winterbiteKills, truthKills, whisperKills])
+                     [wardcliff.kills, tractor.kills, acrius.kills, darci.kills, colony.kills,
+                      worldline.kills, sleeper.kills, thousand.kills, twotailed.kills, black.kills, queenbreak.kills,
+                      thunderlord.kills,
+                      anarchy.kills, leviathan.kills, xeno.kills, deathbringer.kills, heir.kills, salvation.kills,
+                      eyesof.kills, lament.kills, gjallar.kills, parasite.kills, overture.kills, heartshadow.kills,
+                      determine.kills,
+                      winterbite.kills, truth.kills, whisper.kills])
     Heavy.add_column("Precision Kills",
-                     [prospectorPrec, wardcliffPrec, tractorPrec, acriusPrec, darciPrec, colonyPrec, wordllinePrec,
-                      sleeperPrec, thousandPrec, twotailedPrec, blackPrec, queenbreakPrec,
-                      thunderlordPrec, anarchyPrec, leviathanPrec, xenoPrec, deathbringerPrec, heirPrec, salvationPrec,
-                      eyesofPrec, lamentPrec, gjallarPrec, parasitePrec, overturePrec,
-                      heartshadowPrec, determinePrec, winterbitePrec, truthPrec, whisperPrec])
+                     [wardcliff.prec, tractor.prec, acrius.prec, darci.prec, colony.prec, worldline.prec,
+                      sleeper.prec, thousand.prec, twotailed.prec, black.prec, queenbreak.prec,
+                      thunderlord.prec, anarchy.prec, leviathan.prec, xeno.prec, deathbringer.prec, heir.prec, salvation.prec,
+                      eyesof.prec, lament.prec, gjallar.prec, parasite.prec, overture.prec,
+                      heartshadow.prec, determine.prec, winterbite.prec, truth.prec, whisper.prec])
     Heavy.align["Exotic"] = 'l'
     Heavy.align["Element"] = 'l'
     Heavy.align["Weapon Type"] = 'l'
@@ -1626,8 +1197,8 @@ def ClanExoCombiner():
                                "No Time to Explain", "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga",
                                "Touch of Malice",
                                "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve",
-                               "Wicked Implement", "Fighting Lion", "Sunshot", "Skyburner's Oath", "Riskrunner",
-                               "Hard Light",
+                               "Wicked Implement", "Fighting Lion", "Sunshot", "Skyburner's Oath", 'Graviton Lance',
+                               "Riskrunner", "Hard Light",
                                "Polaris Lance", "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin",
                                "Tommy's Matchbook", "Ticuu's Divination", "Vex Mythoclast", "Collective Obligation",
                                "Trespasser",
@@ -1637,8 +1208,8 @@ def ClanExoCombiner():
                                "Borealis", "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn",
                                "Eriana's Vow",
                                "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
-                               "Lorentz Driver", "Edge of Concurrence", "Edge of Action", "Edge of Intent",
-                               "Dead Messenger", "Delicate Tomb", "Vexcalibur", "The Prospector",
+                               "Lorentz Driver", "Edge of Intent",
+                               "Dead Messenger", "Delicate Tomb", "Vexcalibur",
                                "The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
                                "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices",
                                "Two-Tailed Fox", "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy",
@@ -1650,12 +1221,13 @@ def ClanExoCombiner():
                                 "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic",
                                 "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis",
                                 "Kinetic", "Kinetic", "Kinetic/Strand", "Kinetic", "Strand", "Stasis", "Stasis",
-                                "Void", "Solar", "Solar", "Arc", "Arc/Void/Solar", "Solar", "Arc", "Void", "Solar",
+                                "Void", "Solar", "Solar", 'Void', "Arc", "Arc/Void/Solar", "Solar", "Arc", "Void",
+                                "Solar",
                                 "Arc", "Solar", "Solar", "Solar", "Solar", "Void", "Arc", "Void", "Solar", "Arc",
                                 "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis", "Kinetic",
                                 "Stasis/Solar", "Strand", "Arc", "Solar", "Arc/Void/Solar", "Solar", "Void", "Void",
-                                "Solar", "Solar", "Solar", "Arc", "Arc", "Void", "Solar", "Arc", "Void", "Arc",
-                                "Void", "Solar", "Arc/Void/Solar", "Arc", "Void", "Arc", "Arc", "Void", "Arc", "Arc",
+                                "Solar", "Solar", "Solar", "Arc", "Arc", "Void", "Solar", "Arc", "Void", "Solar",
+                                "Arc/Void/Solar", "Arc", "Void", "Arc", "Void", "Arc", "Arc",
                                 "Void", "Arc", "Solar", "Solar", "Arc/Void/Solar",
                                 "Void", "Arc", "Arc", "Arc", "Void", "Solar", "Void", "Solar", "Stasis", "Solar",
                                 "Solar", "Solar", "Solar", "Arc", "Void", "Void", "Stasis", "Void", "Void"])
@@ -1665,7 +1237,7 @@ def ClanExoCombiner():
                                     "Pulse Rifle", "Hand Cannon", "Pulse Rifle", "Auto Rifle", "Sidearm",
                                     "Hand Cannon", "Pulse Rifle", "Scout Rifle", "Sidearm", "Submachine Gun",
                                     "Scout Rifle", "Auto Rifle", "Pulse Rifle", "Sidearm", "Combat Bow",
-                                    "Scout Rifle", "Grenade Launcher", "Hand Cannon", "Scout Rifle",
+                                    "Scout Rifle", "Grenade Launcher", "Hand Cannon", "Scout Rifle", 'Pulse Rifle',
                                     "Submachine Gun", "Auto Rifle", "Scout Rifle", "Combat Bow", "Combat Bow",
                                     "Submachine Gun", "Scout Rifle", "Sidearm", "Auto Rifle", "Combat Bow",
                                     "Fusion Rifle", "Pulse Rifle", "Sidearm", "Submachine Gun", "Combat Bow",
@@ -1674,8 +1246,8 @@ def ClanExoCombiner():
                                     "Trace Rifle", "Fusion Rifle", "Sniper Rifle", "Trace Rifle", "Fusion Rifle",
                                     "Trace Rifle", "Shotgun", "Fusion Rifle", "Hand Cannon", "Trace Rifle",
                                     "Shotgun", "Trace Rifle", "Shotgun", "Sniper Rifle", "Linear Fusion Rifle",
-                                    "Glaive", "Glaive", "Glaive", "Grenade Launcher", "Fusion Rifle", "Glaive",
-                                    "Grenade Launcher", "Rocket Launcher", "Shotgun", "Shotgun", "Sniper Rifle",
+                                    "Glaive", "Grenade Launcher", "Fusion Rifle", "Glaive",
+                                    "Rocket Launcher", "Shotgun", "Shotgun", "Sniper Rifle",
                                     "Grenade Launcher", "Sword", "Linear Fusion Rifle", "Fusion Rifle",
                                     "Rocket Launcher", "Sword", "Linear Fusion Rifle", "Machine Gun",
                                     "Grenade Launcher", "Combat Bow", "Machine Gun", "Rocket Launcher", "Machine Gun",
@@ -1683,46 +1255,46 @@ def ClanExoCombiner():
                                     "Grenade Launcher", "Machine Gun", "Sword", "Machine Gun", "Glaive",
                                     "Rocket Launcher", "Sniper Rifle"])
     Full.add_column("Kills",
-                    [sweetKills, strumKills, vigilanceKills, ratkingKills, midaKills, crimsonKills, rabbitKills,
-                     huckleKills, surosKills, cerberusKills, wishKills, malfeaseKills, aceKills,
-                     lastwordKills, thornKills, outbreakKills, luminaKills, jujuKills, monteKills, chosenKills,
-                     hawkmoonKills, notimeKills, deadmansKills, cryoKills, osteoKills, touchKills, quicksilverKills,
-                     revisionKills, warningKills, verglasKills, wickedKills, fightingKills, sunshotKills,
-                     skyburnerKills, riskrunnerKills, hardlightKills, polarisKills, trinityKills, lemonKills,
-                     tarrabahKills, symmetryKills,
-                     devilKills, tommysKills, ticuuKills, mythoclastKills, obligationKills, trespassKills,
-                     manticoreKills, hierarchyKills, centrifuseKills, chaperonKills, izanKills, arbalestKills,
-                     bastionKills, witherhoardKills,
-                     agersKills, forerunnerKills, finalityKills, navigatorKills, coldheartKills, mercilessKills,
-                     boreKills, prometheusKills, telestoKills, wavesplitKills, lordofwolvesKills, jotunnKills,
-                     erianaKills, divinityKills,
-                     fourthhorseKills, ruinousKills, dualityKills, cloudstrikeKills, driverKills, concurrenceKills,
-                     actionKills, intentKills, messengerKills, delicateKills, vexcalKills, prospectorKills,
-                     wardcliffKills,
-                     tractorKills, acriusKills, darciKills, colonyKills, wordllineKills, sleeperKills, thousandKills,
-                     twotailedKills, blackKills, queenbreakKills, thunderlordKills, anarchyKills, leviathanKills,
-                     xenoKills,
-                     deathbringerKills, heirKills, salvationKills, eyesofKills, lamentKills, gjallarKills,
-                     parasiteKills, overtureKills, heartshadowKills, determineKills, winterbiteKills, truthKills,
-                     whisperKills])
+                    [sweetBusiness.kills, strum.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
+                     rabbit.kills,
+                     huckle.kills, suros.kills, cerberus.kills, wish.kills, malfease.kills, ace.kills,
+                     lastword.kills, thorn.kills, outbreak.kills, lumina.kills, juju.kills, monte.kills, chosen.kills,
+                     hawkmoon.kills, notime.kills, deadmans.kills, cryo.kills, osteo.kills, touch.kills,
+                     quicksilver.kills,
+                     revision.kills, warning.kills, verglas.kills, wicked.kills, fighting.kills, sunshot.kills,
+                     skyburner.kills, graviton.kills, riskrunner.kills, hardlight.kills, polaris.kills, trinity.kills,
+                     lemon.kills,
+                     tarrabah.kills, symmetry.kills, devil.kills, tommys.kills, ticuu.kills, mythoclast.kills,
+                     obligation.kills, trespass.kills, manticore.kills, hierarchy.kills, centrifuse.kills, chaperone.kills,
+                     izan.kills, arbalest.kills, bastion.kills, witherhoard.kills, agers.kills, forerunner.kills,
+                     finality.kills, navigator.kills, coldheart.kills, merciless.kills, bore.kills, prometheus.kills,
+                     telesto.kills, wavesplit.kills, lordofwolves.kills, jotunn.kills, eriana.kills, divinity.kills,
+                     fourthhorse.kills, ruinous.kills, duality.kills, cloudstrike.kills, driver.kills, intent.kills,
+                     messenger.kills, delicate.kills, vexcal.kills,
+                     wardcliff.kills, tractor.kills, acrius.kills, darci.kills, colony.kills, worldline.kills, sleeper.kills,
+                     thousand.kills, twotailed.kills, black.kills, queenbreak.kills, thunderlord.kills, anarchy.kills,
+                     leviathan.kills, xeno.kills, deathbringer.kills, heir.kills, salvation.kills, eyesof.kills, lament.kills,
+                     gjallar.kills, parasite.kills, overture.kills, heartshadow.kills, determine.kills, winterbite.kills,
+                     truth.kills, whisper.kills])
     Full.add_column("Precision Kills",
-                    [sweetPrec, strumPrec, vigilancePrec, ratkingPrec, midaPrec, crimsonPrec, rabbitPrec, hucklePrec,
-                     surosPrec, cerberusPrec, wishPrec, malfeasePrec, acePrec,
-                     lastwordPrec, thornPrec, outbreakPrec, luminaPrec, jujuPrec, montePrec, chosenPrec, hawkmoonPrec,
-                     notimePrec, deadmansPrec, cryoPrec, osteoPrec, touchPrec,
-                     quicksilverPrec, revisionPrec, warningPrec, verglasPrec, wickedPrec, fightingPrec, sunshotPrec,
-                     skyburnerPrec, riskrunnerPrec, hardlightPrec, polarisPrec, trinityPrec, lemonPrec,
-                     tarrabahPrec, symmetryPrec, devilPrec, tommysPrec, ticuuPrec, mythoclastPrec, obligationPrec,
-                     trespassPrec, manticorePrec, hierarchyPrec, centrifusePrec, chaperonePrec, izanPrec,
-                     arbalestPrec, bastionPrec, witherhoardPrec, agersPrec, forerunnerPrec, finalityPrec, navigatorPrec,
-                     coldheartPrec, mercilessPrec, borePrec, prometheusPrec, telestoPrec, wavesplitPrec,
-                     lordofwolvesPrec, jotunnPrec, erianaPrec, divinityPrec, fourthhorsePrec, ruinousPrec, dualityPrec,
-                     cloudstrikePrec, driverPrec, concurrencePrec, actionPrec, intentPrec, messengerPrec,
-                     delicatePrec, vexcalPrec, prospectorPrec, wardcliffPrec, tractorPrec, acriusPrec, darciPrec,
-                     colonyPrec, wordllinePrec, sleeperPrec, thousandPrec, twotailedPrec, blackPrec,
-                     queenbreakPrec, thunderlordPrec, anarchyPrec, leviathanPrec, xenoPrec, deathbringerPrec, heirPrec,
-                     salvationPrec, eyesofPrec, lamentPrec, gjallarPrec, parasitePrec, overturePrec,
-                     heartshadowPrec, determinePrec, winterbitePrec, truthPrec, whisperPrec])
+                    [sweetBusiness.prec, strum.prec, vigilance.prec, ratKing.prec, mida.prec, crimson.prec, rabbit.prec,
+                     huckle.prec,
+                     suros.prec, cerberus.prec, wish.prec, malfease.prec, ace.prec,
+                     lastword.prec, thorn.prec, outbreak.prec, lumina.prec, juju.prec, monte.prec, chosen.prec, hawkmoon.prec,
+                     notime.prec, deadmans.prec, cryo.prec, osteo.prec, touch.prec,
+                     quicksilver.prec, revision.prec, warning.prec, verglas.prec, wicked.prec, fighting.prec, sunshot.prec,
+                     skyburner.prec, graviton.prec, riskrunner.prec, hardlight.prec, polaris.prec, trinity.prec, lemon.prec,
+                     tarrabah.prec, symmetry.prec, devil.prec, tommys.prec, ticuu.prec, mythoclast.prec, obligation.prec,
+                     trespass.prec, manticore.prec, hierarchy.prec, centrifuse.prec, chaperone.prec, izan.prec,
+                     arbalest.prec, bastion.prec, witherhoard.prec, agers.prec, forerunner.prec, finality.prec, navigator.prec,
+                     coldheart.prec, merciless.prec, bore.prec, prometheus.prec, telesto.prec, wavesplit.prec,
+                     lordofwolves.prec, jotunn.prec, eriana.prec, divinity.prec, fourthhorse.prec, ruinous.prec, duality.prec,
+                     cloudstrike.prec, driver.prec, intent.prec, messenger.prec,
+                     delicate.prec, vexcal.prec, wardcliff.prec, tractor.prec, acrius.prec, darci.prec,
+                     colony.prec, worldline.prec, sleeper.prec, thousand.prec, twotailed.prec, black.prec,
+                     queenbreak.prec, thunderlord.prec, anarchy.prec, leviathan.prec, xeno.prec, deathbringer.prec, heir.prec,
+                     salvation.prec, eyesof.prec, lament.prec, gjallar.prec, parasite.prec, overture.prec,
+                     heartshadow.prec, determine.prec, winterbite.prec, truth.prec, whisper.prec])
     Full.align["Exotic"] = 'l'
     Full.align["Element"] = 'l'
     Full.align["Weapon Type"] = 'l'
