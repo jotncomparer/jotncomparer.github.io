@@ -1,5 +1,6 @@
 # Connor Downs
 # 7-27-2023
+# Last Updated: 8-14-2023
 # This program is used with Raid_and_Dungeon to combine all the data of every player in Jötunn Gang.
 # The first part of the program is the method of getting the API url call to generate each .json file to then be
 # collected, combined, then redivided to get all the necessary values to show all the raid or dungeon info.
@@ -32,8 +33,6 @@ def URLZero(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_1.json', 'w')
     writeFile.write(char_data)
-
-
 def URLOne(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -47,8 +46,6 @@ def URLOne(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_2.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwo(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -62,8 +59,6 @@ def URLTwo(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_3.json', 'w')
     writeFile.write(char_data)
-
-
 def URLThree(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -77,8 +72,6 @@ def URLThree(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_4.json', 'w')
     writeFile.write(char_data)
-
-
 def URLFour(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -92,8 +85,6 @@ def URLFour(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_5.json', 'w')
     writeFile.write(char_data)
-
-
 def URLFive(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -107,8 +98,6 @@ def URLFive(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_6.json', 'w')
     writeFile.write(char_data)
-
-
 def URLSix(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -122,8 +111,6 @@ def URLSix(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_7.json', 'w')
     writeFile.write(char_data)
-
-
 def URLSeven(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -137,8 +124,6 @@ def URLSeven(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_8.json', 'w')
     writeFile.write(char_data)
-
-
 def URLEight(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -152,8 +137,6 @@ def URLEight(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_9.json', 'w')
     writeFile.write(char_data)
-
-
 def URLNine(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -167,8 +150,6 @@ def URLNine(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_10.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -182,8 +163,6 @@ def URLTen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_11.json', 'w')
     writeFile.write(char_data)
-
-
 def URLEleven(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -197,8 +176,6 @@ def URLEleven(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_12.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwelve(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -212,8 +189,6 @@ def URLTwelve(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_13.json', 'w')
     writeFile.write(char_data)
-
-
 def URLThirteen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -227,8 +202,6 @@ def URLThirteen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_14.json', 'w')
     writeFile.write(char_data)
-
-
 def URLFourteen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -242,8 +215,6 @@ def URLFourteen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_15.json', 'w')
     writeFile.write(char_data)
-
-
 def URLFifteen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -257,8 +228,6 @@ def URLFifteen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_16.json', 'w')
     writeFile.write(char_data)
-
-
 def URLSixteen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -272,8 +241,6 @@ def URLSixteen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_17.json', 'w')
     writeFile.write(char_data)
-
-
 def URLSeventeen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -287,8 +254,6 @@ def URLSeventeen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_18.json', 'w')
     writeFile.write(char_data)
-
-
 def URLEighteen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -302,8 +267,6 @@ def URLEighteen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_19.json', 'w')
     writeFile.write(char_data)
-
-
 def URLNineteen(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -317,8 +280,6 @@ def URLNineteen(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_20.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwenty(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -332,8 +293,6 @@ def URLTwenty(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_21.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwenOne(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -347,8 +306,6 @@ def URLTwenOne(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_22.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwenTwo(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -362,8 +319,6 @@ def URLTwenTwo(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_23.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwenThree(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=0"
@@ -377,8 +332,6 @@ def URLTwenThree(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_24.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwenFour(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=1"
@@ -392,8 +345,6 @@ def URLTwenFour(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_25.json', 'w')
     writeFile.write(char_data)
-
-
 def URLTwenFive(membershipType, destinyMembershipId, characterId, MODE):
     url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
           f"{characterId}/Stats/Activities/?mode={MODE}&count=250&page=1"
@@ -407,8 +358,6 @@ def URLTwenFive(membershipType, destinyMembershipId, characterId, MODE):
     char_data = json.dumps(json.loads(response.content), indent=2)
     writeFile = open('Char_26.json', 'w')
     writeFile.write(char_data)
-
-
 def allPlayersR_and_D(MODE):
     if MODE == 4:
         # All Raid Data
@@ -1518,8 +1467,8 @@ def allPlayersR_and_D(MODE):
 
         with open('Char_1.json') as f:
             data1 = json.load(f)
-        with open('Char_2.json') as f:
-            data2 = json.load(f)
+        with open('Char_3.json') as f:
+            data3 = json.load(f)
         with open('Char_4.json') as f:
             data4 = json.load(f)
         with open('Char_5.json') as f:
@@ -1564,7 +1513,7 @@ def allPlayersR_and_D(MODE):
             data26 = json.load(f)
 
         items1 = data1["Response"]
-        items2 = data2["Response"]
+        items3 = data3["Response"]
         items4 = data4["Response"]
         items5 = data5["Response"]
         items6 = data6["Response"]
@@ -1590,7 +1539,7 @@ def allPlayersR_and_D(MODE):
         char_json = {"Response": []}
 
         char_json['Response'].append(items1)
-        char_json["Response"].append(items2)
+        char_json["Response"].append(items3)
         char_json['Response'].append(items4)
         char_json["Response"].append(items5)
         char_json["Response"].append(items6)
@@ -1617,7 +1566,7 @@ def allPlayersR_and_D(MODE):
             f.write(json.dumps(char_json, indent=2))
 
         activities_len_1 = len(char_json["Response"][0]['activities'])
-        activities_len_2 = len(char_json["Response"][1]['activities'])
+        activities_len_3 = len(char_json["Response"][1]['activities'])
         activities_len_4 = len(char_json["Response"][2]['activities'])
         activities_len_5 = len(char_json["Response"][3]['activities'])
         activities_len_6 = len(char_json["Response"][4]['activities'])
@@ -1676,7 +1625,7 @@ def allPlayersR_and_D(MODE):
             Dungeon_Time['Time'].append(Dungeon_Time_1)
             Dungeon_PlayerCount['Player Count'].append(Dungeon_PlayerCount_1)
             Dungeon_Complete['Completion'].append(Dungeon_Complete_1)
-        for number in range(0, activities_len_2):
+        for number in range(0, activities_len_3):
             Dungeon_Name_2 = char_json["Response"][1]["activities"][number]["activityDetails"]["referenceId"]
             Dungeon_Kills_2 = char_json["Response"][1]["activities"][number]["values"]["kills"]["basic"][
                 "value"]
