@@ -134,44 +134,44 @@ def ExoCombinerCam():
     items2 = data2["Response"]
     items3 = data3["Response"]
 
-    exotic_json = {"Response": []}
+    cameronExotics = {"Response": []}
 
-    exotic_json['Response'].append(items1)
-    exotic_json["Response"].append(items2)
-    exotic_json["Response"].append(items3)
+    cameronExotics['Response'].append(items1)
+    cameronExotics["Response"].append(items2)
+    cameronExotics["Response"].append(items3)
 
-    with open('exotic.json', "w") as f:
-        f.write(json.dumps(exotic_json, indent=2))
+    with open('cameronExotics.json', "w") as f:
+        f.write(json.dumps(cameronExotics, indent=2))
 
-    exotic_len_1 = len(exotic_json["Response"][0]['weapons'])
-    exotic_len_2 = len(exotic_json["Response"][1]['weapons'])
-    exotic_len_3 = len(exotic_json["Response"][2]['weapons'])
+    exotic_len_1 = len(cameronExotics["Response"][0]['weapons'])
+    exotic_len_2 = len(cameronExotics["Response"][1]['weapons'])
+    exotic_len_3 = len(cameronExotics["Response"][2]['weapons'])
 
     Exotic = {"Exotic": []}
     Kills = {"Kills": []}
     Precision = {"Precision Kills": []}
 
     for number in range(0, exotic_len_1):
-        Name_1 = exotic_json["Response"][0]["weapons"][number]["referenceId"]
-        Kills_1 = exotic_json["Response"][0]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
+        Name_1 = cameronExotics["Response"][0]["weapons"][number]["referenceId"]
+        Kills_1 = cameronExotics["Response"][0]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
         Precision_1 = \
-            exotic_json["Response"][0]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
+            cameronExotics["Response"][0]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
         Exotic['Exotic'].append(Name_1)
         Kills['Kills'].append(Kills_1)
         Precision['Precision Kills'].append(Precision_1)
     for number in range(0, exotic_len_2):
-        Name_2 = exotic_json["Response"][1]["weapons"][number]["referenceId"]
-        Kills_2 = exotic_json["Response"][1]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
+        Name_2 = cameronExotics["Response"][1]["weapons"][number]["referenceId"]
+        Kills_2 = cameronExotics["Response"][1]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
         Precision_2 = \
-            exotic_json["Response"][1]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
+            cameronExotics["Response"][1]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
         Exotic['Exotic'].append(Name_2)
         Kills['Kills'].append(Kills_2)
         Precision['Precision Kills'].append(Precision_2)
     for number in range(0, exotic_len_3):
-        Name_3 = exotic_json["Response"][2]["weapons"][number]["referenceId"]
-        Kills_3 = exotic_json["Response"][2]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
+        Name_3 = cameronExotics["Response"][2]["weapons"][number]["referenceId"]
+        Kills_3 = cameronExotics["Response"][2]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
         Precision_3 = \
-            exotic_json["Response"][2]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
+            cameronExotics["Response"][2]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
         Exotic['Exotic'].append(Name_3)
         Kills['Kills'].append(Kills_3)
         Precision['Precision Kills'].append(Precision_3)
