@@ -1,7 +1,7 @@
 import json
 
 from prettytable import PrettyTable
-
+from colorama import Fore
 
 def ExoCombinerJack():
     class Exotic:
@@ -16,7 +16,7 @@ def ExoCombinerJack():
             self.prec += Precision
 
     sweetBusiness = Exotic(1345867570, 'Sweet Business')
-    strum = Exotic(2907129556, 'Strum')
+    sturm = Exotic(2907129556, 'Sturm')
     vigilance = Exotic(3628991659, 'Vigilance Wing')
     ratKing = Exotic(2362471601, 'Rat King')
     mida = Exotic(1331482397, 'MIDA Multi-Tool')
@@ -324,7 +324,7 @@ def ExoCombinerJack():
         elif ID == 2603483885:
             cloudstrike.weaponData(Kills, Precision)
         elif ID == 2907129556:
-            strum.weaponData(Kills, Precision)
+            sturm.weaponData(Kills, Precision)
         elif ID == 3110698812:
             tarrabah.weaponData(Kills, Precision)
         elif ID == 3118061004:
@@ -400,36 +400,53 @@ def ExoCombinerJack():
         elif ID == 3549153978:
             fighting.weaponData(Kills, Precision)
 
+    def stasis(text):
+        return(f"{Fore.BLUE}{text}{Fore.RESET}")
+
+    def strand(text):
+        return(f"{Fore.GREEN}{text}{Fore.RESET}")
+
+    def arc(text):
+        return(f"{Fore.LIGHTCYAN_EX}{text}{Fore.RESET}")
+
+    def void(text):
+        return(f"{Fore.MAGENTA}{text}{Fore.RESET}")
+
+    def solar(text):
+        return(f"{Fore.RED}{text}{Fore.RESET}")
+
+
     Full = PrettyTable()
-    Full.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
+    Full.add_column("Exotic", ["Sweet Business", "Sturm", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
                                "The Jade Rabbit", "The Huckleberry", "SUROS Regime", "Cerberus+1", "Wish-Ender",
                                "Malfeasance", "Ace of Spades", "The Last Word", "Thorn", "Outbreak Perfected",
                                "Lumina", "Bad Juju", "Monte Carlo", "Traveler's Chosen", "Hawkmoon",
-                               "No Time to Explain", "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga",
+                               "No Time to Explain", "Dead Man's Tale", stasis("Cryosthethesia 77K"), "Osteo Striga",
                                "Touch of Malice",
-                               "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve",
-                               "Wicked Implement", "Fighting Lion", "Sunshot", "Skyburner's Oath", 'Graviton Lance',
-                               "Riskrunner", "Hard Light",
-                               "Polaris Lance", "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin",
-                               "Tommy's Matchbook", "Ticuu's Divination", "Vex Mythoclast", "Collective Obligation",
-                               "Trespasser",
-                               "The Manticore", "Hierarchy of Needs", "Centrifuse", "The Chaperone", "Izanagi's Burden",
-                               "Arbalest", "Bastion", "Witherhoard", "Ager's Scepter",
-                               "Forerunner", "Conditional Finality", "The Navigator", "Coldheart", "Merciless",
-                               "Borealis", "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn",
-                               "Eriana's Vow",
-                               "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
-                               "Lorentz Driver", "Edge of Intent",
-                               "Dead Messenger", "Delicate Tomb", "Vexcalibur",
-                               "The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
-                               "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices",
-                               "Two-Tailed Fox", "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy",
-                               "Leviathan's Breath",
-                               "Xenophage", "Deathbringer", "Heir Apparent", "Salvation's Grip", "Eyes of Tomorrow",
-                               "The Lament", "Gjallarhorn", "Parasite", "Grand Overture", "Heartshadow",
-                               "Deterministic Chaos", "Winterbite", "Truth", "Whisper of the Worm"])
+                               strand("Quicksilver Storm"), "Revision Zero", strand("Final Warning"), stasis("Verglas Curve"),
+                               stasis("Wicked Implement"), void("Fighting Lion"), solar("Sunshot"), solar("Skyburner's Oath"), void('Graviton Lance'),
+                               arc("Riskrunner"), void("Hard Light"),
+                               solar("Polaris Lance"), arc("Trinity Ghoul"), void("Le Monarque"), solar("Tarrabah"),
+                               arc("Symmetry"), solar("Devil's Ruin"),
+                               solar("Tommy's Matchbook"), solar("Ticuu's Divination"), solar("Vex Mythoclast"), void("Collective Obligation"),
+                               arc("Trespasser"),
+                               void("The Manticore"), solar("Hierarchy of Needs"), arc("Centrifuse"), "The Chaperone", "Izanagi's Burden",
+                               "Arbalest", "Bastion", "Witherhoard", stasis("Ager's Scepter"),
+                               "Forerunner", stasis("Conditional Finality"), strand("The Navigator"), arc("Coldheart"), solar("Merciless"),
+                               void("Borealis"), solar("Prometheus Lens"), void("Telesto"), void("Wavesplitter"), solar("Lord of Wolves"), solar("Jötunn"),
+                               solar("Eriana's Vow"),
+                               arc("Divinity"), arc("The Fourth Horseman"), void("Ruinous Effigy"), solar("Duality"), arc("Cloudstrike"),
+                               void("Lorentz Driver"), solar("Edge of Intent"),
+                               void("Dead Messenger"), arc("Delicate Tomb"), void("Vexcalibur"),
+                               arc("The Wardcliff Coil"), void("Tractor Cannon"), arc("Legend of Acrius"), arc("D.A.R.C.I."),
+                               void("The Colony"), arc("Worldline Zero"), solar("Sleeper Simulant"), solar("One Thousand Voices"),
+                               void("Two-Tailed Fox"), void("Black Talon"), arc("The Queenbreaker"), arc("Thunderlord"), arc("Anarchy"),
+                               void("Leviathan's Breath"),
+                               solar("Xenophage"), void("Deathbringer"), solar("Heir Apparent"), stasis("Salvation's Grip"), solar("Eyes of Tomorrow"),
+                               solar("The Lament"), solar("Gjallarhorn"), solar("Parasite"), arc("Grand Overture"), void("Heartshadow"),
+                               void("Deterministic Chaos"), stasis("Winterbite"), void("Truth"), solar("Whisper of the Worm")])
     Full.add_column("Kills",
-                    [sweetBusiness.kills, strum.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
+                    [sweetBusiness.kills, sturm.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
                      rabbit.kills,
                      huckle.kills, suros.kills, cerberus.kills, wish.kills, malfease.kills, ace.kills,
                      lastword.kills, thorn.kills, outbreak.kills, lumina.kills, juju.kills, monte.kills, chosen.kills,

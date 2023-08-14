@@ -2,6 +2,7 @@ import json
 
 from prettytable import PrettyTable
 
+from colorama import Fore
 
 def ExoCombiner():
     class Exotic:
@@ -16,7 +17,7 @@ def ExoCombiner():
             self.prec += Precision
 
     sweetBusiness = Exotic(1345867570, 'Sweet Business')
-    strum = Exotic(2907129556, 'Strum')
+    sturm = Exotic(2907129556, 'Sturm')
     vigilance = Exotic(3628991659, 'Vigilance Wing')
     ratKing = Exotic(2362471601, 'Rat King')
     mida = Exotic(1331482397, 'MIDA Multi-Tool')
@@ -324,7 +325,7 @@ def ExoCombiner():
         elif ID == 2603483885:
             cloudstrike.weaponData(Kills, Precision)
         elif ID == 2907129556:
-            strum.weaponData(Kills, Precision)
+            sturm.weaponData(Kills, Precision)
         elif ID == 3110698812:
             tarrabah.weaponData(Kills, Precision)
         elif ID == 3118061004:
@@ -401,28 +402,47 @@ def ExoCombiner():
             fighting.weaponData(Kills, Precision)
 
     Primary = PrettyTable()
-    Primary.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
+    
+    def stasis(text):
+        return(f"{Fore.BLUE}{text}{Fore.RESET}")
+
+    def strand(text):
+        return(f"{Fore.GREEN}{text}{Fore.RESET}")
+
+    def arc(text):
+        return(f"{Fore.LIGHTCYAN_EX}{text}{Fore.RESET}")
+
+    def void(text):
+        return(f"{Fore.MAGENTA}{text}{Fore.RESET}")
+
+    def solar(text):
+        return(f"{Fore.RED}{text}{Fore.RESET}")
+    
+    
+    Primary.add_column("Exotic", ["Sweet Business", "Sturm", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
                                   "The Jade Rabbit", "The Huckleberry", "SUROS Regime", "Cerberus+1", "Wish-Ender",
-                                  "Malfeasance", "Ace of Spades", "The Last Word", "Thorn", "Outbreak Perfected",
+                                  "Malfeasance","Ace of Spades", "The Last Word", "Thorn", "Outbreak Perfected",
                                   "Lumina", "Bad Juju", "Monte Carlo", "Traveler's Chosen", "Hawkmoon",
                                   "No Time to Explain",
-                                  "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga", "Touch of Malice",
-                                  "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve",
-                                  "Wicked Implement",
-                                  "Fighting Lion", "Sunshot", "Skyburner's Oath", 'Graviton Lance', "Riskrunner",
-                                  "Hard Light",
-                                  "Polaris Lance",
-                                  "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin",
-                                  "Tommy's Matchbook",
-                                  "Ticuu's Divination", "Vex Mythoclast", "Collective Obligation", "Trespasser",
-                                  "The Manticore", "Hierarchy of Needs", "Centrifuse"])
+                                  "Dead Man's Tale", stasis("Cryosthethesia 77K"), "Osteo Striga", "Touch of Malice",
+                                  strand("Quicksilver Storm"), "Revision Zero", strand("Final Warning"), stasis("Verglas Curve"),
+                                  stasis("Wicked Implement"),
+                                  void("Fighting Lion"), solar("Sunshot"), solar("Skyburner's Oath"), void('Graviton Lance'), arc("Riskrunner"),
+                                  void("Hard Light"),
+                                  solar("Polaris Lance"),
+                                  arc("Trinity Ghoul"), void("Le Monarque"), solar("Tarrabah"), arc("Symmetry"), solar("Devil's Ruin"),
+                                  solar("Tommy's Matchbook"),
+                                  solar("Ticuu's Divination"), solar("Vex Mythoclast"), void("Collective Obligation"), arc("Trespasser"),
+                                  void("The Manticore"), solar("Hierarchy of Needs"), arc("Centrifuse")])
     Primary.add_column("Element",
                        ["Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic",
                         "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic",
-                        "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis",
-                        "Kinetic", "Kinetic", "Kinetic/Strand", "Kinetic", "Strand", "Stasis", "Stasis",
-                        "Void", "Solar", "Solar", 'Void', "Arc", "Arc/Void/Solar", "Solar", "Arc", "Void", "Solar",
-                        "Arc", "Solar", "Solar", "Solar", "Solar", "Void", "Arc", "Void", "Solar", "Arc"])
+                        "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", stasis("Stasis"),
+                        "Kinetic", "Kinetic", strand("Kinetic/Strand"), "Kinetic", strand("Strand"), stasis("Stasis"), stasis("Stasis"),
+                        void("Void"), solar("Solar"), solar("Solar"), void('Void'), arc("Arc"),
+                        void("Arc/Void/Solar"), solar("Solar"), arc("Arc"), void("Void"),
+                        solar("Solar"), arc("Arc"), solar("Solar"), solar("Solar"), solar("Solar"), solar("Solar"), void("Void"),
+                        arc("Arc"), void("Void"), solar("Solar"), arc("Arc")])
     Primary.add_column("Weapon Type", ["Auto Rifle", "Hand Cannon", "Pulse Rifle", "Sidearm", "Scout Rifle",
                                        "Hand Cannon", "Scout Rifle", "Submachine Gun", "Auto Rifle", "Auto Rifle",
                                        "Combat Bow", "Hand Cannon", "Hand Cannon", "Hand Cannon", "Hand Cannon",
@@ -435,7 +455,7 @@ def ExoCombiner():
                                        "Fusion Rifle", "Pulse Rifle", "Sidearm", "Submachine Gun", "Combat Bow",
                                        "Auto Rifle"])
     Primary.add_column("Kills",
-                       [sweetBusiness.kills, strum.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
+                       [sweetBusiness.kills, sturm.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
                         rabbit.kills,
                         huckle.kills, suros.kills, cerberus.kills, wish.kills, malfease.kills, ace.kills,
                         lastword.kills, thorn.kills, outbreak.kills, lumina.kills, juju.kills, monte.kills,
@@ -445,7 +465,7 @@ def ExoCombiner():
                         trinity.kills, lemon.kills, tarrabah.kills, symmetry.kills, devil.kills, tommys.kills, ticuu.kills,
                         mythoclast.kills, obligation.kills, trespass.kills, manticore.kills, hierarchy.kills, centrifuse.kills])
     Primary.add_column("Precision Kills",
-                       [sweetBusiness.prec, strum.prec, vigilance.prec, ratKing.prec, mida.prec, crimson.prec,
+                       [sweetBusiness.prec, sturm.prec, vigilance.prec, ratKing.prec, mida.prec, crimson.prec,
                         rabbit.prec, huckle.prec, suros.prec, cerberus.prec, wish.prec, malfease.prec, ace.prec,
                         lastword.prec, thorn.prec, outbreak.prec, lumina.prec, juju.prec, monte.prec, chosen.prec,
                         hawkmoon.prec, notime.prec, deadmans.prec, cryo.prec, osteo.prec, touch.prec,
@@ -463,15 +483,18 @@ def ExoCombiner():
 
     Special = PrettyTable()
     Special.add_column("Exotic",
-                       ["The Chaperone", "Izanagi's Burden", "Arbalest", "Bastion", "Witherhoard", "Ager's Scepter",
-                        "Forerunner", "Conditional Finality", "The Navigator", "Coldheart", "Merciless", "Borealis",
-                        "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn", "Eriana's Vow",
-                        "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
-                        "Lorentz Driver", "Edge of Intent",
-                        "Dead Messenger", "Delicate Tomb", "Vexcalibur"])
-    Special.add_column("Element", ["Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis", "Kinetic",
-                                   "Stasis/Solar", "Strand", "Arc", "Solar", "Arc/Void/Solar", "Solar", "Void", "Void",
-                                   "Solar", "Solar", "Solar", "Arc", "Arc", "Void", "Solar", "Arc", "Void", "Solar", "Arc/Void/Solar", "Arc", "Void"])
+                       ["The Chaperone", "Izanagi's Burden", "Arbalest", "Bastion", "Witherhoard", stasis("Ager's Scepter"),
+                        "Forerunner", stasis("Conditional Finality"), strand("The Navigator"), arc("Coldheart"), solar("Merciless"), void("Borealis"),
+                        solar("Prometheus Lens"), void("Telesto"), void("Wavesplitter"), solar("Lord of Wolves"), solar("Jötunn"), solar("Eriana's Vow"),
+                        arc("Divinity"), arc("The Fourth Horseman"), void("Ruinous Effigy"), solar("Duality"), arc("Cloudstrike"),
+                        void("Lorentz Driver"), solar("Edge of Intent"),
+                        void("Dead Messenger"), arc("Delicate Tomb"), void("Vexcalibur")])
+    Special.add_column("Element", ["Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", stasis("Stasis"), "Kinetic",
+                                   "Stasis/Solar", strand("Strand"), arc("Arc"), solar("Solar"),
+                                   void("Arc/Void/Solar"), solar("Solar"), void("Void"), void("Void"),
+                                   solar("Solar"), solar("Solar"), solar("Solar"), arc("Arc"),
+                                   arc("Arc"), void("Void"), solar("Solar"), arc("Arc"), void("Void"), solar("Solar"),
+                                   void("Arc/Void/Solar"), arc("Arc"), "Void"])
     Special.add_column("Weapon Type", ["Shotgun", "Sniper Rifle", "Linear Fusion Rifle", "Fusion Rifle",
                                        "Grenade Launcher", "Trace Rifle", "Sidearm", "Shotgun", "Trace Rifle",
                                        "Trace Rifle", "Fusion Rifle", "Sniper Rifle", "Trace Rifle", "Fusion Rifle",
@@ -501,15 +524,18 @@ def ExoCombiner():
 
     Heavy = PrettyTable()
     Heavy.add_column("Exotic",
-                     ["The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
-                      "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices", "Two-Tailed Fox",
-                      "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy", "Leviathan's Breath",
-                      "Xenophage", "Deathbringer", "Heir Apparent", "Salvation's Grip", "Eyes of Tomorrow",
-                      "The Lament", "Gjallarhorn", "Parasite", "Grand Overture", "Heartshadow",
-                      "Deterministic Chaos", "Winterbite", "Truth", "Whisper of the Worm"])
-    Heavy.add_column("Element", ["Arc", "Void", "Arc", "Arc", "Void", "Arc", "Solar", "Solar", "Arc/Void/Solar",
-                                 "Void", "Arc", "Arc", "Arc", "Void", "Solar", "Void", "Solar", "Stasis", "Solar",
-                                 "Solar", "Solar", "Solar", "Arc", "Void", "Void", "Stasis", "Void", "Void"])
+                     [arc("The Wardcliff Coil"), void("Tractor Cannon"), arc("Legend of Acrius"), arc("D.A.R.C.I."),
+                      void("The Colony"), arc("Worldline Zero"), solar("Sleeper Simulant"), solar("One Thousand Voices"), void("Two-Tailed Fox"),
+                      void("Black Talon"), arc("The Queenbreaker"), arc("Thunderlord"), arc("Anarchy"), void("Leviathan's Breath"),
+                      solar("Xenophage"), void("Deathbringer"), solar("Heir Apparent"), stasis("Salvation's Grip"), solar("Eyes of Tomorrow"),
+                      solar("The Lament"), solar("Gjallarhorn"), solar("Parasite"), arc("Grand Overture"), void("Heartshadow"),
+                      void("Deterministic Chaos"), stasis("Winterbite"), void("Truth"), solar("Whisper of the Worm")])
+    Heavy.add_column("Element", [arc("Arc"), void("Void"), arc("Arc"), arc("Arc"), void("Void"),
+                                 arc("Arc"), solar("Solar"), solar("Solar"), void("Arc/Void/Solar"),
+                                 void("Void"), arc("Arc"), arc("Arc"), arc("Arc"), void("Void"),
+                                 solar("Solar"), void("Void"), solar("Solar"), stasis("Stasis"), solar("Solar"),
+                                 solar("Solar"), solar("Solar"), solar("Solar"), arc("Arc"),
+                                 void("Void"), void("Void"), stasis("Stasis"), void("Void"), "Void"])
     Heavy.add_column("Weapon Type", ["Rocket Launcher", "Shotgun", "Shotgun", "Sniper Rifle",
                                      "Grenade Launcher", "Sword", "Linear Fusion Rifle", "Fusion Rifle",
                                      "Rocket Launcher", "Sword", "Linear Fusion Rifle", "Machine Gun",
@@ -540,47 +566,48 @@ def ExoCombiner():
     print(Heavy.get_string(sortby="Kills", start=0, end=5))
 
     Full = PrettyTable()
-    Full.add_column("Exotic", ["Sweet Business", "Strum", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
+    Full.add_column("Exotic", ["Sweet Business", "Sturm", "Vigilance Wing", "Rat King", "MIDA Multi-Tool", "Crimson",
                                "The Jade Rabbit", "The Huckleberry", "SUROS Regime", "Cerberus+1", "Wish-Ender",
                                "Malfeasance", "Ace of Spades", "The Last Word", "Thorn", "Outbreak Perfected",
                                "Lumina", "Bad Juju", "Monte Carlo", "Traveler's Chosen", "Hawkmoon",
-                               "No Time to Explain", "Dead Man's Tale", "Cryosthethesia 77K", "Osteo Striga",
+                               "No Time to Explain", "Dead Man's Tale", stasis("Cryosthethesia 77K"), "Osteo Striga",
                                "Touch of Malice",
-                               "Quicksilver Storm", "Revision Zero", "Final Warning", "Verglas Curve",
-                               "Wicked Implement", "Fighting Lion", "Sunshot", "Skyburner's Oath", 'Graviton Lance',
-                               "Riskrunner", "Hard Light",
-                               "Polaris Lance", "Trinity Ghoul", "Le Monarque", "Tarrabah", "Symmetry", "Devil's Ruin",
-                               "Tommy's Matchbook", "Ticuu's Divination", "Vex Mythoclast", "Collective Obligation",
-                               "Trespasser",
-                               "The Manticore", "Hierarchy of Needs", "Centrifuse", "The Chaperone", "Izanagi's Burden",
-                               "Arbalest", "Bastion", "Witherhoard", "Ager's Scepter",
-                               "Forerunner", "Conditional Finality", "The Navigator", "Coldheart", "Merciless",
-                               "Borealis", "Prometheus Lens", "Telesto", "Wavesplitter", "Lord of Wolves", "Jötunn",
-                               "Eriana's Vow",
-                               "Divinity", "The Fourth Horseman", "Ruinous Effigy", "Duality", "Cloudstrike",
-                               "Lorentz Driver", "Edge of Intent",
-                               "Dead Messenger", "Delicate Tomb", "Vexcalibur",
-                               "The Wardcliff Coil", "Tractor Cannon", "Legend of Acrius", "D.A.R.C.I.",
-                               "The Colony", "Worldline Zero", "Sleeper Simulant", "One Thousand Voices",
-                               "Two-Tailed Fox", "Black Talon", "The Queenbreaker", "Thunderlord", "Anarchy",
-                               "Leviathan's Breath",
-                               "Xenophage", "Deathbringer", "Heir Apparent", "Salvation's Grip", "Eyes of Tomorrow",
-                               "The Lament", "Gjallarhorn", "Parasite", "Grand Overture", "Heartshadow",
-                               "Deterministic Chaos", "Winterbite", "Truth", "Whisper of the Worm"])
+                               strand("Quicksilver Storm"), "Revision Zero", strand("Final Warning"), stasis("Verglas Curve"),
+                               stasis("Wicked Implement"), void("Fighting Lion"), solar("Sunshot"), solar("Skyburner's Oath"), void('Graviton Lance'),
+                               arc("Riskrunner"), void("Hard Light"),
+                               solar("Polaris Lance"), arc("Trinity Ghoul"), void("Le Monarque"), solar("Tarrabah"),
+                               arc("Symmetry"), solar("Devil's Ruin"),
+                               solar("Tommy's Matchbook"), solar("Ticuu's Divination"), solar("Vex Mythoclast"), void("Collective Obligation"),
+                               arc("Trespasser"),
+                               void("The Manticore"), solar("Hierarchy of Needs"), arc("Centrifuse"), "The Chaperone", "Izanagi's Burden",
+                               "Arbalest", "Bastion", "Witherhoard", stasis("Ager's Scepter"),
+                               "Forerunner", stasis("Conditional Finality"), strand("The Navigator"), arc("Coldheart"), solar("Merciless"),
+                               void("Borealis"), solar("Prometheus Lens"), void("Telesto"), void("Wavesplitter"), solar("Lord of Wolves"), solar("Jötunn"),
+                               solar("Eriana's Vow"),
+                               arc("Divinity"), arc("The Fourth Horseman"), void("Ruinous Effigy"), solar("Duality"), arc("Cloudstrike"),
+                               void("Lorentz Driver"), solar("Edge of Intent"),
+                               void("Dead Messenger"), arc("Delicate Tomb"), void("Vexcalibur"),
+                               arc("The Wardcliff Coil"), void("Tractor Cannon"), arc("Legend of Acrius"), arc("D.A.R.C.I."),
+                               void("The Colony"), arc("Worldline Zero"), solar("Sleeper Simulant"), solar("One Thousand Voices"),
+                               void("Two-Tailed Fox"), void("Black Talon"), arc("The Queenbreaker"), arc("Thunderlord"), arc("Anarchy"),
+                               void("Leviathan's Breath"),
+                               solar("Xenophage"), void("Deathbringer"), solar("Heir Apparent"), stasis("Salvation's Grip"), solar("Eyes of Tomorrow"),
+                               solar("The Lament"), solar("Gjallarhorn"), solar("Parasite"), arc("Grand Overture"), void("Heartshadow"),
+                               void("Deterministic Chaos"), stasis("Winterbite"), void("Truth"), solar("Whisper of the Worm")])
     Full.add_column("Element", ["Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic",
                                 "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic",
-                                "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis",
-                                "Kinetic", "Kinetic", "Kinetic/Strand", "Kinetic", "Strand", "Stasis", "Stasis",
-                                "Void", "Solar", "Solar", 'Void', "Arc", "Arc/Void/Solar", "Solar", "Arc", "Void",
-                                "Solar",
-                                "Arc", "Solar", "Solar", "Solar", "Solar", "Void", "Arc", "Void", "Solar", "Arc",
-                                "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Stasis", "Kinetic",
-                                "Stasis/Solar", "Strand", "Arc", "Solar", "Arc/Void/Solar", "Solar", "Void", "Void",
-                                "Solar", "Solar", "Solar", "Arc", "Arc", "Void", "Solar", "Arc", "Void", "Solar",
-                                "Arc/Void/Solar", "Arc", "Void", "Arc", "Void", "Arc", "Arc",
-                                "Void", "Arc", "Solar", "Solar", "Arc/Void/Solar",
-                                "Void", "Arc", "Arc", "Arc", "Void", "Solar", "Void", "Solar", "Stasis", "Solar",
-                                "Solar", "Solar", "Solar", "Arc", "Void", "Void", "Stasis", "Void", "Void"])
+                                "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", stasis("Stasis"),
+                                "Kinetic", "Kinetic", strand("Kinetic/Strand"), "Kinetic", strand("Strand"), stasis("Stasis"), stasis("Stasis"),
+                                void("Void"), solar("Solar"), solar("Solar"), void('Void'), arc("Arc"), void("Arc/Void/Solar"), solar("Solar"), arc("Arc"), void("Void"),
+                                solar("Solar"),
+                                arc("Arc"), solar("Solar"), solar("Solar"), solar("Solar"), solar("Solar"), void("Void"), arc("Arc"), void("Void"), solar("Solar"), arc("Arc"),
+                                "Kinetic", "Kinetic", "Kinetic", "Kinetic", "Kinetic", stasis("Stasis"), "Kinetic",
+                                stasis("Stasis/Solar"), strand("Strand"), arc("Arc"), solar("Solar"), void("Arc/Void/Solar"), solar("Solar"), void("Void"), void("Void"),
+                                solar("Solar"), solar("Solar"), solar("Solar"), arc("Arc"), arc("Arc"), void("Void"), solar("Solar"), arc("Arc"), void("Void"), solar("Solar"),
+                                void("Arc/Void/Solar"), arc("Arc"), void("Void"), arc("Arc"), void("Void"), arc("Arc"), arc("Arc"),
+                                void("Void"), arc("Arc"), solar("Solar"), solar("Solar"), void("Arc/Void/Solar"),
+                                void("Void"), arc("Arc"), arc("Arc"), arc("Arc"), void("Void"), solar("Solar"), void("Void"), solar("Solar"), stasis("Stasis"), solar("Solar"),
+                                solar("Solar"), solar("Solar"), solar("Solar"), arc("Arc"), void("Void"), void("Void"), stasis("Stasis"), void("Void"), "Void"])
     Full.add_column("Weapon Type", ["Auto Rifle", "Hand Cannon", "Pulse Rifle", "Sidearm", "Scout Rifle",
                                     "Hand Cannon", "Scout Rifle", "Submachine Gun", "Auto Rifle", "Auto Rifle",
                                     "Combat Bow", "Hand Cannon", "Hand Cannon", "Hand Cannon", "Hand Cannon",
@@ -605,7 +632,7 @@ def ExoCombiner():
                                     "Grenade Launcher", "Machine Gun", "Sword", "Machine Gun", "Glaive",
                                     "Rocket Launcher", "Sniper Rifle"])
     Full.add_column("Kills",
-                    [sweetBusiness.kills, strum.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
+                    [sweetBusiness.kills, sturm.kills, vigilance.kills, ratKing.kills, mida.kills, crimson.kills,
                      rabbit.kills,
                      huckle.kills, suros.kills, cerberus.kills, wish.kills, malfease.kills, ace.kills,
                      lastword.kills, thorn.kills, outbreak.kills, lumina.kills, juju.kills, monte.kills, chosen.kills,
@@ -627,7 +654,7 @@ def ExoCombiner():
                      gjallar.kills, parasite.kills, overture.kills, heartshadow.kills, determine.kills, winterbite.kills,
                      truth.kills, whisper.kills])
     Full.add_column("Precision Kills",
-                    [sweetBusiness.prec, strum.prec, vigilance.prec, ratKing.prec, mida.prec, crimson.prec, rabbit.prec,
+                    [sweetBusiness.prec, sturm.prec, vigilance.prec, ratKing.prec, mida.prec, crimson.prec, rabbit.prec,
                      huckle.prec,
                      suros.prec, cerberus.prec, wish.prec, malfease.prec, ace.prec,
                      lastword.prec, thorn.prec, outbreak.prec, lumina.prec, juju.prec, monte.prec, chosen.prec, hawkmoon.prec,
