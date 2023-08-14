@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 8-7-2023
-# Last Updated: 8-7-2023
+# Last Updated: 8-14-2023
 # This program needs Character_Metrics.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -10,6 +10,7 @@
 import json
 from Time_Converter import Time_Converter
 from prettytable import PrettyTable
+
 
 def allTimeWasted():
     with open('Metrics.json') as f:
@@ -51,7 +52,6 @@ def allTimeWasted():
     with open('Metrics.json', "w") as f:
         f.write(json.dumps(metric_json, indent=2))
 
-    minutesPlayedTotal = 0
     minutesPlayedTotalCon = 0
     minutesPlayedTotalTom = 0
     minutesPlayedTotalDoug = 0
@@ -60,235 +60,133 @@ def allTimeWasted():
     minutesPlayedTotalHunt = 0
     minutesPlayedTotalCam = 0
     minutesPlayedTotalKade = 0
+    secondsPlayedTotal = 0
 
     # Connor - Titan
-    dateLastPlayedTitanCon = metric_json["Response"][0]["characters"]['data']['2305843009644414176']['dateLastPlayed']
-    minutesPlayedTotalCon += int(metric_json["Response"][0]["characters"]['data']['2305843009644414176']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][0]["characters"]['data']['2305843009644414176']['minutesPlayedTotal'])
+    dateLastPlayedCon = metric_json['Response'][0]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalCon += int(
+        metric_json["Response"][0]["characters"]['data']['2305843009644414176']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarCon = metric_json["Response"][0]["characters"]['data']['2305843009663894341']['dateLastPlayed']
-    minutesPlayedTotalCon += int(metric_json["Response"][0]["characters"]['data']['2305843009663894341']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][0]["characters"]['data']['2305843009663894341']['minutesPlayedTotal'])
+    minutesPlayedTotalCon += int(
+        metric_json["Response"][0]["characters"]['data']['2305843009663894341']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterCon = metric_json["Response"][0]["characters"]['data']['2305843009703275457']['dateLastPlayed']
-    minutesPlayedTotalCon += int(metric_json["Response"][0]["characters"]['data']['2305843009703275457']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][0]["characters"]['data']['2305843009703275457']['minutesPlayedTotal'])
+    minutesPlayedTotalCon += int(
+        metric_json["Response"][0]["characters"]['data']['2305843009703275457']['minutesPlayedTotal'])
 
     secondsPlayedTotalCon = minutesPlayedTotalCon * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneCon = dateLastPlayedTitanCon > dateLastPlayedWarCon
-    compareTwoCon = dateLastPlayedWarCon > dateLastPlayedHunterCon
-
-    if compareOneCon == True and compareTwoCon == True:
-        lastLoggedCon = dateLastPlayedTitanCon
-    elif compareOneCon == True and compareTwoCon == False:
-        lastLoggedCon = dateLastPlayedTitanCon
-    elif compareOneCon == False and compareTwoCon == True:
-        lastLoggedCon = dateLastPlayedWarCon
-    else:
-        lastLoggedCon = dateLastPlayedHunterCon
+    secondsPlayedTotal += minutesPlayedTotalCon * 60
 
     # Thomas - Titan
-    dateLastPlayedTitanTom = metric_json["Response"][1]["characters"]['data']['2305843009283965144']['dateLastPlayed']
-    minutesPlayedTotal += int(metric_json["Response"][1]["characters"]['data']['2305843009283965144']['minutesPlayedTotal'])
-    minutesPlayedTotalTom += int(metric_json["Response"][1]["characters"]['data']['2305843009283965144']['minutesPlayedTotal'])
+    dateLastPlayedTom = metric_json['Response'][1]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalTom += int(
+        metric_json["Response"][1]["characters"]['data']['2305843009283965144']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarTom = metric_json["Response"][1]["characters"]['data']['2305843009265786295']['dateLastPlayed']
-    minutesPlayedTotal += int(metric_json["Response"][1]["characters"]['data']['2305843009265786295'][ 'minutesPlayedTotal'])
-    minutesPlayedTotalTom += int(metric_json["Response"][1]["characters"]['data']['2305843009265786295'][ 'minutesPlayedTotal'])
+    minutesPlayedTotalTom += int(
+        metric_json["Response"][1]["characters"]['data']['2305843009265786295']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterTom = metric_json["Response"][1]["characters"]['data']['2305843009569534739']['dateLastPlayed']
-    minutesPlayedTotal += int(metric_json["Response"][1]["characters"]['data']['2305843009569534739']['minutesPlayedTotal'])
-    minutesPlayedTotalTom += int(metric_json["Response"][1]["characters"]['data']['2305843009569534739']['minutesPlayedTotal'])
+    minutesPlayedTotalTom += int(
+        metric_json["Response"][1]["characters"]['data']['2305843009569534739']['minutesPlayedTotal'])
 
     secondsPlayedTotalTom = minutesPlayedTotalTom * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneTom = dateLastPlayedTitanTom > dateLastPlayedWarTom
-    compareTwoTom = dateLastPlayedWarTom > dateLastPlayedHunterTom
-
-    if compareOneTom == True and compareTwoTom == True:
-        lastLoggedTom = dateLastPlayedTitanTom
-    elif compareOneTom == True and compareTwoTom == False:
-        lastLoggedTom = dateLastPlayedTitanTom
-    elif compareOneTom == False and compareTwoTom == True:
-        lastLoggedTom = dateLastPlayedWarTom
-    else:
-        lastLoggedTom = dateLastPlayedHunterTom
+    secondsPlayedTotal += minutesPlayedTotalTom * 60
 
     # Douglas - Titan
-    dateLastPlayedTitanDoug = metric_json["Response"][2]["characters"]['data']['2305843009293915719']['dateLastPlayed']
-    minutesPlayedTotal += int(metric_json["Response"][2]["characters"]['data']['2305843009293915719']['minutesPlayedTotal'])
-    minutesPlayedTotalDoug += int(metric_json["Response"][2]["characters"]['data']['2305843009293915719']['minutesPlayedTotal'])
+    dateLastPlayedDoug = metric_json['Response'][2]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalDoug += int(
+        metric_json["Response"][2]["characters"]['data']['2305843009293915719']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarDoug = metric_json["Response"][2]["characters"]['data']['2305843009301374530']['dateLastPlayed']
-    minutesPlayedTotal += int(metric_json["Response"][2]["characters"]['data']['2305843009301374530']['minutesPlayedTotal'])
-    minutesPlayedTotalDoug += int(metric_json["Response"][2]["characters"]['data']['2305843009301374530']['minutesPlayedTotal'])
+    minutesPlayedTotalDoug += int(
+        metric_json["Response"][2]["characters"]['data']['2305843009301374530']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterDoug = metric_json["Response"][2]["characters"]['data']['2305843010083874501']['dateLastPlayed']
-    minutesPlayedTotal += int(metric_json["Response"][2]["characters"]['data']['2305843010083874501']['minutesPlayedTotal'])
-    minutesPlayedTotalDoug += int(metric_json["Response"][2]["characters"]['data']['2305843010083874501']['minutesPlayedTotal'])
+    minutesPlayedTotalDoug += int(
+        metric_json["Response"][2]["characters"]['data']['2305843010083874501']['minutesPlayedTotal'])
 
     secondsPlayedTotalDoug = minutesPlayedTotalDoug * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneDoug = dateLastPlayedTitanDoug > dateLastPlayedWarDoug
-    compareTwoDoug = dateLastPlayedWarDoug > dateLastPlayedHunterDoug
-
-    if compareOneDoug == True and compareTwoDoug == True:
-        lastLoggedDoug = dateLastPlayedTitanDoug
-    elif compareOneDoug == True and compareTwoDoug == False:
-        lastLoggedDoug = dateLastPlayedTitanDoug
-    elif compareOneDoug == False and compareTwoDoug == True:
-        lastLoggedDoug = dateLastPlayedWarDoug
-    else:
-        lastLoggedDoug = dateLastPlayedHunterDoug
+    secondsPlayedTotal += minutesPlayedTotalDoug * 60
 
     # Mark - Titan
-    dateLastPlayedTitanMark = metric_json["Response"][3]["characters"]['data']['2305843009668854600']['dateLastPlayed']
-    minutesPlayedTotalMark += int(metric_json["Response"][3]["characters"]['data']['2305843009668854600']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][3]["characters"]['data']['2305843009668854600']['minutesPlayedTotal'])
+    dateLastPlayedMark = metric_json['Response'][3]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalMark += int(
+        metric_json["Response"][3]["characters"]['data']['2305843009668854600']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarMark = metric_json["Response"][3]["characters"]['data']['2305843009802904121']['dateLastPlayed']
-    minutesPlayedTotalMark += int(metric_json["Response"][3]["characters"]['data']['2305843009802904121']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][3]["characters"]['data']['2305843009802904121']['minutesPlayedTotal'])
+    minutesPlayedTotalMark += int(
+        metric_json["Response"][3]["characters"]['data']['2305843009802904121']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterMark = metric_json["Response"][3]["characters"]['data']['2305843009348154555']['dateLastPlayed']
-    minutesPlayedTotalMark += int(metric_json["Response"][3]["characters"]['data']['2305843009348154555']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][3]["characters"]['data']['2305843009348154555']['minutesPlayedTotal'])
+    minutesPlayedTotalMark += int(
+        metric_json["Response"][3]["characters"]['data']['2305843009348154555']['minutesPlayedTotal'])
 
     secondsPlayedTotalMark = minutesPlayedTotalMark * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneMark = dateLastPlayedTitanMark > dateLastPlayedWarMark
-    compareTwoMark = dateLastPlayedWarMark > dateLastPlayedHunterMark
-
-    if compareOneMark == True and compareTwoMark == True:
-        lastLoggedMark = dateLastPlayedTitanMark
-    elif compareOneMark == True and compareTwoMark == False:
-        lastLoggedMark = dateLastPlayedTitanMark
-    elif compareOneMark == False and compareTwoMark == True:
-        lastLoggedMark = dateLastPlayedWarMark
-    else:
-        lastLoggedMark = dateLastPlayedHunterMark
+    secondsPlayedTotal += minutesPlayedTotalMark * 60
 
     # Jack - Titan
-    dateLastPlayedTitanJack = metric_json["Response"][4]["characters"]['data']['2305843009890274343']['dateLastPlayed']
-    minutesPlayedTotalJack += int(metric_json["Response"][4]["characters"]['data']['2305843009890274343']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][4]["characters"]['data']['2305843009890274343']['minutesPlayedTotal'])
+    dateLastPlayedJack = metric_json['Response'][4]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalJack += int(
+        metric_json["Response"][4]["characters"]['data']['2305843009890274343']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarJack = metric_json["Response"][4]["characters"]['data']['2305843009891864023']['dateLastPlayed']
-    minutesPlayedTotalJack += int(metric_json["Response"][4]["characters"]['data']['2305843009891864023']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][4]["characters"]['data']['2305843009891864023']['minutesPlayedTotal'])
+    minutesPlayedTotalJack += int(
+        metric_json["Response"][4]["characters"]['data']['2305843009891864023']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterJack = metric_json["Response"][4]["characters"]['data']['2305843009268771475']['dateLastPlayed']
-    minutesPlayedTotalJack += int(metric_json["Response"][4]["characters"]['data']['2305843009268771475']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][4]["characters"]['data']['2305843009268771475']['minutesPlayedTotal'])
+    minutesPlayedTotalJack += int(
+        metric_json["Response"][4]["characters"]['data']['2305843009268771475']['minutesPlayedTotal'])
 
     secondsPlayedTotalJack = minutesPlayedTotalJack * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneJack = dateLastPlayedTitanJack > dateLastPlayedWarJack
-    compareTwoJack = dateLastPlayedWarJack > dateLastPlayedHunterJack
-
-    if compareOneJack == True and compareTwoJack == True:
-        lastLoggedJack = dateLastPlayedTitanJack
-    elif compareOneJack == True and compareTwoJack == False:
-        lastLoggedJack = dateLastPlayedTitanJack
-    elif compareOneJack == False and compareTwoJack == True:
-        lastLoggedJack = dateLastPlayedWarJack
-    else:
-        lastLoggedJack = dateLastPlayedHunterJack
+    secondsPlayedTotal += minutesPlayedTotalJack * 60
 
     # Hunter - Titan
-    dateLastPlayedTitanHunt = metric_json["Response"][5]["characters"]['data']['2305843009756404411']['dateLastPlayed']
-    minutesPlayedTotalHunt += int(metric_json["Response"][5]["characters"]['data']['2305843009756404411']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][5]["characters"]['data']['2305843009756404411']['minutesPlayedTotal'])
+    dateLastPlayedHunt = metric_json['Response'][5]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalHunt += int(
+        metric_json["Response"][5]["characters"]['data']['2305843009756404411']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarHunt = metric_json["Response"][5]["characters"]['data']['2305843009359365362']['dateLastPlayed']
-    minutesPlayedTotalHunt += int(metric_json["Response"][5]["characters"]['data']['2305843009359365362']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][5]["characters"]['data']['2305843009359365362']['minutesPlayedTotal'])
+    minutesPlayedTotalHunt += int(
+        metric_json["Response"][5]["characters"]['data']['2305843009359365362']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterHunt = metric_json["Response"][5]["characters"]['data']['2305843009359734078']['dateLastPlayed']
-    minutesPlayedTotalHunt += int(metric_json["Response"][5]["characters"]['data']['2305843009359734078']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][5]["characters"]['data']['2305843009359734078']['minutesPlayedTotal'])
+    minutesPlayedTotalHunt += int(
+        metric_json["Response"][5]["characters"]['data']['2305843009359734078']['minutesPlayedTotal'])
 
     secondsPlayedTotalHunt = minutesPlayedTotalHunt * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneHunt = dateLastPlayedTitanHunt > dateLastPlayedWarHunt
-    compareTwoHunt = dateLastPlayedWarHunt > dateLastPlayedHunterHunt
-
-    if compareOneHunt == True and compareTwoHunt == True:
-        lastLoggedHunt = dateLastPlayedTitanHunt
-    elif compareOneHunt == True and compareTwoHunt == False:
-        lastLoggedHunt = dateLastPlayedTitanHunt
-    elif compareOneHunt == False and compareTwoHunt == True:
-        lastLoggedHunt = dateLastPlayedWarHunt
-    else:
-        lastLoggedHunt = dateLastPlayedHunterHunt
+    secondsPlayedTotal += minutesPlayedTotalHunt * 60
 
     # Cameron - Titan
-    dateLastPlayedTitanCam = metric_json["Response"][6]["characters"]['data']['2305843009624174508']['dateLastPlayed']
-    minutesPlayedTotalCam += int(metric_json["Response"][6]["characters"]['data']['2305843009624174508']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][6]["characters"]['data']['2305843009624174508']['minutesPlayedTotal'])
+    dateLastPlayedCam = metric_json['Response'][6]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalCam += int(
+        metric_json["Response"][6]["characters"]['data']['2305843009624174508']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarCam = metric_json["Response"][6]["characters"]['data']['2305843009683284493']['dateLastPlayed']
-    minutesPlayedTotalCam += int(metric_json["Response"][6]["characters"]['data']['2305843009683284493']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][6]["characters"]['data']['2305843009683284493']['minutesPlayedTotal'])
+    minutesPlayedTotalCam += int(
+        metric_json["Response"][6]["characters"]['data']['2305843009683284493']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterCam = metric_json["Response"][6]["characters"]['data']['2305843009683284492']['dateLastPlayed']
-    minutesPlayedTotalCam += int(metric_json["Response"][6]["characters"]['data']['2305843009683284492']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][6]["characters"]['data']['2305843009683284492']['minutesPlayedTotal'])
+    minutesPlayedTotalCam += int(
+        metric_json["Response"][6]["characters"]['data']['2305843009683284492']['minutesPlayedTotal'])
 
     secondsPlayedTotalCam = minutesPlayedTotalCam * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneCam = dateLastPlayedTitanCam > dateLastPlayedWarCam
-    compareTwoCam = dateLastPlayedWarCam > dateLastPlayedHunterCam
-
-    if compareOneCam == True and compareTwoCam == True:
-        lastLoggedCam = dateLastPlayedTitanCam
-    elif compareOneCam == True and compareTwoCam == False:
-        lastLoggedCam = dateLastPlayedTitanCam
-    elif compareOneCam == False and compareTwoCam == True:
-        lastLoggedCam = dateLastPlayedWarCam
-    else:
-        lastLoggedCam = dateLastPlayedHunterCam
+    secondsPlayedTotal += minutesPlayedTotalCam * 60
 
     # Kade - Titan
-    dateLastPlayedTitanKade = metric_json["Response"][7]["characters"]['data']['2305843009264637527']['dateLastPlayed']
-    minutesPlayedTotalKade += int(metric_json["Response"][7]["characters"]['data']['2305843009264637527']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][7]["characters"]['data']['2305843009264637527']['minutesPlayedTotal'])
+    dateLastPlayedKade = metric_json['Response'][7]['profile']['data']['dateLastPlayed']
+    minutesPlayedTotalKade += int(
+        metric_json["Response"][7]["characters"]['data']['2305843009264637527']['minutesPlayedTotal'])
     # Warlock
-    dateLastPlayedWarKade = metric_json["Response"][7]["characters"]['data']['2305843009264637524']['dateLastPlayed']
-    minutesPlayedTotalKade += int(metric_json["Response"][7]["characters"]['data']['2305843009264637524']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][7]["characters"]['data']['2305843009264637524']['minutesPlayedTotal'])
+    minutesPlayedTotalKade += int(
+        metric_json["Response"][7]["characters"]['data']['2305843009264637524']['minutesPlayedTotal'])
     # Hunter
-    dateLastPlayedHunterKade = metric_json["Response"][7]["characters"]['data']['2305843010322954573']['dateLastPlayed']
-    minutesPlayedTotalKade += int(metric_json["Response"][7]["characters"]['data']['2305843010322954573']['minutesPlayedTotal'])
-    minutesPlayedTotal += int(metric_json["Response"][7]["characters"]['data']['2305843010322954573']['minutesPlayedTotal'])
+    minutesPlayedTotalKade += int(
+        metric_json["Response"][7]["characters"]['data']['2305843010322954573']['minutesPlayedTotal'])
 
     secondsPlayedTotalKade = minutesPlayedTotalKade * 60
-    secondsPlayedTotal = minutesPlayedTotal * 60
-    compareOneKade = dateLastPlayedTitanKade > dateLastPlayedWarKade
-    compareTwoKade = dateLastPlayedWarKade > dateLastPlayedHunterKade
-
-    if compareOneKade == True and compareTwoKade == True:
-        lastLoggedKade = dateLastPlayedTitanKade
-    elif compareOneKade == True and compareTwoKade == False:
-        lastLoggedKade = dateLastPlayedTitanKade
-    elif compareOneKade == False and compareTwoKade == True:
-        lastLoggedKade = dateLastPlayedWarKade
-    else:
-        lastLoggedKade = dateLastPlayedHunterKade
+    secondsPlayedTotal += minutesPlayedTotalKade * 60
 
     timeWasted = PrettyTable()
     timeWasted.field_names = ['Player', 'Last Logged In', 'Time Wasted']
     timeWasted.add_rows(
         [
-            ['Connor', lastLoggedCon, Time_Converter(secondsPlayedTotalCon)],
-            ['Thomas', lastLoggedTom, Time_Converter(secondsPlayedTotalTom)],
-            ['Douglas', lastLoggedDoug, Time_Converter(secondsPlayedTotalDoug)],
-            ['Mark', lastLoggedMark, Time_Converter(secondsPlayedTotalMark)],
-            ['Jack', lastLoggedJack, Time_Converter(secondsPlayedTotalJack)],
-            ['Hunter', lastLoggedHunt, Time_Converter(secondsPlayedTotalHunt)],
-            ['Cameron', lastLoggedCam, Time_Converter(secondsPlayedTotalCam)],
-            ['Kade', lastLoggedKade, Time_Converter(secondsPlayedTotalKade)]
+            ['Connor', dateLastPlayedCon, Time_Converter(secondsPlayedTotalCon)],
+            ['Thomas', dateLastPlayedTom, Time_Converter(secondsPlayedTotalTom)],
+            ['Douglas', dateLastPlayedDoug, Time_Converter(secondsPlayedTotalDoug)],
+            ['Mark', dateLastPlayedMark, Time_Converter(secondsPlayedTotalMark)],
+            ['Jack', dateLastPlayedJack, Time_Converter(secondsPlayedTotalJack)],
+            ['Hunter', dateLastPlayedHunt, Time_Converter(secondsPlayedTotalHunt)],
+            ['Cameron', dateLastPlayedCam, Time_Converter(secondsPlayedTotalCam)],
+            ['Kade', dateLastPlayedKade, Time_Converter(secondsPlayedTotalKade)],
+            ['Total', 'Last Logged In', Time_Converter(secondsPlayedTotal)]
         ]
     )
     timeWasted.reversesort = True
