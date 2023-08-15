@@ -5,3 +5,16 @@ body {
     background-color: rgb(238, 238, 238); 
     margin: 0 auto;
 }
+
+.player-button {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 10px 15px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .player-button.active {
+        background-color: #9B6852;
+        color: #fff;
+    }

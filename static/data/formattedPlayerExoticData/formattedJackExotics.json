@@ -1,0 +1,646 @@
+{
+  "exoticWeapons": [
+    {
+      "referenceID": "1345867570",
+      "name": "Sweet Business",
+      "kills": 2425.0,
+      "precision": 566.0
+    },
+    {
+      "referenceID": "2907129556",
+      "name": "Strum",
+      "kills": 230.0,
+      "precision": 103.0
+    },
+    {
+      "referenceID": "3628991659",
+      "name": "Vigilance Wing",
+      "kills": 274.0,
+      "precision": 107.0
+    },
+    {
+      "referenceID": "2362471601",
+      "name": "Rat King",
+      "kills": 4.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "1331482397",
+      "name": "MIDA Multi-Tool",
+      "kills": 149.0,
+      "precision": 76.0
+    },
+    {
+      "referenceID": "3437746471",
+      "name": "Crimson",
+      "kills": 1500.0,
+      "precision": 696.0
+    },
+    {
+      "referenceID": "3844694310",
+      "name": "Jade Rabbit",
+      "kills": 121.0,
+      "precision": 68.0
+    },
+    {
+      "referenceID": "2286143274",
+      "name": "Huckleberry",
+      "kills": 2044.0,
+      "precision": 470.0
+    },
+    {
+      "referenceID": "2856683562",
+      "name": "SUROS Regime",
+      "kills": 369.0,
+      "precision": 172.0
+    },
+    {
+      "referenceID": "1541131350",
+      "name": "Cerberus+1",
+      "kills": 543.0,
+      "precision": 93.0
+    },
+    {
+      "referenceID": "814876684",
+      "name": "Wish Ender",
+      "kills": 448.0,
+      "precision": 111.0
+    },
+    {
+      "referenceID": "204878059",
+      "name": "Malfeasance",
+      "kills": 268.0,
+      "precision": 101.0
+    },
+    {
+      "referenceID": "347366834",
+      "name": "Ace of Spades",
+      "kills": 6166.0,
+      "precision": 2898.0
+    },
+    {
+      "referenceID": "3413860062",
+      "name": "The Chaperone",
+      "kills": 74.0,
+      "precision": 14.0
+    },
+    {
+      "referenceID": "3211806999",
+      "name": "Izanagi's Burden",
+      "kills": 685.0,
+      "precision": 279.0
+    },
+    {
+      "referenceID": "1364093401",
+      "name": "The Last Word",
+      "kills": 1470.0,
+      "precision": 635.0
+    },
+    {
+      "referenceID": "2130065553",
+      "name": "Arbalest",
+      "kills": 1367.0,
+      "precision": 634.0
+    },
+    {
+      "referenceID": "3973202132",
+      "name": "Thorn",
+      "kills": 1094.0,
+      "precision": 347.0
+    },
+    {
+      "referenceID": "400096939",
+      "name": "Outbreak Perfected",
+      "kills": 1620.0,
+      "precision": 590.0
+    },
+    {
+      "referenceID": "3512014804",
+      "name": "Lumina",
+      "kills": 115.0,
+      "precision": 54.0
+    },
+    {
+      "referenceID": "2816212794",
+      "name": "Bad Juju",
+      "kills": 999.0,
+      "precision": 442.0
+    },
+    {
+      "referenceID": "4068264807",
+      "name": "Monte Carlo",
+      "kills": 1227.0,
+      "precision": 313.0
+    },
+    {
+      "referenceID": "2415517654",
+      "name": "Bastion",
+      "kills": 101.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "2357297366",
+      "name": "Witherhoard",
+      "kills": 3922.0,
+      "precision": 1.0
+    },
+    {
+      "referenceID": "1853180924",
+      "name": "Traveler's Chosen",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "3856705927",
+      "name": "Hawkmoon",
+      "kills": 749.0,
+      "precision": 391.0
+    },
+    {
+      "referenceID": "1594120904",
+      "name": "No Time to Explain",
+      "kills": 834.0,
+      "precision": 312.0
+    },
+    {
+      "referenceID": "3654674561",
+      "name": "Dead Man's Tale",
+      "kills": 2901.0,
+      "precision": 1352.0
+    },
+    {
+      "referenceID": "603721696",
+      "name": "Cryosthethesia 77K",
+      "kills": 116.0,
+      "precision": 29.0
+    },
+    {
+      "referenceID": "1833195496",
+      "name": "Ager's Scepter",
+      "kills": 3294.0,
+      "precision": 679.0
+    },
+    {
+      "referenceID": "2179048386",
+      "name": "Forerunner",
+      "kills": 228.0,
+      "precision": 123.0
+    },
+    {
+      "referenceID": "46524085",
+      "name": "Osteo Striga",
+      "kills": 3518.0,
+      "precision": 557.0
+    },
+    {
+      "referenceID": "1802135586",
+      "name": "Touch of Malice",
+      "kills": 133.0,
+      "precision": 63.0
+    },
+    {
+      "referenceID": "4293613902",
+      "name": "Quicksilver Storm",
+      "kills": 959.0,
+      "precision": 200.0
+    },
+    {
+      "referenceID": "1473821207",
+      "name": "Revision Zero",
+      "kills": 433.0,
+      "precision": 156.0
+    },
+    {
+      "referenceID": "3121540812",
+      "name": "Final Warning",
+      "kills": 1932.0,
+      "precision": 640.0
+    },
+    {
+      "referenceID": "3371017761",
+      "name": "Conditional Finality",
+      "kills": 17.0,
+      "precision": 2.0
+    },
+    {
+      "referenceID": "3659414143",
+      "name": "Verglas Curve",
+      "kills": 688.0,
+      "precision": 247.0
+    },
+    {
+      "referenceID": "940371471",
+      "name": "Wicked Implement",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "1441805468",
+      "name": "The Navigator",
+      "kills": 20.0,
+      "precision": 5.0
+    },
+    {
+      "referenceID": "1345867571",
+      "name": "Coldheart",
+      "kills": 912.0,
+      "precision": 222.0
+    },
+    {
+      "referenceID": "4190156464",
+      "name": "Merciless",
+      "kills": 184.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3549153978",
+      "name": "Fighting Lion",
+      "kills": 135.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "2907129557",
+      "name": "Sunshot",
+      "kills": 4326.0,
+      "precision": 880.0
+    },
+    {
+      "referenceID": "3628991658",
+      "name": "Graviton Lance",
+      "kills": 1324.0,
+      "precision": 389.0
+    },
+    {
+      "referenceID": "4255268456",
+      "name": "Skyburner's Oath",
+      "kills": 113.0,
+      "precision": 30.0
+    },
+    {
+      "referenceID": "3141979347",
+      "name": "Borealis",
+      "kills": 3.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3089417789",
+      "name": "Riskrunner",
+      "kills": 1931.0,
+      "precision": 408.0
+    },
+    {
+      "referenceID": "4124984448",
+      "name": "Hard Light",
+      "kills": 159.0,
+      "precision": 43.0
+    },
+    {
+      "referenceID": "19024058",
+      "name": "Prometheus Lens",
+      "kills": 22.0,
+      "precision": 5.0
+    },
+    {
+      "referenceID": "2208405142",
+      "name": "Telesto",
+      "kills": 100.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3413074534",
+      "name": "Polaris Lance",
+      "kills": 2950.0,
+      "precision": 1701.0
+    },
+    {
+      "referenceID": "814876685",
+      "name": "Trinity Ghoul",
+      "kills": 17832.0,
+      "precision": 4734.0
+    },
+    {
+      "referenceID": "1852863732",
+      "name": "Wavesplitter",
+      "kills": 100.0,
+      "precision": 49.0
+    },
+    {
+      "referenceID": "3413860063",
+      "name": "Lord of Wolves",
+      "kills": 133.0,
+      "precision": 17.0
+    },
+    {
+      "referenceID": "3588934839",
+      "name": "Le Monarque",
+      "kills": 2601.0,
+      "precision": 1019.0
+    },
+    {
+      "referenceID": "417164956",
+      "name": "J\u00c3\u00b6tunn",
+      "kills": 235.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3110698812",
+      "name": "Tarrabah",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "3524313097",
+      "name": "Eriana's Vow",
+      "kills": 1301.0,
+      "precision": 520.0
+    },
+    {
+      "referenceID": "4103414242",
+      "name": "Divinity",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "4017959782",
+      "name": "Symmetry",
+      "kills": 9.0,
+      "precision": 2.0
+    },
+    {
+      "referenceID": "3824106094",
+      "name": "Devil's Ruin",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "776191470",
+      "name": "Tommy's Matchbook",
+      "kills": 1064.0,
+      "precision": 235.0
+    },
+    {
+      "referenceID": "1665952087",
+      "name": "The Fourth Horseman",
+      "kills": 526.0,
+      "precision": 46.0
+    },
+    {
+      "referenceID": "1363238943",
+      "name": "Ruinous Effigy",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "3460576091",
+      "name": "Duality",
+      "kills": 1116.0,
+      "precision": 240.0
+    },
+    {
+      "referenceID": "2603483885",
+      "name": "Cloudstrike",
+      "kills": 300.0,
+      "precision": 126.0
+    },
+    {
+      "referenceID": "3260753130",
+      "name": "Ticuu's Divination",
+      "kills": 853.0,
+      "precision": 218.0
+    },
+    {
+      "referenceID": "4289226715",
+      "name": "Vex Mythoclast",
+      "kills": 1213.0,
+      "precision": 472.0
+    },
+    {
+      "referenceID": "3761898871",
+      "name": "Lorentz Driver",
+      "kills": 871.0,
+      "precision": 234.0
+    },
+    {
+      "referenceID": "14194600",
+      "name": "Edge of Intent",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "2812324401",
+      "name": "Dead Messenger",
+      "kills": 141.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3505113722",
+      "name": "Collective Obligation",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "374573733",
+      "name": "Delicate Tomb",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "1234150730",
+      "name": "The Trespasser",
+      "kills": 702.0,
+      "precision": 139.0
+    },
+    {
+      "referenceID": "219145368",
+      "name": "The Manticore",
+      "kills": 12.0,
+      "precision": 7.0
+    },
+    {
+      "referenceID": "4174431791",
+      "name": "Hierarchy of Needs",
+      "kills": 281.0,
+      "precision": 107.0
+    },
+    {
+      "referenceID": "3118061005",
+      "name": "Vexcalibur",
+      "kills": 31.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "1912669214",
+      "name": "Centrifuse",
+      "kills": 309.0,
+      "precision": 88.0
+    },
+    {
+      "referenceID": "1508896098",
+      "name": "Wardcliff Coil",
+      "kills": 985.0,
+      "precision": 1.0
+    },
+    {
+      "referenceID": "358090458",
+      "name": "Tractor Cannon",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "3580904580",
+      "name": "Legend of Acrius",
+      "kills": 130.0,
+      "precision": 4.0
+    },
+    {
+      "referenceID": "3141979346",
+      "name": "D.A.R.C.I",
+      "kills": 4.0,
+      "precision": 1.0
+    },
+    {
+      "referenceID": "3899270607",
+      "name": "The Colony",
+      "kills": 49.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "1864563948",
+      "name": "Worldline Zero",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "4036115577",
+      "name": "Sleeper Simulant",
+      "kills": 492.0,
+      "precision": 137.0
+    },
+    {
+      "referenceID": "2069224589",
+      "name": "One Thousand Voices",
+      "kills": 707.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "2694576561",
+      "name": "Two-Tailed Fox",
+      "kills": 672.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3766045777",
+      "name": "Black Talon",
+      "kills": 413.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "2044500762",
+      "name": "The Queenbreaker",
+      "kills": 40.0,
+      "precision": 28.0
+    },
+    {
+      "referenceID": "3325463374",
+      "name": "Thunderlord",
+      "kills": 820.0,
+      "precision": 236.0
+    },
+    {
+      "referenceID": "2376481550",
+      "name": "Anarchy",
+      "kills": 67.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "2591746970",
+      "name": "Leviathan's Breath",
+      "kills": 1144.0,
+      "precision": 165.0
+    },
+    {
+      "referenceID": "1395261499",
+      "name": "Xenophage",
+      "kills": 1359.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "2232171099",
+      "name": "Deathbringer",
+      "kills": 900.0,
+      "precision": 1.0
+    },
+    {
+      "referenceID": "2084878005",
+      "name": "Heir Apparent",
+      "kills": 812.0,
+      "precision": 187.0
+    },
+    {
+      "referenceID": "370712896",
+      "name": "Salvation's Grip",
+      "kills": 17.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "2399110176",
+      "name": "Eyes of Tomorrow",
+      "kills": 167.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3487253372",
+      "name": "Lament",
+      "kills": 946.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "1363886209",
+      "name": "Gjallarhorn",
+      "kills": 3621.0,
+      "precision": 1.0
+    },
+    {
+      "referenceID": "2812324400",
+      "name": "Parasite",
+      "kills": 207.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "1763584999",
+      "name": "Grand Overture",
+      "kills": 406.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "3664831848",
+      "name": "Heartshadow",
+      "kills": 52.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "449318888",
+      "name": "Deterministic Chaos",
+      "kills": 169.0,
+      "precision": 51.0
+    },
+    {
+      "referenceID": "3118061004",
+      "name": "Winterbite",
+      "kills": 25.0,
+      "precision": 0.0
+    },
+    {
+      "referenceID": "1201830623",
+      "name": "Truth",
+      "kills": 0,
+      "precision": 0
+    },
+    {
+      "referenceID": "1891561814",
+      "name": "Whisper of the Worm",
+      "kills": 14.0,
+      "precision": 6.0
+    }
+  ]
+}
