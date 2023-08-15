@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Jotunn Comparer</title>
-    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
+{% extends 'base.html' %}
+
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
     <table id="exoticTable" class="display">
         <thead>
             <tr>
@@ -19,6 +21,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
-    <script src="exotics-json.js"></script>
-</body>
-</html>
+    <script src="{{ url_for('static', filename='exotics-json.js') }}"></script>
+
+{% endblock %}
