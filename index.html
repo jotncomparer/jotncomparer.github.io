@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Jotunn Comparer</title>
+    <title>Jotunn Comparer</title>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Jotunn Comparer is currently under construction</h1>
-  <div class = "">
-    <div id = "buttonClass">
-      <button id="display" class = "button" type="button">press to show</button>
-    </div>
+    <table id="exoticTable" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Kills</th>
+                <th>Precision</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
-    <section id = "content"> <p>content will be shown here!!</p></section>
-  </div>
-
-  <script src="exotics-json.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+    <script src="exotics-json.js"></script>
 </body>
+</html>
