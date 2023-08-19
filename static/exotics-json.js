@@ -9,14 +9,16 @@ $(document).ready(function() {
     });
 
     // Load initial data for the first player
-    updateExoticData('hunter');
+    var initialPlayer = $('.player-button.active').data('player');
+    updateExoticData(initialPlayer);
 
     // Function to update the exotic data
     function updateExoticData(player) {
         var table = $('#exoticTable').DataTable();
         table.clear().draw();
+        console.log(`Calling updateExoticData for player: ${player}`);
 
-        $.getJSON(`static/data/formattedPlayerExoticData/formatted${player}Exotics.json`, function(data) {
+        $.getJSON(`/get_exotic_data/${player}`, function(data) {
             $.each(data.exoticWeapons, function(index, weapon) {
                 table.row.add([
                     weapon.name,

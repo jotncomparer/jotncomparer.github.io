@@ -5,6 +5,12 @@ import os
 
 app = Flask(__name__, static_folder='static')
 
+def update_all_players_data():
+    players = ["Cameron", "Connor", "Douglas", "Hunter", "Jack", "Kade", "Mark", "Thomas"]
+    
+    for player in players:
+        subprocess.run(['python3', 'formatExotic.py', player], shell=True)
+
 def get_formatted_data(player):
     json_path = f'static/data/formattedPlayerExoticData/formatted{player.capitalize()}Exotics.json'
     if os.path.exists(json_path):
@@ -16,14 +22,11 @@ def get_formatted_data(player):
 
 @app.route('/', methods=['GET'])
 def index():
+    update_all_players_data()
     return render_template("index.html")
 
 @app.route('/get_exotic_data/<player>', methods=['GET'])
 def get_exotic_data(player):
-    # Run formatExotic.py with the specified player
-    subprocess.run(['python', 'formatExotic.py', player], shell=True)
-   
-    # Return the formatted data
     data = get_formatted_data(player)
     if data:
         return jsonify(data)

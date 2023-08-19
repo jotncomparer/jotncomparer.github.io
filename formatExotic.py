@@ -61,4 +61,5 @@ if __name__ == "__main__":
         print("Usage: python formatExotic.py <player>")
     else:
         player = sys.argv[1]
+        print(f"Running formatExotic.py for player: {player}")
         format_exotic_data(player)
