@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 8-7-2023
-# Last Updated: 8-7-2023
+# Last Updated: 11-10-2023
 # This program needs Character_Metrics.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -27,6 +27,9 @@ def allProfileData():
         data7 = json.load(f)
     with open('Metrics_8.json') as f:
         data8 = json.load(f)
+    with open('Metrics_9.json') as f:
+        data9 = json.load(f)
+
 
     items1 = data1["Response"]
     items2 = data2["Response"]
@@ -36,6 +39,7 @@ def allProfileData():
     items6 = data6["Response"]
     items7 = data7["Response"]
     items8 = data8["Response"]
+    items9 = data9["Response"]
 
     metric_json = {"Response": []}
     metric_json['Response'].append(items1)
@@ -46,6 +50,7 @@ def allProfileData():
     metric_json['Response'].append(items6)
     metric_json['Response'].append(items7)
     metric_json['Response'].append(items8)
+    metric_json['Response'].append(items9)
 
     with open('Metrics.json', "w") as f:
         f.write(json.dumps(metric_json, indent=2))
@@ -90,14 +95,19 @@ def allProfileData():
     legacyScoreKade = metric_json["Response"][7]["profileRecords"]['data']['legacyScore']
     lifetimeScoreKade = metric_json["Response"][7]["profileRecords"]['data']['lifetimeScore']
 
+    scoreNoz = metric_json["Response"][8]["profileRecords"]['data']['score']
+    activeScoreNoz = metric_json["Response"][8]["profileRecords"]['data']['activeScore']
+    legacyScoreNoz = metric_json["Response"][8]["profileRecords"]['data']['legacyScore']
+    lifetimeScoreNoz = metric_json["Response"][8]["profileRecords"]['data']['lifetimeScore']
+
     profileTable = PrettyTable()
-    profileTable.field_names = ['Triumph Score', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+    profileTable.field_names = ['Triumph Score', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade', 'Nozyric']
     profileTable.add_rows(
         [
-            ['Lifetime Score', lifetimeScoreCon, lifetimeScoreTom, lifetimeScoreDoug, lifetimeScoreMark, lifetimeScoreJack, lifetimeScoreHunt, lifetimeScoreCam, lifetimeScoreKade],
-            ['Active Score', activeScoreCon, activeScoreTom, activeScoreDoug, activeScoreMark, activeScoreJack, activeScoreHunt, activeScoreCam, activeScoreKade],
-            ['Legacy Score', legacyScoreCon, legacyScoreTom, legacyScoreDoug, legacyScoreMark, legacyScoreJack, legacyScoreHunt, legacyScoreCam, legacyScoreKade],
-            ['Score', scoreCon, scoreTom, scoreDoug, scoreMark, scoreJack, scoreHunt, scoreCam, scoreKade]
+            ['Lifetime Score', lifetimeScoreCon, lifetimeScoreTom, lifetimeScoreDoug, lifetimeScoreMark, lifetimeScoreJack, lifetimeScoreHunt, lifetimeScoreCam, lifetimeScoreKade, lifetimeScoreNoz],
+            ['Active Score', activeScoreCon, activeScoreTom, activeScoreDoug, activeScoreMark, activeScoreJack, activeScoreHunt, activeScoreCam, activeScoreKade, activeScoreNoz],
+            ['Legacy Score', legacyScoreCon, legacyScoreTom, legacyScoreDoug, legacyScoreMark, legacyScoreJack, legacyScoreHunt, legacyScoreCam, legacyScoreKade, legacyScoreNoz],
+            ['Score', scoreCon, scoreTom, scoreDoug, scoreMark, scoreJack, scoreHunt, scoreCam, scoreKade, scoreNoz]
         ]
     )
     profileTable.reversesort = True
