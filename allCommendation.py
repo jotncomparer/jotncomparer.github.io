@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 8-7-2023
-# Last Updated: 8-8-2023
+# Last Updated: 11-10-2023
 # This program needs Character_Metrics.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -27,6 +27,8 @@ def allCommendationData():
         data7 = json.load(f)
     with open('Metrics_8.json') as f:
         data8 = json.load(f)
+    with open('Metrics_9.json') as f:
+        data9 = json.load(f)
 
     items1 = data1["Response"]
     items2 = data2["Response"]
@@ -36,6 +38,7 @@ def allCommendationData():
     items6 = data6["Response"]
     items7 = data7["Response"]
     items8 = data8["Response"]
+    items9 = data9["Response"]
 
     metric_json = {"Response": []}
     metric_json['Response'].append(items1)
@@ -46,6 +49,7 @@ def allCommendationData():
     metric_json['Response'].append(items6)
     metric_json['Response'].append(items7)
     metric_json['Response'].append(items8)
+    metric_json['Response'].append(items9)
 
     with open('Metrics.json', "w") as f:
         f.write(json.dumps(metric_json, indent=2))
@@ -59,6 +63,7 @@ def allCommendationData():
     guardianRankHunt = metric_json["Response"][5]['profile']['data']['currentGuardianRank']
     guardianRankCam = metric_json["Response"][6]['profile']['data']['currentGuardianRank']
     guardianRankKade = metric_json["Response"][7]['profile']['data']['currentGuardianRank']
+    guardianRankNoz = metric_json["Response"][8]['profile']['data']['currentGuardianRank']
 
     if guardianRankCon <= 6:
         guardianRankTitleCon = 'Blueberry'
@@ -164,6 +169,19 @@ def allCommendationData():
     elif guardianRankKade == 11:
         guardianRankTitleKade = 'Paragon'
 
+    if guardianRankNoz <= 6:
+        guardianRankTitleNoz = 'Blueberry'
+    elif guardianRankNoz == 7:
+        guardianRankTitleNoz = 'Elite'
+    elif guardianRankNoz == 8:
+        guardianRankTitleNoz = 'Justiciar'
+    elif guardianRankNoz == 9:
+        guardianRankTitleNoz = 'Vanquisher'
+    elif guardianRankNoz == 10:
+        guardianRankTitleNoz = 'Exemplar'
+    elif guardianRankNoz == 11:
+        guardianRankTitleNoz = 'Paragon'
+
     guardianRankTable = PrettyTable()
     guardianRankTable.field_names = ['Player', 'Rank', 'Title']
     guardianRankTable.add_rows(
@@ -175,7 +193,8 @@ def allCommendationData():
             ['Jack', guardianRankJack, guardianRankTitleJack],
             ['Hunter', guardianRankHunt, guardianRankTitleHunt],
             ['Cameron', guardianRankCam, guardianRankTitleCam],
-            ['Kade', guardianRankKade, guardianRankTitleKade]
+            ['Kade', guardianRankKade, guardianRankTitleKade],
+            ['Nozyric', guardianRankNoz, guardianRankTitleNoz]
         ]
     )
     print(guardianRankTable)
@@ -229,15 +248,21 @@ def allCommendationData():
     leadershipScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
     masteryScoreKade = metric_json["Response"][7]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
 
+    totalScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['totalScore']
+    allyScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
+    funScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
+    leadershipScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
+    masteryScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
+
     commendationTable = PrettyTable()
-    commendationTable.field_names = ['Commendation Category', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+    commendationTable.field_names = ['Commendation Category', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade', 'Nozyric']
     commendationTable.add_rows(
         [
-            ['Ally', allyScoreCon, allyScoreTom, allyScoreDoug, allyScoreMark, allyScoreJack, allyScoreHunt, allyScoreCam, allyScoreKade],
-            ['Fun', funScoreCon, funScoreTom, funScoreDoug, funScoreMark, funScoreJack, funScoreHunt, funScoreCam, funScoreKade ],
-            ['Leadership', leadershipScoreCon, leadershipScoreTom, leadershipScoreDoug, leadershipScoreMark, leadershipScoreJack, leadershipScoreHunt, leadershipScoreCam, leadershipScoreKade ],
-            ['Mastery', masteryScoreCon, masteryScoreTom, masteryScoreDoug, masteryScoreMark, masteryScoreJack, masteryScoreHunt, masteryScoreCam, masteryScoreKade ],
-            ['Total', totalScoreCon, totalScoreTom, totalScoreDoug, totalScoreMark, totalScoreJack, totalScoreHunt, totalScoreCam, totalScoreKade]
+            ['Ally', allyScoreCon, allyScoreTom, allyScoreDoug, allyScoreMark, allyScoreJack, allyScoreHunt, allyScoreCam, allyScoreKade, allyScoreNoz],
+            ['Fun', funScoreCon, funScoreTom, funScoreDoug, funScoreMark, funScoreJack, funScoreHunt, funScoreCam, funScoreKade, funScoreNoz],
+            ['Leadership', leadershipScoreCon, leadershipScoreTom, leadershipScoreDoug, leadershipScoreMark, leadershipScoreJack, leadershipScoreHunt, leadershipScoreCam, leadershipScoreKade, leadershipScoreNoz],
+            ['Mastery', masteryScoreCon, masteryScoreTom, masteryScoreDoug, masteryScoreMark, masteryScoreJack, masteryScoreHunt, masteryScoreCam, masteryScoreKade, masteryScoreNoz],
+            ['Total', totalScoreCon, totalScoreTom, totalScoreDoug, totalScoreMark, totalScoreJack, totalScoreHunt, totalScoreCam, totalScoreKade, totalScoreNoz]
         ]
     )
     commendationTable.reversesort = True
@@ -379,22 +404,40 @@ def allCommendationData():
     # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
     # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
     # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # Specific Commendation Cards
+    selflessScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['354527503']
+    bestDressedScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    primevalInstinctScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['363818544']
+    indispensableScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
+    patientConsiderateScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    levelHeadedScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
+    joyBringerScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
+    thoughfulScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
+    heroicScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
+    perceptiveScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
+    knowledgeableScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    playmakerScoreNoz = metric_json["Response"][8]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+    # totalScore = metric_json["Response"][0]['profileCommendations']['data']['commendationScoresByHash']['']
+
     commendationCardTable = PrettyTable()
-    commendationCardTable.field_names = ['Commendation Card', 'Category', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+    commendationCardTable.field_names = ['Commendation Card', 'Category', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade', 'Nozyric']
     commendationCardTable.add_rows(
         [
-            ['Perceptive', 'Leadership', perceptiveScoreCon, perceptiveScoreTom, perceptiveScoreDoug, perceptiveScoreMark, perceptiveScoreJack, perceptiveScoreHunt, perceptiveScoreCam, perceptiveScoreKade],
-            ['Knowledgeable', 'Leadership', knowledgeableScoreCon, knowledgeableScoreTom, knowledgeableScoreDoug, knowledgeableScoreMark, knowledgeableScoreJack, knowledgeableScoreHunt, knowledgeableScoreCam, knowledgeableScoreKade],
-            ['Joy Bringer', 'Fun', joyBringerScoreCon, joyBringerScoreTom, joyBringerScoreDoug, joyBringerScoreMark, joyBringerScoreJack, joyBringerScoreHunt, joyBringerScoreCam, joyBringerScoreKade],
-            ['Level-headed', 'Fun', levelHeadedScoreCon, levelHeadedScoreTom, levelHeadedScoreDoug, levelHeadedScoreMark, levelHeadedScoreJack, levelHeadedScoreHunt, levelHeadedScoreCam, levelHeadedScoreKade],
-            ['Best Dressed', 'Fun', bestDressedScoreCon, bestDressedScoreTom, bestDressedScoreDoug, bestDressedScoreMark, bestDressedScoreJack, bestDressedScoreHunt, bestDressedScoreCam, bestDressedScoreKade],
-            ['Playmaker', 'Mastery', playmakerScoreCon, playmakerScoreTom, playmakerScoreDoug, playmakerScoreMark, playmakerScoreJack, playmakerScoreHunt, playmakerScoreCam, playmakerScoreKade],
-            ['Primeval Instinct', 'Mastery', primevalInstinctScoreCon, primevalInstinctScoreTom, primevalInstinctScoreDoug, primevalInstinctScoreMark, primevalInstinctScoreJack, primevalInstinctScoreHunt, primevalInstinctScoreCam, primevalInstinctScoreKade],
-            ['Heroic', 'Mastery', heroicScoreCon, heroicScoreTom, heroicScoreDoug, heroicScoreMark, heroicScoreJack, heroicScoreHunt, heroicScoreCam, heroicScoreKade],
-            ['Indispensable', 'Ally', indispensableScoreCon, indispensableScoreTom, indispensableScoreDoug, indispensableScoreMark, indispensableScoreJack, indispensableScoreHunt, indispensableScoreCam, indispensableScoreKade],
-            ['Selfless', 'Ally', selflessScoreCon, selflessScoreTom, selflessScoreDoug, selflessScoreMark, selflessScoreJack, selflessScoreHunt, selflessScoreCam, selflessScoreKade],
-            ['Thoughtful', 'Ally', thoughfulScoreCon, thoughfulScoreTom, thoughfulScoreDoug, thoughfulScoreMark, thoughfulScoreJack, thoughfulScoreHunt, thoughfulScoreCam, thoughfulScoreKade],
-            ['Patience and Consideration', 'Ally', patientConsiderateScoreCon, patientConsiderateScoreTom, patientConsiderateScoreDoug, patientConsiderateScoreMark, patientConsiderateScoreJack, patientConsiderateScoreHunt, patientConsiderateScoreCam, patientConsiderateScoreKade]
+            ['Perceptive', 'Leadership', perceptiveScoreCon, perceptiveScoreTom, perceptiveScoreDoug, perceptiveScoreMark, perceptiveScoreJack, perceptiveScoreHunt, perceptiveScoreCam, perceptiveScoreKade, perceptiveScoreNoz],
+            ['Knowledgeable', 'Leadership', knowledgeableScoreCon, knowledgeableScoreTom, knowledgeableScoreDoug, knowledgeableScoreMark, knowledgeableScoreJack, knowledgeableScoreHunt, knowledgeableScoreCam, knowledgeableScoreKade, knowledgeableScoreNoz],
+            ['Joy Bringer', 'Fun', joyBringerScoreCon, joyBringerScoreTom, joyBringerScoreDoug, joyBringerScoreMark, joyBringerScoreJack, joyBringerScoreHunt, joyBringerScoreCam, joyBringerScoreKade, joyBringerScoreNoz],
+            ['Level-headed', 'Fun', levelHeadedScoreCon, levelHeadedScoreTom, levelHeadedScoreDoug, levelHeadedScoreMark, levelHeadedScoreJack, levelHeadedScoreHunt, levelHeadedScoreCam, levelHeadedScoreKade, levelHeadedScoreNoz],
+            ['Best Dressed', 'Fun', bestDressedScoreCon, bestDressedScoreTom, bestDressedScoreDoug, bestDressedScoreMark, bestDressedScoreJack, bestDressedScoreHunt, bestDressedScoreCam, bestDressedScoreKade, bestDressedScoreNoz],
+            ['Playmaker', 'Mastery', playmakerScoreCon, playmakerScoreTom, playmakerScoreDoug, playmakerScoreMark, playmakerScoreJack, playmakerScoreHunt, playmakerScoreCam, playmakerScoreKade, playmakerScoreNoz],
+            ['Primeval Instinct', 'Mastery', primevalInstinctScoreCon, primevalInstinctScoreTom, primevalInstinctScoreDoug, primevalInstinctScoreMark, primevalInstinctScoreJack, primevalInstinctScoreHunt, primevalInstinctScoreCam, primevalInstinctScoreKade, primevalInstinctScoreNoz],
+            ['Heroic', 'Mastery', heroicScoreCon, heroicScoreTom, heroicScoreDoug, heroicScoreMark, heroicScoreJack, heroicScoreHunt, heroicScoreCam, heroicScoreKade, heroicScoreNoz],
+            ['Indispensable', 'Ally', indispensableScoreCon, indispensableScoreTom, indispensableScoreDoug, indispensableScoreMark, indispensableScoreJack, indispensableScoreHunt, indispensableScoreCam, indispensableScoreKade, indispensableScoreNoz],
+            ['Selfless', 'Ally', selflessScoreCon, selflessScoreTom, selflessScoreDoug, selflessScoreMark, selflessScoreJack, selflessScoreHunt, selflessScoreCam, selflessScoreKade, selflessScoreNoz],
+            ['Thoughtful', 'Ally', thoughfulScoreCon, thoughfulScoreTom, thoughfulScoreDoug, thoughfulScoreMark, thoughfulScoreJack, thoughfulScoreHunt, thoughfulScoreCam, thoughfulScoreKade, thoughfulScoreNoz],
+            ['Patience and Consideration', 'Ally', patientConsiderateScoreCon, patientConsiderateScoreTom, patientConsiderateScoreDoug, patientConsiderateScoreMark, patientConsiderateScoreJack, patientConsiderateScoreHunt, patientConsiderateScoreCam, patientConsiderateScoreKade, patientConsiderateScoreNoz]
         ]
     )
     commendationCardTable.reversesort = False
