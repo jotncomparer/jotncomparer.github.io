@@ -119,7 +119,7 @@ def allMetricsData():
         heavyFishCaughtKade = heavyFishCaughtKade / 100
         goodBoyProtocolKade = \
             metric_json["Response"][7]['metrics']['data']['metrics']['3131994725']["objectiveProgress"]['progress']
-        
+
         fishCaughtNoz = metric_json["Response"][8]['metrics']['data']['metrics']['24768693']["objectiveProgress"][
             'progress']
         heavyFishCaughtNoz = \
@@ -257,7 +257,7 @@ def allMetricsData():
                 metric_json["Response"][7]['metrics']['data']['metrics']['2464463405']["objectiveProgress"]['progress']
             strandFinalBlowsKade = \
                 metric_json["Response"][7]['metrics']['data']['metrics']['2889561660']["objectiveProgress"]['progress']
-            
+
             totalFinalBlowsNoz = \
                 metric_json["Response"][8]['metrics']['data']['metrics']['2537844000']["objectiveProgress"]['progress']
             arcFinalBlowsNoz = \
@@ -680,7 +680,7 @@ def allMetricsData():
                      grenadeLaunchFinalBlowsDoug, grenadeLaunchFinalBlowsMark, grenadeLaunchFinalBlowsJack,
                      grenadeLaunchFinalBlowsHunt, grenadeLaunchFinalBlowsCam, grenadeLaunchFinalBlowsKade, grenadeLaunchFinalBlowsNoz, sumGrenade],
                     ['Sword', swordFinalBlowsCon, swordFinalBlowsTom, swordFinalBlowsDoug, swordFinalBlowsMark,
-                     swordFinalBlowsJack, swordFinalBlowsHunt, swordFinalBlowsCam, swordFinalBlowsKade, sumSword],
+                     swordFinalBlowsJack, swordFinalBlowsHunt, swordFinalBlowsCam, swordFinalBlowsKade, swordFinalBlowsNoz, sumSword],
                     ['Linear Fusion Rifle', linearFinalBlowsCon, linearFinalBlowsTom, linearFinalBlowsDoug,
                      linearFinalBlowsMark, linearFinalBlowsJack, linearFinalBlowsHunt, linearFinalBlowsCam,
                      linearFinalBlowsKade, linearFinalBlowsNoz, sumLinear],
@@ -744,7 +744,7 @@ def allMetricsData():
             flawlessStrikeKade = metric_json["Response"][7]['metrics']['data']['metrics']['2326329668']["objectiveProgress"]['progress']
             champsDefeatedKade = metric_json["Response"][7]['metrics']['data']['metrics']['41075005']["objectiveProgress"]['progress']
             finalBlowsPerSKade = metric_json["Response"][7]['metrics']['data']['metrics']['3857340681']["objectiveProgress"]['progress']
-            
+
             strikeCompleteNoz = metric_json["Response"][8]['metrics']['data']['metrics']['793155718']["objectiveProgress"]['progress']
             flawlessStrikeNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2326329668']["objectiveProgress"]['progress']
             champsDefeatedNoz = metric_json["Response"][8]['metrics']['data']['metrics']['41075005']["objectiveProgress"]['progress']
@@ -965,7 +965,7 @@ def allMetricsData():
             hollowedLairKade = metric_json["Response"][7]['metrics']['data']['metrics']['449969041']["objectiveProgress"]['progress']
             theLightbladeKade = metric_json["Response"][7]['metrics']['data']['metrics']['3181525833']["objectiveProgress"]['progress']
             birthplaceOTVileKade = metric_json["Response"][7]['metrics']['data']['metrics']['1065851514']["objectiveProgress"]['progress']
-            
+
             armsDealerNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3036740778']["objectiveProgress"]['progress']
             insightTermNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3146366866']["objectiveProgress"]['progress']
             invertedSpireNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3466351705']["objectiveProgress"]['progress']
