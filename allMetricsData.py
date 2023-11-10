@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 8-8-2023
-# Last Updated: 8-8-2023
+# Last Updated: 11-10-2023
 # This program needs Character_Metrics.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -28,6 +28,8 @@ def allMetricsData():
         data7 = json.load(f)
     with open('Metrics_8.json') as f:
         data8 = json.load(f)
+    with open('Metrics_9.json') as f:
+        data9 = json.load(f)
 
     items1 = data1["Response"]
     items2 = data2["Response"]
@@ -37,6 +39,7 @@ def allMetricsData():
     items6 = data6["Response"]
     items7 = data7["Response"]
     items8 = data8["Response"]
+    items9 = data9["Response"]
 
     metric_json = {"Response": []}
     metric_json['Response'].append(items1)
@@ -47,6 +50,7 @@ def allMetricsData():
     metric_json['Response'].append(items6)
     metric_json['Response'].append(items7)
     metric_json['Response'].append(items8)
+    metric_json['Response'].append(items9)
 
     with open('Metrics.json', "w") as f:
         f.write(json.dumps(metric_json, indent=2))
@@ -115,6 +119,14 @@ def allMetricsData():
         heavyFishCaughtKade = heavyFishCaughtKade / 100
         goodBoyProtocolKade = \
             metric_json["Response"][7]['metrics']['data']['metrics']['3131994725']["objectiveProgress"]['progress']
+        
+        fishCaughtNoz = metric_json["Response"][8]['metrics']['data']['metrics']['24768693']["objectiveProgress"][
+            'progress']
+        heavyFishCaughtNoz = \
+            metric_json["Response"][8]['metrics']['data']['metrics']['2691615711']["objectiveProgress"]['progress']
+        heavyFishCaughtNoz = heavyFishCaughtNoz / 100
+        goodBoyProtocolNoz = \
+            metric_json["Response"][8]['metrics']['data']['metrics']['3131994725']["objectiveProgress"]['progress']
 
         seasonalTable = PrettyTable()
         seasonalTable.field_names = ['Player', 'Fish Caught', 'Heaviest Fish', 'Good Boy Protocol']
@@ -127,7 +139,8 @@ def allMetricsData():
                 ['Jack', fishCaughtJack, f'{heavyFishCaughtJack}kg', goodBoyProtocolJack],
                 ['Hunter', fishCaughtHunt, f'{heavyFishCaughtHunt}kg', goodBoyProtocolHunt],
                 ['Cameron', fishCaughtCam, f'{heavyFishCaughtCam}kg', goodBoyProtocolCam],
-                ['Kade', fishCaughtKade, f'{heavyFishCaughtKade}kg', goodBoyProtocolKade]
+                ['Kade', fishCaughtKade, f'{heavyFishCaughtKade}kg', goodBoyProtocolKade],
+                ['Nozyric', fishCaughtNoz, f'{heavyFishCaughtNoz}kg', goodBoyProtocolNoz]
             ]
         )
         print(seasonalTable)
@@ -244,19 +257,32 @@ def allMetricsData():
                 metric_json["Response"][7]['metrics']['data']['metrics']['2464463405']["objectiveProgress"]['progress']
             strandFinalBlowsKade = \
                 metric_json["Response"][7]['metrics']['data']['metrics']['2889561660']["objectiveProgress"]['progress']
+            
+            totalFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2537844000']["objectiveProgress"]['progress']
+            arcFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['1513312460']["objectiveProgress"]['progress']
+            voidFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2327589890']["objectiveProgress"]['progress']
+            solarFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2187143539']["objectiveProgress"]['progress']
+            stasisFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2464463405']["objectiveProgress"]['progress']
+            strandFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2889561660']["objectiveProgress"]['progress']
 
             sumTotal += (totalFinalBlowsCon + totalFinalBlowsTom + totalFinalBlowsDoug + totalFinalBlowsMark +
-                         totalFinalBlowsJack + totalFinalBlowsHunt + totalFinalBlowsCam + totalFinalBlowsKade)
+                         totalFinalBlowsJack + totalFinalBlowsHunt + totalFinalBlowsCam + totalFinalBlowsKade + totalFinalBlowsNoz)
             sumArc += (arcFinalBlowsCon + arcFinalBlowsTom + arcFinalBlowsDoug + arcFinalBlowsMark + arcFinalBlowsJack +
-                       arcFinalBlowsHunt + arcFinalBlowsCam + arcFinalBlowsKade)
+                       arcFinalBlowsHunt + arcFinalBlowsCam + arcFinalBlowsKade + arcFinalBlowsNoz)
             sumVoid += (voidFinalBlowsCon + voidFinalBlowsTom + voidFinalBlowsDoug + voidFinalBlowsMark +
-                        voidFinalBlowsJack + voidFinalBlowsHunt + voidFinalBlowsCam + voidFinalBlowsKade)
+                        voidFinalBlowsJack + voidFinalBlowsHunt + voidFinalBlowsCam + voidFinalBlowsKade + voidFinalBlowsNoz)
             sumSolar += (solarFinalBlowsCon + solarFinalBlowsTom + solarFinalBlowsDoug + solarFinalBlowsMark +
-                         solarFinalBlowsJack + solarFinalBlowsHunt + solarFinalBlowsCam + solarFinalBlowsKade)
+                         solarFinalBlowsJack + solarFinalBlowsHunt + solarFinalBlowsCam + solarFinalBlowsKade + solarFinalBlowsNoz)
             sumStatis += (stasisFinalBlowsCon + stasisFinalBlowsTom + stasisFinalBlowsDoug + stasisFinalBlowsMark +
-                          stasisFinalBlowsJack + stasisFinalBlowsHunt + stasisFinalBlowsCam + stasisFinalBlowsKade)
+                          stasisFinalBlowsJack + stasisFinalBlowsHunt + stasisFinalBlowsCam + stasisFinalBlowsKade + stasisFinalBlowsNoz)
             sumStrand += (strandFinalBlowsCon + strandFinalBlowsTom + strandFinalBlowsDoug + strandFinalBlowsMark +
-                          strandFinalBlowsJack + strandFinalBlowsHunt + strandFinalBlowsCam + strandFinalBlowsKade)
+                          strandFinalBlowsJack + strandFinalBlowsHunt + strandFinalBlowsCam + strandFinalBlowsKade + strandFinalBlowsNoz)
 
             elementTable = PrettyTable()
             elementTable.field_names = ['Player', 'Arc', 'Solar', 'Void', 'Stasis', 'Strand', 'Total']
@@ -278,6 +304,8 @@ def allMetricsData():
                      strandFinalBlowsCam, totalFinalBlowsCam],
                     ['Kade', arcFinalBlowsKade, solarFinalBlowsKade, voidFinalBlowsKade, stasisFinalBlowsKade,
                      strandFinalBlowsKade, totalFinalBlowsKade],
+                    ['Nozyric', arcFinalBlowsNoz, solarFinalBlowsNoz, voidFinalBlowsNoz, stasisFinalBlowsNoz,
+                     strandFinalBlowsNoz, totalFinalBlowsNoz],
                     ['Total', sumArc, sumSolar, sumVoid, sumStatis, sumStrand, sumTotal]
                 ]
             )
@@ -566,69 +594,102 @@ def allMetricsData():
             machineGunFinalBlowsKade = \
                 metric_json["Response"][7]['metrics']['data']['metrics']['401742412']["objectiveProgress"]['progress']
 
-            sumAuto += autoFinalBlowsCon + autoFinalBlowsTom + autoFinalBlowsDoug + autoFinalBlowsMark + autoFinalBlowsJack + autoFinalBlowsHunt + autoFinalBlowsCam + autoFinalBlowsKade
-            sumPulse += pulseFinalBlowsCon + pulseFinalBlowsTom + pulseFinalBlowsDoug + pulseFinalBlowsMark + pulseFinalBlowsJack + pulseFinalBlowsHunt + pulseFinalBlowsCam + pulseFinalBlowsKade
-            sumScout += scoutFinalBlowsCon + scoutFinalBlowsTom + scoutFinalBlowsDoug + scoutFinalBlowsMark + scoutFinalBlowsJack + scoutFinalBlowsHunt + scoutFinalBlowsCam + scoutFinalBlowsKade
-            sumHand += handFinalBlowsCon + handFinalBlowsTom + handFinalBlowsDoug + handFinalBlowsMark + handFinalBlowsJack + handFinalBlowsHunt + handFinalBlowsCam + handFinalBlowsKade
-            sumSide += sidearmFinalBlowsCon + sidearmFinalBlowsTom + sidearmFinalBlowsDoug + sidearmFinalBlowsMark + sidearmFinalBlowsJack + sidearmFinalBlowsHunt + sidearmFinalBlowsCam + sidearmFinalBlowsKade
-            sumSub += submachineFinalBlowsCon + submachineFinalBlowsTom + submachineFinalBlowsDoug + submachineFinalBlowsMark + submachineFinalBlowsJack + submachineFinalBlowsHunt + submachineFinalBlowsCam + submachineFinalBlowsKade
-            sumBow += bowFinalBlowsCon + bowFinalBlowsTom + bowFinalBlowsDoug + bowFinalBlowsMark + bowFinalBlowsJack + bowFinalBlowsHunt + bowFinalBlowsCam + bowFinalBlowsKade
-            sumFusion += fusionFinalBlowsCon + fusionFinalBlowsTom + fusionFinalBlowsDoug + fusionFinalBlowsMark + fusionFinalBlowsJack + fusionFinalBlowsHunt + fusionFinalBlowsCam + fusionFinalBlowsKade
-            sumShotgun += shotgunFinalBlowsCon + shotgunFinalBlowsTom + shotgunFinalBlowsDoug + shotgunFinalBlowsMark + shotgunFinalBlowsJack + shotgunFinalBlowsHunt + shotgunFinalBlowsCam + shotgunFinalBlowsKade
-            sumSniper += sniperFinalBlowsCon + sniperFinalBlowsTom + sniperFinalBlowsDoug + sniperFinalBlowsMark + sniperFinalBlowsJack + sniperFinalBlowsHunt + sniperFinalBlowsCam + sniperFinalBlowsKade
-            sumTrace += traceFinalBlowsCon + traceFinalBlowsTom + traceFinalBlowsDoug + traceFinalBlowsMark + traceFinalBlowsJack + traceFinalBlowsHunt + traceFinalBlowsCam + traceFinalBlowsKade
-            sumGrenade += grenadeLaunchFinalBlowsCon + grenadeLaunchFinalBlowsTom + grenadeLaunchFinalBlowsDoug + grenadeLaunchFinalBlowsMark + grenadeLaunchFinalBlowsJack + grenadeLaunchFinalBlowsHunt + grenadeLaunchFinalBlowsCam + grenadeLaunchFinalBlowsKade
-            sumSword += swordFinalBlowsCon + swordFinalBlowsTom + swordFinalBlowsDoug + swordFinalBlowsMark + swordFinalBlowsJack + swordFinalBlowsHunt + swordFinalBlowsCam + swordFinalBlowsKade
-            sumLMG += machineGunFinalBlowsCon + machineGunFinalBlowsTom + machineGunFinalBlowsDoug + machineGunFinalBlowsMark + machineGunFinalBlowsJack + machineGunFinalBlowsHunt + machineGunFinalBlowsCam + machineGunFinalBlowsKade
-            sumLinear += linearFinalBlowsCon + linearFinalBlowsTom + linearFinalBlowsDoug + linearFinalBlowsMark + linearFinalBlowsJack + linearFinalBlowsHunt + linearFinalBlowsCam + linearFinalBlowsKade
-            sumRocket += rocketFinalBlowsCon + rocketFinalBlowsTom + rocketFinalBlowsDoug + rocketFinalBlowsMark + rocketFinalBlowsJack + rocketFinalBlowsHunt + rocketFinalBlowsCam + rocketFinalBlowsKade
+            autoFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2094013181']["objectiveProgress"]['progress']
+            pulseFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['982406257']["objectiveProgress"]['progress']
+            scoutFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2599646044']["objectiveProgress"]['progress']
+            handFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2117204340']["objectiveProgress"]['progress']
+            sidearmFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2012993124']["objectiveProgress"]['progress']
+            submachineFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['1165153680']["objectiveProgress"]['progress']
+            bowFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['3522276357']["objectiveProgress"]['progress']
+            traceFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['3124958797']["objectiveProgress"]['progress']
+            fusionFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['105734892']["objectiveProgress"]['progress']
+            shotgunFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['139320435']["objectiveProgress"]['progress']
+            sniperFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['633604541']["objectiveProgress"]['progress']
+            grenadeLaunchFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['1681554390']["objectiveProgress"]['progress']
+            rocketFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['1200426430']["objectiveProgress"]['progress']
+            swordFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['1619269474']["objectiveProgress"]['progress']
+            linearFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['2707112071']["objectiveProgress"]['progress']
+            machineGunFinalBlowsNoz = \
+                metric_json["Response"][8]['metrics']['data']['metrics']['401742412']["objectiveProgress"]['progress']
+
+            sumAuto += autoFinalBlowsCon + autoFinalBlowsTom + autoFinalBlowsDoug + autoFinalBlowsMark + autoFinalBlowsJack + autoFinalBlowsHunt + autoFinalBlowsCam + autoFinalBlowsKade + autoFinalBlowsNoz
+            sumPulse += pulseFinalBlowsCon + pulseFinalBlowsTom + pulseFinalBlowsDoug + pulseFinalBlowsMark + pulseFinalBlowsJack + pulseFinalBlowsHunt + pulseFinalBlowsCam + pulseFinalBlowsKade + pulseFinalBlowsNoz
+            sumScout += scoutFinalBlowsCon + scoutFinalBlowsTom + scoutFinalBlowsDoug + scoutFinalBlowsMark + scoutFinalBlowsJack + scoutFinalBlowsHunt + scoutFinalBlowsCam + scoutFinalBlowsKade + scoutFinalBlowsNoz
+            sumHand += handFinalBlowsCon + handFinalBlowsTom + handFinalBlowsDoug + handFinalBlowsMark + handFinalBlowsJack + handFinalBlowsHunt + handFinalBlowsCam + handFinalBlowsKade + handFinalBlowsNoz
+            sumSide += sidearmFinalBlowsCon + sidearmFinalBlowsTom + sidearmFinalBlowsDoug + sidearmFinalBlowsMark + sidearmFinalBlowsJack + sidearmFinalBlowsHunt + sidearmFinalBlowsCam + sidearmFinalBlowsKade + sidearmFinalBlowsNoz
+            sumSub += submachineFinalBlowsCon + submachineFinalBlowsTom + submachineFinalBlowsDoug + submachineFinalBlowsMark + submachineFinalBlowsJack + submachineFinalBlowsHunt + submachineFinalBlowsCam + submachineFinalBlowsKade + submachineFinalBlowsNoz
+            sumBow += bowFinalBlowsCon + bowFinalBlowsTom + bowFinalBlowsDoug + bowFinalBlowsMark + bowFinalBlowsJack + bowFinalBlowsHunt + bowFinalBlowsCam + bowFinalBlowsKade + bowFinalBlowsNoz
+            sumFusion += fusionFinalBlowsCon + fusionFinalBlowsTom + fusionFinalBlowsDoug + fusionFinalBlowsMark + fusionFinalBlowsJack + fusionFinalBlowsHunt + fusionFinalBlowsCam + fusionFinalBlowsKade + fusionFinalBlowsNoz
+            sumShotgun += shotgunFinalBlowsCon + shotgunFinalBlowsTom + shotgunFinalBlowsDoug + shotgunFinalBlowsMark + shotgunFinalBlowsJack + shotgunFinalBlowsHunt + shotgunFinalBlowsCam + shotgunFinalBlowsKade + shotgunFinalBlowsNoz
+            sumSniper += sniperFinalBlowsCon + sniperFinalBlowsTom + sniperFinalBlowsDoug + sniperFinalBlowsMark + sniperFinalBlowsJack + sniperFinalBlowsHunt + sniperFinalBlowsCam + sniperFinalBlowsKade + sniperFinalBlowsNoz
+            sumTrace += traceFinalBlowsCon + traceFinalBlowsTom + traceFinalBlowsDoug + traceFinalBlowsMark + traceFinalBlowsJack + traceFinalBlowsHunt + traceFinalBlowsCam + traceFinalBlowsKade +traceFinalBlowsNoz
+            sumGrenade += grenadeLaunchFinalBlowsCon + grenadeLaunchFinalBlowsTom + grenadeLaunchFinalBlowsDoug + grenadeLaunchFinalBlowsMark + grenadeLaunchFinalBlowsJack + grenadeLaunchFinalBlowsHunt + grenadeLaunchFinalBlowsCam + grenadeLaunchFinalBlowsKade + grenadeLaunchFinalBlowsNoz
+            sumSword += swordFinalBlowsCon + swordFinalBlowsTom + swordFinalBlowsDoug + swordFinalBlowsMark + swordFinalBlowsJack + swordFinalBlowsHunt + swordFinalBlowsCam + swordFinalBlowsKade + swordFinalBlowsNoz
+            sumLMG += machineGunFinalBlowsCon + machineGunFinalBlowsTom + machineGunFinalBlowsDoug + machineGunFinalBlowsMark + machineGunFinalBlowsJack + machineGunFinalBlowsHunt + machineGunFinalBlowsCam + machineGunFinalBlowsKade + machineGunFinalBlowsNoz
+            sumLinear += linearFinalBlowsCon + linearFinalBlowsTom + linearFinalBlowsDoug + linearFinalBlowsMark + linearFinalBlowsJack + linearFinalBlowsHunt + linearFinalBlowsCam + linearFinalBlowsKade + linearFinalBlowsNoz
+            sumRocket += rocketFinalBlowsCon + rocketFinalBlowsTom + rocketFinalBlowsDoug + rocketFinalBlowsMark + rocketFinalBlowsJack + rocketFinalBlowsHunt + rocketFinalBlowsCam + rocketFinalBlowsKade + rocketFinalBlowsNoz
 
             weaponTable = PrettyTable()
             weaponTable.field_names = ['Weapon', ' Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron',
-                                       'Kade', 'Total']
+                                       'Kade', 'Nozyric', 'Total']
             weaponTable.add_rows(
                 [
                     ['Auto Rifle', autoFinalBlowsCon, autoFinalBlowsTom, autoFinalBlowsDoug, autoFinalBlowsMark,
-                     autoFinalBlowsJack, autoFinalBlowsHunt, autoFinalBlowsCam, autoFinalBlowsKade, sumAuto],
+                     autoFinalBlowsJack, autoFinalBlowsHunt, autoFinalBlowsCam, autoFinalBlowsKade, autoFinalBlowsNoz, sumAuto],
                     ['Pulse Rifle', pulseFinalBlowsCon, pulseFinalBlowsTom, pulseFinalBlowsDoug, pulseFinalBlowsMark,
-                     pulseFinalBlowsJack, pulseFinalBlowsHunt, pulseFinalBlowsCam, pulseFinalBlowsKade, sumPulse],
+                     pulseFinalBlowsJack, pulseFinalBlowsHunt, pulseFinalBlowsCam, pulseFinalBlowsKade, pulseFinalBlowsNoz, sumPulse],
                     ['Scout Rifle', scoutFinalBlowsCon, scoutFinalBlowsTom, scoutFinalBlowsDoug, scoutFinalBlowsMark,
-                     scoutFinalBlowsJack, scoutFinalBlowsHunt, scoutFinalBlowsCam, scoutFinalBlowsKade, sumScout],
+                     scoutFinalBlowsJack, scoutFinalBlowsHunt, scoutFinalBlowsCam, scoutFinalBlowsKade, scoutFinalBlowsNoz, sumScout],
                     ['Hand Cannon', handFinalBlowsCon, handFinalBlowsTom, handFinalBlowsDoug, handFinalBlowsMark,
-                     handFinalBlowsJack, handFinalBlowsHunt, handFinalBlowsCam, handFinalBlowsKade, sumHand],
+                     handFinalBlowsJack, handFinalBlowsHunt, handFinalBlowsCam, handFinalBlowsKade, handFinalBlowsNoz, sumHand],
                     ['Submachine Gun', submachineFinalBlowsCon, submachineFinalBlowsTom, submachineFinalBlowsDoug,
                      submachineFinalBlowsMark, submachineFinalBlowsJack, submachineFinalBlowsHunt,
-                     submachineFinalBlowsCam, submachineFinalBlowsKade, sumSub],
+                     submachineFinalBlowsCam, submachineFinalBlowsKade, submachineFinalBlowsNoz, sumSub],
                     ['Sidearm', sidearmFinalBlowsCon, sidearmFinalBlowsTom, sidearmFinalBlowsDoug,
                      sidearmFinalBlowsMark, sidearmFinalBlowsJack, sidearmFinalBlowsHunt, sidearmFinalBlowsCam,
-                     sidearmFinalBlowsKade, sumSide],
+                     sidearmFinalBlowsKade, sidearmFinalBlowsNoz, sumSide],
                     ['Combat Bow', bowFinalBlowsCon, bowFinalBlowsTom, bowFinalBlowsDoug, bowFinalBlowsMark,
-                     bowFinalBlowsJack, bowFinalBlowsHunt, bowFinalBlowsCam, bowFinalBlowsKade, sumBow],
+                     bowFinalBlowsJack, bowFinalBlowsHunt, bowFinalBlowsCam, bowFinalBlowsKade, bowFinalBlowsNoz, sumBow],
                     ['Trace Rifle', traceFinalBlowsCon, traceFinalBlowsTom, traceFinalBlowsDoug, traceFinalBlowsMark,
-                     traceFinalBlowsJack, traceFinalBlowsHunt, traceFinalBlowsCam, traceFinalBlowsKade, sumTrace],
+                     traceFinalBlowsJack, traceFinalBlowsHunt, traceFinalBlowsCam, traceFinalBlowsKade, traceFinalBlowsNoz, sumTrace],
                     ['Fusion Rifle', fusionFinalBlowsCon, fusionFinalBlowsTom, fusionFinalBlowsDoug,
                      fusionFinalBlowsMark, fusionFinalBlowsJack, fusionFinalBlowsHunt, fusionFinalBlowsCam,
-                     fusionFinalBlowsKade, sumFusion],
+                     fusionFinalBlowsKade, fusionFinalBlowsNoz, sumFusion],
                     ['Shotgun', shotgunFinalBlowsCon, shotgunFinalBlowsTom, shotgunFinalBlowsDoug,
                      shotgunFinalBlowsMark, shotgunFinalBlowsJack, shotgunFinalBlowsHunt, shotgunFinalBlowsCam,
-                     shotgunFinalBlowsKade, sumShotgun],
+                     shotgunFinalBlowsKade, shotgunFinalBlowsNoz, sumShotgun],
                     ['Sniper Rifle', sniperFinalBlowsCon, sniperFinalBlowsTom, sniperFinalBlowsDoug,
                      sniperFinalBlowsMark, sniperFinalBlowsJack, sniperFinalBlowsHunt, sniperFinalBlowsCam,
-                     sniperFinalBlowsKade, sumSniper],
+                     sniperFinalBlowsKade, sniperFinalBlowsNoz, sumSniper],
                     ['Grenade Launcher', grenadeLaunchFinalBlowsCon, grenadeLaunchFinalBlowsTom,
                      grenadeLaunchFinalBlowsDoug, grenadeLaunchFinalBlowsMark, grenadeLaunchFinalBlowsJack,
-                     grenadeLaunchFinalBlowsHunt, grenadeLaunchFinalBlowsCam, grenadeLaunchFinalBlowsKade, sumGrenade],
+                     grenadeLaunchFinalBlowsHunt, grenadeLaunchFinalBlowsCam, grenadeLaunchFinalBlowsKade, grenadeLaunchFinalBlowsNoz, sumGrenade],
                     ['Sword', swordFinalBlowsCon, swordFinalBlowsTom, swordFinalBlowsDoug, swordFinalBlowsMark,
                      swordFinalBlowsJack, swordFinalBlowsHunt, swordFinalBlowsCam, swordFinalBlowsKade, sumSword],
                     ['Linear Fusion Rifle', linearFinalBlowsCon, linearFinalBlowsTom, linearFinalBlowsDoug,
                      linearFinalBlowsMark, linearFinalBlowsJack, linearFinalBlowsHunt, linearFinalBlowsCam,
-                     linearFinalBlowsKade, sumLinear],
+                     linearFinalBlowsKade, linearFinalBlowsNoz, sumLinear],
                     ['Rocket Launcher', rocketFinalBlowsCon, rocketFinalBlowsTom, rocketFinalBlowsDoug,
                      rocketFinalBlowsMark, rocketFinalBlowsJack, rocketFinalBlowsHunt, rocketFinalBlowsCam,
-                     rocketFinalBlowsKade, sumRocket],
+                     rocketFinalBlowsKade, rocketFinalBlowsNoz, sumRocket],
                     ['Machine Gun', machineGunFinalBlowsCon, machineGunFinalBlowsTom, machineGunFinalBlowsDoug,
                      machineGunFinalBlowsMark, machineGunFinalBlowsJack, machineGunFinalBlowsHunt,
-                     machineGunFinalBlowsCam, machineGunFinalBlowsKade, sumLMG],
+                     machineGunFinalBlowsCam, machineGunFinalBlowsKade, machineGunFinalBlowsNoz, sumLMG],
                 ]
             )
             weaponTable.reversesort = True
@@ -683,11 +744,16 @@ def allMetricsData():
             flawlessStrikeKade = metric_json["Response"][7]['metrics']['data']['metrics']['2326329668']["objectiveProgress"]['progress']
             champsDefeatedKade = metric_json["Response"][7]['metrics']['data']['metrics']['41075005']["objectiveProgress"]['progress']
             finalBlowsPerSKade = metric_json["Response"][7]['metrics']['data']['metrics']['3857340681']["objectiveProgress"]['progress']
+            
+            strikeCompleteNoz = metric_json["Response"][8]['metrics']['data']['metrics']['793155718']["objectiveProgress"]['progress']
+            flawlessStrikeNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2326329668']["objectiveProgress"]['progress']
+            champsDefeatedNoz = metric_json["Response"][8]['metrics']['data']['metrics']['41075005']["objectiveProgress"]['progress']
+            finalBlowsPerSNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3857340681']["objectiveProgress"]['progress']
 
-            sumStrike += strikeCompleteCon + strikeCompleteTom + strikeCompleteDoug + strikeCompleteMark + strikeCompleteJack + strikeCompleteHunt + strikeCompleteCam + strikeCompleteKade
-            sumFlawless += flawlessStrikeCon + flawlessStrikeTom + flawlessStrikeDoug + flawlessStrikeMark + flawlessStrikeJack + flawlessStrikeHunt + flawlessStrikeCam + flawlessStrikeKade
-            sumChamps += champsDefeatedCon + champsDefeatedTom + champsDefeatedDoug + champsDefeatedMark + champsDefeatedJack + champsDefeatedHunt + champsDefeatedCam + champsDefeatedKade
-            aveFinalBlowsS += round((finalBlowsPerSCon + finalBlowsPerSTom + finalBlowsPerSDoug + finalBlowsPerSMark + finalBlowsPerSJack + finalBlowsPerSHunt + finalBlowsPerSCam + finalBlowsPerSKade) / 8 , 2)
+            sumStrike += strikeCompleteCon + strikeCompleteTom + strikeCompleteDoug + strikeCompleteMark + strikeCompleteJack + strikeCompleteHunt + strikeCompleteCam + strikeCompleteKade + strikeCompleteNoz
+            sumFlawless += flawlessStrikeCon + flawlessStrikeTom + flawlessStrikeDoug + flawlessStrikeMark + flawlessStrikeJack + flawlessStrikeHunt + flawlessStrikeCam + flawlessStrikeKade + flawlessStrikeNoz
+            sumChamps += champsDefeatedCon + champsDefeatedTom + champsDefeatedDoug + champsDefeatedMark + champsDefeatedJack + champsDefeatedHunt + champsDefeatedCam + champsDefeatedKade + champsDefeatedNoz
+            aveFinalBlowsS += round((finalBlowsPerSCon + finalBlowsPerSTom + finalBlowsPerSDoug + finalBlowsPerSMark + finalBlowsPerSJack + finalBlowsPerSHunt + finalBlowsPerSCam + finalBlowsPerSKade + finalBlowsPerSNoz) / 9 , 2)
 
             strikeTable = PrettyTable()
             strikeTable.field_names = ['Player', 'Strike Completions', 'Flawless Strike Completions', 'Champions Defeated', 'Final Blows per Strike']
@@ -701,6 +767,7 @@ def allMetricsData():
                     ['Hunter', strikeCompleteHunt, flawlessStrikeHunt, champsDefeatedHunt, finalBlowsPerSHunt],
                     ['Cameron', strikeCompleteCam, flawlessStrikeCam, champsDefeatedCam, finalBlowsPerSCam],
                     ['Kade', strikeCompleteKade, flawlessStrikeKade, champsDefeatedKade, finalBlowsPerSKade],
+                    ['Nozyric', strikeCompleteNoz, flawlessStrikeNoz, champsDefeatedNoz, finalBlowsPerSNoz],
                     ['Total', sumStrike, sumFlawless, sumChamps, aveFinalBlowsS]
                 ]
             )
@@ -898,34 +965,58 @@ def allMetricsData():
             hollowedLairKade = metric_json["Response"][7]['metrics']['data']['metrics']['449969041']["objectiveProgress"]['progress']
             theLightbladeKade = metric_json["Response"][7]['metrics']['data']['metrics']['3181525833']["objectiveProgress"]['progress']
             birthplaceOTVileKade = metric_json["Response"][7]['metrics']['data']['metrics']['1065851514']["objectiveProgress"]['progress']
+            
+            armsDealerNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3036740778']["objectiveProgress"]['progress']
+            insightTermNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3146366866']["objectiveProgress"]['progress']
+            invertedSpireNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3466351705']["objectiveProgress"]['progress']
+            savaSongNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2894079898']["objectiveProgress"]['progress']
+            pyramidionNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2457392818']["objectiveProgress"]['progress']
+            exodusCrashNoz = metric_json["Response"][8]['metrics']['data']['metrics']['1118387860']["objectiveProgress"]['progress']
+            gardenWorldNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3543375894']["objectiveProgress"]['progress']
+            treeOfPossibilityNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2778406657']["objectiveProgress"]['progress']
+            strangeTerrainNoz = metric_json["Response"][8]['metrics']['data']['metrics']['40546883']["objectiveProgress"]['progress']
+            wardenOfNothingNoz = metric_json["Response"][8]['metrics']['data']['metrics']['4140273235']["objectiveProgress"]['progress']
+            broodholdNoz = metric_json["Response"][8]['metrics']['data']['metrics']['356508148']["objectiveProgress"]['progress']
+            scarletKeepNoz = metric_json["Response"][8]['metrics']['data']['metrics']['1666283222']["objectiveProgress"]['progress']
+            lakeOfShadowsNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3139878529']["objectiveProgress"]['progress']
+            theCorruptedNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2920064672']["objectiveProgress"]['progress']
+            festeringCoreNoz = metric_json["Response"][8]['metrics']['data']['metrics']['326550718']["objectiveProgress"]['progress']
+            theDisgracedNoz = metric_json["Response"][8]['metrics']['data']['metrics']['136014172']["objectiveProgress"]['progress']
+            theGlasswayNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2883115929']["objectiveProgress"]['progress']
+            provingGroundsNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3209483141']["objectiveProgress"]['progress']
+            devilsLairNoz = metric_json["Response"][8]['metrics']['data']['metrics']['103014972']["objectiveProgress"]['progress']
+            fallenSABERNoz = metric_json["Response"][8]['metrics']['data']['metrics']['2894593528']["objectiveProgress"]['progress']
+            hollowedLairNoz = metric_json["Response"][8]['metrics']['data']['metrics']['449969041']["objectiveProgress"]['progress']
+            theLightbladeNoz = metric_json["Response"][8]['metrics']['data']['metrics']['3181525833']["objectiveProgress"]['progress']
+            birthplaceOTVileNoz = metric_json["Response"][8]['metrics']['data']['metrics']['1065851514']["objectiveProgress"]['progress']
 
             nightfallTable = PrettyTable()
-            nightfallTable.field_names = ['Nightfall', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+            nightfallTable.field_names = ['Nightfall', 'Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade', 'Nozyric']
             nightfallTable.add_rows(
                 [
-                    ['Arms Dealer', armsDealerCon, armsDealerTom, armsDealerDoug, armsDealerMark, armsDealerJack, armsDealerHunt, armsDealerCam, armsDealerKade],
-                    ['Insight Terminus', insightTermCon, insightTermTom, insightTermDoug, insightTermMark, insightTermJack, insightTermHunt, insightTermCam, insightTermKade],
-                    ['The Inverted Spire', invertedSpireCon, invertedSpireTom, invertedSpireDoug, invertedSpireMark, invertedSpireJack, invertedSpireHunt, invertedSpireCam, invertedSpireKade],
-                    ["Savathûn's Song", savaSongCon, savaSongTom, savaSongDoug, savaSongMark, savaSongJack, savaSongHunt, savaSongCam, savaSongKade],
-                    ['The Pyramidion', pyramidionCon, pyramidionTom, pyramidionDoug, pyramidionMark, pyramidionJack, pyramidionHunt, pyramidionCam, pyramidionKade],
-                    ['Exodus Crash', exodusCrashCon, exodusCrashTom, exodusCrashDoug, exodusCrashMark, exodusCrashJack, exodusCrashHunt, exodusCrashCam, exodusCrashKade],
-                    ['A Garden World', gardenWorldCon, gardenWorldTom, gardenWorldDoug, gardenWorldMark, gardenWorldJack, gardenWorldHunt, gardenWorldCam, gardenWorldKade],
-                    ['Tree of Possibilities', treeOfPossibilityCon, treeOfPossibilityTom, treeOfPossibilityDoug, treeOfPossibilityMark, treeOfPossibilityJack, treeOfPossibilityHunt, treeOfPossibilityCam, treeOfPossibilityKade],
-                    ['Strange Terrain', strangeTerrainCon, strangeTerrainTom, strangeTerrainDoug, strangeTerrainMark, strangeTerrainJack, strangeTerrainHunt, strangeTerrainCam, strangeTerrainKade],
-                    ['Warden of Nothing', wardenOfNothingCon, wardenOfNothingTom, wardenOfNothingDoug, wardenOfNothingMark, wardenOfNothingJack, wardenOfNothingHunt, wardenOfNothingCam, wardenOfNothingKade],
-                    ['Broodhold', broodholdCon, broodholdTom, broodholdDoug, broodholdMark, broodholdJack, broodholdHunt, broodholdCam, broodholdKade],
-                    ['The Scarlet Keep', scarletKeepCon, scarletKeepTom, scarletKeepDoug, scarletKeepMark, scarletKeepJack, scarletKeepHunt, scarletKeepCam, scarletKeepKade],
-                    ['Lake of Shadows', lakeOfShadowsCon, lakeOfShadowsTom, lakeOfShadowsDoug, lakeOfShadowsMark, lakeOfShadowsJack, lakeOfShadowsHunt, lakeOfShadowsCam, lakeOfShadowsKade],
-                    ['The Corrupted', theCorruptedCon, theCorruptedTom, theCorruptedDoug, theCorruptedMark, theCorruptedJack, theCorruptedHunt, theCorruptedCam, theCorruptedKade],
-                    ['The Festering Core', festeringCoreCon, festeringCoreTom, festeringCoreDoug, festeringCoreMark, festeringCoreJack, festeringCoreHunt, festeringCoreCam, festeringCoreKade],
-                    ['The Disgraced', theDisgracedCon, theDisgracedTom, theDisgracedDoug, theDisgracedMark, theDisgracedJack, theDisgracedHunt, theDisgracedCam, theDisgracedKade],
-                    ['The Glassway', theGlasswayCon, theGlasswayTom, theGlasswayDoug, theGlasswayMark, theGlasswayJack, theGlasswayHunt, theGlasswayCam, theGlasswayKade],
-                    ['Proving Grounds', provingGroundsCon, provingGroundsTom, provingGroundsDoug, provingGroundsMark, provingGroundsJack, provingGroundsHunt, provingGroundsCam, provingGroundsKade],
-                    ["The Devil's Lair", devilsLairCon, devilsLairTom, devilsLairDoug, devilsLairMark, devilsLairJack, devilsLairHunt, devilsLairCam, devilsLairKade],
-                    ['Fallen S.A.B.E.R.', fallenSABERCon, fallenSABERTom, fallenSABERDoug, fallenSABERMark, fallenSABERJack, fallenSABERHunt, fallenSABERCam, fallenSABERKade],
-                    ['The Hollowed Lair', hollowedLairCon, hollowedLairTom, hollowedLairDoug, hollowedLairMark, hollowedLairJack, hollowedLairHunt, hollowedLairCam, hollowedLairKade],
-                    ['The Lightblade', theLightbladeCon, theLightbladeTom, theLightbladeDoug, theLightbladeMark, theLightbladeJack, theLightbladeHunt, theLightbladeCam, theLightbladeKade],
-                    ['Birthplace of the Vile', birthplaceOTVileCon, birthplaceOTVileTom, birthplaceOTVileDoug, birthplaceOTVileMark, birthplaceOTVileJack, birthplaceOTVileHunt, birthplaceOTVileCam, birthplaceOTVileKade]
+                    ['Arms Dealer', armsDealerCon, armsDealerTom, armsDealerDoug, armsDealerMark, armsDealerJack, armsDealerHunt, armsDealerCam, armsDealerKade, armsDealerNoz],
+                    ['Insight Terminus', insightTermCon, insightTermTom, insightTermDoug, insightTermMark, insightTermJack, insightTermHunt, insightTermCam, insightTermKade, insightTermNoz],
+                    ['The Inverted Spire', invertedSpireCon, invertedSpireTom, invertedSpireDoug, invertedSpireMark, invertedSpireJack, invertedSpireHunt, invertedSpireCam, invertedSpireKade, invertedSpireNoz],
+                    ["Savathûn's Song", savaSongCon, savaSongTom, savaSongDoug, savaSongMark, savaSongJack, savaSongHunt, savaSongCam, savaSongKade, savaSongNoz],
+                    ['The Pyramidion', pyramidionCon, pyramidionTom, pyramidionDoug, pyramidionMark, pyramidionJack, pyramidionHunt, pyramidionCam, pyramidionKade, pyramidionNoz],
+                    ['Exodus Crash', exodusCrashCon, exodusCrashTom, exodusCrashDoug, exodusCrashMark, exodusCrashJack, exodusCrashHunt, exodusCrashCam, exodusCrashKade, exodusCrashNoz],
+                    ['A Garden World', gardenWorldCon, gardenWorldTom, gardenWorldDoug, gardenWorldMark, gardenWorldJack, gardenWorldHunt, gardenWorldCam, gardenWorldKade, gardenWorldNoz],
+                    ['Tree of Possibilities', treeOfPossibilityCon, treeOfPossibilityTom, treeOfPossibilityDoug, treeOfPossibilityMark, treeOfPossibilityJack, treeOfPossibilityHunt, treeOfPossibilityCam, treeOfPossibilityKade, treeOfPossibilityNoz],
+                    ['Strange Terrain', strangeTerrainCon, strangeTerrainTom, strangeTerrainDoug, strangeTerrainMark, strangeTerrainJack, strangeTerrainHunt, strangeTerrainCam, strangeTerrainKade, strangeTerrainNoz],
+                    ['Warden of Nothing', wardenOfNothingCon, wardenOfNothingTom, wardenOfNothingDoug, wardenOfNothingMark, wardenOfNothingJack, wardenOfNothingHunt, wardenOfNothingCam, wardenOfNothingKade, wardenOfNothingNoz],
+                    ['Broodhold', broodholdCon, broodholdTom, broodholdDoug, broodholdMark, broodholdJack, broodholdHunt, broodholdCam, broodholdKade, broodholdNoz],
+                    ['The Scarlet Keep', scarletKeepCon, scarletKeepTom, scarletKeepDoug, scarletKeepMark, scarletKeepJack, scarletKeepHunt, scarletKeepCam, scarletKeepKade, scarletKeepNoz],
+                    ['Lake of Shadows', lakeOfShadowsCon, lakeOfShadowsTom, lakeOfShadowsDoug, lakeOfShadowsMark, lakeOfShadowsJack, lakeOfShadowsHunt, lakeOfShadowsCam, lakeOfShadowsKade, lakeOfShadowsNoz],
+                    ['The Corrupted', theCorruptedCon, theCorruptedTom, theCorruptedDoug, theCorruptedMark, theCorruptedJack, theCorruptedHunt, theCorruptedCam, theCorruptedKade, theCorruptedNoz],
+                    ['The Festering Core', festeringCoreCon, festeringCoreTom, festeringCoreDoug, festeringCoreMark, festeringCoreJack, festeringCoreHunt, festeringCoreCam, festeringCoreKade, festeringCoreNoz],
+                    ['The Disgraced', theDisgracedCon, theDisgracedTom, theDisgracedDoug, theDisgracedMark, theDisgracedJack, theDisgracedHunt, theDisgracedCam, theDisgracedKade, theDisgracedNoz],
+                    ['The Glassway', theGlasswayCon, theGlasswayTom, theGlasswayDoug, theGlasswayMark, theGlasswayJack, theGlasswayHunt, theGlasswayCam, theGlasswayKade, theGlasswayNoz],
+                    ['Proving Grounds', provingGroundsCon, provingGroundsTom, provingGroundsDoug, provingGroundsMark, provingGroundsJack, provingGroundsHunt, provingGroundsCam, provingGroundsKade, provingGroundsNoz],
+                    ["The Devil's Lair", devilsLairCon, devilsLairTom, devilsLairDoug, devilsLairMark, devilsLairJack, devilsLairHunt, devilsLairCam, devilsLairKade, devilsLairNoz],
+                    ['Fallen S.A.B.E.R.', fallenSABERCon, fallenSABERTom, fallenSABERDoug, fallenSABERMark, fallenSABERJack, fallenSABERHunt, fallenSABERCam, fallenSABERKade, fallenSABERNoz],
+                    ['The Hollowed Lair', hollowedLairCon, hollowedLairTom, hollowedLairDoug, hollowedLairMark, hollowedLairJack, hollowedLairHunt, hollowedLairCam, hollowedLairKade, hollowedLairNoz],
+                    ['The Lightblade', theLightbladeCon, theLightbladeTom, theLightbladeDoug, theLightbladeMark, theLightbladeJack, theLightbladeHunt, theLightbladeCam, theLightbladeKade, theLightbladeNoz],
+                    ['Birthplace of the Vile', birthplaceOTVileCon, birthplaceOTVileTom, birthplaceOTVileDoug, birthplaceOTVileMark, birthplaceOTVileJack, birthplaceOTVileHunt, birthplaceOTVileCam, birthplaceOTVileKade, birthplaceOTVileNoz]
                 ]
             )
             print(nightfallTable)
