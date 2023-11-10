@@ -1992,8 +1992,8 @@ def allRecordsData():
                               'Season Added']
     titleTable.add_rows(
         [
-            ['Haruspex', harusCon, harusTom, harusDoug, harusMark, harusJack, harusHunt, harusCam, harusKade, harusNoz, ' Season 22 - Season of the Witch'],
-            ['Swordbearer', swordCon, swordTom, swordDoug, swordMark, swordJack, swordHunt, swordCam, swordKade, swordNoz, ' Season 22 - Season of the Witch'],
+            ['Haruspex', harusCon, harusTom, harusDoug, harusMark, harusJack, harusHunt, harusCam, harusKade, harusNoz, 'Season 22 - Season of the Witch'],
+            ['Swordbearer', swordCon, swordTom, swordDoug, swordMark, swordJack, swordHunt, swordCam, swordKade, swordNoz, 'Season 22 - Season of the Witch'],
             ['Aquanaut', aquanautCon, aquanautTom, aquanautDoug, aquanautMark, aquanautJack, aquanautHunt, aquanautCam,
              aquanautKade, aquanautNoz, 'Season 21 - Season of the Deep'],
             ['Queensguard', queensCon, queensTom, queensDoug, queensMark, queensJack, queensHunt, queensCam, queensKade, queensNoz,
