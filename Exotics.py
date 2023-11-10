@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-24-2023
-# Last Updated: 8-10-2023
+# Last Updated: 11-10-2023
 # This program needs both ExoCombiner.py, ClanExoComparer.py, all ExoCombiner(name) programs and JOTUNN.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -15,7 +15,7 @@ def Exotics():
     import requests
     from ClanExoComparer import URLThree, URLFour, URLFive, URLSix, URLSeven, URLEight, URLNine, URLTen, URLEleven, \
         URLTwelve, URLThirteen, URLFourteen, URLFifteen, URLSixteen, URLSeventeen, URLEighteen, URLNineteen, URLTwenty, \
-        URLTwenOne, URLTwenTwo, URLTwenThree, ClanExoCombiner
+        URLTwenOne, URLTwenTwo, URLTwenThree, URLTwenFour, URLTwenFive, URLTwenSix, ClanExoCombiner
     from ExoCombiner import ExoCombiner
     from ExoCombinerCon import ExoCombinerCon
     from ExoCombinerTom import ExoCombinerTom
@@ -25,7 +25,9 @@ def Exotics():
     from ExoCombinerHunt import ExoCombinerHunt
     from ExoCombinerCam import ExoCombinerCam
     from ExoCombinerKade import ExoCombinerKade
+    from ExoCombinerNoz import ExoCombinerNoz
     from prettytable import PrettyTable
+    from random import randrange
 
     def URLZero(membershipType, destinyMembershipId, characterId):
         url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
@@ -205,9 +207,26 @@ def Exotics():
             CHAR += 1
         ExoCombiner()
 
+    def Nozyric():
+        CHAR = 0
+        membershipType = 1
+        destinyMembershipId = 4611686018460052968
+        while CHAR < 3:
+            if CHAR == 0:
+                characterId = 2305843009261093481
+                URLZero(membershipType, destinyMembershipId, characterId)
+            if CHAR == 1:
+                characterId = 2305843009279014408
+                URLOne(membershipType, destinyMembershipId, characterId)
+            if CHAR == 2:
+                characterId = 2305843009315575079
+                URLTwo(membershipType, destinyMembershipId, characterId)
+            CHAR += 1
+        ExoCombiner()
+
     def ALL():
         PLAYER = 0
-        while PLAYER < 8:
+        while PLAYER < 9:
             # Man in the Moon
             while PLAYER == 0:
                 CHAR = 0
@@ -344,18 +363,35 @@ def Exotics():
                         URLTwenThree(membershipType, destinyMembershipId, characterId)
                     CHAR += 1
                 PLAYER += 1
+            # Nozyric
+            while PLAYER == 8:
+                CHAR = 0
+                membershipType = 1
+                destinyMembershipId = 4611686018460052968
+                while CHAR < 3:
+                    if CHAR == 0:
+                        characterId = 2305843009261093481
+                        URLTwenFour(membershipType, destinyMembershipId, characterId)
+                    if CHAR == 1:
+                        characterId = 2305843009279014408
+                        URLTwenFive(membershipType, destinyMembershipId, characterId)
+                    if CHAR == 2:
+                        characterId = 2305843009315575079
+                        URLTwenSix(membershipType, destinyMembershipId, characterId)
+                    CHAR += 1
+                PLAYER += 1
 
             playerTable = PrettyTable()
-            playerTable.field_names = ['Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade']
+            playerTable.field_names = ['Connor', 'Thomas', 'Douglas', 'Mark', 'Jack', 'Hunter', 'Cameron', 'Kade', 'Nozyric']
             playerTable.add_row([ExoCombinerCon(), ExoCombinerTom(), ExoCombinerDoug(), ExoCombinerMark(),
-                                 ExoCombinerJack(), ExoCombinerHunt(), ExoCombinerCam(), ExoCombinerKade()])
+                                 ExoCombinerJack(), ExoCombinerHunt(), ExoCombinerCam(), ExoCombinerKade(), ExoCombinerNoz()])
             print(playerTable)
             print(f"\nTop Exotics\n")
             ClanExoCombiner()
 
-    print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade, All")
+    print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade, Nozyric, All")
     print("Player Name: Man in the Moon, The Chrome Leaf, Piepuns, Lachlan, TheZefraOracle, HeavyChevy, SlayWarsV, "
-          "Gargoyle Goose, All")
+          "Gargoyle Goose, Nozyric, All")
     USER = input("Please type a player or player name to analyse their Exotic Weapon usage: ")
 
     if USER == "Man in the Moon" or USER == "Connor":
@@ -374,7 +410,17 @@ def Exotics():
         SlayWarsV()
     elif USER == "Gargoyle Goose" or USER == "Kade":
         Gargoyle_Goose()
+    elif USER == 'Nozyric':
+        Nozyric()
     elif USER == "All":
         ALL()
     else:
-        print("She be Rhulking on my Disciple til I Strand.")
+        errorNumb = randrange(1, 5)
+        if errorNumb == 1:
+            print("She be Rhulking on my Disciple til I Strand.")
+        elif errorNumb == 2:
+            print("The Wish Wall accepts your wish, O' Gooner Mine.")
+        elif errorNumb == 3:
+            print("Nice try Shitass, go again.")
+        elif errorNumb == 4:
+            print("That Savathussy got me acting Lightless.")
