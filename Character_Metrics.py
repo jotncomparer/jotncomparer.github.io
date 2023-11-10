@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-31-2023
-# Last Updated: 8-8-2023
+# Last Updated: 11-10-2023
 # This program needs metricGenerator.py and JOTUNN.py to work properly.
 
 # This program is used to define every player in Jötunn Gang.
@@ -20,6 +20,7 @@ def Character_Metrics():
     from allTimeWasted import allTimeWasted
     import json
     import requests
+    from random import randrange
 
     def API_URL(membershipType, destinyMembershipId):
         url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
@@ -133,6 +134,20 @@ def Character_Metrics():
         writeFile = open('Metrics_8.json', 'w')
         writeFile.write(metric_data)
 
+    def API_URL_EIGHT(membershipType, destinyMembershipId):
+        url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Profile/{destinyMembershipId}/?components=100,200," \
+              f"900,1100,1300,1400"
+        payload = {}
+        headers = {
+            'x-api-key': '654dad1171c44eb688f2fb5ca11e7c3b',
+        }
+
+        response = requests.request("GET", url, headers=headers, data=payload)
+        response.content.decode('utf-8')
+        metric_data = json.dumps(json.loads(response.content), indent=2)
+        writeFile = open('Metrics_9.json', 'w')
+        writeFile.write(metric_data)
+
     def Man_in_the_Moon():
         membershipType = 1
         destinyMembershipId = 4611686018450697084
@@ -173,9 +188,14 @@ def Character_Metrics():
         destinyMembershipId = 4611686018451886498
         API_URL(membershipType, destinyMembershipId)
 
+    def Nozyric():
+        membershipType = 1
+        destinyMembershipId = 4611686018460052968
+        API_URL(membershipType, destinyMembershipId)
+
     def ALL():
         PLAYER = 0
-        while PLAYER < 8:
+        while PLAYER < 9:
             # Man in the Moon
             while PLAYER == 0:
                 CHAR = 0
@@ -232,6 +252,11 @@ def Character_Metrics():
                 destinyMembershipId = 4611686018451886498
                 API_URL_SEVEN(membershipType, destinyMembershipId)
                 PLAYER += 1
+            # Nozyric
+            while PLAYER == 8:
+                membershipType = 1
+                destinyMembershipId = 4611686018460052968
+                API_URL_EIGHT(membershipType, destinyMembershipId)
 
     print("Players: Connor, Thomas, Douglas, Hunter, Mark, Jack, Cameron, Kade, All")
     print("Player Name: Man in the Moon, The Chrome Leaf, Piepuns, Lachlan, TheZefraOracle, HeavyChevy, SlayWarsV, "
@@ -262,10 +287,21 @@ def Character_Metrics():
     elif USER == "Gargoyle Goose" or USER == "Kade":
         player = 8
         Gargoyle_Goose()
+    elif USER == 'Nozyric':
+        player = 9
+        Nozyric()
     elif USER == 'All':
         ALL()
     else:
-        print("She be Rhulking on my Disciple til I Strand.")
+        errorNumb = randrange(1, 5)
+        if errorNumb == 1:
+            print("She be Rhulking on my Disciple til I Strand.")
+        elif errorNumb == 2:
+            print("The Wish Wall accepts your wish, O' Gooner Mine.")
+        elif errorNumb == 3:
+            print("Nice try, Shitass.")
+        elif errorNumb == 4:
+            print("That Savathussy got me acting lightless.")
 
     print('Triumph Data (1), Title Data (2), Metric Data (3), Commendation Score (4), Time Wasted (5)')
     typeData = input("Please indicate which data group to be reported: ")
@@ -296,4 +332,12 @@ def Character_Metrics():
         else:
             timeWasted(player)
     else:
-        print("She be Rhulking on my Disciple til I Strand.")
+        errorNumb = randrange(1, 5)
+        if errorNumb == 1:
+            print("She be Rhulking on my Disciple til I Strand.")
+        elif errorNumb == 2:
+            print("The Wish Wall accepts your wish, O' Gooner Mine.")
+        elif errorNumb == 3:
+            print("Nice try, Shitass.")
+        elif errorNumb == 4:
+            print("That Savathussy got me acting lightless.")
