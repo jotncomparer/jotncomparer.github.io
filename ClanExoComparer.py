@@ -1,6 +1,6 @@
 # Connor Downs
 # Started: 7-26-2023
-# Last Updated: 8-14-2023
+# Last Updated: 11-10-2023
 # This program creates tables of the most used exotics across all members of Jotunn Gang
 # Tables are broken down into top 5 Primary, Special, and Heavy, as well as top 10 of all Exotics
 
@@ -380,6 +380,51 @@ def URLTwenThree(membershipType, destinyMembershipId, characterId):
     writeFile.write(exotic_data)
 
 
+def URLTwenFour(membershipType, destinyMembershipId, characterId):
+    url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
+          f"{characterId}/Stats/UniqueWeapons/"
+    payload = {}
+    headers = {
+        'x-api-key': '654dad1171c44eb688f2fb5ca11e7c3b',
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    response.content.decode('utf-8')
+    exotic_data = json.dumps(json.loads(response.content), indent=2)
+    writeFile = open('Exotics_24.json', 'w')
+    writeFile.write(exotic_data)
+
+
+def URLTwenFive(membershipType, destinyMembershipId, characterId):
+    url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
+          f"{characterId}/Stats/UniqueWeapons/"
+    payload = {}
+    headers = {
+        'x-api-key': '654dad1171c44eb688f2fb5ca11e7c3b',
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    response.content.decode('utf-8')
+    exotic_data = json.dumps(json.loads(response.content), indent=2)
+    writeFile = open('Exotics_25.json', 'w')
+    writeFile.write(exotic_data)
+
+
+def URLTwenSix(membershipType, destinyMembershipId, characterId):
+    url = f"https://www.bungie.net/Platform/Destiny2/{membershipType}/Account/{destinyMembershipId}/Character/" \
+          f"{characterId}/Stats/UniqueWeapons/"
+    payload = {}
+    headers = {
+        'x-api-key': '654dad1171c44eb688f2fb5ca11e7c3b',
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    response.content.decode('utf-8')
+    exotic_data = json.dumps(json.loads(response.content), indent=2)
+    writeFile = open('Exotics_26.json', 'w')
+    writeFile.write(exotic_data)
+
+
 def ClanExoCombiner():
     class Exotic:
         def __init__(self, exotic_id, exotic_name):
@@ -548,6 +593,12 @@ def ClanExoCombiner():
         data23 = json.load(f)
     with open('Exotics_23.json') as f:
         data24 = json.load(f)
+    with open('Exotics_24.json') as f:
+        data25 = json.load(f)
+    with open('Exotics_25.json') as f:
+        data26 = json.load(f)
+    with open('Exotics_26.json') as f:
+        data27 = json.load(f)
 
     items1 = data1["Response"]
     items2 = data2["Response"]
@@ -573,6 +624,9 @@ def ClanExoCombiner():
     items22 = data22["Response"]
     items23 = data23["Response"]
     items24 = data24["Response"]
+    items25 = data25["Response"]
+    items26 = data26["Response"]
+    items27 = data27["Response"]
 
     exotic_json = {"Response": []}
 
@@ -600,6 +654,9 @@ def ClanExoCombiner():
     exotic_json['Response'].append(items22)
     exotic_json["Response"].append(items23)
     exotic_json["Response"].append(items24)
+    exotic_json['Response'].append(items25)
+    exotic_json["Response"].append(items26)
+    exotic_json["Response"].append(items27)
 
     with open('exotic.json', "w") as f:
         f.write(json.dumps(exotic_json, indent=2))
@@ -628,6 +685,9 @@ def ClanExoCombiner():
     exotic_len_22 = len(exotic_json["Response"][21]['weapons'])
     exotic_len_23 = len(exotic_json["Response"][22]['weapons'])
     exotic_len_24 = len(exotic_json["Response"][23]['weapons'])
+    exotic_len_25 = len(exotic_json["Response"][24]['weapons'])
+    exotic_len_26 = len(exotic_json["Response"][25]['weapons'])
+    exotic_len_27 = len(exotic_json["Response"][26]['weapons'])
 
     Exotic = {"Exotic": []}
     Kills = {"Kills": []}
@@ -826,6 +886,33 @@ def ClanExoCombiner():
         Kills['Kills'].append(Kills_24)
         [''].append(Kills_24)
         Precision['Precision Kills'].append(Precision_24)
+    for number in range(0, exotic_len_25):
+        Name_25 = exotic_json["Response"][24]["weapons"][number]["referenceId"]
+        Kills_25 = exotic_json["Response"][24]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
+        Precision_25 = \
+            exotic_json["Response"][24]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
+        Exotic['Exotic'].append(Name_25)
+        Kills['Kills'].append(Kills_25)
+        [''].append(Kills_25)
+        Precision['Precision Kills'].append(Precision_25)
+    for number in range(0, exotic_len_26):
+        Name_26 = exotic_json["Response"][25]["weapons"][number]["referenceId"]
+        Kills_26 = exotic_json["Response"][25]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
+        Precision_26 = \
+            exotic_json["Response"][25]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
+        Exotic['Exotic'].append(Name_26)
+        Kills['Kills'].append(Kills_26)
+        [''].append(Kills_26)
+        Precision['Precision Kills'].append(Precision_26)
+    for number in range(0, exotic_len_27):
+        Name_27 = exotic_json["Response"][26]["weapons"][number]["referenceId"]
+        Kills_27 = exotic_json["Response"][26]["weapons"][number]["values"]["uniqueWeaponKills"]["basic"]["value"]
+        Precision_27 = \
+            exotic_json["Response"][26]["weapons"][number]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"]
+        Exotic['Exotic'].append(Name_27)
+        Kills['Kills'].append(Kills_27)
+        [''].append(Kills_27)
+        Precision['Precision Kills'].append(Precision_27)
 
     Exotic_Info = [Exotic, Kills, Precision]
 
