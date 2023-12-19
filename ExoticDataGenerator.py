@@ -22,7 +22,7 @@ def getWeaponFromId(id):
         1541131350: 'Cerberus+1',
         814876684: 'Wish Ender',
         204878059: 'Malfeasance',
-        347366834: 'Ace of Spaced',
+        347366834: 'Ace of Spades',
         3413860062: 'The Chaperone',
         3211806999: "Izanagi's Burden",
         1364093401: 'The Last Word',
@@ -144,7 +144,7 @@ def weaponData():
         'Cerberus+1':{'kills':0,'precision':0},
         'Wish Ender':{'kills':0,'precision':0},
         'Malfeasance':{'kills':0,'precision':0},
-        'Ace of Spaced':{'kills':0,'precision':0},
+        'Ace of Spades':{'kills':0,'precision':0},
         'The Chaperone':{'kills':0,'precision':0},
         "Izanagi's Burden":{'kills':0,'precision':0},
         'The Last Word':{'kills':0,'precision':0},
@@ -273,7 +273,7 @@ def getExoticData(memType, memId, charId1, charId2, charId3):
     
 def compileData(exoticData):
     dataDictionary = weaponData()
-    #exoticData["Response"][value 0-2]["weapons"][]["referenceId"] = reference Id
+    #exoticData["Response"][value 0-2]["weapons"][num]["referenceId"] = reference Id
     #exoticData["Response"][charNum]["weapons"][num]["values"]["uniqueWeaponKills"]["basic"]["value"] = kills
     #exoticData["Response"][charNum]["weapons"][num]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"] = precision kills
     for charNum in range(0,3):
@@ -288,62 +288,71 @@ def compileData(exoticData):
             
             dataDictionary[exoticName]["kills"] += exoticKills
             dataDictionary[exoticName]["precision"] += exoticPrecision
-    compiledData = json.dumps(dataDictionary, indent=2)
-    return compiledData
+    return dataDictionary
 
+
+def compileClanData(playerDataList):
+    dataDictionary = weaponData()
+    
+    for player in playerDataList:
+        for exoticName in player:
             
+            exoticKills = player[exoticName]['kills']
+            exoticPrecision = player[exoticName]['precision']
+            
+            dataDictionary[exoticName]['kills'] +=exoticKills
+            dataDictionary[exoticName]['precision'] += exoticPrecision
+    return dataDictionary
+  
+  
+def writeToDirectory(playerDict,name):
+    f = open(f'./data/{name}Exotics.json', 'w')
+    playerFile = json.dumps(playerDict, indent = 2)
+    f.write(playerFile)
+    f.close()
+  
+
 
 thomasExoticDataRaw = getExoticData(1,4611686018444441571,2305843009265786295,2305843009283965144,2305843009569534739)
 thomasExoticDataClean = compileData(thomasExoticDataRaw)
-f = open('./data/ThomasExotics.json', 'w')
-f.write(thomasExoticDataClean)
-f.close()
+writeToDirectory(thomasExoticDataClean, "Thomas")
 
 
 douglasExoticDataRaw = getExoticData(1,4611686018434621591,2305843009293915719,2305843009301374530,2305843010083874501)
 douglasExoticDataClean = compileData(douglasExoticDataRaw)
-f = open('./data/DouglasExotics.json', 'w')
-f.write(douglasExoticDataClean)
-f.close()
+writeToDirectory(douglasExoticDataClean,"Douglas")
 
 
 markExoticDataRaw = getExoticData(1,4611686018432221111,2305843009348154555,2305843009668854600,2305843009802904121)
 markExoticDataClean = compileData(markExoticDataRaw)
-f = open('./data/MarkExotics.json', 'w')
-f.write(markExoticDataClean)
-f.close()
+writeToDirectory(markExoticDataClean, "Mark")
 
 
 connorExoticDataRaw = getExoticData(1,4611686018450697084,2305843009644414176,2305843009663894341,2305843009703275457)
 connorExoticDataClean = compileData(connorExoticDataRaw)
-f = open('./data/ConnorExotics.json', 'w')
-f.write(connorExoticDataClean)
-f.close()
+writeToDirectory(connorExoticDataClean, "Connor")
 
 
 jackExoticDataRaw = getExoticData(2,4611686018469231992,2305843009268771475,2305843009891864023,2305843009890274343)
 jackExoticDataClean = compileData(jackExoticDataRaw)
-f = open('./data/JackExotics.json', 'w')
-f.write(jackExoticDataClean)
-f.close()
+writeToDirectory(jackExoticDataClean,"Jack")
 
 
 hunterExoticDataRaw = getExoticData(3,4611686018476416864,2305843009359734078,2305843009359365362,2305843009756404411)
 hunterExoticDataClean = compileData(hunterExoticDataRaw)
-f = open('./data/HunterExotics.json', 'w')
-f.write(hunterExoticDataClean)
-f.close()
+writeToDirectory(hunterExoticDataClean,"Hunter")
 
 
 cameronExoticDataRaw = getExoticData(3,4611686018501646188,2305843009624174508,2305843009683284492,2305843009683284493)
 cameronExoticDataClean = compileData(cameronExoticDataRaw)
-f = open('./data/CameronExotics.json', 'w')
-f.write(cameronExoticDataClean)
-f.close()
+writeToDirectory(cameronExoticDataClean,"Cameron")
 
 
 kadeExoticDataRaw = getExoticData(1,4611686018451886498,2305843009264637524,2305843009264637527,2305843010322954573)
 kadeExoticDataClean = compileData(kadeExoticDataRaw)
-f = open('./data/KadeExotics.json', 'w')
-f.write(kadeExoticDataClean)
-f.close()
+writeToDirectory(kadeExoticDataClean, "Kade")
+
+
+playerDataList = [thomasExoticDataClean,douglasExoticDataClean,markExoticDataClean,connorExoticDataClean,jackExoticDataClean,hunterExoticDataClean,cameronExoticDataClean,kadeExoticDataClean]
+clanExoticDataClean = compileClanData(playerDataList)
+writeToDirectory(clanExoticDataClean, "Clan")
