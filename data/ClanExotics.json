@@ -92,7 +92,7 @@
     "precision": 0.0
   },
   "Witherhoard": {
-    "kills": 40676.0,
+    "kills": 40695.0,
     "precision": 8.0
   },
   "Traveler's Chosen": {
@@ -450,5 +450,9 @@
   "The Prospector": {
     "kills": 1906.0,
     "precision": 0.0
+  },
+  "Wish-Keeper": {
+    "kills": 0,
+    "precision": 0
   }
 }

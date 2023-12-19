@@ -450,5 +450,9 @@
   "The Prospector": {
     "kills": 285.0,
     "precision": 0.0
+  },
+  "Wish-Keeper": {
+    "kills": 0,
+    "precision": 0
   }
 }

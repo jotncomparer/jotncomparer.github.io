@@ -124,7 +124,8 @@ def getWeaponFromId(id):
         3821409356: "Ex Diris",
         3856705927: "Hawkmoon",
         3549153979: "The Prospector",
-        2188764214: "Dead Man's Tale"
+        2188764214: "Dead Man's Tale",
+        2910326942: "Wish-Keeper"
     }
     return idDict.get(id)
 
@@ -244,7 +245,8 @@ def weaponData():
         "Necrochasm":{'kills':0,'precision':0},
         "Ex Diris":{'kills':0,'precision':0},
         "Hawkmoon":{'kills':0,'precision':0},
-        "The Prospector":{'kills':0,'precision':0}
+        "The Prospector":{'kills':0,'precision':0},
+        "Wish-Keeper":{'kills':0,'precision':0}
     }
     return dictionary
     
@@ -316,43 +318,44 @@ def writeToDirectory(playerDict,name):
 thomasExoticDataRaw = getExoticData(1,4611686018444441571,2305843009265786295,2305843009283965144,2305843009569534739)
 thomasExoticDataClean = compileData(thomasExoticDataRaw)
 writeToDirectory(thomasExoticDataClean, "Thomas")
-
+print("Thomas cleared!")
 
 douglasExoticDataRaw = getExoticData(1,4611686018434621591,2305843009293915719,2305843009301374530,2305843010083874501)
 douglasExoticDataClean = compileData(douglasExoticDataRaw)
 writeToDirectory(douglasExoticDataClean,"Douglas")
-
+print("Douglas cleared!")
 
 markExoticDataRaw = getExoticData(1,4611686018432221111,2305843009348154555,2305843009668854600,2305843009802904121)
 markExoticDataClean = compileData(markExoticDataRaw)
 writeToDirectory(markExoticDataClean, "Mark")
-
+print("Mark cleared!")
 
 connorExoticDataRaw = getExoticData(1,4611686018450697084,2305843009644414176,2305843009663894341,2305843009703275457)
 connorExoticDataClean = compileData(connorExoticDataRaw)
 writeToDirectory(connorExoticDataClean, "Connor")
-
+print("Connor cleared!")
 
 jackExoticDataRaw = getExoticData(2,4611686018469231992,2305843009268771475,2305843009891864023,2305843009890274343)
 jackExoticDataClean = compileData(jackExoticDataRaw)
 writeToDirectory(jackExoticDataClean,"Jack")
-
+print("Jack cleared!")
 
 hunterExoticDataRaw = getExoticData(3,4611686018476416864,2305843009359734078,2305843009359365362,2305843009756404411)
 hunterExoticDataClean = compileData(hunterExoticDataRaw)
 writeToDirectory(hunterExoticDataClean,"Hunter")
-
+print("Hunter cleared!")
 
 cameronExoticDataRaw = getExoticData(3,4611686018501646188,2305843009624174508,2305843009683284492,2305843009683284493)
 cameronExoticDataClean = compileData(cameronExoticDataRaw)
 writeToDirectory(cameronExoticDataClean,"Cameron")
-
+print("Cameron cleared!")
 
 kadeExoticDataRaw = getExoticData(1,4611686018451886498,2305843009264637524,2305843009264637527,2305843010322954573)
 kadeExoticDataClean = compileData(kadeExoticDataRaw)
 writeToDirectory(kadeExoticDataClean, "Kade")
-
+print("Kade cleared!")
 
 playerDataList = [thomasExoticDataClean,douglasExoticDataClean,markExoticDataClean,connorExoticDataClean,jackExoticDataClean,hunterExoticDataClean,cameronExoticDataClean,kadeExoticDataClean]
 clanExoticDataClean = compileClanData(playerDataList)
 writeToDirectory(clanExoticDataClean, "Clan")
+print("Clan cleared!")
