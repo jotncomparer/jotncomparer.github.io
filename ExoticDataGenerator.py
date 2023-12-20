@@ -7,6 +7,7 @@
 
 import json
 import requests
+import prettytable
  
 def getWeaponFromId(id):
     idDict = {
@@ -307,55 +308,79 @@ def compileClanData(playerDataList):
     return dataDictionary
   
   
-def writeToDirectory(playerDict,name):
-    f = open(f'./data/{name}Exotics.json', 'w')
-    playerFile = json.dumps(playerDict, indent = 2)
-    f.write(playerFile)
+def writeToDirectory(data,name):
+    f = open(f'./data/{name}Exotics.html', 'w')
+    f.write(data)
     f.close()
-  
 
+
+
+def generateTable(data):
+    table = prettytable.PrettyTable()
+    table.field_names = ["Weapon","Kills","Precision Kills"]
+    for exoticName in data:
+        exoticKills = int(data[exoticName]['kills'])
+        exoticPrecision = int(data[exoticName]['precision'])
+        
+        table.add_row([exoticName,exoticKills,exoticPrecision])
+    
+    table.sortby = "Kills"
+    table.align["Weapon"] = "l"
+    table.reversesort = True
+    
+    return table.get_html_string()
+    
 
 thomasExoticDataRaw = getExoticData(1,4611686018444441571,2305843009265786295,2305843009283965144,2305843009569534739)
 thomasExoticDataClean = compileData(thomasExoticDataRaw)
-writeToDirectory(thomasExoticDataClean, "Thomas")
+thomasTable = generateTable(thomasExoticDataClean)
+writeToDirectory(thomasTable, "Thomas")
 print("Thomas cleared!")
 
 douglasExoticDataRaw = getExoticData(1,4611686018434621591,2305843009293915719,2305843009301374530,2305843010083874501)
 douglasExoticDataClean = compileData(douglasExoticDataRaw)
-writeToDirectory(douglasExoticDataClean,"Douglas")
+douglasTable = generateTable(douglasExoticDataClean)
+writeToDirectory(douglasTable,"Douglas")
 print("Douglas cleared!")
 
 markExoticDataRaw = getExoticData(1,4611686018432221111,2305843009348154555,2305843009668854600,2305843009802904121)
 markExoticDataClean = compileData(markExoticDataRaw)
-writeToDirectory(markExoticDataClean, "Mark")
+markTable = generateTable(markExoticDataClean)
+writeToDirectory(markTable, "Mark")
 print("Mark cleared!")
 
 connorExoticDataRaw = getExoticData(1,4611686018450697084,2305843009644414176,2305843009663894341,2305843009703275457)
 connorExoticDataClean = compileData(connorExoticDataRaw)
-writeToDirectory(connorExoticDataClean, "Connor")
+connorTable = generateTable(connorExoticDataClean)
+writeToDirectory(connorTable, "Connor")
 print("Connor cleared!")
 
 jackExoticDataRaw = getExoticData(2,4611686018469231992,2305843009268771475,2305843009891864023,2305843009890274343)
 jackExoticDataClean = compileData(jackExoticDataRaw)
-writeToDirectory(jackExoticDataClean,"Jack")
+jackTable = generateTable(jackExoticDataClean)
+writeToDirectory(jackTable,"Jack")
 print("Jack cleared!")
 
 hunterExoticDataRaw = getExoticData(3,4611686018476416864,2305843009359734078,2305843009359365362,2305843009756404411)
 hunterExoticDataClean = compileData(hunterExoticDataRaw)
-writeToDirectory(hunterExoticDataClean,"Hunter")
+hunterTable = generateTable(hunterExoticDataClean)
+writeToDirectory(hunterTable,"Hunter")
 print("Hunter cleared!")
 
 cameronExoticDataRaw = getExoticData(3,4611686018501646188,2305843009624174508,2305843009683284492,2305843009683284493)
 cameronExoticDataClean = compileData(cameronExoticDataRaw)
-writeToDirectory(cameronExoticDataClean,"Cameron")
+cameronTable = generateTable(cameronExoticDataClean)
+writeToDirectory(cameronTable,"Cameron")
 print("Cameron cleared!")
 
 kadeExoticDataRaw = getExoticData(1,4611686018451886498,2305843009264637524,2305843009264637527,2305843010322954573)
 kadeExoticDataClean = compileData(kadeExoticDataRaw)
-writeToDirectory(kadeExoticDataClean, "Kade")
+kadeTable = generateTable(kadeExoticDataClean)
+writeToDirectory(kadeTable, "Kade")
 print("Kade cleared!")
 
 playerDataList = [thomasExoticDataClean,douglasExoticDataClean,markExoticDataClean,connorExoticDataClean,jackExoticDataClean,hunterExoticDataClean,cameronExoticDataClean,kadeExoticDataClean]
 clanExoticDataClean = compileClanData(playerDataList)
-writeToDirectory(clanExoticDataClean, "Clan")
+clanTable = generateTable(clanExoticDataClean)
+writeToDirectory(clanTable, "Clan")
 print("Clan cleared!")
