@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
 
 html {
-    background-color: rgb(30,30,30);
+    background-color: rgb(30, 30, 30);
 }
 
 /*HEADER---------------------------------------------------------------------*/
@@ -29,12 +29,13 @@ header a {
     text-align: center;
     text-decoration: none;
     
+
 }
 
 /*SIDENAV---------------------------------------------------*/
 .sidenav {
-    background-color: black;
-    border-right: 3px solid orange;
+    
+    
 
     height: 100%;
     width: 15%;
@@ -44,8 +45,8 @@ header a {
 .sidenav a {
     font-family: "Bungee hairline", 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size:large;
-    color: white;
+    font-size: large;
+    color:white;
     text-decoration: none;
 
     display: block;
@@ -56,18 +57,26 @@ header a {
 
 .sidenav a:hover {
     color: orange;
-   
+
 }
 
 /*MAIN-----------------------------------------------------------*/
 .main {
-    border: 1px solid red;
+    
     color: white;
     width: 85%;
     height: 100%;
-    float:right;
-}
-.main>p{
+    float: right;
     font-family: 'Courier New', Courier, monospace;
+}
 
+
+.main>div>h1 {
+    font-size:xx-large
+}
+
+.main>iframe {
+    width: 50%;
+    height:175em;
+    border: 3px solid orange;
 }

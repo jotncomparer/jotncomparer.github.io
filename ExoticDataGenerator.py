@@ -66,7 +66,7 @@ def getWeaponFromId(id):
         1852863732: 'Wavesplitter',
         3413860063: 'Lord of Wolves',
         3588934839: 'Le Monarque',
-        417164956: 'Jötunn',
+        417164956: 'Jotunn',
         3110698812: 'Tarrabah',
         3524313097: "Eriana's Vow",
         4103414242: 'Divinity',
@@ -189,7 +189,7 @@ def weaponData():
         'Wavesplitter':{'kills':0,'precision':0},
         'Lord of Wolves':{'kills':0,'precision':0},
         'Le Monarque':{'kills':0,'precision':0},
-        'Jötunn':{'kills':0,'precision':0},
+        'Jotunn':{'kills':0,'precision':0},
         'Tarrabah':{'kills':0,'precision':0},
         "Eriana's Vow":{'kills':0,'precision':0},
         'Divinity':{'kills':0,'precision':0},
@@ -310,12 +310,65 @@ def compileClanData(playerDataList):
   
 def writeToDirectory(data,name):
     f = open(f'./data/{name}Exotics.html', 'w')
+    f.write('''<style>
+    h1{
+        color: white;
+        font-family:'Courier New', Courier, monospace
+    }
+    
+    table {
+        color: white;
+        width: 100%;
+        text-align: left;
+        font-family:'Courier New', Courier, monospace
+    }
+
+    tbody>tr:nth-child(even) {
+        background-color: rgb(50, 50, 50);
+    }
+
+    tbody>tr:nth-of-type(1) {
+        background-color:gold;
+        color:black;
+    }
+
+    tbody>tr:nth-of-type(2) {
+        background-color:silver;
+        color:black;
+    }
+
+    tbody>tr:nth-of-type(3) {
+        background-color:chocolate;
+        color:black;
+    }
+
+    th,
+    td {
+        border-bottom: 1px solid white
+    }
+</style>
+<h1>EXOTICS</h1>''')
     f.write(data)
     f.close()
 
 
 
 def generateTable(data):
+    table = prettytable.PrettyTable()
+    table.field_names = ["Weapon","Kills","Precision Kills"]
+    
+    for exoticName in data:
+        exoticKills = int(data[exoticName]['kills'])
+        exoticPrecision = int(data[exoticName]['precision'])
+        
+        table.add_row([exoticName,exoticKills,exoticPrecision])
+        
+    table.sortby = "Kills"
+    table.reversesort = True
+    
+    return table.get_html_string()
+    
+def generateTopTen(data):
     table = prettytable.PrettyTable()
     table.field_names = ["Weapon","Kills","Precision Kills"]
     for exoticName in data:
@@ -328,8 +381,10 @@ def generateTable(data):
     table.align["Weapon"] = "l"
     table.reversesort = True
     
-    return table.get_html_string()
     
+    return table.get_html_string(start=0,end=10)
+
+
 
 thomasExoticDataRaw = getExoticData(1,4611686018444441571,2305843009265786295,2305843009283965144,2305843009569534739)
 thomasExoticDataClean = compileData(thomasExoticDataRaw)
@@ -383,4 +438,6 @@ playerDataList = [thomasExoticDataClean,douglasExoticDataClean,markExoticDataCle
 clanExoticDataClean = compileClanData(playerDataList)
 clanTable = generateTable(clanExoticDataClean)
 writeToDirectory(clanTable, "Clan")
+indexTable = generateTopTen(clanExoticDataClean)
+writeToDirectory(indexTable,"Index")
 print("Clan cleared!")
