@@ -1,6 +1,6 @@
 import math
 
-
+#Pass in time in seconds
 def Time_Converter(time):
     Seconds = time % 60
     Minutes = time / 60
