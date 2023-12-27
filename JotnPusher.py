@@ -5,6 +5,7 @@
 import os
 
 os.system("cd /home/scf/Desktop/jotncomparer.github.io")
+os.system("python ElementalDataGenerator.py")
 os.system("python ExoticDataGenerator.py")
 os.system("git add data")
 os.system('git commit -m "Updated player data"')

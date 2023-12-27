@@ -75,8 +75,18 @@ header a {
     font-size:xx-large
 }
 
-.main>iframe {
-    width: 50%;
-    height:175em;
+iframe {
+    height:fit-content;
     border: 3px solid orange;
+    float:inline-start;
+}
+
+.exotics {
+    width: 45%;
+    height:175em;
+}
+
+.finalblows {
+    width: 45%;
+    height:21em;
 }
