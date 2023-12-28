@@ -98,6 +98,7 @@ def processClan(playerDataList):
     for player in playerDataList:
         fishingDictionary["Total"] += player["Total"]
         if player["Heaviest"] > heaviest:
+            heaviest = player["Heaviest"]
             fishingDictionary["Heaviest"] = player["Heaviest"]
             fishingDictionary["Name"] = player["Name"]
         fishingDictionary["Pets"] += player["Pets"]
