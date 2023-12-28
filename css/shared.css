@@ -79,14 +79,17 @@ iframe {
     height:fit-content;
     border: 3px solid orange;
     float:inline-start;
+    width:45%
 }
 
 .exotics {
-    width: 45%;
     height:175em;
 }
 
 .finalblows {
-    width: 45%;
     height:21em;
+}
+
+.silly {
+    height: 13em;
 }

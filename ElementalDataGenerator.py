@@ -1,3 +1,10 @@
+# Thomas McGinley
+# Started 12/27/2023
+# Last Updated 12/28/2023
+
+# Gathers elemental final blows information about each desired player, cleans the data, and generates JSON files with relevant information
+
+
 import requests
 import json
 import prettytable
@@ -112,14 +119,14 @@ def processClan(playerDataList):
         elementDictionary["Strand"] += player["Strand"]
     return generateHTML(elementDictionary)
 
-ThomasData = processPlayer("Thomas", 1,4611686018444441571 )
+thomasData = processPlayer("Thomas", 1,4611686018444441571 )
 douglasData = processPlayer("Douglas", 1,4611686018434621591)
-MarkData = processPlayer("Mark",1,4611686018432221111)
-ConnorData = processPlayer("Connor",1,4611686018450697084)
-JackData = processPlayer("Jack",2,4611686018469231992)
-HunterData = processPlayer("Hunter",3,4611686018476416864)
-CameronData = processPlayer("Cameron",3,4611686018501646188)
-KadeData = processPlayer("Kade",1,4611686018451886498)
-playerDataList = [ThomasData,douglasData,MarkData,ConnorData,JackData,HunterData,CameronData,KadeData]
+markData = processPlayer("Mark",1,4611686018432221111)
+connorData = processPlayer("Connor",1,4611686018450697084)
+jackData = processPlayer("Jack",2,4611686018469231992)
+hunterData = processPlayer("Hunter",3,4611686018476416864)
+cameronData = processPlayer("Cameron",3,4611686018501646188)
+kadeData = processPlayer("Kade",1,4611686018451886498)
+playerDataList = [thomasData,douglasData,markData,connorData,jackData,hunterData,cameronData,kadeData]
 ClanHTML = processClan(playerDataList)
 writeToDirectory(ClanHTML,"Clan")
