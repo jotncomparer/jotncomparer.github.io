@@ -27,6 +27,8 @@ def fishDict():
         "Total": 0,
         "Heaviest": 0,
         "Pets": 0,
+        "Snowballs":0,
+        "Cookies":0,
         "Name": ""
     }
     return dictionary
@@ -37,6 +39,10 @@ def cleanFishingData(metricData):
     fishingDictionary["Total"] = metricData["Response"]['metrics']['data']['metrics']['24768693']["objectiveProgress"]['progress']
     fishingDictionary["Heaviest"] = metricData["Response"]['metrics']['data']['metrics']['2691615711']["objectiveProgress"]['progress'] / 100
     fishingDictionary["Pets"] = metricData["Response"]['metrics']['data']['metrics']['3131994725']["objectiveProgress"]['progress']
+    fishingDictionary["Snowballs"] = metricData["Response"]['metrics']['data']['metrics']['857713621']["objectiveProgress"]['progress']
+    fishingDictionary["Cookies"] = metricData["Response"]['metrics']['data']['metrics']['3597861791']["objectiveProgress"]['progress']
+
+    
     return fishingDictionary
 
 
@@ -48,6 +54,8 @@ def generateHTML(fishingData, isClan = False):
     if isClan:
         table.add_row(["Biggest fish caught by", fishingData["Name"]])
     table.add_row(["Good Boy Protocol activations", int(fishingData["Pets"])])
+    table.add_row(["Snowball kills", int(fishingData["Snowballs"])])
+    table.add_row(["Cookies baked", int(fishingData["Cookies"])])
     return table.get_html_string()
 
 
@@ -102,6 +110,8 @@ def processClan(playerDataList):
             fishingDictionary["Heaviest"] = player["Heaviest"]
             fishingDictionary["Name"] = player["Name"]
         fishingDictionary["Pets"] += player["Pets"]
+        fishingDictionary["Snowballs"] += player["Snowballs"]
+        fishingDictionary["Cookies"] += player["Cookies"]
     return generateHTML(fishingDictionary, True)
 
 
