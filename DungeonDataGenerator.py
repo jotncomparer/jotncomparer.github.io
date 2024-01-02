@@ -1,6 +1,6 @@
 # Thomas McGinley
 # Started 12/29/2023
-# Last Updated 12/29/2023
+# Last Updated 1/1/2024
 
 # Gathers basic Dungeon stat information about each desired player, cleans the data, and generates HTML files with relevant information
 
@@ -20,6 +20,7 @@ def getMetricData(memType, memId):
     response = requests.request("GET",url, headers=headers, data=payload)
     metricData = json.loads(response.content)
     return metricData
+
 
 #Add new Dungeons to the front of the dictionary so it displays in reverse chronological order
 def dungeonDictionary():
@@ -61,7 +62,7 @@ def cleanDungeonData(metricData):
 
     dungeonDict["Prophecy"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['352659556']["objectiveProgress"]['progress']
     dungeonDict["Prophecy"]["Flawless"] = metricData["Response"]['metrics']['data']['metrics']['1099614108']["objectiveProgress"]['progress']
-    #^^^ not working? ^^^
+    #^^^ not working on Bungie's end ^^^
     dungeonDict["Prophecy"]["Solo Flawless"] =  0#metricData["Response"]['metrics']['data']['metrics']['']["objectiveProgress"]['progress']
 
     dungeonDict["Pit of Heresy"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['1451729471']["objectiveProgress"]['progress']
@@ -132,6 +133,7 @@ def processPlayer(name, memType, memId):
     htmlString = generateHTML(cleanData)
     writeToDirectory(htmlString,name)
     return cleanData
+   
     
 def processClan(playerDataList):
     dungeonDict=dungeonDictionary()
@@ -169,11 +171,7 @@ def processClan(playerDataList):
         dungeonDict["The Shattered Throne"]["Solo Flawless"] += player["The Shattered Throne"]["Solo Flawless"]
     return generateHTML(dungeonDict)
     
-    
-    
-    
-    
-    
+
 thomasData = processPlayer("Thomas", 1,4611686018444441571 )
 douglasData = processPlayer("Douglas", 1,4611686018434621591)
 markData = processPlayer("Mark",1,4611686018432221111)
