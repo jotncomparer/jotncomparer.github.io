@@ -1,2 +1,20 @@
 @charset "utf-8";
 
+.main {
+    display:grid;
+    grid-template-columns: auto auto auto;
+}
+.main>.about {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+iframe {
+    
+    border:3px solid orange;
+    float:inline-start;
+    width:100%;
+    height:30em;
+    margin-right:10px;
+}
+

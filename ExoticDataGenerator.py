@@ -1,6 +1,6 @@
 # Thomas McGinley
 # Started 12/17/2023
-# Last Updated 12/18/2023
+# Last Updated 1/4/2024
 
 # Gathers exotic information about each desired player, cleans the data, and generates JSON files with relevant information
 
@@ -346,8 +346,12 @@ def writeToDirectory(data,name):
     td {
         border-bottom: 1px solid white
     }
-</style>
-<h1>EXOTICS</h1>''')
+    
+    tbody>tr>td:nth-of-type(n+1){
+        text-align:end;
+    }
+</style>''')
+    f.write(f"<h1>{str(name).replace('10','').upper()} EXOTICS</h1>")
     f.write(data)
     f.close()
 
@@ -378,66 +382,34 @@ def generateTopTen(data):
         table.add_row([exoticName,exoticKills,exoticPrecision])
     
     table.sortby = "Kills"
-    table.align["Weapon"] = "l"
     table.reversesort = True
-    
-    
     return table.get_html_string(start=0,end=10)
 
+def processPlayer(name,memType,memId,charId1,charId2,charId3):
+    rawData = getExoticData(memType,memId,charId1,charId2,charId3)
+    cleanData = compileData(rawData)
+    table = generateTable(cleanData)
+    writeToDirectory(table, name)
+    ten = generateTopTen(cleanData)
+    writeToDirectory(ten, str(name+"10"))
+    print(name + " exotic data written!")
+    return cleanData
 
 
-thomasExoticDataRaw = getExoticData(1,4611686018444441571,2305843009265786295,2305843009283965144,2305843009569534739)
-thomasExoticDataClean = compileData(thomasExoticDataRaw)
-thomasTable = generateTable(thomasExoticDataClean)
-writeToDirectory(thomasTable, "Thomas")
-print("Thomas cleared!")
 
-douglasExoticDataRaw = getExoticData(1,4611686018434621591,2305843009293915719,2305843009301374530,2305843010083874501)
-douglasExoticDataClean = compileData(douglasExoticDataRaw)
-douglasTable = generateTable(douglasExoticDataClean)
-writeToDirectory(douglasTable,"Douglas")
-print("Douglas cleared!")
-
-markExoticDataRaw = getExoticData(1,4611686018432221111,2305843009348154555,2305843009668854600,2305843009802904121)
-markExoticDataClean = compileData(markExoticDataRaw)
-markTable = generateTable(markExoticDataClean)
-writeToDirectory(markTable, "Mark")
-print("Mark cleared!")
-
-connorExoticDataRaw = getExoticData(1,4611686018450697084,2305843009644414176,2305843009663894341,2305843009703275457)
-connorExoticDataClean = compileData(connorExoticDataRaw)
-connorTable = generateTable(connorExoticDataClean)
-writeToDirectory(connorTable, "Connor")
-print("Connor cleared!")
-
-jackExoticDataRaw = getExoticData(2,4611686018469231992,2305843009268771475,2305843009891864023,2305843009890274343)
-jackExoticDataClean = compileData(jackExoticDataRaw)
-jackTable = generateTable(jackExoticDataClean)
-writeToDirectory(jackTable,"Jack")
-print("Jack cleared!")
-
-hunterExoticDataRaw = getExoticData(3,4611686018476416864,2305843009359734078,2305843009359365362,2305843009756404411)
-hunterExoticDataClean = compileData(hunterExoticDataRaw)
-hunterTable = generateTable(hunterExoticDataClean)
-writeToDirectory(hunterTable,"Hunter")
-print("Hunter cleared!")
-
-cameronExoticDataRaw = getExoticData(3,4611686018501646188,2305843009624174508,2305843009683284492,2305843009683284493)
-cameronExoticDataClean = compileData(cameronExoticDataRaw)
-cameronTable = generateTable(cameronExoticDataClean)
-writeToDirectory(cameronTable,"Cameron")
-print("Cameron cleared!")
-
-kadeExoticDataRaw = getExoticData(1,4611686018451886498,2305843009264637524,2305843009264637527,2305843010322954573)
-kadeExoticDataClean = compileData(kadeExoticDataRaw)
-kadeTable = generateTable(kadeExoticDataClean)
-writeToDirectory(kadeTable, "Kade")
-print("Kade cleared!")
+thomasExoticDataClean = processPlayer("Thomas",1,4611686018444441571,2305843009265786295,2305843009283965144,2305843009569534739)
+douglasExoticDataClean = processPlayer("Douglas",1,4611686018434621591,2305843009293915719,2305843009301374530,2305843010083874501)
+markExoticDataClean = processPlayer("Mark",1,4611686018432221111,2305843009348154555,2305843009668854600,2305843009802904121)
+connorExoticDataClean = processPlayer("Connor",1,4611686018450697084,2305843009644414176,2305843009663894341,2305843009703275457)
+jackExoticDataClean = processPlayer("Jack",2,4611686018469231992,2305843009268771475,2305843009891864023,2305843009890274343)
+hunterExoticDataClean = processPlayer("Hunter",3,4611686018476416864,2305843009359734078,2305843009359365362,2305843009756404411)
+cameronExoticDataClean = processPlayer("Cameron",3,4611686018501646188,2305843009624174508,2305843009683284492,2305843009683284493)
+kadeExoticDataClean = processPlayer("Kade",1,4611686018451886498,2305843009264637524,2305843009264637527,2305843010322954573)
 
 playerDataList = [thomasExoticDataClean,douglasExoticDataClean,markExoticDataClean,connorExoticDataClean,jackExoticDataClean,hunterExoticDataClean,cameronExoticDataClean,kadeExoticDataClean]
 clanExoticDataClean = compileClanData(playerDataList)
 clanTable = generateTable(clanExoticDataClean)
 writeToDirectory(clanTable, "Clan")
 indexTable = generateTopTen(clanExoticDataClean)
-writeToDirectory(indexTable,"Index")
+writeToDirectory(indexTable,"Clan10")
 print("Clan cleared!")

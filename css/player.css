@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+.otherstats {
+    width:66%;
+    float:right;
+    display:grid;
+    grid-template-columns: auto auto;
+}
+
+.otherstats>iframe {
+    width:99%
+}
+
+.otherstats>.finalblows,
+.otherstats>.weapons {
+    height:30em;
+}
+
+.otherstats>.raids,
+.otherstats>.dungeon {
+    height:75em;
+}
+
+.otherstats>.strikes,
+.otherstats>.time {
+    height:50em;
+}
+
+.otherstats>.silly,
+.otherstats>.idk {
+    height:15em;
+}
+
+.otherstats>.seals {
+    grid-column-start: 1;
+    grid-column-end:3;
+    width:99.5%
+}
+
+iframe {
+    border: 3px solid orange;
+    
+}
+.exotics {
+    width:33%;
+    height:175em;
+}
