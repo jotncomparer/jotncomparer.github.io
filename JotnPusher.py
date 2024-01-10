@@ -6,6 +6,7 @@ import os
 import time
 
 os.system("cd /home/scf/Desktop/jotncomparer.github.io")
+os.system("git pull")
 os.system("python ElementalDataGenerator.py")
 time.sleep(15)
 os.system("python ExoticDataGenerator.py")
@@ -17,6 +18,8 @@ time.sleep(15)
 os.system("python WeaponDataGenerator.py")
 time.sleep(15)
 os.system("python StrikeDataGenerator.py")
+time.sleep(15)
+os.system("python RaidDataGenerator.py")
 os.system("git add data")
 os.system('git commit -m "Updated player data"')
 os.system("git push")
