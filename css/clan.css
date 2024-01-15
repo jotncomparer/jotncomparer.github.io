@@ -1,60 +1,63 @@
 @charset "utf-8";
 
 .toptendiv {
-    border:3px solid orange;
-    height:64em;
+    border: 3px solid orange;
+    height: 64em;
 }
 
 
 .toptendiv>iframe {
-    width:25%;
-    height:32em;
-    border:none;
+    width: 25%;
+    height: 32em;
+    border: none;
 }
 
 
 .otherstats {
-    width:66%;
-    float:right;
-    display:grid;
+    width: 66%;
+    float: right;
+    display: grid;
     grid-template-columns: auto auto;
 }
 
 .otherstats>iframe {
-    width:99%
+    width: 99%
 }
 
 .otherstats>.finalblows,
 .otherstats>.weapons {
-    height:30em;
+    height: 30em;
 }
 
 .otherstats>.raids,
 .otherstats>.dungeon {
-    height:75em;
+    height: 75em;
 }
 
 .otherstats>.strikes,
 .otherstats>.time {
-    height:15em;
+    height: 15em;
 }
 
 .otherstats>.silly,
 .otherstats>.idk {
-    height:15em;
+    height: 15em;
 }
 
-.otherstats>.seals {
+.otherstats>.seals,
+.otherstats>.commendations {
     grid-column-start: 1;
-    grid-column-end:3;
-    width:99.5%
+    grid-column-end: 3;
+    width: 99.5%;
+    height: 17em;
 }
 
 iframe {
     border: 3px solid orange;
-    
+
 }
+
 .exotics {
-    width:33%;
-    height:175em;
+    width: 33%;
+    height: 175em;
 }
