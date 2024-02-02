@@ -1,6 +1,6 @@
 # Thomas McGinley
 # Started 12/27/2023
-# Last Updated 12/28/2023
+# Last Updated 2/2/2024
 
 # Gathers elemental final blows information about each desired player, cleans the data, and generates JSON files with relevant information
 
@@ -127,6 +127,7 @@ jackData = processPlayer("Jack",2,4611686018469231992)
 hunterData = processPlayer("Hunter",3,4611686018476416864)
 cameronData = processPlayer("Cameron",3,4611686018501646188)
 kadeData = processPlayer("Kade",1,4611686018451886498)
-playerDataList = [thomasData,douglasData,markData,connorData,jackData,hunterData,cameronData,kadeData]
+xavierData = processPlayer("Xavier", 3, 4611686018471574419)
+playerDataList = [thomasData,douglasData,markData,connorData,jackData,hunterData,cameronData,kadeData, xavierData]
 ClanHTML = processClan(playerDataList)
 writeToDirectory(ClanHTML,"Clan")

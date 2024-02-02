@@ -1,6 +1,6 @@
 # Thomas McGinley
 # Started 1/14/2024
-# Last Updated 1/14/2024
+# Last Updated 2/2/2024
 
 # Gathers basic commendation information about each desired player, cleans the data, and generates HTML files with relevant information
 
@@ -24,86 +24,194 @@ def getCommendationData(memType, memId):
 def commendationDictionary():
     dictionary = {
         "Total": 0,
-        
         "Ally": {"Score": 0, "Percent": 0},
         "Indispensable": 0,
         "Selfless": 0,
         "Thoughtful": 0,
         "Patient And Considerate": 0,
-        
         "Fun": {"Score": 0, "Percent": 0},
         "Joy Bringer": 0,
         "Level-Headed": 0,
         "Saint's Favorite": 0,
         "Best Dressed": 0,
-        
         "Mastery": {"Score": 0, "Percent": 0},
         "Playmaker": 0,
         "Primeval Instinct": 0,
         "Heroic": 0,
         "Pacesetter": 0,
-        
         "Leadership": {"Score": 0, "Percent": 0},
         "Perceptive": 0,
-        "Knowledgeable": 0
+        "Knowledgeable": 0,
     }
     return dictionary
 
 
 def cleanData(commData):
     commDict = commendationDictionary()
-    commDict["Total"] = commData["Response"]['profileCommendations']['data']['totalScore']
-    
-    commDict["Ally"]["Score"] = commData["Response"]['profileCommendations']['data']['commendationNodeScoresByHash']['154475713']
-    commDict["Ally"]["Percent"] = commData["Response"]['profileCommendations']['data']['commendationNodePercentagesByHash']['154475713']
-    commDict["Indispensable"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['2019871317']
-    commDict["Selfless"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['354527503']
-    commDict["Thoughtful"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['3513056018']
-    commDict["Patient And Considerate"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['2506835299']
+    commDict["Total"] = commData["Response"]["profileCommendations"]["data"][
+        "totalScore"
+    ]
 
-    commDict["Fun"]["Score"] = commData["Response"]['profileCommendations']['data']['commendationNodeScoresByHash']['1341823550']
-    commDict["Fun"]["Percent"] = commData["Response"]['profileCommendations']['data']['commendationNodePercentagesByHash']['1341823550']
-    commDict["Joy Bringer"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['3377580220']
-    commDict["Level-Headed"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['3037314846']
-    commDict["Saint's Favorite"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['3030493827']
-    commDict["Best Dressed"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['357212819']
+    commDict["Ally"]["Score"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationNodeScoresByHash"
+    ]["154475713"]
+    commDict["Ally"]["Percent"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationNodePercentagesByHash"
+    ]["154475713"]
+    commDict["Indispensable"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["2019871317"]
+    commDict["Selfless"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["354527503"]
+    commDict["Thoughtful"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["3513056018"]
+    commDict["Patient And Considerate"] = commData["Response"]["profileCommendations"][
+        "data"
+    ]["commendationScoresByHash"]["2506835299"]
 
-    commDict["Mastery"]["Score"] = commData["Response"]['profileCommendations']['data']['commendationNodeScoresByHash']['4180748446']
-    commDict["Mastery"]["Percent"] = commData["Response"]['profileCommendations']['data']['commendationNodePercentagesByHash']['1390663518']
-    commDict["Playmaker"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['4209356036']
-    commDict["Primeval Instinct"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['363818544']
-    commDict["Heroic"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['3575743922']
-    commDict["Pacesetter"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['2205006002']
+    commDict["Fun"]["Score"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationNodeScoresByHash"
+    ]["1341823550"]
+    commDict["Fun"]["Percent"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationNodePercentagesByHash"
+    ]["1341823550"]
+    commDict["Joy Bringer"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["3377580220"]
+    commDict["Level-Headed"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["3037314846"]
+    commDict["Saint's Favorite"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["3030493827"]
+    commDict["Best Dressed"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["357212819"]
 
+    commDict["Mastery"]["Score"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationNodeScoresByHash"
+    ]["4180748446"]
+    commDict["Mastery"]["Percent"] = commData["Response"]["profileCommendations"][
+        "data"
+    ]["commendationNodePercentagesByHash"]["1390663518"]
+    commDict["Playmaker"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["4209356036"]
+    commDict["Primeval Instinct"] = commData["Response"]["profileCommendations"][
+        "data"
+    ]["commendationScoresByHash"]["363818544"]
+    commDict["Heroic"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["3575743922"]
+    commDict["Pacesetter"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["2205006002"]
 
-    commDict["Leadership"]["Score"] = commData["Response"]['profileCommendations']['data']['commendationNodeScoresByHash']['1390663518']
-    commDict["Leadership"]["Percent"] = commData["Response"]['profileCommendations']['data']['commendationNodePercentagesByHash']['4180748446']
-    commDict["Perceptive"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['3872064891']
-    commDict["Knowledgeable"] = commData["Response"]['profileCommendations']['data']['commendationScoresByHash']['3970150545']
+    commDict["Leadership"]["Score"] = commData["Response"]["profileCommendations"][
+        "data"
+    ]["commendationNodeScoresByHash"]["1390663518"]
+    commDict["Leadership"]["Percent"] = commData["Response"]["profileCommendations"][
+        "data"
+    ]["commendationNodePercentagesByHash"]["4180748446"]
+    commDict["Perceptive"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["3872064891"]
+    commDict["Knowledgeable"] = commData["Response"]["profileCommendations"]["data"][
+        "commendationScoresByHash"
+    ]["3970150545"]
 
     return commDict
 
 
 def generateTable(cleanData):
     table = PrettyTable()
-    table.add_column("Ally", [cleanData["Ally"]["Score"], "Indispensable", "Selfless", "Thoughtful", "Patient And Considerate"])
-    table.add_column(" ", [str(cleanData["Ally"]["Percent"]) + "%", cleanData["Indispensable"], cleanData["Selfless"], cleanData["Thoughtful"], cleanData["Patient And Considerate"]])
-    
-    table.add_column("Fun", [cleanData["Fun"]["Score"], "Joy Bringer", "Level-Headed", "Saint's Favorite", "Best Dressed"])
-    table.add_column("  ", [str(cleanData["Fun"]["Percent"]) + "%", cleanData["Joy Bringer"], cleanData["Level-Headed"], cleanData["Saint's Favorite"], cleanData["Best Dressed"]])
+    table.add_column(
+        "Ally",
+        [
+            cleanData["Ally"]["Score"],
+            "Indispensable",
+            "Selfless",
+            "Thoughtful",
+            "Patient And Considerate",
+        ],
+    )
+    table.add_column(
+        " ",
+        [
+            str(cleanData["Ally"]["Percent"]) + "%",
+            cleanData["Indispensable"],
+            cleanData["Selfless"],
+            cleanData["Thoughtful"],
+            cleanData["Patient And Considerate"],
+        ],
+    )
 
-    table.add_column("Mastery", [cleanData["Mastery"]["Score"], "Playmaker", "Primeval Instinct", "Heroic", "Pacesetter"])
-    table.add_column("   ", [str(cleanData["Mastery"]["Percent"]) + "%", cleanData["Playmaker"], cleanData["Primeval Instinct"], cleanData["Heroic"], cleanData["Pacesetter"]])
+    table.add_column(
+        "Fun",
+        [
+            cleanData["Fun"]["Score"],
+            "Joy Bringer",
+            "Level-Headed",
+            "Saint's Favorite",
+            "Best Dressed",
+        ],
+    )
+    table.add_column(
+        "  ",
+        [
+            str(cleanData["Fun"]["Percent"]) + "%",
+            cleanData["Joy Bringer"],
+            cleanData["Level-Headed"],
+            cleanData["Saint's Favorite"],
+            cleanData["Best Dressed"],
+        ],
+    )
 
-    table.add_column("Leadership", [cleanData["Leadership"]["Score"], "Perceptive", "Knowledgeable", " ", " "])
-    table.add_column("    ", [str(cleanData["Leadership"]["Percent"]) + "%", cleanData["Perceptive"], cleanData["Knowledgeable"], " ", " "])
+    table.add_column(
+        "Mastery",
+        [
+            cleanData["Mastery"]["Score"],
+            "Playmaker",
+            "Primeval Instinct",
+            "Heroic",
+            "Pacesetter",
+        ],
+    )
+    table.add_column(
+        "   ",
+        [
+            str(cleanData["Mastery"]["Percent"]) + "%",
+            cleanData["Playmaker"],
+            cleanData["Primeval Instinct"],
+            cleanData["Heroic"],
+            cleanData["Pacesetter"],
+        ],
+    )
+
+    table.add_column(
+        "Leadership",
+        [cleanData["Leadership"]["Score"], "Perceptive", "Knowledgeable", " ", " "],
+    )
+    table.add_column(
+        "    ",
+        [
+            str(cleanData["Leadership"]["Percent"]) + "%",
+            cleanData["Perceptive"],
+            cleanData["Knowledgeable"],
+            " ",
+            " ",
+        ],
+    )
     # table.add_row(["Total Commendation Score", cleanData["Total"], "", "", "", "", "", ""])
     return table.get_html_string()
-    
+
 
 def writeToDirectory(data, name, dictionary):
-    f = open(f'./data/{name}Commendation.html', 'w')
-    f.write('''
+    f = open(f"./data/{name}Commendation.html", "w")
+    f.write(
+        """
     <style>
     h1,
     h2 {
@@ -191,11 +299,14 @@ def writeToDirectory(data, name, dictionary):
         background-color: rgba(100, 149, 237, .25)
     }
 </style>
-    ''')
-    f.write(f'''
+    """
+    )
+    f.write(
+        f"""
 <h1>Commendations - Total: {dictionary["Total"]}</h1>
 <h2>Resets every season</h2>
-    ''')
+    """
+    )
     f.write(data)
     f.close()
     print(f"{name} commendation data written!")
@@ -213,34 +324,33 @@ def processClan(playerDataList):
     commDict = commendationDictionary()
     for player in playerDataList:
         commDict["Total"] += player["Total"]
-    
+
         commDict["Ally"]["Score"] += player["Ally"]["Score"]
-        #commDict["Ally"]["Percent"] += player["Ally"]["Percent"]
+        # commDict["Ally"]["Percent"] += player["Ally"]["Percent"]
         commDict["Indispensable"] += player["Indispensable"]
         commDict["Selfless"] += player["Selfless"]
         commDict["Thoughtful"] += player["Thoughtful"]
         commDict["Patient And Considerate"] += player["Patient And Considerate"]
 
         commDict["Fun"]["Score"] += player["Fun"]["Score"]
-       #commDict["Fun"]["Percent"] += player["Fun"]["Percent"]
+        # commDict["Fun"]["Percent"] += player["Fun"]["Percent"]
         commDict["Joy Bringer"] += player["Joy Bringer"]
         commDict["Level-Headed"] += player["Level-Headed"]
         commDict["Saint's Favorite"] += player["Saint's Favorite"]
         commDict["Best Dressed"] += player["Best Dressed"]
 
         commDict["Mastery"]["Score"] += player["Mastery"]["Score"]
-        #commDict["Mastery"]["Percent"] += player["Mastery"]["Percent"]
+        # commDict["Mastery"]["Percent"] += player["Mastery"]["Percent"]
         commDict["Playmaker"] += player["Playmaker"]
         commDict["Primeval Instinct"] += player["Primeval Instinct"]
         commDict["Heroic"] += player["Heroic"]
         commDict["Pacesetter"] += player["Pacesetter"]
 
-
         commDict["Leadership"]["Score"] += player["Leadership"]["Score"]
-        #commDict["Leadership"]["Percent"] += player["Leadership"]["Percent"]
+        # commDict["Leadership"]["Percent"] += player["Leadership"]["Percent"]
         commDict["Perceptive"] += player["Perceptive"]
         commDict["Knowledgeable"] += player["Knowledgeable"]
-    
+
     return generateTable(commDict)
 
 
@@ -252,9 +362,20 @@ jackData = processPlayer("Jack", 2, 4611686018469231992)
 hunterData = processPlayer("Hunter", 3, 4611686018476416864)
 cameronData = processPlayer("Cameron", 3, 4611686018501646188)
 kadeData = processPlayer("Kade", 1, 4611686018451886498)
-playerDataList = [thomasData, douglasData, markData, connorData, jackData, hunterData, cameronData, kadeData]
+xavierData = processPlayer("Xavier", 3, 4611686018471574419)
+playerDataList = [
+    thomasData,
+    douglasData,
+    markData,
+    connorData,
+    jackData,
+    hunterData,
+    cameronData,
+    kadeData,
+    xavierData
+]
 ClanHTML = processClan(playerDataList)
 total = 0
 for player in playerDataList:
     total += player["Total"]
-writeToDirectory(name="Clan", data=ClanHTML, dictionary={"Total":total})
+writeToDirectory(name="Clan", data=ClanHTML, dictionary={"Total": total})

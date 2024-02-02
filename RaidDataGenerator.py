@@ -1,6 +1,6 @@
 # Thomas McGinley
 # Started 1/8/2024
-# Last Updated 1/9/2024
+# Last Updated 2/2/2024
 
 # Gathers basic Raid stat information about each desired player, cleans the data, and generates HTML files with relevant information
 
@@ -366,6 +366,7 @@ jackData = processPlayer("Jack",2,4611686018469231992)
 hunterData = processPlayer("Hunter",3,4611686018476416864)
 cameronData = processPlayer("Cameron",3,4611686018501646188)
 kadeData = processPlayer("Kade",1,4611686018451886498)
-playerDataList = [thomasData, douglasData, markData, connorData, jackData, hunterData, cameronData, kadeData]
+xavierData = processPlayer("Xavier", 3, 4611686018471574419)
+playerDataList = [thomasData,douglasData,markData,connorData,jackData,hunterData,cameronData,kadeData, xavierData]
 ClanHTML = processClan(playerDataList) 
 writeToClanDirectory(name="Clan",data=ClanHTML)
