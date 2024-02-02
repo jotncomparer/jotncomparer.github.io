@@ -83,8 +83,6 @@ def generateHTML(dungeonData):
         table.add_row(["Clears",dungeonData[dungeon]["Clears"]])
         table.add_row(["Flawless Clears",dungeonData[dungeon]["Flawless"]])
         table.add_row(["Solo Flawless Clears",dungeonData[dungeon]["Solo Flawless"]])
-        table.add_row(["---------------------"," "])
-        table.add_row([" "," "])
     return table.get_html_string()
     
     
@@ -112,7 +110,7 @@ def writeToDirectory(data,name):
     td {
         border-bottom: 1px solid white
     }
-    tbody>tr:nth-child(6n-5) {
+    tbody>tr:nth-child(4n-3) {
         font-weight:bold;
         font-size:larger;
         background-color:orange;
