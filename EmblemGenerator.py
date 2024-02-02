@@ -19,29 +19,33 @@ def get_character_data(memType, memId):
     characterData = json.loads(response.content)
     return characterData
 
+def get_emblem_data(emblemHash):
+    url = f"https://www.bungie.net/Platform/Destiny2/Manifest/DestinyInventoryItemDefinition/{emblemHash}/"
+    payload = {}
+    headers = {
+        "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
+    }
+    response = requests.request("GET", url, headers=headers, data=payload)
+    emblem_data = json.loads(response.content)
+    return emblem_data
 
 def process_player(name, memType, memId, charId):
     data = get_character_data(memType=memType, memId=memId)
-
-    emblem_path_1 = data["Response"]["characters"]["data"][str(charId)][
-        "emblemBackgroundPath"
-    ]
-    emblem_img_1 = requests.get(url=f"https://www.bungie.net{emblem_path_1}").content
-    emblem_file_1 = open(file=f"./images/{name}Emblem.jpg", mode="wb")
-    emblem_file_1.write(emblem_img_1)
-    emblem_file_1.close()
-
-    # emblem_path_2 = data["Response"]["characters"]["data"][str(charId2)]["emblemBackgroundPath"]
-    # emblem_img_2 = requests.get(url=f"https://www.bungie.net{emblem_path_2}").content
-    # emblem_file_2 = open(file=f"./images/{name}Emblem2.jpg",mode='wb')
-    # emblem_file_2.write(emblem_img_2)
-    # emblem_file_2.close()
-
-    # emblem_path_3 = data["Response"]["characters"]["data"][str(charId3)]["emblemBackgroundPath"]
-    # emblem_img_3 = requests.get(url=f"https://www.bungie.net{emblem_path_3}").content
-    # emblem_file_3 = open(file=f"./images/{name}Emblem3.jpg",mode='wb')
-    # emblem_file_3.write(emblem_img_3)
-    # emblem_file_3.close()
+    emblem_hash = data["Response"]["characters"]["data"][str(charId)]["emblemHash"]
+    emblem_data = get_emblem_data(emblemHash=emblem_hash)
+    
+    emblem_overlay_url = emblem_data["Response"]["secondaryOverlay"]
+    emblem_overlay = requests.get(url=f"https://www.bungie.net{emblem_overlay_url}").content
+    emblem_overlay_file_hand = open(file=f"./images/{name}EmblemOverlay.png", mode="wb")
+    emblem_overlay_file_hand.write(emblem_overlay)
+    emblem_overlay_file_hand.close()
+    
+    emblem_background_url = emblem_data["Response"]["secondarySpecial"]
+    emblem_background = requests.get(url=f"http://www.bungie.net{emblem_background_url}").content
+    emblem_background_file_hand = open(file=f"./images/{name}Emblem.jpg", mode="wb")
+    emblem_background_file_hand.write(emblem_background)
+    emblem_background_file_hand.close()
+    print(f"{name} emblems processed!")
 
 
 process_player("Thomas", 1, 4611686018444441571, 2305843009265786295)

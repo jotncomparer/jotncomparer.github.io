@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
 
+@font-face {
+    font-family: BoucherieBlock;
+    src: url("../fonts/Boucherie Block.ttf");
+}
 html {
     background-color: rgb(30, 30, 30);
 }
@@ -23,13 +27,18 @@ header h1,
 header a {
     font-size: 75px;
     color: white;
-    font-family: "Bungee Hairline", 'Courier New', Courier, monospace;
+    font-family: "BoucherieBlock", 'Courier New', Courier, monospace;
     font-weight: lighter;
     width: 100%;
     text-align: center;
     text-decoration: none;
     
 
+}
+
+header img {
+    height: 100px;
+    padding: 0 20px 0 20px
 }
 
 /*SIDENAV---------------------------------------------------*/
