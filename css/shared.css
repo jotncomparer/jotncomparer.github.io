@@ -28,17 +28,22 @@ header a {
     font-size: 75px;
     color: white;
     font-family: "BoucherieBlock", 'Courier New', Courier, monospace;
-    font-weight: lighter;
+    font-weight: 100;
     width: 100%;
     text-align: center;
     text-decoration: none;
-    
 
 }
 
+header a {
+    position:absolute;
+}
 header img {
     height: 100px;
-    padding: 0 20px 0 20px
+    padding: 0 20px 0 20px;
+    position:absolute;
+    left:0;
+    top:0px;
 }
 
 /*SIDENAV---------------------------------------------------*/
