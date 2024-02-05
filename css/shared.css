@@ -118,7 +118,7 @@ iframe {
 }
 */
 /* MEDIA------------------------------- */
-@media screen and (max-width:900px) {
+@media only screen and (max-width:1200px) {
     .main>.exotics,
     .main>.otherstats {
         width:100%;

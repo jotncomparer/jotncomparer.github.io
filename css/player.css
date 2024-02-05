@@ -48,7 +48,7 @@ iframe {
     height: 175em;
 }
 
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
 
     .otherstats>.raids,
     .otherstats>.dungeon {
