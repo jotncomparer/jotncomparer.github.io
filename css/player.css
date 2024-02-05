@@ -8,7 +8,7 @@
 }
 
 .otherstats>iframe {
-    width: 99%
+    width: 100%
 }
 
 .otherstats>.finalblows,
@@ -35,7 +35,7 @@
 .otherstats>.commendations {
     grid-column-start: 1;
     grid-column-end: 3;
-    width: 99.5%;
+    width: 100%;
     height: 20em;
 }
 
@@ -46,4 +46,30 @@ iframe {
 .exotics {
     width: 33%;
     height: 175em;
+}
+
+@media screen and (max-width: 900px) {
+
+    .otherstats>.raids,
+    .otherstats>.dungeon {
+        height: 95em
+    }
+
+    .otherstats>.strikes,
+    .otherstats>.time {
+        height: 60em;
+    }
+
+    .otherstats>.silly,
+    .otherstats>.idk {
+        height: 25em;
+    }
+
+    .otherstats>.seals,
+    .otherstats>.commendations {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 100%;
+        height: 30em;
+    }
 }

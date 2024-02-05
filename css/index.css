@@ -1,25 +1,41 @@
 @charset "utf-8";
 
-.main {
-    display:grid;
+.main>.stats {
+    display: grid;
     grid-template-columns: auto auto auto;
-}
-.main>.about {
-    grid-column-start: 1;
-    grid-column-end: 4;
 }
 
 iframe {
-    
-    border:3px solid orange;
-    float:inline-start;
-    width:100%;
-    height:30em;
-    margin-right:10px;
+
+    border: 3px solid orange;
+    float: inline-start;
+    width: 100%;
+    height: 30em;
+    margin-right: 10px;
 }
 
 iframe:nth-of-type(4),
 iframe:nth-of-type(5),
 iframe:nth-of-type(6) {
-    height:72em;
+    height: 72em;
+}
+
+@media screen and (max-width:900px) {
+    .main>.stats {
+        grid-template-columns: auto auto;
+    }
+
+    iframe:nth-of-type(3),
+    iframe:nth-of-type(4),
+    iframe:nth-of-type(5),
+    iframe:nth-of-type(6) {
+        height: 72em;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .main>.stats {
+        grid-template-columns: auto;
+    }
 }
