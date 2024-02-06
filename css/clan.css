@@ -67,33 +67,38 @@ iframe {
     .toptendiv {
         grid-template-columns: auto auto;
     }
-
-    .otherstats>.raids,
-    .otherstats>.dungeon {
-        height: 85em
+    
+    .toptendiv>iframe {
+        height:25em;
     }
 
-    .otherstats>.strikes,
-    .otherstats>.time {
-        height: 25em;
-    }
-
-    .otherstats>.silly,
-    .otherstats>.idk {
-        height: 25em;
-    }
-
-    .otherstats>.seals,
-    .otherstats>.commendations {
+    .otherstats>iframe {
         grid-column-start: 1;
         grid-column-end: 3;
-        width: 100%;
-        height: 30em;
     }
+
+    .otherstats>.finalblows {
+        height: 20em
+    }
+
+    .otherstats>.dungeon {
+        height: 60em
+    }
+
+    .otherstats>.commendations {
+        height: 25em
+    }
+   
 }
 
 @media screen and (max-width:600px) {
     .toptendiv {
         grid-template-columns: auto;
     }
+
+    .otherstats>iframe {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
 }
