@@ -1,28 +1,30 @@
 # Thomas McGinley
 # Started 12/28/2023
-# Last Updated 2/2/2024
+# Last Updated 2/9/2024
 
 # Gathers fishing stat and good boy protocol information about each desired player, cleans the data, and generates JSON files with relevant information
 
 
 import requests
 import json
-import prettytable
 from prettytable import PrettyTable
 
 
-def getMetricData(memType, memId):
-    url = f"https://www.bungie.net/Platform/Destiny2/{memType}/Profile/{memId}/?components=1100"
+def get_metric_data(mem_type, mem_id):
+    url = f"https://www.bungie.net/Platform/Destiny2/{mem_type}/Profile/{mem_id}/?components=1100"
     payload = {}
     headers = {
         "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
     }
     response = requests.request("GET", url, headers=headers, data=payload)
-    metricData = json.loads(response.content)
-    return metricData
+    if response != 200:
+            print("Error occurred in request:", response)
+            print("She be Rhulking on my Disciple til I Strand")
+    metric_data = json.loads(response.content)
+    return metric_data
 
 
-def fishDict():
+def fish_dict():
     dictionary = {
         "Total": 0,
         "Heaviest": 0,
@@ -34,45 +36,47 @@ def fishDict():
     return dictionary
 
 
-def cleanFishingData(metricData):
-    fishingDictionary = fishDict()
-    fishingDictionary["Total"] = metricData["Response"]["metrics"]["data"]["metrics"][
+def clean_fishing_data(metric_data):
+    fishing_dictionary = fish_dict()
+    fishing_dictionary["Total"] = metric_data["Response"]["metrics"]["data"]["metrics"][
         "24768693"
     ]["objectiveProgress"]["progress"]
-    fishingDictionary["Heaviest"] = (
-        metricData["Response"]["metrics"]["data"]["metrics"]["2691615711"][
+    fishing_dictionary["Heaviest"] = (
+        metric_data["Response"]["metrics"]["data"]["metrics"]["2691615711"][
             "objectiveProgress"
         ]["progress"]
         / 100
     )
-    fishingDictionary["Pets"] = metricData["Response"]["metrics"]["data"]["metrics"][
+    fishing_dictionary["Pets"] = metric_data["Response"]["metrics"]["data"]["metrics"][
         "3131994725"
     ]["objectiveProgress"]["progress"]
-    fishingDictionary["Snowballs"] = metricData["Response"]["metrics"]["data"][
+    fishing_dictionary["Snowballs"] = metric_data["Response"]["metrics"]["data"][
         "metrics"
     ]["857713621"]["objectiveProgress"]["progress"]
-    fishingDictionary["Cookies"] = metricData["Response"]["metrics"]["data"]["metrics"][
+    fishing_dictionary["Cookies"] = metric_data["Response"]["metrics"]["data"]["metrics"][
         "3597861791"
     ]["objectiveProgress"]["progress"]
 
-    return fishingDictionary
+    return fishing_dictionary
 
 
-def generateHTML(fishingData, isClan=False):
+def generate_html(fishing_data, is_clan=False):
     table = PrettyTable()
     table.field_names = ["Stat", "Value"]
-    table.add_row(["Total fish caught", int(fishingData["Total"])])
-    table.add_row(["Heaviest fish caught", str(fishingData["Heaviest"]) + " kg"])
-    if isClan:
-        table.add_row(["Biggest fish caught by", fishingData["Name"]])
-    table.add_row(["Good Boy Protocol activations", int(fishingData["Pets"])])
-    table.add_row(["Snowball kills", int(fishingData["Snowballs"])])
-    table.add_row(["Cookies baked", int(fishingData["Cookies"])])
+    table.add_row(["Total fish caught", int(fishing_data["Total"])])
+    table.add_row(["Heaviest fish caught", str(fishing_data["Heaviest"]) + " kg"])
+    if is_clan:
+        table.add_row(["Biggest fish caught by", fishing_data["Name"]])
+    table.add_row(["Good Boy Protocol activations", int(fishing_data["Pets"])])
+    table.add_row(["Snowball kills", int(fishing_data["Snowballs"])])
+    table.add_row(["Cookies baked", int(fishing_data["Cookies"])])
     return table.get_html_string()
 
 
-def writeToDirectory(data, name):
+def write_to_directory(data, name):
+    
     f = open(f"./data/{name}Fish.html", "w")
+    
     f.write(
         """
     <style>
@@ -105,49 +109,51 @@ def writeToDirectory(data, name):
     print(f"{name} fishing data written!")
 
 
-def processPlayer(name, memType, memId):
-    rawData = getMetricData(memType, memId)
-    fishingData = cleanFishingData(rawData)
-    htmlString = generateHTML(fishingData)
-    writeToDirectory(htmlString, name)
-    fishingData["Name"] = name
-    return fishingData
+def process_player(name, mem_type, mem_id):
+    raw_data = get_metric_data(mem_type, mem_id)
+    fishing_data = clean_fishing_data(raw_data)
+    html_string = generate_html(fishing_data)
+    write_to_directory(html_string, name)
+    fishing_data["Name"] = name
+    return fishing_data
 
 
-def processClan(playerDataList):
-    fishingDictionary = fishDict()
+def process_clan(player_data_list):
+    fishing_dictionary = fish_dict()
     heaviest = 0.0
-    for player in playerDataList:
-        fishingDictionary["Total"] += player["Total"]
+    for player in player_data_list:
+        fishing_dictionary["Total"] += player["Total"]
         if player["Heaviest"] > heaviest:
             heaviest = player["Heaviest"]
-            fishingDictionary["Heaviest"] = player["Heaviest"]
-            fishingDictionary["Name"] = player["Name"]
-        fishingDictionary["Pets"] += player["Pets"]
-        fishingDictionary["Snowballs"] += player["Snowballs"]
-        fishingDictionary["Cookies"] += player["Cookies"]
-    return generateHTML(fishingDictionary, True)
+            fishing_dictionary["Heaviest"] = player["Heaviest"]
+            fishing_dictionary["Name"] = player["Name"]
+        fishing_dictionary["Pets"] += player["Pets"]
+        fishing_dictionary["Snowballs"] += player["Snowballs"]
+        fishing_dictionary["Cookies"] += player["Cookies"]
+    return generate_html(fishing_dictionary, True)
 
-
-thomasData = processPlayer("Thomas", 1, 4611686018444441571)
-douglasData = processPlayer("Douglas", 1, 4611686018434621591)
-markData = processPlayer("Mark", 1, 4611686018432221111)
-connorData = processPlayer("Connor", 1, 4611686018450697084)
-jackData = processPlayer("Jack", 2, 4611686018469231992)
-hunterData = processPlayer("Hunter", 3, 4611686018476416864)
-cameronData = processPlayer("Cameron", 3, 4611686018501646188)
-kadeData = processPlayer("Kade", 1, 4611686018451886498)
-xavierData = processPlayer("Xavier", 3, 4611686018471574419)
-playerDataList = [
-    thomasData,
-    douglasData,
-    markData,
-    connorData,
-    jackData,
-    hunterData,
-    cameronData,
-    kadeData,
-    xavierData
-]
-ClanHTML = processClan(playerDataList)
-writeToDirectory(ClanHTML, "Clan")
+def run():
+    thomas_data = process_player("Thomas", 1, 4611686018444441571)
+    douglas_data = process_player("Douglas", 1, 4611686018434621591)
+    mark_data = process_player("Mark", 1, 4611686018432221111)
+    connor_data = process_player("Connor", 1, 4611686018450697084)
+    jack_data = process_player("Jack", 2, 4611686018469231992)
+    hunter_data = process_player("Hunter", 3, 4611686018476416864)
+    cameron_data = process_player("Cameron", 3, 4611686018501646188)
+    kade_data = process_player("Kade", 1, 4611686018451886498)
+    xavier_data = process_player("Xavier", 3, 4611686018471574419)
+    player_data_list = [
+        thomas_data,
+        douglas_data,
+        mark_data,
+        connor_data,
+        jack_data,
+        hunter_data,
+        cameron_data,
+        kade_data,
+        xavier_data
+    ]
+    
+def compile_clan(player_data_list):
+    clan_html = process_clan(player_data_list)
+    write_to_directory(clan_html, "Clan")

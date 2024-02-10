@@ -1,6 +1,6 @@
 # Thomas McGinley
 # Started 1/14/2024
-# Last Updated 2/2/2024
+# Last Updated 2/9/2024
 
 # Gathers basic commendation information about each desired player, cleans the data, and generates HTML files with relevant information
 
@@ -10,18 +10,21 @@ import json
 from prettytable import PrettyTable
 
 
-def getCommendationData(memType, memId):
+def get_commendation_data(memType, memId):
     url = f"https://www.bungie.net/Platform/Destiny2/{memType}/Profile/{memId}/?components=1400"
     payload = {}
     headers = {
         "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
     }
     response = requests.request("GET", url, headers=headers, data=payload)
+    if response != 200:
+            print("Error occurred in request:", response)
+            print("She be Rhulking on my Disciple til I Strand")
     metricData = json.loads(response.content)
     return metricData
 
 
-def commendationDictionary():
+def commendation_dictionary():
     dictionary = {
         "Total": 0,
         "Ally": {"Score": 0, "Percent": 0},
@@ -46,91 +49,91 @@ def commendationDictionary():
     return dictionary
 
 
-def cleanData(commData):
-    commDict = commendationDictionary()
-    commDict["Total"] = commData["Response"]["profileCommendations"]["data"][
+def clean_data(comm_data):
+    comm_dict = commendation_dictionary()
+    comm_dict["Total"] = comm_data["Response"]["profileCommendations"]["data"][
         "totalScore"
     ]
 
-    commDict["Ally"]["Score"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Ally"]["Score"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationNodeScoresByHash"
     ]["154475713"]
-    commDict["Ally"]["Percent"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Ally"]["Percent"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationNodePercentagesByHash"
     ]["154475713"]
-    commDict["Indispensable"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Indispensable"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["2019871317"]
-    commDict["Selfless"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Selfless"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["354527503"]
-    commDict["Thoughtful"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Thoughtful"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3513056018"]
-    commDict["Patient And Considerate"] = commData["Response"]["profileCommendations"][
+    comm_dict["Patient And Considerate"] = comm_data["Response"]["profileCommendations"][
         "data"
     ]["commendationScoresByHash"]["2506835299"]
 
-    commDict["Fun"]["Score"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Fun"]["Score"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationNodeScoresByHash"
     ]["1341823550"]
-    commDict["Fun"]["Percent"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Fun"]["Percent"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationNodePercentagesByHash"
     ]["1341823550"]
-    commDict["Joy Bringer"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Joy Bringer"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3377580220"]
-    commDict["Level-Headed"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Level-Headed"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3037314846"]
-    commDict["Saint's Favorite"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Saint's Favorite"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3030493827"]
-    commDict["Best Dressed"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Best Dressed"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["357212819"]
 
-    commDict["Mastery"]["Score"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Mastery"]["Score"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationNodeScoresByHash"
     ]["4180748446"]
-    commDict["Mastery"]["Percent"] = commData["Response"]["profileCommendations"][
+    comm_dict["Mastery"]["Percent"] = comm_data["Response"]["profileCommendations"][
         "data"
     ]["commendationNodePercentagesByHash"]["1390663518"]
-    commDict["Playmaker"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Playmaker"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["4209356036"]
-    commDict["Primeval Instinct"] = commData["Response"]["profileCommendations"][
+    comm_dict["Primeval Instinct"] = comm_data["Response"]["profileCommendations"][
         "data"
     ]["commendationScoresByHash"]["363818544"]
-    commDict["Heroic"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Heroic"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3575743922"]
-    commDict["Pacesetter"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Pacesetter"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["2205006002"]
 
-    commDict["Leadership"]["Score"] = commData["Response"]["profileCommendations"][
+    comm_dict["Leadership"]["Score"] = comm_data["Response"]["profileCommendations"][
         "data"
     ]["commendationNodeScoresByHash"]["1390663518"]
-    commDict["Leadership"]["Percent"] = commData["Response"]["profileCommendations"][
+    comm_dict["Leadership"]["Percent"] = comm_data["Response"]["profileCommendations"][
         "data"
     ]["commendationNodePercentagesByHash"]["4180748446"]
-    commDict["Perceptive"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Perceptive"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3872064891"]
-    commDict["Knowledgeable"] = commData["Response"]["profileCommendations"]["data"][
+    comm_dict["Knowledgeable"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3970150545"]
 
-    return commDict
+    return comm_dict
 
 
-def generateTable(cleanData):
+def generate_table(clean_data):
     table = PrettyTable()
     table.add_column(
         "Ally",
         [
-            cleanData["Ally"]["Score"],
+            clean_data["Ally"]["Score"],
             "Indispensable",
             "Selfless",
             "Thoughtful",
@@ -140,18 +143,18 @@ def generateTable(cleanData):
     table.add_column(
         " ",
         [
-            str(cleanData["Ally"]["Percent"]) + "%",
-            cleanData["Indispensable"],
-            cleanData["Selfless"],
-            cleanData["Thoughtful"],
-            cleanData["Patient And Considerate"],
+            str(clean_data["Ally"]["Percent"]) + "%",
+            clean_data["Indispensable"],
+            clean_data["Selfless"],
+            clean_data["Thoughtful"],
+            clean_data["Patient And Considerate"],
         ],
     )
 
     table.add_column(
         "Fun",
         [
-            cleanData["Fun"]["Score"],
+            clean_data["Fun"]["Score"],
             "Joy Bringer",
             "Level-Headed",
             "Saint's Favorite",
@@ -161,18 +164,18 @@ def generateTable(cleanData):
     table.add_column(
         "  ",
         [
-            str(cleanData["Fun"]["Percent"]) + "%",
-            cleanData["Joy Bringer"],
-            cleanData["Level-Headed"],
-            cleanData["Saint's Favorite"],
-            cleanData["Best Dressed"],
+            str(clean_data["Fun"]["Percent"]) + "%",
+            clean_data["Joy Bringer"],
+            clean_data["Level-Headed"],
+            clean_data["Saint's Favorite"],
+            clean_data["Best Dressed"],
         ],
     )
 
     table.add_column(
         "Mastery",
         [
-            cleanData["Mastery"]["Score"],
+            clean_data["Mastery"]["Score"],
             "Playmaker",
             "Primeval Instinct",
             "Heroic",
@@ -182,24 +185,24 @@ def generateTable(cleanData):
     table.add_column(
         "   ",
         [
-            str(cleanData["Mastery"]["Percent"]) + "%",
-            cleanData["Playmaker"],
-            cleanData["Primeval Instinct"],
-            cleanData["Heroic"],
-            cleanData["Pacesetter"],
+            str(clean_data["Mastery"]["Percent"]) + "%",
+            clean_data["Playmaker"],
+            clean_data["Primeval Instinct"],
+            clean_data["Heroic"],
+            clean_data["Pacesetter"],
         ],
     )
 
     table.add_column(
         "Leadership",
-        [cleanData["Leadership"]["Score"], "Perceptive", "Knowledgeable", " ", " "],
+        [clean_data["Leadership"]["Score"], "Perceptive", "Knowledgeable", " ", " "],
     )
     table.add_column(
         "    ",
         [
-            str(cleanData["Leadership"]["Percent"]) + "%",
-            cleanData["Perceptive"],
-            cleanData["Knowledgeable"],
+            str(clean_data["Leadership"]["Percent"]) + "%",
+            clean_data["Perceptive"],
+            clean_data["Knowledgeable"],
             " ",
             " ",
         ],
@@ -208,8 +211,12 @@ def generateTable(cleanData):
     return table.get_html_string()
 
 
-def writeToDirectory(data, name, dictionary):
-    f = open(f"./data/{name}Commendation.html", "w")
+def write_to_directory(data, name, dictionary):
+    try:
+        f = open(f"./data/{name}Commendation.html", "w")
+    except:
+        print("Write file did not open properly")
+        quit()
     f.write(
         """
     <style>
@@ -312,70 +319,72 @@ def writeToDirectory(data, name, dictionary):
     print(f"{name} commendation data written!")
 
 
-def processPlayer(name, memType, memId):
-    rawData = getCommendationData(memType, memId)
-    cleanedData = cleanData(rawData)
-    htmlString = generateTable(cleanedData)
-    writeToDirectory(htmlString, name, cleanedData)
-    return cleanedData
+def process_player(name, mem_type, mem_id):
+    raw_data = get_commendation_data(mem_type, mem_id)
+    cleaned_data = clean_data(raw_data)
+    htmlString = generate_table(cleaned_data)
+    write_to_directory(htmlString, name, cleaned_data)
+    return cleaned_data
 
 
-def processClan(playerDataList):
-    commDict = commendationDictionary()
-    for player in playerDataList:
-        commDict["Total"] += player["Total"]
+def process_clan(player_data_list):
+    comm_dict = commendation_dictionary()
+    for player in player_data_list:
+        comm_dict["Total"] += player["Total"]
 
-        commDict["Ally"]["Score"] += player["Ally"]["Score"]
+        comm_dict["Ally"]["Score"] += player["Ally"]["Score"]
         # commDict["Ally"]["Percent"] += player["Ally"]["Percent"]
-        commDict["Indispensable"] += player["Indispensable"]
-        commDict["Selfless"] += player["Selfless"]
-        commDict["Thoughtful"] += player["Thoughtful"]
-        commDict["Patient And Considerate"] += player["Patient And Considerate"]
+        comm_dict["Indispensable"] += player["Indispensable"]
+        comm_dict["Selfless"] += player["Selfless"]
+        comm_dict["Thoughtful"] += player["Thoughtful"]
+        comm_dict["Patient And Considerate"] += player["Patient And Considerate"]
 
-        commDict["Fun"]["Score"] += player["Fun"]["Score"]
+        comm_dict["Fun"]["Score"] += player["Fun"]["Score"]
         # commDict["Fun"]["Percent"] += player["Fun"]["Percent"]
-        commDict["Joy Bringer"] += player["Joy Bringer"]
-        commDict["Level-Headed"] += player["Level-Headed"]
-        commDict["Saint's Favorite"] += player["Saint's Favorite"]
-        commDict["Best Dressed"] += player["Best Dressed"]
+        comm_dict["Joy Bringer"] += player["Joy Bringer"]
+        comm_dict["Level-Headed"] += player["Level-Headed"]
+        comm_dict["Saint's Favorite"] += player["Saint's Favorite"]
+        comm_dict["Best Dressed"] += player["Best Dressed"]
 
-        commDict["Mastery"]["Score"] += player["Mastery"]["Score"]
+        comm_dict["Mastery"]["Score"] += player["Mastery"]["Score"]
         # commDict["Mastery"]["Percent"] += player["Mastery"]["Percent"]
-        commDict["Playmaker"] += player["Playmaker"]
-        commDict["Primeval Instinct"] += player["Primeval Instinct"]
-        commDict["Heroic"] += player["Heroic"]
-        commDict["Pacesetter"] += player["Pacesetter"]
+        comm_dict["Playmaker"] += player["Playmaker"]
+        comm_dict["Primeval Instinct"] += player["Primeval Instinct"]
+        comm_dict["Heroic"] += player["Heroic"]
+        comm_dict["Pacesetter"] += player["Pacesetter"]
 
-        commDict["Leadership"]["Score"] += player["Leadership"]["Score"]
+        comm_dict["Leadership"]["Score"] += player["Leadership"]["Score"]
         # commDict["Leadership"]["Percent"] += player["Leadership"]["Percent"]
-        commDict["Perceptive"] += player["Perceptive"]
-        commDict["Knowledgeable"] += player["Knowledgeable"]
+        comm_dict["Perceptive"] += player["Perceptive"]
+        comm_dict["Knowledgeable"] += player["Knowledgeable"]
 
-    return generateTable(commDict)
+    return generate_table(comm_dict)
 
-
-thomasData = processPlayer("Thomas", 1, 4611686018444441571)
-douglasData = processPlayer("Douglas", 1, 4611686018434621591)
-markData = processPlayer("Mark", 1, 4611686018432221111)
-connorData = processPlayer("Connor", 1, 4611686018450697084)
-jackData = processPlayer("Jack", 2, 4611686018469231992)
-hunterData = processPlayer("Hunter", 3, 4611686018476416864)
-cameronData = processPlayer("Cameron", 3, 4611686018501646188)
-kadeData = processPlayer("Kade", 1, 4611686018451886498)
-xavierData = processPlayer("Xavier", 3, 4611686018471574419)
-playerDataList = [
-    thomasData,
-    douglasData,
-    markData,
-    connorData,
-    jackData,
-    hunterData,
-    cameronData,
-    kadeData,
-    xavierData
-]
-ClanHTML = processClan(playerDataList)
-total = 0
-for player in playerDataList:
-    total += player["Total"]
-writeToDirectory(name="Clan", data=ClanHTML, dictionary={"Total": total})
+def run():
+    thomas_data = process_player("Thomas", 1, 4611686018444441571)
+    douglas_data = process_player("Douglas", 1, 4611686018434621591)
+    mark_data = process_player("Mark", 1, 4611686018432221111)
+    connor_data = process_player("Connor", 1, 4611686018450697084)
+    jack_data = process_player("Jack", 2, 4611686018469231992)
+    hunter_data = process_player("Hunter", 3, 4611686018476416864)
+    cameron_data = process_player("Cameron", 3, 4611686018501646188)
+    kade_data = process_player("Kade", 1, 4611686018451886498)
+    xavier_data = process_player("Xavier", 3, 4611686018471574419)
+    player_data_list = [
+        thomas_data,
+        douglas_data,
+        mark_data,
+        connor_data,
+        jack_data,
+        hunter_data,
+        cameron_data,
+        kade_data,
+        xavier_data
+    ]
+    
+def compile_clan(player_data_list):
+    clan_html = process_clan(player_data_list)
+    total = 0
+    for player in player_data_list:
+        total += player["Total"]
+    write_to_directory(name="Clan", data=clan_html, dictionary={"Total": total})

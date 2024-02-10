@@ -1,28 +1,30 @@
 # Thomas McGinley
 # Started 1/8/2024
-# Last Updated 2/2/2024
+# Last Updated 2/9/2024
 
 # Gathers basic Raid stat information about each desired player, cleans the data, and generates HTML files with relevant information
 
 
 import requests
 import json
-import prettytable
 from prettytable import PrettyTable
 from MillisecondTimeConverter import convert
 
-def getMetricData(memType, memId):
-    url = f"https://www.bungie.net/Platform/Destiny2/{memType}/Profile/{memId}/?components=1100"
+def get_metric_data(mem_type, mem_id):
+    url = f"https://www.bungie.net/Platform/Destiny2/{mem_type}/Profile/{mem_id}/?components=1100"
     payload = {}
     headers = {
         'x-api-key': '654dad1171c44eb688f2fb5ca11e7c3b',
     }
     response = requests.request("GET",url, headers=headers, data=payload)
-    metricData = json.loads(response.content)
-    return metricData
+    if response != 200:
+            print("Error occurred in request:", response)
+            print("She be Rhulking on my Disciple til I Strand")
+    data = json.loads(response.content)
+    return data
 
 
-def raidDictionary():
+def raid_dictionary():
     dictionary = {
         "Crota's End":{"Clears":0, "Fastest":0},
         "Root of Nightmares":{"Clears":0, "Fastest":0},
@@ -41,119 +43,119 @@ def raidDictionary():
     return dictionary
 
 
-def cleanRaidData(metricData):
-    raidDict = raidDictionary()
+def clean_raid_data(metric_data):
+    raid_dict = raid_dictionary()
     
-    raidDict["Crota's End"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['2552956848']["objectiveProgress"]['progress']
-    raidDict["Crota's End"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['510466839']["objectiveProgress"]['progress'])
+    raid_dict["Crota's End"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['2552956848']["objectiveProgress"]['progress']
+    raid_dict["Crota's End"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['510466839']["objectiveProgress"]['progress'])
     
-    raidDict["Root of Nightmares"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['321051454']["objectiveProgress"]['progress']
-    raidDict["Root of Nightmares"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['58319253']["objectiveProgress"]['progress'])
+    raid_dict["Root of Nightmares"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['321051454']["objectiveProgress"]['progress']
+    raid_dict["Root of Nightmares"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['58319253']["objectiveProgress"]['progress'])
     
-    raidDict["King's Fall"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['1624029217']["objectiveProgress"]['progress']
-    raidDict["King's Fall"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['399420098']["objectiveProgress"]['progress'])
+    raid_dict["King's Fall"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['1624029217']["objectiveProgress"]['progress']
+    raid_dict["King's Fall"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['399420098']["objectiveProgress"]['progress'])
     
-    raidDict["Vow of the Disciple"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['3585185883']["objectiveProgress"]['progress']
-    raidDict["Vow of the Disciple"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['3775579868']["objectiveProgress"]['progress'])
+    raid_dict["Vow of the Disciple"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['3585185883']["objectiveProgress"]['progress']
+    raid_dict["Vow of the Disciple"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['3775579868']["objectiveProgress"]['progress'])
     
-    raidDict["Vault of Glass"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['2506886274']["objectiveProgress"]['progress']
-    raidDict["Vault of Glass"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['905219689']["objectiveProgress"]['progress'])
+    raid_dict["Vault of Glass"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['2506886274']["objectiveProgress"]['progress']
+    raid_dict["Vault of Glass"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['905219689']["objectiveProgress"]['progress'])
     
-    raidDict["Deep Stone Crypt"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['954805812']["objectiveProgress"]['progress']
-    raidDict["Deep Stone Crypt"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['3679202587']["objectiveProgress"]['progress'])
+    raid_dict["Deep Stone Crypt"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['954805812']["objectiveProgress"]['progress']
+    raid_dict["Deep Stone Crypt"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['3679202587']["objectiveProgress"]['progress'])
     
-    raidDict["Garden of Salvation"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['1168279855']["objectiveProgress"]['progress']
-    raidDict["Garden of Salvation"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['1835852368']["objectiveProgress"]['progress'])
+    raid_dict["Garden of Salvation"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['1168279855']["objectiveProgress"]['progress']
+    raid_dict["Garden of Salvation"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['1835852368']["objectiveProgress"]['progress'])
     
-    raidDict["Last Wish"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['905240985']["objectiveProgress"]['progress']
-    raidDict["Last Wish"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['4164362538']["objectiveProgress"]['progress'])
+    raid_dict["Last Wish"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['905240985']["objectiveProgress"]['progress']
+    raid_dict["Last Wish"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['4164362538']["objectiveProgress"]['progress'])
     
-    raidDict["Crown of Sorrow"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['1815425870']["objectiveProgress"]['progress']
-    raidDict["Crown of Sorrow"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['996516677']["objectiveProgress"]['progress'])
+    raid_dict["Crown of Sorrow"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['1815425870']["objectiveProgress"]['progress']
+    raid_dict["Crown of Sorrow"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['996516677']["objectiveProgress"]['progress'])
     
-    raidDict["Scourge of the Past"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['1201631538']["objectiveProgress"]['progress']
-    raidDict["Scourge of the Past"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['1245368441']["objectiveProgress"]['progress'])
+    raid_dict["Scourge of the Past"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['1201631538']["objectiveProgress"]['progress']
+    raid_dict["Scourge of the Past"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['1245368441']["objectiveProgress"]['progress'])
     
-    raidDict["Spire of Stars"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['700051716']["objectiveProgress"]['progress']
-    raidDict["Spire of Stars"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['2842037131']["objectiveProgress"]['progress'])
-    raidDict["Spire of Stars"]["Prestige"] = metricData["Response"]['metrics']['data']['metrics']['3070318724']["objectiveProgress"]['progress']
+    raid_dict["Spire of Stars"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['700051716']["objectiveProgress"]['progress']
+    raid_dict["Spire of Stars"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['2842037131']["objectiveProgress"]['progress'])
+    raid_dict["Spire of Stars"]["Prestige"] = metric_data["Response"]['metrics']['data']['metrics']['3070318724']["objectiveProgress"]['progress']
     
-    raidDict["Eater of Worlds"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['2659534585']["objectiveProgress"]['progress']
-    raidDict["Eater of Worlds"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['1275208010']["objectiveProgress"]['progress'])
-    raidDict["Eater of Worlds"]["Prestige"] = metricData["Response"]['metrics']['data']['metrics']['3284024615']["objectiveProgress"]['progress']
+    raid_dict["Eater of Worlds"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['2659534585']["objectiveProgress"]['progress']
+    raid_dict["Eater of Worlds"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['1275208010']["objectiveProgress"]['progress'])
+    raid_dict["Eater of Worlds"]["Prestige"] = metric_data["Response"]['metrics']['data']['metrics']['3284024615']["objectiveProgress"]['progress']
     
-    raidDict["Leviathan"]["Clears"] = metricData["Response"]['metrics']['data']['metrics']['2486745106']["objectiveProgress"]['progress']
-    raidDict["Leviathan"]["Fastest"] = convert(metricData["Response"]['metrics']['data']['metrics']['3434325913']["objectiveProgress"]['progress'])
-    raidDict["Leviathan"]["Prestige"] = metricData["Response"]['metrics']['data']['metrics']['1130423918']["objectiveProgress"]['progress']
+    raid_dict["Leviathan"]["Clears"] = metric_data["Response"]['metrics']['data']['metrics']['2486745106']["objectiveProgress"]['progress']
+    raid_dict["Leviathan"]["Fastest"] = convert(metric_data["Response"]['metrics']['data']['metrics']['3434325913']["objectiveProgress"]['progress'])
+    raid_dict["Leviathan"]["Prestige"] = metric_data["Response"]['metrics']['data']['metrics']['1130423918']["objectiveProgress"]['progress']
     
-    return raidDict
+    return raid_dict
 
 
-def generateHTML(raidData):
+def generate_html(raid_data):
     table = PrettyTable()
     table.field_names = ["Stat","Value"]
     table.add_row(["Current Raids", " "])
     table.add_row(["Crota's End", " "])
-    table.add_row(["Clears", raidData["Crota's End"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Crota's End"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Crota's End"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Crota's End"]["Fastest"]])
     
     table.add_row(["Root of Nightmares", " "])
-    table.add_row(["Clears", raidData["Root of Nightmares"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Root of Nightmares"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Root of Nightmares"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Root of Nightmares"]["Fastest"]])
     
     table.add_row(["King's Fall", " "])
-    table.add_row(["Clears", raidData["King's Fall"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["King's Fall"]["Fastest"]])
+    table.add_row(["Clears", raid_data["King's Fall"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["King's Fall"]["Fastest"]])
     
     table.add_row(["Vow of the Disciple", " "])
-    table.add_row(["Clears", raidData["Vow of the Disciple"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Vow of the Disciple"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Vow of the Disciple"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Vow of the Disciple"]["Fastest"]])
     
     table.add_row(["Vault of Glass", " "])
-    table.add_row(["Clears", raidData["Vault of Glass"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Vault of Glass"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Vault of Glass"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Vault of Glass"]["Fastest"]])
     
     table.add_row(["Deep Stone Crypt", " "])
-    table.add_row(["Clears", raidData["Deep Stone Crypt"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Deep Stone Crypt"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Deep Stone Crypt"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Deep Stone Crypt"]["Fastest"]])
     
     table.add_row(["Garden of Salvation", " "])
-    table.add_row(["Clears", raidData["Garden of Salvation"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Garden of Salvation"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Garden of Salvation"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Garden of Salvation"]["Fastest"]])
     
     table.add_row(["Last Wish", " "])
-    table.add_row(["Clears", raidData["Last Wish"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Last Wish"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Last Wish"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Last Wish"]["Fastest"]])
     
     table.add_row(["Legacy Raids", " "])
     
     table.add_row(["Crown of Sorrow", " "])
-    table.add_row(["Clears", raidData["Crown of Sorrow"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Crown of Sorrow"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Crown of Sorrow"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Crown of Sorrow"]["Fastest"]])
     
     table.add_row(["Scourge of the Past", " "])
-    table.add_row(["Clears", raidData["Scourge of the Past"]["Clears"]])
-    table.add_row(["Fastest Time", raidData["Scourge of the Past"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Scourge of the Past"]["Clears"]])
+    table.add_row(["Fastest Time", raid_data["Scourge of the Past"]["Fastest"]])
     
     table.add_row(["Spire of Stars", " "])
-    table.add_row(["Clears", raidData["Spire of Stars"]["Clears"]])
-    table.add_row(["Prestige Clears", raidData["Spire of Stars"]["Prestige"]])
-    table.add_row(["Fastest Time", raidData["Spire of Stars"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Spire of Stars"]["Clears"]])
+    table.add_row(["Prestige Clears", raid_data["Spire of Stars"]["Prestige"]])
+    table.add_row(["Fastest Time", raid_data["Spire of Stars"]["Fastest"]])
     
     table.add_row(["Eater of Worlds", " "])
-    table.add_row(["Clears", raidData["Eater of Worlds"]["Clears"]])
-    table.add_row(["Prestige Clears", raidData["Eater of Worlds"]["Prestige"]])
-    table.add_row(["Fastest Time", raidData["Eater of Worlds"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Eater of Worlds"]["Clears"]])
+    table.add_row(["Prestige Clears", raid_data["Eater of Worlds"]["Prestige"]])
+    table.add_row(["Fastest Time", raid_data["Eater of Worlds"]["Fastest"]])
     
     table.add_row(["Leviathan", " "])
-    table.add_row(["Clears", raidData["Leviathan"]["Clears"]])
-    table.add_row(["Prestige Clears", raidData["Leviathan"]["Prestige"]])
-    table.add_row(["Fastest Time", raidData["Leviathan"]["Fastest"]])
+    table.add_row(["Clears", raid_data["Leviathan"]["Clears"]])
+    table.add_row(["Prestige Clears", raid_data["Leviathan"]["Prestige"]])
+    table.add_row(["Fastest Time", raid_data["Leviathan"]["Fastest"]])
     
     return table.get_html_string()
 
 
-def writeToDirectory(data,name):
+def write_to_directory(data,name):
     f = open(f'./data/{name}Raid.html', 'w')
     f.write('''
     <style>
@@ -210,49 +212,49 @@ def writeToDirectory(data,name):
     print(f"{name} raid data written!")
     
     
-def processPlayer(name, memType, memId):
-    rawData = getMetricData(memType, memId)
-    cleanData = cleanRaidData(rawData)
-    htmlString = generateHTML(cleanData)
-    writeToDirectory(htmlString,name)
-    return cleanData
+def process_player(name, mem_type, mem_id):
+    raw_data = get_metric_data(mem_type, mem_id)
+    clean_data = clean_raid_data(raw_data)
+    html_string = generate_html(clean_data)
+    write_to_directory(html_string,name)
+    return clean_data
     
      
-def processClan(playerDataList):
-    raidDict = raidDictionary()
-    for player in playerDataList:
-        raidDict["Crota's End"]["Clears"]  +=  player["Crota's End"]["Clears"]
+def process_clan(player_data_list):
+    raid_dict = raid_dictionary()
+    for player in player_data_list:
+        raid_dict["Crota's End"]["Clears"]  +=  player["Crota's End"]["Clears"]
         
-        raidDict["Root of Nightmares"]["Clears"] += player["Root of Nightmares"]["Clears"]
+        raid_dict["Root of Nightmares"]["Clears"] += player["Root of Nightmares"]["Clears"]
         
-        raidDict["King's Fall"]["Clears"]  += player["King's Fall"]["Clears"]
+        raid_dict["King's Fall"]["Clears"]  += player["King's Fall"]["Clears"]
         
-        raidDict["Vow of the Disciple"]["Clears"]  += player["Vow of the Disciple"]["Clears"]
+        raid_dict["Vow of the Disciple"]["Clears"]  += player["Vow of the Disciple"]["Clears"]
         
-        raidDict["Vault of Glass"]["Clears"]  += player["Vault of Glass"]["Clears"]
+        raid_dict["Vault of Glass"]["Clears"]  += player["Vault of Glass"]["Clears"]
         
-        raidDict["Deep Stone Crypt"]["Clears"] += player["Deep Stone Crypt"]["Clears"]
+        raid_dict["Deep Stone Crypt"]["Clears"] += player["Deep Stone Crypt"]["Clears"]
         
-        raidDict["Garden of Salvation"]["Clears"]  += player["Garden of Salvation"]["Clears"]
+        raid_dict["Garden of Salvation"]["Clears"]  += player["Garden of Salvation"]["Clears"]
         
-        raidDict["Last Wish"]["Clears"] += player["Last Wish"]["Clears"]
+        raid_dict["Last Wish"]["Clears"] += player["Last Wish"]["Clears"]
         
-        raidDict["Crown of Sorrow"]["Clears"]  += player["Crown of Sorrow"]["Clears"]
+        raid_dict["Crown of Sorrow"]["Clears"]  += player["Crown of Sorrow"]["Clears"]
         
-        raidDict["Scourge of the Past"]["Clears"]  += player["Scourge of the Past"]["Clears"]
+        raid_dict["Scourge of the Past"]["Clears"]  += player["Scourge of the Past"]["Clears"]
         
-        raidDict["Spire of Stars"]["Clears"] += player["Spire of Stars"]["Clears"]
-        raidDict["Spire of Stars"]["Prestige"] += player["Spire of Stars"]["Prestige"]
+        raid_dict["Spire of Stars"]["Clears"] += player["Spire of Stars"]["Clears"]
+        raid_dict["Spire of Stars"]["Prestige"] += player["Spire of Stars"]["Prestige"]
         
-        raidDict["Eater of Worlds"]["Clears"] += player["Eater of Worlds"]["Clears"]
-        raidDict["Eater of Worlds"]["Prestige"] +=player["Eater of Worlds"]["Prestige"]
+        raid_dict["Eater of Worlds"]["Clears"] += player["Eater of Worlds"]["Clears"]
+        raid_dict["Eater of Worlds"]["Prestige"] +=player["Eater of Worlds"]["Prestige"]
         
-        raidDict["Leviathan"]["Clears"] += player["Leviathan"]["Clears"]
-        raidDict["Leviathan"]["Prestige"] += player["Leviathan"]["Prestige"]
+        raid_dict["Leviathan"]["Clears"] += player["Leviathan"]["Clears"]
+        raid_dict["Leviathan"]["Prestige"] += player["Leviathan"]["Prestige"]
         
-    return generateClanHTML(raidDict)
+    return generate_clan_html(raid_dict)
     
-def generateClanHTML(raidData):    
+def generate_clan_html(raidData):    
     table = PrettyTable()
     table.field_names = ["Stat","Value"]
     table.add_row(["Current Raids", " "])
@@ -302,7 +304,7 @@ def generateClanHTML(raidData):
     
     return table.get_html_string()
     
-def writeToClanDirectory(data,name):
+def write_to_clan_directory(data,name):
     f = open(f'./data/{name}Raid.html', 'w')
     f.write('''
 <style>
@@ -357,16 +359,19 @@ def writeToClanDirectory(data,name):
     f.write(data)
     f.close()
     print(f"{name} raid data written!")
+
+def run():    
+    thomasData = process_player("Thomas", 1,4611686018444441571 )
+    douglasData = process_player("Douglas", 1,4611686018434621591)
+    markData = process_player("Mark",1,4611686018432221111)
+    connorData = process_player("Connor",1,4611686018450697084)
+    jackData = process_player("Jack",2,4611686018469231992)
+    hunterData = process_player("Hunter",3,4611686018476416864)
+    cameronData = process_player("Cameron",3,4611686018501646188)
+    kadeData = process_player("Kade",1,4611686018451886498)
+    xavierData = process_player("Xavier", 3, 4611686018471574419)
+    playerDataList = [thomasData,douglasData,markData,connorData,jackData,hunterData,cameronData,kadeData, xavierData]
     
-thomasData = processPlayer("Thomas", 1,4611686018444441571 )
-douglasData = processPlayer("Douglas", 1,4611686018434621591)
-markData = processPlayer("Mark",1,4611686018432221111)
-connorData = processPlayer("Connor",1,4611686018450697084)
-jackData = processPlayer("Jack",2,4611686018469231992)
-hunterData = processPlayer("Hunter",3,4611686018476416864)
-cameronData = processPlayer("Cameron",3,4611686018501646188)
-kadeData = processPlayer("Kade",1,4611686018451886498)
-xavierData = processPlayer("Xavier", 3, 4611686018471574419)
-playerDataList = [thomasData,douglasData,markData,connorData,jackData,hunterData,cameronData,kadeData, xavierData]
-ClanHTML = processClan(playerDataList) 
-writeToClanDirectory(name="Clan",data=ClanHTML)
+def compile_clan(player_data_list):
+    ClanHTML = process_clan(player_data_list) 
+    write_to_clan_directory(name="Clan",data=ClanHTML)

@@ -1,6 +1,6 @@
 # Thomas McGinley
 # Started 12/17/2023
-# Last Updated 2/2/2024
+# Last Updated 2/9/2024
 
 # Gathers exotic information about each desired player, cleans the data, and generates JSON files with relevant information
 
@@ -10,8 +10,8 @@ import requests
 import prettytable
 
 
-def getWeaponFromId(id):
-    idDict = {
+def get_weapon_from_hash(hash):
+    hash_dictionary = {
         1345867570: "Sweet Business",
         2907129556: "Sturm",
         3628991659: "Vigilance Wing",
@@ -129,10 +129,10 @@ def getWeaponFromId(id):
         2188764214: "Dead Man's Tale",
         2910326942: "Wish-Keeper",
     }
-    return idDict.get(id)
+    return hash_dictionary.get(hash)
 
 
-def weaponData():
+def weapon_data():
     dictionary = {
         "Sweet Business": {"kills": 0, "precision": 0},
         "Sturm": {"kills": 0, "precision": 0},
@@ -252,67 +252,68 @@ def weaponData():
     return dictionary
 
 
-def getExoticData(memType, memId, charId1, charId2, charId3):
-    charIds = [charId1, charId2, charId3]
-    combinedExoticData = {"Response": []}
-    for charId in charIds:
+def get_exotic_data(mem_type, mem_id, char_id_1, char_id_2, char_id_3):
+    char_ids = [char_id_1, char_id_2, char_id_3]
+    combined_exotic_data = {"Response": []}
+    for char_id in char_ids:
         url = (
-            f"https://www.bungie.net/Platform/Destiny2/{memType}/Account/{memId}/Character/"
-            f"{charId}/Stats/UniqueWeapons/"
+            f"https://www.bungie.net/Platform/Destiny2/{mem_type}/Account/{mem_id}/Character/"
+            f"{char_id}/Stats/UniqueWeapons/"
         )
         payload = {}
         header = {
             "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
         }
-
         response = requests.request("GET", url, headers=header, data=payload)
+        if response != 200:
+            print("Error occurred in request:", response)
+            print("She be Rhulking on my Disciple til I Strand")
+        exotic_data = json.loads(response.content)
 
-        exoticData = json.loads(response.content)
-
-        combinedExoticData["Response"].append(exoticData["Response"])
-    return combinedExoticData
+        combined_exotic_data["Response"].append(exotic_data["Response"])
+    return combined_exotic_data
 
 
-def compileData(exoticData):
-    dataDictionary = weaponData()
+def compile_data(exotic_data):
+    data_dictionary = weapon_data()
     # exoticData["Response"][value 0-2]["weapons"][num]["referenceId"] = reference Id
     # exoticData["Response"][charNum]["weapons"][num]["values"]["uniqueWeaponKills"]["basic"]["value"] = kills
     # exoticData["Response"][charNum]["weapons"][num]["values"]["uniqueWeaponPrecisionKills"]["basic"]["value"] = precision kills
-    for charNum in range(0, 3):
-        weaponCount = len(exoticData["Response"][charNum]["weapons"])
-        for num in range(0, weaponCount):
-            exoticName = getWeaponFromId(
-                exoticData["Response"][charNum]["weapons"][num]["referenceId"]
+    for char_num in range(0, 3):
+        weapon_count = len(exotic_data["Response"][char_num]["weapons"])
+        for num in range(0, weapon_count):
+            exotic_name = get_weapon_from_hash(
+                exotic_data["Response"][char_num]["weapons"][num]["referenceId"]
             )
-            exoticKills = exoticData["Response"][charNum]["weapons"][num]["values"][
+            exotic_kills = exotic_data["Response"][char_num]["weapons"][num]["values"][
                 "uniqueWeaponKills"
             ]["basic"]["value"]
-            exoticPrecision = exoticData["Response"][charNum]["weapons"][num]["values"][
+            exotic_precision = exotic_data["Response"][char_num]["weapons"][num]["values"][
                 "uniqueWeaponPrecisionKills"
             ]["basic"]["value"]
             # print(str(exoticName) + "\t" + str(exoticData["Response"][charNum]["weapons"][num]['referenceId']))
             # print(exoticKills)
             # print(exoticPrecision)
 
-            dataDictionary[exoticName]["kills"] += exoticKills
-            dataDictionary[exoticName]["precision"] += exoticPrecision
-    return dataDictionary
+            data_dictionary[exotic_name]["kills"] += exotic_kills
+            data_dictionary[exotic_name]["precision"] += exotic_precision
+    return data_dictionary
 
 
-def compileClanData(playerDataList):
-    dataDictionary = weaponData()
+def compile_clan_data(player_data_list):
+    data_dictionary = weapon_data()
 
-    for player in playerDataList:
-        for exoticName in player:
-            exoticKills = player[exoticName]["kills"]
-            exoticPrecision = player[exoticName]["precision"]
+    for player in player_data_list:
+        for exotic_name in player:
+            exotic_kills = player[exotic_name]["kills"]
+            exotic_precision = player[exotic_name]["precision"]
 
-            dataDictionary[exoticName]["kills"] += exoticKills
-            dataDictionary[exoticName]["precision"] += exoticPrecision
-    return dataDictionary
+            data_dictionary[exotic_name]["kills"] += exotic_kills
+            data_dictionary[exotic_name]["precision"] += exotic_precision
+    return data_dictionary
 
 
-def writeToDirectory(data, name):
+def write_to_directory(data, name):
     f = open(f"./data/{name}Exotics.html", "w")
     f.write(
         """<style>
@@ -362,7 +363,7 @@ def writeToDirectory(data, name):
     f.close()
 
 
-def generateTable(data):
+def generate_table(data):
     table = prettytable.PrettyTable()
     table.field_names = ["Weapon", "Kills", "Precision Kills"]
 
@@ -378,7 +379,7 @@ def generateTable(data):
     return table.get_html_string()
 
 
-def generateTopTen(data):
+def generate_top_ten(data):
     table = prettytable.PrettyTable()
     table.field_names = ["Weapon", "Kills", "Precision Kills"]
     for exoticName in data:
@@ -392,104 +393,106 @@ def generateTopTen(data):
     return table.get_html_string(start=0, end=10)
 
 
-def processPlayer(name, memType, memId, charId1, charId2, charId3):
-    rawData = getExoticData(memType, memId, charId1, charId2, charId3)
-    cleanData = compileData(rawData)
-    table = generateTable(cleanData)
-    writeToDirectory(table, name)
-    ten = generateTopTen(cleanData)
-    writeToDirectory(ten, str(name + "10"))
+def process_player(name, mem_type, mem_id, char_id_1, char_id_2, char_id_3):
+    rawData = get_exotic_data(mem_type, mem_id, char_id_1, char_id_2, char_id_3)
+    cleanData = compile_data(rawData)
+    table = generate_table(cleanData)
+    write_to_directory(table, name)
+    ten = generate_top_ten(cleanData)
+    write_to_directory(ten, str(name + "10"))
     print(name + " exotic data written!")
     return cleanData
 
+def run():
+    thomasExoticDataClean = process_player(
+        "Thomas",
+        1,
+        4611686018444441571,
+        2305843009265786295,
+        2305843009283965144,
+        2305843009569534739,
+    )
+    douglasExoticDataClean = process_player(
+        "Douglas",
+        1,
+        4611686018434621591,
+        2305843009293915719,
+        2305843009301374530,
+        2305843010083874501,
+    )
+    markExoticDataClean = process_player(
+        "Mark",
+        1,
+        4611686018432221111,
+        2305843009348154555,
+        2305843009668854600,
+        2305843009802904121,
+    )
+    connorExoticDataClean = process_player(
+        "Connor",
+        1,
+        4611686018450697084,
+        2305843009644414176,
+        2305843009663894341,
+        2305843009703275457,
+    )
+    jackExoticDataClean = process_player(
+        "Jack",
+        2,
+        4611686018469231992,
+        2305843009268771475,
+        2305843009891864023,
+        2305843009890274343,
+    )
+    hunterExoticDataClean = process_player(
+        "Hunter",
+        3,
+        4611686018476416864,
+        2305843009359734078,
+        2305843009359365362,
+        2305843009756404411,
+    )
+    cameronExoticDataClean = process_player(
+        "Cameron",
+        3,
+        4611686018501646188,
+        2305843009624174508,
+        2305843009683284492,
+        2305843009683284493,
+    )
+    kadeExoticDataClean = process_player(
+        "Kade",
+        1,
+        4611686018451886498,
+        2305843009264637524,
+        2305843009264637527,
+        2305843010322954573,
+    )
+    xavierExoticDataClean = process_player(
+        "Xavier",
+        3,
+        4611686018471574419,
+        2305843009306625517,
+        2305843009309817521,
+        2305843009313885640,
+    )
 
-thomasExoticDataClean = processPlayer(
-    "Thomas",
-    1,
-    4611686018444441571,
-    2305843009265786295,
-    2305843009283965144,
-    2305843009569534739,
-)
-douglasExoticDataClean = processPlayer(
-    "Douglas",
-    1,
-    4611686018434621591,
-    2305843009293915719,
-    2305843009301374530,
-    2305843010083874501,
-)
-markExoticDataClean = processPlayer(
-    "Mark",
-    1,
-    4611686018432221111,
-    2305843009348154555,
-    2305843009668854600,
-    2305843009802904121,
-)
-connorExoticDataClean = processPlayer(
-    "Connor",
-    1,
-    4611686018450697084,
-    2305843009644414176,
-    2305843009663894341,
-    2305843009703275457,
-)
-jackExoticDataClean = processPlayer(
-    "Jack",
-    2,
-    4611686018469231992,
-    2305843009268771475,
-    2305843009891864023,
-    2305843009890274343,
-)
-hunterExoticDataClean = processPlayer(
-    "Hunter",
-    3,
-    4611686018476416864,
-    2305843009359734078,
-    2305843009359365362,
-    2305843009756404411,
-)
-cameronExoticDataClean = processPlayer(
-    "Cameron",
-    3,
-    4611686018501646188,
-    2305843009624174508,
-    2305843009683284492,
-    2305843009683284493,
-)
-kadeExoticDataClean = processPlayer(
-    "Kade",
-    1,
-    4611686018451886498,
-    2305843009264637524,
-    2305843009264637527,
-    2305843010322954573,
-)
-xavierExoticDataClean = processPlayer(
-    "Xavier",
-    3,
-    4611686018471574419,
-    2305843009306625517,
-    2305843009309817521,
-    2305843009313885640,
-)
-
-playerDataList = [
-    thomasExoticDataClean,
-    douglasExoticDataClean,
-    markExoticDataClean,
-    connorExoticDataClean,
-    jackExoticDataClean,
-    hunterExoticDataClean,
-    cameronExoticDataClean,
-    kadeExoticDataClean,
-    xavierExoticDataClean
-]
-clanExoticDataClean = compileClanData(playerDataList)
-clanTable = generateTable(clanExoticDataClean)
-writeToDirectory(clanTable, "Clan")
-indexTable = generateTopTen(clanExoticDataClean)
-writeToDirectory(indexTable, "Clan10")
-print("Clan cleared!")
+    playerDataList = [
+        thomasExoticDataClean,
+        douglasExoticDataClean,
+        markExoticDataClean,
+        connorExoticDataClean,
+        jackExoticDataClean,
+        hunterExoticDataClean,
+        cameronExoticDataClean,
+        kadeExoticDataClean,
+        xavierExoticDataClean,
+    ]
+    
+def compile_clan(player_data_list):
+    clanExoticDataClean = compile_clan_data(player_data_list)
+    clanTable = generate_table(clanExoticDataClean)
+    write_to_directory(clanTable, "Clan")
+    indexTable = generate_top_ten(clanExoticDataClean)
+    write_to_directory(indexTable, "Clan10")
+    print("Clan cleared!")
