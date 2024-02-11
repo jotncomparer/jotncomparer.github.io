@@ -61,7 +61,8 @@ header img {
 }
 
 .sidenav a {
-    font-family: "JetBrains Mono", 'Courier New', Courier, monospace;
+    font-family: "BoucherieBlock", 'Courier New', Courier, monospace;
+    font-weight:lighter;
     font-size: large;
     color: white;
     text-decoration: none;
