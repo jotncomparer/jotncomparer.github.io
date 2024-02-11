@@ -317,9 +317,15 @@ def write_to_directory(data, name):
     f = open(f"./data/{name}Exotics.html", "w")
     f.write(
         """<style>
-    h1{
+    @font-face {
+    font-family: JetBrains Mono;
+    src: url("../fonts/JetBrainsMono-Regular.ttf");
+    }
+    
+    h1,
+    h2 {
         color: white;
-        font-family:'Courier New', Courier, monospace
+        font-family: "JetBrains Mono", 'Courier New', Courier, monospace
     }
     
     table {

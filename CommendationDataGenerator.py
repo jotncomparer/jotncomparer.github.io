@@ -18,8 +18,8 @@ def get_commendation_data(memType, memId):
     }
     response = requests.request("GET", url, headers=headers, data=payload)
     if response != 200:
-            print("Error occurred in request:", response)
-            print("She be Rhulking on my Disciple til I Strand")
+        print("Error occurred in request:", response)
+        print("She be Rhulking on my Disciple til I Strand")
     metricData = json.loads(response.content)
     return metricData
 
@@ -58,9 +58,9 @@ def clean_data(comm_data):
     comm_dict["Ally"]["Score"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationNodeScoresByHash"
     ]["154475713"]
-    comm_dict["Ally"]["Percent"] = comm_data["Response"]["profileCommendations"]["data"][
-        "commendationNodePercentagesByHash"
-    ]["154475713"]
+    comm_dict["Ally"]["Percent"] = comm_data["Response"]["profileCommendations"][
+        "data"
+    ]["commendationNodePercentagesByHash"]["154475713"]
     comm_dict["Indispensable"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["2019871317"]
@@ -70,9 +70,9 @@ def clean_data(comm_data):
     comm_dict["Thoughtful"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3513056018"]
-    comm_dict["Patient And Considerate"] = comm_data["Response"]["profileCommendations"][
-        "data"
-    ]["commendationScoresByHash"]["2506835299"]
+    comm_dict["Patient And Considerate"] = comm_data["Response"][
+        "profileCommendations"
+    ]["data"]["commendationScoresByHash"]["2506835299"]
 
     comm_dict["Fun"]["Score"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationNodeScoresByHash"
@@ -86,16 +86,16 @@ def clean_data(comm_data):
     comm_dict["Level-Headed"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["3037314846"]
-    comm_dict["Saint's Favorite"] = comm_data["Response"]["profileCommendations"]["data"][
-        "commendationScoresByHash"
-    ]["3030493827"]
+    comm_dict["Saint's Favorite"] = comm_data["Response"]["profileCommendations"][
+        "data"
+    ]["commendationScoresByHash"]["3030493827"]
     comm_dict["Best Dressed"] = comm_data["Response"]["profileCommendations"]["data"][
         "commendationScoresByHash"
     ]["357212819"]
 
-    comm_dict["Mastery"]["Score"] = comm_data["Response"]["profileCommendations"]["data"][
-        "commendationNodeScoresByHash"
-    ]["4180748446"]
+    comm_dict["Mastery"]["Score"] = comm_data["Response"]["profileCommendations"][
+        "data"
+    ]["commendationNodeScoresByHash"]["4180748446"]
     comm_dict["Mastery"]["Percent"] = comm_data["Response"]["profileCommendations"][
         "data"
     ]["commendationNodePercentagesByHash"]["1390663518"]
@@ -220,10 +220,15 @@ def write_to_directory(data, name, dictionary):
     f.write(
         """
     <style>
+    @font-face {
+    font-family: JetBrains Mono;
+    src: url("../fonts/JetBrainsMono-Regular.ttf");
+    }
+    
     h1,
     h2 {
         color: white;
-        font-family: 'Courier New', Courier, monospace
+        font-family: "JetBrains Mono", 'Courier New', Courier, monospace
     }
 
     h2 {
@@ -360,6 +365,7 @@ def process_clan(player_data_list):
 
     return generate_table(comm_dict)
 
+
 def run():
     thomas_data = process_player("Thomas", 1, 4611686018444441571)
     douglas_data = process_player("Douglas", 1, 4611686018434621591)
@@ -379,9 +385,10 @@ def run():
         hunter_data,
         cameron_data,
         kade_data,
-        xavier_data
+        xavier_data,
     ]
-    
+
+
 def compile_clan(player_data_list):
     clan_html = process_clan(player_data_list)
     total = 0
