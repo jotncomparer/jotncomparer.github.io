@@ -16,9 +16,10 @@ def get_character_data(membership_type, member_id):
         "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
     }
     response = requests.request("GET", url, headers=headers, data=payload)
-    if response != 200:
-            print("Error occurred in request:", response)
-            print("She be Rhulking on my Disciple til I Strand")
+    if response.status_code not in range(200, 300):
+                print("Error occurred in request:", response.status_code)
+                print("She be Rhulking on my Disciple til I Strand")
+                quit()
     characterData = json.loads(response.content)
     return characterData
 
@@ -29,9 +30,10 @@ def get_emblem_data(emblem_hash):
         "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
     }
     response = requests.request("GET", url, headers=headers, data=payload)
-    if response != 200:
-            print("Error occurred in request:", response)
-            print("She be Rhulking on my Disciple til I Strand")
+    if response.status_code not in range(200, 300):
+                print("Error occurred in request:", response.status_code)
+                print("She be Rhulking on my Disciple til I Strand")
+                quit()
     emblem_data = json.loads(response.content)
     return emblem_data
 

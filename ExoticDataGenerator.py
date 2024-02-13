@@ -265,9 +265,10 @@ def get_exotic_data(mem_type, mem_id, char_id_1, char_id_2, char_id_3):
             "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
         }
         response = requests.request("GET", url, headers=header, data=payload)
-        if response != 200:
-            print("Error occurred in request:", response)
-            print("She be Rhulking on my Disciple til I Strand")
+        if response.status_code not in range(200, 300):
+                print("Error occurred in request:", response.status_code)
+                print("She be Rhulking on my Disciple til I Strand")
+                quit()
         exotic_data = json.loads(response.content)
 
         combined_exotic_data["Response"].append(exotic_data["Response"])
