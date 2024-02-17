@@ -10,6 +10,7 @@ import EmblemGenerator
 import ExoticDataGenerator
 import FishDataGenerator
 import RaidDataGenerator
+import RaidCatalyst
 import StrikeDataGenerator
 import WeaponDataGenerator
 from time import sleep
@@ -41,6 +42,7 @@ class Player:
             "Dungeons": None,
             "Raids": None,
             "Exotics": None,
+            "RaidReport":None,
         }
         EmblemGenerator.process_player(
             name=self.name,
@@ -86,6 +88,15 @@ class Player:
             char_id_3=self.character_id_3,
         )
 
+        player_data["RaidReport"] = RaidCatalyst.process_player(
+            name=self.name,
+            mem_id=self.member_id,
+            mem_type=self.member_type,
+            char_id_1=self.character_id_main,
+            char_id_2=self.character_id_2,
+            char_id_3=self.character_id_3,
+        )
+        
         return player_data
 
 
@@ -202,6 +213,7 @@ def process_clan(player_data_list):
     dungeons_data = []
     raids_data = []
     exotic_data = []
+    raid_report_data = []
     
     for player in player_data_list:
         commendation_data.append(player["Commendations"])
@@ -212,6 +224,7 @@ def process_clan(player_data_list):
         dungeons_data.append(player["Dungeons"]) 
         raids_data.append(player["Raids"])
         exotic_data.append(player["Exotics"]) 
+        raid_report_data.append(player["RaidReport"])
         
     CommendationDataGenerator.compile_clan(commendation_data)
     FishDataGenerator.compile_clan(fishing_data)
@@ -221,7 +234,7 @@ def process_clan(player_data_list):
     DungeonDataGenerator.compile_clan(dungeons_data)
     RaidDataGenerator.compile_clan(raids_data)
     ExoticDataGenerator.compile_clan(exotic_data)
-
+    RaidCatalyst.compile_clan(raid_report_data)
 
 
 

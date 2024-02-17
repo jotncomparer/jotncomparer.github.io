@@ -14,6 +14,7 @@
 
 html {
     background-color: rgb(30, 30, 30);
+    color: white;
 }
 
 /*HEADER---------------------------------------------------------------------*/
@@ -25,8 +26,11 @@ header {
     justify-content: center;
     vertical-align: baseline;
     height: 100px;
-
     border-bottom: 3px solid orange;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 header h1,
@@ -58,25 +62,72 @@ header img {
     height: 100%;
     width: 175px;
     position: fixed;
+    transition:all 0.25s ease 0;
 }
 
-.sidenav a {
+.sidenav>.dropdown {
+    width:100%;
+    margin: 0.5em auto;
+}
+
+/*DROPDOWN-------------------------------------------------------*/
+button {
+    background-color: rgb(30,30,30);
+    border:none;
     font-family: "BoucherieBlock", 'Courier New', Courier, monospace;
-    font-weight:lighter;
+    font-weight: lighter;
     font-size: large;
     color: white;
     text-decoration: none;
+    width:100%;
+    transition:all 0.125s ease 0s;
+}
 
-    display: block;
+button:hover {
+    color:orange;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    overflow: auto;
+    border:none;
+    padding: 10px;
     text-align: center;
-    margin: 1.5em auto 1.5em auto;
-    transition: all 0.25s ease 0s;
 }
 
-.sidenav a:hover {
-    color: orange;
 
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    font-family: "BoucherieBlock", 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    font-size: large;
+    color: white;
+    text-decoration: none;
+    transition:all 0.125s ease 0s;
 }
+
+.dropdown-content a:hover {
+    color: orange
+}
+
+.show{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
 
 /*MAIN-----------------------------------------------------------*/
 .main {
@@ -85,13 +136,13 @@ header img {
     width: 100%;
     height: 100%;
     float: right;
-    font-family: "JetBrains Mono",'Courier New', Courier, monospace;
+    font-family: "JetBrains Mono", 'Courier New', Courier, monospace;
 
 }
 
 
-.main>div>h1 {
-    font-family: "JetBrains Mono",'Courier New', Courier, monospace;
+.main h1 {
+    font-family: "JetBrains Mono", 'Courier New', Courier, monospace;
 
     font-size: xx-large;
     font-weight: bolder;
@@ -106,37 +157,14 @@ iframe {
 
 .main a {
     text-decoration: none;
-    color:white;
+    color: white;
     transition: all 0.25s ease 0s;
 }
 
 .main a:hover {
-    color:orange;
-}
-/*.exotics {
-    height:175em;
+    color: orange;
 }
 
-.dungeon {
-    height:75em
-}
-
-.finalblows {
-    height:21em;
-}
-
-.silly {
-    height: 15em;
-}
-
-.weapons {
-    height:30em;
-}
-
-.strikes {
-    height: 50em;
-}
-*/
 /* MEDIA------------------------------- */
 @media only screen and (max-width:1200px) {
 
