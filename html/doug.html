@@ -1,124 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>J&ouml;tunn Comparer</title>
-  <link href="../css/reset.css" rel="stylesheet" />
-  <link href="../css/shared.css" rel="stylesheet" />
-  <link href="../css/player.css" rel="stylesheet" />
-  <link href="../images/jotunn.jpg" rel="icon" />
-  <link rel="apple-touch-icon" href="../images/jotunn.jpg">
-  <script src="../js/menu.js"></script>
+    <title>J&ouml;tunn Comparer</title>
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/shared.css" rel="stylesheet" />
+    <link href="../css/player.css" rel="stylesheet" />
+    <link href="../images/jotunn.jpg" rel="icon" />
+    <link rel="apple-touch-icon" href="../images/jotunn.jpg">
+    <script src="../js/menu.js"></script>
 </head>
+
 <body>
-  <header style="background-image: url('../images/DouglasEmblem.jpg');
+    <header style="background-image: url('../images/DouglasEmblem.jpg');
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;">
-    <img src="../images/DouglasEmblemOverlay.png">
-    <a href="../index.html">
-      <h1>DOUGLAS</h1>
-    </a>
-  </header>
-  <div class="sidenav">
-    <div class="dropdown">
-        <button onclick="clan()" class="dropbtn">Clan &#11206;</button>
-        <div id="clanDrop" class="dropdown-content">
-            <a href="../html/clan.html">Stats</a>
-            <a href="../html/clanReport.html">Raids</a>
+        <img src="../images/DouglasEmblemOverlay.png">
+        <a href="../index.html">
+            <h1>DOUGLAS</h1>
+        </a>
+    </header>
+    <div class="sidenav">
+        <div class="dropdown">
+            <button onclick="clan()" class="dropbtn">Clan &#11206;</button>
+            <div id="clanDrop" class="dropdown-content">
+                <a href="../html/clan.html">Stats</a>
+                <a href="../html/clanReport.html">Raids</a>
+                <a href="../html/clanDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="cam()" class="dropbtn">Cameron &#11206;</button>
+            <div id="camDrop" class="dropdown-content">
+                <a href="../html/cam.html">Stats</a>
+                <a href="../html/camReport.html">Raids</a>
+                <a href="../html/camDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="con()" class="dropbtn">Connor &#11206;</button>
+            <div id="conDrop" class="dropdown-content">
+                <a href="../html/connor.html">Stats</a>
+                <a href="../html/connorReport.html">Raids</a>
+                <a href="../html/connorDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="doug()" class="dropbtn">Douglas &#11206;</button>
+            <div id="dougDrop" class="dropdown-content">
+                <a href="../html/doug.html">Stats</a>
+                <a href="../html/dougReport.html">Raids</a>
+                <a href="../html/dougDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="hunt()" class="dropbtn">Hunter &#11206;</button>
+            <div id="huntDrop" class="dropdown-content">
+                <a href="../html/hunter.html">Stats</a>
+                <a href="../html/hunterReport.html">Raids</a>
+                <a href="../html/hunterDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="jack()" class="dropbtn">Jack &#11206;</button>
+            <div id="jackDrop" class="dropdown-content">
+                <a href="../html/jack.html">Stats</a>
+                <a href="../html/jackReport.html">Raids</a>
+                <a href="../html/jackDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="kade()" class="dropbtn">Kade &#11206;</button>
+            <div id="kadeDrop" class="dropdown-content">
+                <a href="../html/kade.html">Stats</a>
+                <a href="../html/kadeReport.html">Raids</a>
+                <a href="../html/kadeDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="mark()" class="dropbtn">Mark &#11206;</button>
+            <div id="markDrop" class="dropdown-content">
+                <a href="../html/mark.html">Stats</a>
+                <a href="../html/markReport.html">Raids</a>
+                <a href="../html/markDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="tom()" class="dropbtn">Thomas &#11206;</button>
+            <div id="tomDrop" class="dropdown-content">
+                <a href="../html/tom.html">Stats</a>
+                <a href="../html/tomReport.html">Raids</a>
+                <a href="../html/tomDReport.html">Dungeons</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="xav()" class="dropbtn">Xavier &#11206;</button>
+            <div id="xavDrop" class="dropdown-content">
+                <a href="../html/xav.html">Stats</a>
+                <a href="../html/xavReport.html">Raids</a>
+                <a href="../html/xavDReport.html">Dungeons</a>
+            </div>
         </div>
     </div>
-    <div class="dropdown">
-        <button onclick="cam()" class="dropbtn">Cameron &#11206;</button>
-        <div id="camDrop" class="dropdown-content">
-            <a href="../html/cam.html">Stats</a>
-            <a href="../html/camReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="con()" class="dropbtn">Connor &#11206;</button>
-        <div id="conDrop" class="dropdown-content">
-            <a href="../html/connor.html">Stats</a>
-            <a href="../html/connorReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="doug()" class="dropbtn">Douglas &#11206;</button>
-        <div id="dougDrop" class="dropdown-content">
-            <a href="../html/doug.html">Stats</a>
-            <a href="../html/dougReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="hunt()" class="dropbtn">Hunter &#11206;</button>
-        <div id="huntDrop" class="dropdown-content">
-            <a href="../html/hunter.html">Stats</a>
-            <a href="../html/hunterReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="jack()" class="dropbtn">Jack &#11206;</button>
-        <div id="jackDrop" class="dropdown-content">
-            <a href="../html/jack.html">Stats</a>
-            <a href="../html/jackReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="kade()" class="dropbtn">Kade &#11206;</button>
-        <div id="kadeDrop" class="dropdown-content">
-            <a href="../html/kade.html">Stats</a>
-            <a href="../html/kadeReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="mark()" class="dropbtn">Mark &#11206;</button>
-        <div id="markDrop" class="dropdown-content">
-            <a href="../html/mark.html">Stats</a>
-            <a href="../html/markReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="tom()" class="dropbtn">Thomas &#11206;</button>
-        <div id="tomDrop" class="dropdown-content">
-            <a href="../html/tom.html">Stats</a>
-            <a href="../html/tomReport.html">Raids</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button onclick="xav()" class="dropbtn">Xavier &#11206;</button>
-        <div id="xavDrop" class="dropdown-content">
-            <a href="../html/xav.html">Stats</a>
-            <a href="../html/xavReport.html">Raids</a>
-        </div>
-    </div>
-</div>
-  <div class="main">
-    <br>
-    <div>
-      <h1>ABOUT</h1>
-      <br>
-      <p>Piepuns#2163</p>
-      <div>
+    <div class="main">
+        <br>
+        <div>
+            <h1>ABOUT</h1>
+            <br>
+            <p>Piepuns#2163</p>
+            <div>
 
-      </div>
+            </div>
+        </div>
+        <br>
+        <iframe class="exotics" src="../data/DouglasExotics.html"></iframe>
+        <div class="otherstats">
+            <iframe class="finalblows" src="../data/DouglasElements.html"></iframe>
+            <iframe class="weapons" src="../data/DouglasWeapons.html"></iframe>
+
+            <iframe class="raids" src="../data/DouglasRaid.html"></iframe>
+            <iframe class="dungeon" src="../data/DouglasDungeon.html"></iframe>
+
+            <iframe class="strikes" src="../data/DouglasStrikes.html"></iframe>
+            <iframe class="time"></iframe>
+
+            <iframe class="silly" src="../data/DouglasFish.html"></iframe>
+            <iframe class="idk"><!--idk if anything will go here--></iframe>
+
+            <iframe class="commendations" src="../data/DouglasCommendation.html"></iframe>
+            <iframe class="seals"></iframe>
+
+        </div>
     </div>
-    <br>
-    <iframe class="exotics" src="../data/DouglasExotics.html" ></iframe>
-    <div class="otherstats">
-      <iframe class="finalblows" src="../data/DouglasElements.html"></iframe>
-      <iframe class="weapons" src="../data/DouglasWeapons.html"></iframe>
-
-      <iframe class="raids" src="../data/DouglasRaid.html"></iframe>
-      <iframe class="dungeon" src="../data/DouglasDungeon.html"></iframe>
-      
-      <iframe class="strikes" src="../data/DouglasStrikes.html"></iframe>
-      <iframe class="time"></iframe>
-
-      <iframe class="silly" src="../data/DouglasFish.html"></iframe>
-      <iframe class="idk"><!--idk if anything will go here--></iframe>
-
-      <iframe class="commendations" src="../data/DouglasCommendation.html"></iframe>
-      <iframe class="seals"></iframe>
-
-    </div>
-  </div>
 </body>

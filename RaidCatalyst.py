@@ -1,12 +1,11 @@
 # Thomas McGinley
 # Started 2/12/2024
-# Last Updated 2/16/2024
+# Last Updated 2/19/2024
 
 # Expanded data on a player's raid info
 
 import json
 import requests
-from prettytable import PrettyTable
 from Time_Converter import Time_Converter
 from MillisecondTimeConverter import convert
 
@@ -15,7 +14,8 @@ def get_raid_data(mem_type, mem_id, char_id_1, char_id_2, char_id_3):
     char_ids = [char_id_1, char_id_2, char_id_3]
     data_package = []
     for char_id in char_ids:
-        for i in range(0, 5):
+        #i range subject to change, 10 just seemed like a reasonable number to start with
+        for i in range(0, 10):
             url = f"https://www.bungie.net/Platform/Destiny2/{mem_type}/Account/{mem_id}/Character/{char_id}/Stats/Activities/?count=250&mode=4&page={i}"
             payload = {}
             header = {
@@ -26,10 +26,15 @@ def get_raid_data(mem_type, mem_id, char_id_1, char_id_2, char_id_3):
                 print("Error occurred in request:", response.status_code)
                 print("She be Rhulking on my Disciple til I Strand")
                 quit()
-
+            
             data = json.loads(response.content)
+            
             if len(data["Response"]) > 0:
                 data_package.append(data["Response"])
+                print (f"page printed: {i}")
+                continue
+            break
+            
     return data_package
 
 
@@ -218,7 +223,11 @@ def clean_data(data_list):
                     "activityDurationSeconds"
                 ]["basic"]["value"]
 
-            elif reference_id == 3458480158 or reference_id == 2659723068 or reference_id == 1042180643:
+            elif (
+                reference_id == 3458480158
+                or reference_id == 2659723068
+                or reference_id == 1042180643
+            ):
                 raid_dict["Garden of Salvation"]["Launches"] += 1
                 # adds one to completions if completed (value is zero otherwise)
                 raid_dict["Garden of Salvation"]["Completions"] += instance["values"][
@@ -254,6 +263,7 @@ def clean_data(data_list):
                 reference_id == 3881495763
                 or reference_id == 1681562271
                 or reference_id == 3022541210
+                or reference_id == 1485585878
             ):
                 raid_dict["Vault of Glass"]["Launches"] += 1
                 # adds one to completions if completed (value is zero otherwise)
@@ -270,7 +280,7 @@ def clean_data(data_list):
                     "activityDurationSeconds"
                 ]["basic"]["value"]
 
-            elif reference_id == 1441982566:
+            elif reference_id == 1441982566 or reference_id == 4217492330:
                 raid_dict["Vow of the Disciple"]["Launches"] += 1
                 # adds one to completions if completed (value is zero otherwise)
                 raid_dict["Vow of the Disciple"]["Completions"] += instance["values"][
@@ -286,7 +296,12 @@ def clean_data(data_list):
                     "activityDurationSeconds"
                 ]["basic"]["value"]
 
-            elif reference_id == 1374392663 or reference_id == 2964135793:
+            elif (
+                reference_id == 1374392663
+                or reference_id == 2964135793
+                or reference_id == 3257594522
+                or reference_id == 1063970578
+            ):
                 raid_dict["King's Fall"]["Launches"] += 1
                 # adds one to completions if completed (value is zero otherwise)
                 raid_dict["King's Fall"]["Completions"] += instance["values"][
@@ -302,7 +317,7 @@ def clean_data(data_list):
                     "activityDurationSeconds"
                 ]["basic"]["value"]
 
-            elif reference_id == 2381413764:
+            elif reference_id == 2381413764 or reference_id == 2918919505:
                 raid_dict["Root of Nightmares"]["Launches"] += 1
                 # adds one to completions if completed (value is zero otherwise)
                 raid_dict["Root of Nightmares"]["Completions"] += instance["values"][
@@ -411,7 +426,11 @@ def clean_data(data_list):
                     "activityDurationSeconds"
                 ]["basic"]["value"]
 
-            elif reference_id == 4179289725 or reference_id == 1507509200:
+            elif (
+                reference_id == 4179289725
+                or reference_id == 1507509200
+                or reference_id == 156253568
+            ):
                 raid_dict["Crota's End"]["Launches"] += 1
                 # adds one to completions if completed (value is zero otherwise)
                 raid_dict["Crota's End"]["Completions"] += instance["values"][
@@ -636,7 +655,9 @@ def compile_clan(player_data_list):
 
     for raid in raid_dict:
         if raid_dict[raid]["Deaths"] > 0:
-            raid_dict[raid]["KD"] = round(raid_dict[raid]["Kills"] / raid_dict[raid]["Deaths"], 2)
+            raid_dict[raid]["KD"] = round(
+                raid_dict[raid]["Kills"] / raid_dict[raid]["Deaths"], 2
+            )
 
     html_string = "<div class=flexContainer>"
     for raid in raid_dict:
@@ -670,7 +691,7 @@ def compile_clan(player_data_list):
 
 
 def run():
-    thomasExoticDataClean = process_player(
+    thomasDataClean = process_player(
         "Thomas",
         1,
         4611686018444441571,
@@ -678,7 +699,7 @@ def run():
         2305843009283965144,
         2305843009569534739,
     )
-    douglasExoticDataClean = process_player(
+    douglasDataClean = process_player(
         "Douglas",
         1,
         4611686018434621591,
@@ -686,7 +707,7 @@ def run():
         2305843009301374530,
         2305843010083874501,
     )
-    markExoticDataClean = process_player(
+    markDataClean = process_player(
         "Mark",
         1,
         4611686018432221111,
@@ -694,7 +715,7 @@ def run():
         2305843009668854600,
         2305843009802904121,
     )
-    connorExoticDataClean = process_player(
+    connorDataClean = process_player(
         "Connor",
         1,
         4611686018450697084,
@@ -702,7 +723,7 @@ def run():
         2305843009663894341,
         2305843009703275457,
     )
-    jackExoticDataClean = process_player(
+    jackDataClean = process_player(
         "Jack",
         2,
         4611686018469231992,
@@ -710,7 +731,7 @@ def run():
         2305843009891864023,
         2305843009890274343,
     )
-    hunterExoticDataClean = process_player(
+    hunterDataClean = process_player(
         "Hunter",
         3,
         4611686018476416864,
@@ -718,7 +739,7 @@ def run():
         2305843009359365362,
         2305843009756404411,
     )
-    cameronExoticDataClean = process_player(
+    cameronDataClean = process_player(
         "Cameron",
         3,
         4611686018501646188,
@@ -726,7 +747,7 @@ def run():
         2305843009683284492,
         2305843009683284493,
     )
-    kadeExoticDataClean = process_player(
+    kadeDataClean = process_player(
         "Kade",
         1,
         4611686018451886498,
@@ -734,7 +755,7 @@ def run():
         2305843009264637527,
         2305843010322954573,
     )
-    xavierExoticDataClean = process_player(
+    xavierDataClean = process_player(
         "Xavier",
         3,
         4611686018471574419,
@@ -742,17 +763,17 @@ def run():
         2305843009309817521,
         2305843009313885640,
     )
-    
+
     playerDataList = [
-        thomasExoticDataClean,
-        douglasExoticDataClean,
-        markExoticDataClean,
-        connorExoticDataClean,
-        jackExoticDataClean,
-        hunterExoticDataClean,
-        cameronExoticDataClean,
-        kadeExoticDataClean,
-        xavierExoticDataClean,
+        thomasDataClean,
+        douglasDataClean,
+        markDataClean,
+        connorDataClean,
+        jackDataClean,
+        hunterDataClean,
+        cameronDataClean,
+        kadeDataClean,
+        xavierDataClean,
     ]
-    
+
     compile_clan(playerDataList)

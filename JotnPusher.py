@@ -7,7 +7,7 @@ from os import system
 system("cd /home/scf/Desktop/jotncomparer.github.io")
 system("git pull")
 system("python JOTUNN_CATALYST.py")
-system("rm __pycache__")
+system("rmdir -f __pycache__")
 system("git add data")
 system("git add images")
 system('git commit -m "Updated player data"')
