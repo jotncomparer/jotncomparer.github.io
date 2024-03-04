@@ -1,10 +1,10 @@
 # Thomas McGinley
 # Started 2/1/2024
-# Last Updated 2/9/2024
+# Last Updated 3/3/2024
 
 # Gets character emblems
 
-
+from APIKEY import API_KEY
 import json
 import requests
 
@@ -12,9 +12,7 @@ import requests
 def get_character_data(membership_type, member_id):
     url = f"https://www.bungie.net/Platform/Destiny2/{membership_type}/Profile/{member_id}/?components=200"
     payload = {}
-    headers = {
-        "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
-    }
+    headers = API_KEY
     response = requests.request("GET", url, headers=headers, data=payload)
     if response.status_code not in range(200, 300):
                 print("Error occurred in request:", response.status_code)
@@ -26,9 +24,7 @@ def get_character_data(membership_type, member_id):
 def get_emblem_data(emblem_hash):
     url = f"https://www.bungie.net/Platform/Destiny2/Manifest/DestinyInventoryItemDefinition/{emblem_hash}/"
     payload = {}
-    headers = {
-        "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
-    }
+    headers = API_KEY
     response = requests.request("GET", url, headers=headers, data=payload)
     if response.status_code not in range(200, 300):
                 print("Error occurred in request:", response.status_code)

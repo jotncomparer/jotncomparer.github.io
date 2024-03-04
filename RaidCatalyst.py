@@ -1,9 +1,9 @@
 # Thomas McGinley
 # Started 2/12/2024
-# Last Updated 2/19/2024
+# Last Updated 3/3/2024
 
 # Expanded data on a player's raid info
-
+from APIKEY import API_KEY
 import json
 import requests
 from Time_Converter import Time_Converter
@@ -18,9 +18,7 @@ def get_raid_data(mem_type, mem_id, char_id_1, char_id_2, char_id_3):
         for i in range(0, 10):
             url = f"https://www.bungie.net/Platform/Destiny2/{mem_type}/Account/{mem_id}/Character/{char_id}/Stats/Activities/?count=250&mode=4&page={i}"
             payload = {}
-            header = {
-                "x-api-key": "654dad1171c44eb688f2fb5ca11e7c3b",
-            }
+            header = API_KEY
             response = requests.request("GET", url, headers=header, data=payload)
             if response.status_code not in range(200, 300):
                 print("Error occurred in request:", response.status_code)

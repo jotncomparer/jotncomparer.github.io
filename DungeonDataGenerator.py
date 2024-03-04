@@ -1,10 +1,10 @@
 # Thomas McGinley
 # Started 12/29/2023
-# Last Updated 2/9/2024
+# Last Updated 3/3/2024
 
 # Gathers basic Dungeon stat information about each desired player, cleans the data, and generates HTML files with relevant information
 
-
+from APIKEY import API_KEY
 import requests
 import json
 from prettytable import PrettyTable
@@ -13,9 +13,7 @@ from prettytable import PrettyTable
 def get_metric_data(memType, memId):
     url = f"https://www.bungie.net/Platform/Destiny2/{memType}/Profile/{memId}/?components=1100"
     payload = {}
-    headers = {
-        'x-api-key': '654dad1171c44eb688f2fb5ca11e7c3b',
-    }
+    headers = API_KEY
     response = requests.request("GET",url, headers=headers, data=payload)
     if response.status_code not in range(200, 300):
                 print("Error occurred in request:", response.status_code)
