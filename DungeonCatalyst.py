@@ -461,5 +461,3 @@ def run():
     ]
 
     compile_clan(playerDataList)
-    
-run()
